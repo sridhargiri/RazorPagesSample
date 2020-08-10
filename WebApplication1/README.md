@@ -1,12 +1,14 @@
 # RazorPagesSample
 
+### sql attached
+
 ## Sample .NET core 3.1 project with razor pages. (Requires VS 2019 v16.6)
 
 # Packages
 ## Following packages used
 1.ef core 3.1.5
 2.bootstrap 4.5
-3.summernore js htnml editor
+3.summernore js editor
 
 # Notes
 ## Following are the general observations
