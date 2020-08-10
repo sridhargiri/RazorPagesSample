@@ -1,0 +1,149 @@
+﻿@page "/{id?}"
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<script>
+    $(document).ready(function () {
+        $('.figure-img').attr('src', '/Images/img1.png');
+        $('#imgddp').change(function () {
+            $('.figure-img').attr('src', '/Images/' + $(this).val());
+            $('#profilepichidden').val('/Images/' + $(this).val());
+        })
+        $('input[name="exampleRadios"]').change(function () {
+            var checkedvalue = $('input[name="exampleRadios"]:checked').val();
+            if (checkedvalue == 'I') {
+                $('#imgdiv').removeClass('d-none');
+                $('#videodiv').addClass('d-none')
+            } else {
+
+                $('#imgdiv').addClass('d-none');
+                $('#videodiv').removeClass('d-none')
+            }
+        })
+        $('#t1,#t2,#t3,#t4').summernote();
+    });
+</script>
+<div class="container">
+    <div class="row">
+        @for (var i = 0; i < 6; i++)
+        {
+            <component type="typeof(Component)" render-mode="Static" param-text='"Hello Universe"' />
+        }
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-md-start font-weight-bold">
+        <div class="col-lg-12">
+            <h4>
+                <span class="@ViewData["css"]">
+                    @ViewData["msd"]
+                </span>
+            </h4>
+        </div>
+    </div>
+</div>
+<form class="form-horizontal" method="post">
+    <div class="container">
+        <div class="row justify-content-md-start">
+
+            <div class="col-lg-12">
+                <label for="refid">Reference Id</label>
+                <div class="form-group">
+                    <span name="refid">
+                        @Model.Id
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-start">
+            <div class="col-lg-12 form-group">
+                <label for="JobTitle">Job title</label>
+                <input type="text" name="JobTitle" value="@Model.JobTitle" class="input-group" />
+            </div>
+        </div>
+        <div class="row justify-content-md-start">
+            <div class="col-lg-12">
+                <span>I want to upload</span>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="I" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Image
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Y">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Youtube link
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12" id="imgdiv">
+            <label for="ProfileData">Choose Your Image</label>
+            <select id="imgddp">
+                <option value="img1.png">img1.png</option>
+                <option value="img2.png">img2.png</option>
+                <option value="img3.png">img3.png</option>
+            </select>
+            <input type="hidden" id="profilepichidden" name="ProfileData" />
+            <img name="Profilepic" class="figure-img" src="@Model.ProfileData" height="100" width="100" alt="Alternate Text" />
+        </div>
+        <div class="col-lg-12 d-none" id="videodiv">
+            <iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe>
+        </div>
+        <div class="row justify-content-md-start">
+
+            <div class="col-lg-12">
+                <label for="CompanyInfo">Company Information</label>
+                <div class="form-group">
+                    <textarea id="t1" class="input-group" name="CompanyInfo">
+      @Model.CompanyInfo
+    </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-start">
+            <div class="col-lg-12">
+                <label for="JobTask">Job task and Information</label>
+                <div class="form-group">
+                    <textarea name="JobTask" id="t2" class="input-group">
+      @Model.JobTask
+    </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-start">
+
+            <div class="col-lg-12">
+                <label for="CandidateProfile">Candidate Profile</label>
+                <div class="form-group">
+                    <textarea name="CandidateProfile" id="t3" class="input-group">
+      @Model.CandidateProfile
+    </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-start">
+            <div class="col-lg-12">
+                <label for="ApplicationInfo">Application Information</label>
+                <div class="form-group">
+                    <textarea name="ApplicationInfo" id="t4" class="input-group">
+      @Model.ApplicationInfo      
+            </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-md-start float-right">
+            <div class="col-lg-12 form-group">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-outline-primary">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
