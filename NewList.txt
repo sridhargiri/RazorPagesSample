@@ -1,0 +1,41 @@
+.net core jwt serialize
+web api when no cache
+azure load balancer
+http trigger fbction json
+aspnet core docker image
+docker dependencies file
+azure api management url rewrite for backend api
+vm deploy vs azure app service
+.net core tls mutual authentication passed in cookies
+compressing requests
+azure hosting and deployment web apps vs vm
+mount vs render
+
+
+https://docs.microsoft.com/en-us/azure/api-management/import-and-publish
+https://reactjs.org/docs/thinking-in-react.html
+
+
+
+dependency register cs microservice
+call api in another api microservices
+parts of http request
+azure function deploy
+connect function to omprem database hybrid connection
+ef core db first oracle
+azure blob auto delete old archive
+azure functions heavy data load
+
+abs factory pattern
+angular change detection
+async pipe - pure/impure pipes
+axios vs fetch - backward,json stringify,timeout,interceptor
+static class vs singleton
+limit no of instance
+share-data-between-sibling-components-in-angular
+microservice transaction - 2pc & saga, microservice event sourcing - CQRS, bounded context in DDD
+sql server vs mysql
+azure ad
+sql elastic pool
+azure static website hosting $web storage account
+debouncing,props.children,httpevent,usecallback,useRef,useEffect
