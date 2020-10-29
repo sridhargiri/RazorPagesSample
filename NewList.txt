@@ -26,16 +26,21 @@ ef core db first oracle
 azure blob auto delete old archive
 azure functions heavy data load
 
-abs factory pattern
+abstract vs interface,static class vs singleton
 angular change detection
 async pipe - pure/impure pipes
 axios vs fetch - backward,json stringify,timeout,interceptor
-static class vs singleton
 limit no of instance
 share-data-between-sibling-components-in-angular
 microservice transaction - 2pc & saga, microservice event sourcing - CQRS, bounded context in DDD
 sql server vs mysql
-azure ad
+azure ad,hybrid
 sql elastic pool
 azure static website hosting $web storage account
 debouncing,props.children,httpevent,usecallback,useRef,useEffect
+microservices transaction example, c# istio, mediatr
+c# template pattern,abstract factory pattern,adapter pattern, abstract override
+react diffing, shadow DOM,hooks
+TempData Attribute
+query performance-Avoid OR in join,Like
+cap theorem nosql
