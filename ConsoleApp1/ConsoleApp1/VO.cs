@@ -37,10 +37,14 @@ namespace ConsoleApp1
             return "ClassC";
         }
     }
+    public class ClassOne { public void M1() { } }
+    public class ClassTwo: ClassOne { public new void M1() { } }
     public class VO
     {
         public static void Main()
         {
+            ClassOne c1 = new ClassTwo();
+            c1.M1();
             classA a = new classC();
             Console.WriteLine(a.Print());
         }

@@ -38,7 +38,7 @@ namespace ConsoleApp1
         public static void Main()
         {
             int[] a = { 1, 13, 7, 2,5,13 };// { 1, 2, 6, 3, 2,5 };
-            int[] b = { 1, 12, 2, 1 };// { 2, 4, 3, 1, 0 };
+            int[] b = { 8, 12, 2, 1 };// { 2, 4, 3, 1, 0 };
 
             int n = a.Length;
             int m = b.Length;

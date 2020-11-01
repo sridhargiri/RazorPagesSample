@@ -11,7 +11,11 @@ namespace ArgsProblem.Tests
         private const string NAME_ARG = "--NAME";
         private const string COUNT_ARG = "--COUNT";
         private const string HELP_ARG = "--HELP";
-        public int Validate(string[] args)
+        public static void Main(string[] args)
+        {
+            Validate(args);
+        }
+        public static int Validate(string[] args)
         {
             // throw new System.ArgumentException("Not yet implemented");
             var help_present = false;
