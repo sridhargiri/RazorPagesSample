@@ -38,9 +38,13 @@ azure ad,hybrid
 sql elastic pool
 azure static website hosting $web storage account
 debouncing,props.children,httpevent,usecallback,useRef,useEffect
-microservices transaction example, c# istio, mediatr
+microservices transaction example c#, c# istio, mediatr,automatonymous,
 c# template pattern,abstract factory pattern,adapter pattern, abstract override
 react diffing, shadow DOM,hooks
 TempData Attribute
 query performance-Avoid OR in join,Like
 cap theorem nosql
+unit test cloud app
+ngrx state
+git reset,distributed,offline,local server
+arrow fn(lexical/dynamic scoping), promise(then,catch,race,chaining) vs observable(next,complete,sub/unsub)=lazy,mutiple emit,cancellable,operator

@@ -17,6 +17,16 @@ namespace ConsoleApp1
 
             Console.WriteLine("{0}:{1}", principal, secondary);
         }
+        public static int diagonalDifference(List<List<int>> arr)
+        {
+            int principal = 0, secondary = 0;
+            for (int i = 0; i < arr.Count; i++)
+            {
+                principal += arr[i][i];
+                secondary += arr[i][arr.Count - i - 1];
+            }
+            return Math.Abs(principal - secondary);
+        }
         public static void Main(string[] args)
         {
             int[,] a ={ { 1, 2, 3, 4 },
