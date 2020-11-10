@@ -11,6 +11,8 @@ namespace ConsoleApp1
         AAAA=A=3
         AABAA=AB=3
         ABAB=ABAB=0
+         No two consecutive characters should be same
+         
          */
         public static int AlternatingCount(string s)
         {

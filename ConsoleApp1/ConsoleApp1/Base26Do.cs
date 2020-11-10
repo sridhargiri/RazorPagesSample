@@ -37,8 +37,8 @@ namespace ConsoleApp1
         public static void Main(string[] args)
         {
             //string o = "cdefgab".rightRotateShift(4);
-            //string o = getShiftedString("abcd", 1, 2);
-            //Console.WriteLine(o);List<string> names = new List<string>();
+            string o = getShiftedString("abcd", 1, 0);
+            Console.WriteLine(o);
             List<string> names = new List<string>();
 
             names.Add("Rose");
