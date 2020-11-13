@@ -48,3 +48,6 @@ unit test cloud app
 ngrx state
 git reset,distributed,offline,local server
 arrow fn(lexical/dynamic scoping), promise(then,catch,race,chaining) vs observable(next,complete,sub/unsub)=lazy,mutiple emit,cancellable,operator
+fnf:automatically set updatedby in ef - override savechanges
+bybox:ABC A<B<C where A=1,C=10 combinations 120
+optimistic (rowverion-code level) & pessimistic locking (db level - 4 types)
