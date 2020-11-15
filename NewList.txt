@@ -20,10 +20,10 @@ https://reactjs.org/docs/thinking-in-react.html
 dependency register cs microservice
 call api in another api microservices
 parts of http request
-azure function deploy
+azure function deploy,authlevel
 connect function to omprem database hybrid connection
 ef core db first oracle
-azure blob auto delete old archive
+azure cdn, azure blob auto delete old archive via webjob or timer trigger or lifecycle management,lease blob
 azure functions heavy data load
 
 abstract vs interface,static class vs singleton

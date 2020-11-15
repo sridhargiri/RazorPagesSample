@@ -3,7 +3,10 @@ using System.Linq;
 
 namespace ConsoleApp1
 {
-    class Class1
+    /*
+  see which array larger
+     */
+    class LargeArrayFind
     {
 
         public static void Main(string[] args)
@@ -19,7 +22,7 @@ namespace ConsoleApp1
             for (int i = 0; i < T; i++)
             {
                 allowed = 0;
-                int size = int.Parse(Console.ReadLine());
+                //int size = int.Parse(Console.ReadLine());
                 firstarray = Console.ReadLine().Split(' ').Select(n1 => Int32.Parse(n1)).ToArray();
                 secondarray = Console.ReadLine().Split(' ').Select(n1 => Int32.Parse(n1)).ToArray();
                 Array.Sort(firstarray);
