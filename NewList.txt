@@ -51,3 +51,20 @@ arrow fn(lexical/dynamic scoping), promise(then,catch,race,chaining) vs observab
 fnf:automatically set updatedby in ef - override savechanges
 bybox:ABC A<B<C where A=1,C=10 combinations 120
 optimistic (rowverion-code level) & pessimistic locking (db level - 4 types)
+
+gamesa
+------
+on conflict on constaraint
+MARS db performance
+Manualautoeventreset client not wait for delayed server reply
+header ajax vs rest
+ef inheritance table per hierarchy
+pub/sub pattern pattern
+
+
+gisbiz
+--------
+microsoft orleans/akka.net
+JUnit, MockIT and TestNG
+fortify tool
+rebase vs squash commit
