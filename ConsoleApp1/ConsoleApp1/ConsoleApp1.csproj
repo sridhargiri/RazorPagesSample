@@ -7,11 +7,17 @@
     <Property1>$(Foo)</Property1>
     <Foo>Second Foo</Foo>
     <Property2>$(Foo)</Property2>
-    <StartupObject>ConsoleApp1.HackerearthMicroArray</StartupObject>
+    <StartupObject>ConsoleApp1.LeetcodeMostWater</StartupObject>
   </PropertyGroup>
   <Target Name="TestMessage" AfterTargets="Build">
     <Message Text="$(Property1)" Importance="high" />
     <Message Text="$(Property2)" Importance="high" />
   </Target>
+  <ItemGroup>
+    <Compile Remove="KdaysAfterWeekday.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="KdaysAfterWeekday.cs" />
+  </ItemGroup>
 
 </Project>
