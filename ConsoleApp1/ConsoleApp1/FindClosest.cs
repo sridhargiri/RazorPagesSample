@@ -5,9 +5,11 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    public static class MyClass
+    public static class FindClosest
     {
-
+        /*
+         find the element that is closest to zero
+         */
         public static int ClosestTo(this IEnumerable<int> collection, int target)
         {
             // NB Method will return int.MaxValue for a sequence containing no elements.
@@ -27,7 +29,7 @@ namespace ConsoleApp1
             return closest;
         }
     }
-    class Bloom
+    class FindClosestCallingCode
     {
         static string B(string tcmid, string pid, string itemid)
         {

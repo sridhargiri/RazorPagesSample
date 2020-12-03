@@ -180,7 +180,7 @@ for(i=0 to end)
   else 
     print arr[i], target-arr[i]
      */
-    class MyClass
+    class CheckforpairWithSum
     {
         static void printpairs(int[] arr,
                                int sum)

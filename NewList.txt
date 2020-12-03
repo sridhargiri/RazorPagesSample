@@ -68,3 +68,19 @@ microsoft orleans/akka.net
 JUnit, MockIT and TestNG
 fortify tool
 rebase vs squash commit
+
+zen3
+----
+angular automatic refresh in browser
+react component lifecycle
+react HOC, polyfill
+find k days after weekday
+
+qburst
+------
+sql>salary greater than avg dept,same location (sql file attached)
+
+wood
+----
+give n palindromes
+
