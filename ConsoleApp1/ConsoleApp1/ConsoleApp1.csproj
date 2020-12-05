@@ -17,7 +17,7 @@
     <Compile Remove="KdaysAfterWeekday.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="KdaysAfterWeekday.cs" />
+    <None Include="GeneralCoding\KdaysAfterWeekday.cs" />
   </ItemGroup>
 
 </Project>

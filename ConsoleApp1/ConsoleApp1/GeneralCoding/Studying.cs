@@ -6,13 +6,20 @@ public interface ISiteInterface
 };
 
 /// <summary>
-/// Skeleton of the singleton that inherits the interface.
+/// Skeleton of the singleton that inherits the interface.if this class is sealed subclass cannot inherit from it
 /// </summary>
 /// <summary>
 /// Sample singleton object.
 /// </summary>
-public sealed class SiteStructure : ISiteInterface
+public class SiteStructure : ISiteInterface
 {
+    class Inside : SiteStructure
+    {
+        public Inside()
+        {
+
+        }
+    }
     /// <summary>
     /// This is an expensive resource.
     /// We need to only store it in one place.
