@@ -1,4 +1,7 @@
-﻿using System;
+/*
+Given an array arr[] of integers, find out the maximum difference between any two elements such that larger element appears after the smaller number.
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
