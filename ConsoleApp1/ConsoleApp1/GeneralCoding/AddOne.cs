@@ -35,7 +35,7 @@ public class AddOne {
 	// driver code 
 	static public void Main () 
 	{ 
-	GFG obj =new GFG(); 
+	AddOne obj =new AddOne(); 
 		
 	// number of elements in array 
 	int n = 4; 

@@ -1,4 +1,4 @@
-using System;;
+using System;
 using System.Text;
 public class MinSwapAlternateSequence{
 /*
@@ -14,7 +14,7 @@ abcaca
 Please note that ? should be replaced by any lowercase letter: [a-z]
 */
 public String solution(String riddle) {
-    if (riddle == null || riddle.indexOf('?') == -1) {
+    if (riddle == null || riddle.IndexOf('?') == -1) {
         return riddle;
     }
     StringBuilder sb = new StringBuilder("");
@@ -30,7 +30,7 @@ public String solution(String riddle) {
                     : prev != 'b' && next != 'b' ? 'b'
                     : 'c';
         }
-        sb.append(current);
+        sb.Append(current);
         prev = current;
     }
     return sb.ToString();
