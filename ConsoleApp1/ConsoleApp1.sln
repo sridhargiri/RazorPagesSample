@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MulVersions", "MulVersions\MulVersions.csproj", "{87172DDD-E8DD-4B7A-A7FD-BFA670A38949}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MM", "MM\MM.csproj", "{12C2CB20-0564-46D3-A875-C5BFCB17DE65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM", "MM\MM.csproj", "{12C2CB20-0564-46D3-A875-C5BFCB17DE65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject_Test", "UnitTestProject_Test\UnitTestProject_Test.csproj", "{EDA96876-B9CA-4F8E-B98D-0ECCF687B4F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject_Test", "UnitTestProject_Test\UnitTestProject_Test.csproj", "{EDA96876-B9CA-4F8E-B98D-0ECCF687B4F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostExample", "HostExample\HostExample.csproj", "{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EDA96876-B9CA-4F8E-B98D-0ECCF687B4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDA96876-B9CA-4F8E-B98D-0ECCF687B4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDA96876-B9CA-4F8E-B98D-0ECCF687B4F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
