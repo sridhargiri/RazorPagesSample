@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp1.GeneralCoding
+namespace ConsoleApp1
 {
     class LinkedListProblem
     {
@@ -60,9 +60,9 @@ Below is method two
             for (int i = 5; i > 0; --i)
             {
                 llist.push(i);
-                llist.printList();
-                llist.printMiddle();
             }
+            llist.printList();
+            llist.printMiddle();
         }
 
         static bool isPalindrome(Node head)
@@ -132,7 +132,7 @@ Below is method two
             Node tnode = head;
             while (tnode != null)
             {
-                Console.WriteLine(tnode.data + "->");
+                Console.Write(tnode.data + "->");
                 tnode = tnode.ptr;
             }
             Console.WriteLine("NULL");

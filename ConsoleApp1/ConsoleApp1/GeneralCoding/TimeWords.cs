@@ -26,8 +26,102 @@ namespace ConsoleApp1
             {
                 Console.WriteLine((out_[i_out_]));
             }
-        }
+            // Given n is in seconds 
+            int n = 129600;
 
+            ConvertSectoDay(n);
+            string T = "21:39";
+            int K = 43;
+            findTime(T, K);
+
+            //lag
+            int h1 = 12, m1 = 0;
+            int h2 = 12, m2 = 58;
+            int k = 1;
+
+            int lag = lagDuration(h1, m1, h2, m2, k);
+            Console.WriteLine("Lag = " + lag +
+                              " minutes");
+        }
+        /*
+         Find the number of ways to divide number into four parts such that a = c and b = d
+        Given a number N. Find the number of ways to divide a number into four parts(a, b, c, d) such that a = c and b = d and a not equal to b.
+
+Examples:
+
+Input : N = 6
+Output : 1
+Expalantion : four parts are {1, 2, 1, 2}
+
+Input : N = 20
+Output : 4
+Expalantion : possible ways are {1, 1, 9, 9}, {2, 2, 8, 8}, {3, 3, 7, 7} and {4, 4, 6, 6}.
+        Approach :
+If the given N is odd the answer is 0, because the sum of four parts will not be even number.
+
+        If n is divisible by 4 then answer will be n/4 -1(here a equals to b can be possible so subtract that possibility) otherwise n/4.
+
+Below is the implementation of the above approach :
+
+         */
+        // Function to find the number of ways to divide 
+        // N into four parts such that a = c and b = d 
+        int possibleways(int n)
+        {
+            if (n % 2 == 1)
+                return 0;
+            else if (n % 4 == 0)
+                return n / 4 - 1;
+            else
+                return n / 4;
+        }
+        /*
+         Time difference between expected time and given time
+Difficulty Level : Easy
+ Last Updated : 27 Feb, 2019
+Given the initial clock time h1:m1 and the present clock time h2:m2, denoting hour and minutes in 24-hours clock format. The present clock time h2:m2 may or may not be correct. Also given a variable K which denotes the number of hours passed. The task is to calculate the delay in seconds i.e. time difference between expected time and given time.
+
+Examples :
+
+Input: h1 = 10, m1 = 12, h2 = 10, m2 = 17, k = 2
+Output: 115 minutes
+The clock initially displays 10:12. After 2 hours it must show 12:12. But at this point, the clock displays 10:17. Hence, the clock must be lagging by 115 minutes. so the answer is 115.
+
+Input: h1 = 12, m1 = 00, h2 = 12, m2 = 58, k = 1
+Output: 2 minutes
+The clock initially displays 12:00. After 1 hour it must show 13:00. But at this point, the clock displays 12:58. Hence, the clock must be lagging by 2 minutes. so the answer is 2.
+        Approach
+1. Convert given time in h:m format to number of minutes. It is simply 60*h+m.
+2. Calculate both the computed time(adding K hours to the initial time).
+3. Find the difference in minutes which will be the answer.
+         */
+
+
+        // Function definition 
+        // with logic 
+        static int lagDuration(int h1, int m1,
+                               int h2, int m2,
+                               int k)
+        {
+            int lag, t1, t2;
+
+            // Conversion to minutes 
+            t1 = (h1 + k) * 60 + m1;
+
+            // Conversion to minutes 
+            t2 = h2 * 60 + m2;
+
+            // Calculating difference 
+            lag = t1 - t2;
+            return lag;
+        }
+        /// <summary>
+        /// function to display time difference expressed in words
+        /// </summary>
+        /// <param name="r"></param>
+        /// <param name="n"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
         private static string[] solve(string r, int n, string[] p)
         {
 
@@ -81,6 +175,97 @@ namespace ConsoleApp1
                 }
             }
             return P;
+        }
+        // function convert second into day  
+        // hours, minutes and seconds 
+
+
+        //Output :
+        //1 days 12 hours 0 minutes 0 seconds
+        //Given an integer n(in seconds).Convert it into days, hours, minutes and seconds.
+
+        //Examples:
+
+        //        Input: 369121517
+        //Output: 4272 days 5 hours 45 minutes 17 seconds
+
+        //Input : 129600
+        //Output: 1 days 12 hours 0 minutes 0 seconds
+        static void ConvertSectoDay(int n)
+        {
+            int day = n / (24 * 3600);
+
+            n = n % (24 * 3600);
+            int hour = n / 3600;
+
+            n %= 3600;
+            int minutes = n / 60;
+
+            n %= 60;
+            int seconds = n;
+
+            Console.WriteLine(day + " "
+                  + "days " + hour + " "
+              + "hours " + minutes + " "
+            + "minutes " + seconds + " "
+                            + "seconds ");
+        }
+        //        Program to find the time after K minutes from given time
+        //            You are given a time T in 24-hour format(hh:mm) and a positive integer K, you have to tell the time after K minutes in 24-hour time.
+        //            Examples:
+
+        //Input: T = 12:43, K = 21
+        //Output: 13:04
+
+        //Input: T = 20:39, K = 534
+        //Output: 05:33
+        //                Approach:
+
+        //Convert the given time in minutes
+        //Add K to it let it be equal to M.
+        //Convert the M minutes in 24 hours format accordingly.
+        //Below is the implementation of the above approach:
+
+        static void findTime(string T, int K)
+        {
+
+            // convert the given time in minutes  
+            int minutes = ((T[0] - '0')
+                            * 10
+                        + T[1] - '0')
+                            * 60
+                        + ((T[3] - '0')
+                                * 10
+                            + T[4] - '0');
+
+            // Add K to current minutes  
+            minutes += K;
+
+            // Obtain the new hour  
+            // and new minutes from minutes  
+            int hour = (minutes / 60) % 24;
+
+            int min = minutes % 60;
+
+            // Print the hour in appropriate format  
+            if (hour < 10)
+            {
+                Console.Write("0" + hour + ":");
+            }
+            else
+            {
+                Console.Write(hour + ":");
+            }
+
+            // Print the minute in appropriate format  
+            if (min < 10)
+            {
+                Console.Write("0" + min);
+            }
+            else
+            {
+                Console.Write(min);
+            }
         }
     }
 }
