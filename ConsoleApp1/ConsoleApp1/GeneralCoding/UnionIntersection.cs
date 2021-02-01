@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp1.GeneralCoding
+namespace ConsoleApp1
 {
     /*
      Union and Intersection of two sorted arrays
@@ -145,6 +145,11 @@ Output : Union : {2, 4, 5, 6, 8, 10}
         }
         public static void Main()
         {
+            //Check common elements output is 10
+            int[] arr_1 = { 10, 4, 15, 6 };
+            int[] arr_2 = { 2, 10, 5, 7, 9 };
+            printIntersection(arr_1, arr_2, arr_1.Length, arr_2.Length);
+
             int[] arr1 = { 1, 2, 4, 5, 6 };
             int[] arr2 = { 2, 3, 5, 7 };
             int m = arr1.Length;
