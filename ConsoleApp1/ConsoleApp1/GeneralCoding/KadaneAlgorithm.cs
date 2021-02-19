@@ -4,6 +4,23 @@ using System.Text;
 
 namespace ConsoleApp1
 {
+    /*
+     * coderbyte disprz
+     * 
+     Kadane’s Algorithm:
+
+Initialize:
+    max_so_far = 0
+    max_ending_here = 0
+
+Loop for each element of the array
+  (a) max_ending_here = max_ending_here + a[i]
+  (b) if(max_so_far < max_ending_here)
+            max_so_far = max_ending_here
+  (c) if(max_ending_here < 0)
+            max_ending_here = 0
+return max_so_far
+    */
     public class KadaneAlgorithm
     {
         /// <summary>
@@ -126,7 +143,7 @@ It is similar to Largest Sum Contiguous Subarray problem. The only thing to note
         // Drive code  
         public static void Main()
         {
-            int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };
+            int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };//Maximum contiguous sum is 7
             //int[] a =  { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
             Console.Write("Maximum contiguous sum is " +
                                     maxSubArraySum(a));

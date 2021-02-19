@@ -107,7 +107,71 @@ Input : 2 1 1 3 5
 Output: 2
 Here, (x, y) = (1, 2) and (3, 4) thus ans = 2.
 Other pairs are also possible.
+------------------------------------------------------------------------------------------------------------------------------------
+        Time Complexity: O(n log n) 
+Auxiliary Space: O(1)
+
+An Efficient Solution to this approach is to use hashing. We store all elements of arr1[] and their counts in a hash table. Then we traverse arr2[] and check if the count of every element in arr2[] matches with the count in arr1[].
+
+Below is the implementation of the above idea. We use unordered_map to store counts. 
+        output Yes
+        Time Complexity: O(n) 
+Auxiliary Space: O(n)
              */
+
+
+        // Returns true if arr1[0..n-1] and arr2[0..m-1]
+        // contain same elements.
+        public static bool areEqual(int[] arr1, int[] arr2)
+        {
+            int n = arr1.Length;
+            int m = arr2.Length;
+
+            // If lengths of arrays are not equal
+            if (n != m)
+                return false;
+
+            // Store arr1[] elements and their counts in
+            // hash map
+            Dictionary<int, int> map
+                = new Dictionary<int, int>();
+            int count = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (!map.ContainsKey(arr1[i]))
+                    map.Add(arr1[i], 1);
+                else
+                {
+                    count = map[arr1[i]];
+                    count++;
+                    map.Remove(arr1[i]);
+                    map.Add(arr1[i], count);
+                }
+            }
+
+            // Traverse arr2[] elements and check if all
+            // elements of arr2[] are present same number
+            // of times or not.
+            for (int i = 0; i < n; i++)
+            {
+                // If there is an element in arr2[], but
+                // not in arr1[]
+                if (!map.ContainsKey(arr2[i]))
+                    return false;
+
+                // If an element of arr2[] appears more
+                // times than it appears in arr1[]
+                if (map[arr2[i]] == 0)
+                    return false;
+
+                count = map[arr2[i]];
+                --count;
+
+                if (!map.ContainsKey(arr2[i]))
+                    map.Add(arr2[i], count);
+            }
+            return true;
+        }
         // Driver program 
         public static void Main()
         {
