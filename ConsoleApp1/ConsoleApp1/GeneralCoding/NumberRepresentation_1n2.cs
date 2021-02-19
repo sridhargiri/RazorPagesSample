@@ -5,7 +5,7 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     
+     https://www.geeksforgeeks.org/implementation-of-tic-tac-toe-game/
      Ways to represent a number as a sum of 1’s and 2’s
     Given a positive integer N. The task is to find the number of ways of representing N as a sum of 1s and 2s.
 
