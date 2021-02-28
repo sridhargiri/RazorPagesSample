@@ -6,7 +6,7 @@ namespace ConsoleApp1
 {
     public class NonRepeatingChar
     {
-
+        //form the string which has atmost K consecutive characters repetedly till length N
         // Function to find the 
         // required output string 
         static void findString(int N, int K)
@@ -27,7 +27,7 @@ namespace ConsoleApp1
             // Initialise integers N and K 
             int N = 10;
             int K = 3;
-
+            // output ABCABCABCA
             findString(N, K);
         }
     }

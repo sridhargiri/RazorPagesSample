@@ -66,11 +66,78 @@ step 3: Print the bits of number
 
             Console.Write(n & 1);
         }
+        /*
+         Count N-length Binary Strings consisting of “11” as substring
+Last Updated : 19 Feb, 2021
+Given a positive integer N, the task is to find the number of binary strings of length N which contains “11” as a substring.
+
+Examples:
+
+Input: N = 2
+Output: 1
+Explanation: The only string of length 2 that has “11” as a substring is “11”.
+
+Input: N = 12
+Output: 3719
+
+Approach: The idea is to derive the number of possibilities of having “11” as a substring for binary representations starting with 0 or 1 based on the following observations:
 
 
+
+
+If the first bit is 0, then the starting bit does not contribute to the string having “11” as a substring. Therefore, the remaining (N – 1) bits have to form a string having “11” as a substring.
+If the first bit is 1 and the following bit is also 1, then there exists 2(N – 2) strings having “11” as a substring.
+If the first bit is 1 but the following bit is 0, then a string having “11” as a substring can be formed with remaining (N – 2) bits.
+Therefore, the recurrence relation to generate all the binary strings of length N is:
+dp[i] = dp[i – 1] + dp[i – 2] + 2(N – 2)
+where,
+dp[i] is the string of length i having “11” as a substring.
+and dp[0] = dp[1] = 0.
+
+Follow the steps below to solve the problem:
+
+Initialize an array, say dp[], of size (N + 1) and assign dp[0] as 0 and dp[1] as 0.
+Precompute the first N powers of 2 and store it in an array, say power[].
+Iterate over the range [2, N] and update dp[i] as (dp[i – 1] + dp[i – 2] + power[i – 2]).
+After completing the above steps, print the value of dp[N] as the result.
+Below is the implementation of the above approach:
+         */
+        static void binaryStrings(int N)
+        {
+            // Initialize dp[] of size N + 1 
+            int[] dp = new int[N + 1];
+
+            // Base Cases 
+            dp[0] = 0;
+            dp[1] = 0;
+
+            // Stores the first N powers of 2 
+            int[] power = new int[N + 1];
+            power[0] = 1;
+
+            // Generate  
+            for (int i = 1; i <= N; i++)
+            {
+                power[i] = 2 * power[i - 1];
+            }
+
+            // Iterate over the range [2, N] 
+            for (int i = 2; i <= N; i++)
+            {
+                dp[i] = dp[i - 1]
+                        + dp[i - 2]
+                        + power[i - 2];
+            }
+
+            // Print total count of substrings 
+            Console.WriteLine(dp[N]);
+        }
         // Driver code
         static public void Main()
         {
+            int N = 12;
+            binaryStrings(N);
+
             bin(7);
             Console.WriteLine();
             bin(4);

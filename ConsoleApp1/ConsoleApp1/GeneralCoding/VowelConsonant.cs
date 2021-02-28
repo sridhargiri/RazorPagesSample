@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class VowelConsonant
+    public class VowelConsonant
     {
         static String remVowel(String str)
         {
@@ -100,12 +100,89 @@ namespace ConsoleApp1
 
             return sb;
         }
+        /*
+Rearrange vowels -> Modify string by rearranging vowels in alphabetical order at their respective indices
+Given a string S of length N, the task is to sort the vowels of the given string in alphabetical order at place them accordingly in their respective indices.
 
+Examples:
+
+Input: S = “geeksforgeeks”
+Output: geeksfergeoks
+Explanation:
+The vowels in the string are: e, e, o, e, e
+Sort in alphabetical order: e, e, e, e, o and replace with the vowels present in original string.
+
+Input: S = “people”
+Output: peeplo
+
+Approach: The idea is to store all the vowels present in the string S in another string, say vow. Sort the string vow in alphabetical order. Traverse the string S from the start and replace S[i] with vow[j] if S[i] is a vowel, and incrementing j by 1. Follow the steps below to solve the problem:
+
+https://www.geeksforgeeks.org/modify-string-by-rearranging-vowels-in-alphabetical-order-at-their-respective-indices/
+
+
+Initialize a string vow to store all the vowels present in the string, S.
+Traverse the string S and check if the current character S[i] is a vowel or not, If found to be true, then push S[i] to vow.
+Sort the string vow in alphabetical order and initialize a variable, say j as 0.
+Again traverse the string S using the variable i and if the current character S[i] is a vowel, then replace S[i] with vow[j] and increment j by 1.
+After the above steps, print the string S as the result.
+Below is the implementation of the above approach.
+        */
+        public static void sortVowels(string S)
+        {
+            char[] chararray = S.ToCharArray();
+
+            // Stores vowels of string S 
+            string vow = "";
+
+            // Traverse the string, S and push 
+            // all the vowels to string vow 
+            for (int i = 0; i < chararray.Length; i++)
+            {
+
+                if (S[i] == 'a' || S[i] == 'e'
+                    || S[i] == 'i' || S[i] == 'o'
+                    || S[i] == 'u')
+                {
+                    vow += S[i];
+                }
+            }
+            // If vow is empty, then print S 
+            // and return 
+            if (vow.Length == 0)
+            {
+                Console.WriteLine(S);
+                return;
+            }
+            char[] vowcopy = vow.ToCharArray();
+            Array.Sort(vowcopy); int j = 0;
+
+            // Traverse the string, S 
+            for (int i = 0; i < chararray.Length; i++)
+            {
+
+                // Replace S[i] with vow[j] iif S[i] 
+                // is a vowel, and increment j by 1 
+                if (S[i] == 'a' || S[i] == 'e' || S[i] == 'i'
+                    || S[i] == 'o' || S[i] == 'u')
+                {
+                    chararray[i] = vowcopy[j++];
+                }
+            }
+            Console.WriteLine(new string(chararray));
+        }
         // Driver method to test the above function 
         //i/p - GeeeksforGeeks - A Computer Science Portal for Geeks
         //o/p GksfrGks - Cmptr Scnc Prtl fr Gks
         public static void Main()
         {
+            string S = "geeksforgeeks";
+            sortVowels(S);
+            /*
+             Output:
+geeksfergeoks
+Time Complexity: O(N*log N)
+Auxiliary Space: O(N)
+            */
             String str = "GeeeksforGeeks - A Computer Science Portal for Geeks";
 
             Console.Write(remVowel(str));
