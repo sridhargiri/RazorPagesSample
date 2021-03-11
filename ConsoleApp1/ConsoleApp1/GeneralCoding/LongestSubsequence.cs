@@ -32,7 +32,7 @@ Otherwise, set len = 1 i.e. start a new subsequence.
 Print the value of maxLen as the final answer.
 Below is the implementation of the above approach:
     */
-    class LongestSubsequene
+    class LongestSubsequence
     {
 
         static void longestSequence(int[] arr, int N)
