@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp1.GeneralCoding
+namespace ConsoleApp1
 {
     /*
      Form minimum number from given sequence

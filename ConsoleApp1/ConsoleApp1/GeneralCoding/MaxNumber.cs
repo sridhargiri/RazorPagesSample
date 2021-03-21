@@ -23,7 +23,7 @@ Efficient approach : We know that the digits in a number will range from 0-9, so
 Then traverse the hashed array from index 9 to 0 and calculate the number accordingly.
 
  */
-namespace ConsoleApp1.GeneralCoding
+namespace ConsoleApp1
 {
     class MaxNumber
     {

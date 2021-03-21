@@ -76,6 +76,75 @@ Below is the implementation of the above approach:
             }
             Console.WriteLine(maxLen);
         }
+        /*
+         Length of longest increasing subsequence in a string
+Last Updated : 12 Mar, 2021
+Given a string S, the task is to find the length of the longest increasing subsequence present in the given string.
+
+A sequence of characters placed in increasing order of their ASCII values is called an increasing sequence.
+
+Examples:
+
+Input: S = “abcfgffs”
+Output: 6
+Explanation: Subsequence “abcfgs” is the longest increasing subsequence present in the string. Therefore, the length of the longest increasing subsequence is 6.
+
+Input: S = “aaabac”
+Output: 3
+
+
+
+Approach: The idea is to use Dynamic Programming. Follow the steps given below to solve the problem:
+
+Initialize an array, say dp[] of size 26, to store at every ith index, the length of the longest increasing subsequence having (‘a’ + i)th character as the last character in the subsequence.
+Initialize variable, say lis, to store the length of the required subsequence.
+Iterate over each character of the string S.
+For every character encountered, i.e. S[i] – ‘a’, check for all characters, say j, with ASCII values smaller than that of the current character.
+Initialize a variable, say curr, to store the length of LIS ending with current character.
+Update curr with max(curr, dp[j]).
+Update length of the LIS, say lis, with max(lis, curr + 1).
+Update dp[S[i] – ‘a’] with max of d[S[i] – ‘a’] and curr.
+Finally, print the value of lis as the required length of LIS.
+Below is the implementation of the above approach
+        */
+        static void longest_increasing_Sequence_string_optimised(string s)
+        {
+            int[] dp = new int[30]; int N = s.Length;
+
+            // Stores the length of LIS 
+            int lis = int.MinValue;
+            // Iterate over each 
+            // character of the string 
+            for (int i = 0; i < N; i++)
+            {
+
+                // Store position of the 
+                // current character 
+                int val = s[i] - 'a';
+
+                // Stores the length of LIS 
+                // ending with current character 
+                int curr = 0;
+
+                // Check for all characters 
+                // less then current character 
+                for (int j = 0; j < val; j++)
+                {
+                    curr = Math.Max(curr, dp[j]);
+                }
+
+                // Include current character 
+                curr++;
+
+                // Update length of longest 
+                // increasing subsequence 
+                lis = Math.Max(lis, curr);
+
+                // Updating LIS for current character 
+                dp[val] = Math.Max(dp[val], curr);
+            }
+            Console.WriteLine(lis);
+        }
         // Driver Code 
         public static void main(String[] args)
         {
@@ -85,14 +154,24 @@ Below is the implementation of the above approach:
             // Size of the array 
             int N = arr.Length;
 
+
             // Function call to find the longest 
             // subsequence 
             longestSequence(arr, N);
+
+            /*
+             *output:
+    3
+    Time Complexity: O(N * logN)
+    Auxiliary Space: O(1)
+            */
+            longest_increasing_Sequence_string_optimised("fdryutiaghfse");
+            /*
+             Output:
+4
+Time Complexity: O(N)
+Auxiliary Space: O(1)
+            */
         }
-        /*
-         *output:
-3
-Time Complexity: O(N * logN)
-Auxiliary Space: O(1)*/
     }
 }
