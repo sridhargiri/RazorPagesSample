@@ -165,7 +165,7 @@ const PRODUCTS = [
   {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
 ];
 <div id="container">
-    <!-- This element's contents will be replaced with your component. -->
+  
 </div>
 ReactDOM.render(
   <FilterableProductTable products={PRODUCTS} />,
