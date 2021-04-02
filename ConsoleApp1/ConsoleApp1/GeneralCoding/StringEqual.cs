@@ -67,8 +67,72 @@ Below is the implementation of the above approach:
             }
             return false;
         }
+        /*
+         * https://www.geeksforgeeks.org/check-if-two-strings-can-be-made-equal-by-swapping-one-character-among-each-other/
+         Check if two strings can be made equal by swapping one character among each other
+Difficulty Level : Basic
+Last Updated : 28 Nov, 2019
+Given two strings A and B of length N, the task is to check whether the two strings can be made equal by swapping any character of A with any other character of B only once.
 
-        // Driver code
+Examples:
+
+Input: A = “SEEKSFORGEEKS”, B = “GEEKSFORGEEKG”
+Output: Yes
+“SEEKSFORGEEKS” and “GEEKSFORGEEKG”
+can be swapped to make both the strings equal.
+
+Input: A = “GEEKSFORGEEKS”, B = “THESUPERBSITE”
+Output: No
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Approach: First omit the elements which are the same and have the same index in both the strings. Then if the new strings are of length two and both the elements in each string are the same then only the swap is possible.
+
+Below is the implementation of the above approach:
+        */
+
+        // Function that returns true if the string
+        // can be made equal after one swap
+        static Boolean canBeEqual(char[] a,
+                                  char[] b, int n)
+        {
+            // A and B are new a and b
+            // after we omit the same elements
+            List<char> A = new List<char>();
+            List<char> B = new List<char>();
+
+            // Take only the characters which are
+            // different in both the strings
+            // for every pair of indices
+            for (int i = 0; i < n; i++)
+            {
+
+                // If the current characters differ
+                if (a[i] != b[i])
+                {
+                    A.Add(a[i]);
+                    B.Add(b[i]);
+                }
+            }
+
+            // The strings were already equal
+            if (A.Count == B.Count &&
+                B.Count == 0)
+                return true;
+
+            // If the lengths of the
+            // strings are two
+            if (A.Count == B.Count &&
+                B.Count == 2)
+            {
+
+                // If swapping these characters
+                // can make the strings equal
+                if (A[0] == A[1] &&
+                    B[0] == B[1])
+                    return true;
+            }
+            return false;
+        }
         public static void Main(String[] args)
         {
             String str1 = "abc", str2 = "defa";
@@ -77,9 +141,16 @@ Below is the implementation of the above approach:
                 Console.WriteLine("Yes");
             else
                 Console.WriteLine("No");
+
+            // op - No
+            char[] A = "SEEKSFORGEEKS".ToCharArray();
+            char[] B = "GEEKSFORGEEKG".ToCharArray();
+
+            if (canBeEqual(A, B, A.Length))
+                Console.WriteLine("Yes");
+            else
+                Console.WriteLine("No");//op yes
         }
     }
-
-    // op - No
 
 }
