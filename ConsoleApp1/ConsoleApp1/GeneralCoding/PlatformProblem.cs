@@ -6,7 +6,8 @@ namespace ConsoleApp1
 {
 	/*
 	 Efficient Solution:
-
+https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/
+https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station-set-2-map-based-approach/
 Approach: The idea is to consider all events in sorted order. Once the events are in sorted order, trace the number of trains at any time keeping track of trains that have arrived, but not departed.
 For example consider the above example.
 

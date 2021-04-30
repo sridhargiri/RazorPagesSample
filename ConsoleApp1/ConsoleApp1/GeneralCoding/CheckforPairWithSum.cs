@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 /*
+ * https://www.geeksforgeeks.org/hashedin-interview-experience-for-software-engineer-1-off-campus/
+ * https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/
  Given an array A[] and a number x, check for pair in A[] with sum as x
 Last Updated: 28-10-2020
 Write a program that, given an array A[] of n numbers and another number x, determines whether or not there exist two elements in S whose sum is exactly x. 
@@ -193,8 +195,7 @@ for(i=0 to end)
                 // checking for condition
                 if (s.Contains(temp))
                 {
-                    Console.Write("Pair with given sum " +
-               sum + " is (" + arr[i] + ", " + temp + ")");
+                    Console.Write("Pair with given sum " + sum + " is (" + arr[i] + ", " + temp + ")");
                 }
                 s.Add(arr[i]);
             }
@@ -207,6 +208,18 @@ for(i=0 to end)
                               6, 10, 8 };
             int n = 16;
             printpairs(A, n);
+            /*
+             Method 2 output using hashing
+            Output: 
+            Pair with given sum 16 is (10, 6)
+Complexity Analysis:  
+
+Time Complexity: O(n). 
+As the whole array is needed to be traversed only once.
+Auxiliary Space: O(n). 
+A hash map has been used to store array elements.
+Note: If the range of numbers includes negative numbers then also it will work fine.
+            */
         }
     }
 

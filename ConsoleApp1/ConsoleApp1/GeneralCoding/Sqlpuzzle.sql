@@ -2846,48 +2846,48 @@ For details please check out the sample input and the expected output below-
 
 Sample Inputs
 
-EmpID	EmpName	ReportsTo
-1	Jacob	NULL
-2	Rui	NULL
-3	Jacobson	NULL
-4	Jess	1
-5	Steve	1
-6	Bob	1
-7	Smith	2
-8	Bobbey	2
-9	Steffi	3
-10	Bracha	3
-11	John	5
-12	Michael	6
-13	Paul	6
-14	Lana	7
-15	Johnson	7
-16	Mic	8
-17	Stev	8
-18	Paulson	9
-19	Jessica	10
+EmpID	EmpName	    ReportsTo
+1	    Jacob	    NULL
+2	    Rui	        NULL
+3	    Jacobson	NULL
+4	    Jess	    1
+5	    Steve	    1
+6	    Bob	        1
+7	    Smith	    2
+8	    Bobbey	    2
+9	    Steffi	    3
+10	    Bracha	    3
+11	    John	    5
+12	    Michael	    6
+13	    Paul	    6
+14	    Lana	    7
+15	    Johnson	    7
+16	    Mic	        8
+17	    Stev	    8
+18	    Paulson	    9
+19	    Jessica	    10
 Expected Output
 
-Employee	Manager	ManagersManager
-Jacob	NULL	NULL
-Rui	NULL	NULL
-Jacobson	NULL	NULL
-Jess	Jacob	NULL
-Steve	Jacob	NULL
-Bob	Jacob	NULL
-Smith	Rui	NULL
-Bobbey	Rui	NULL
-Steffi	Jacobson	NULL
-Bracha	Jacobson	NULL
-John	Steve	Jacob
-Michael	Bob	Jacob
-Paul	Bob	Jacob
-Lana	Smith	Rui
-Johnson	Smith	Rui
-Mic	Bobbey	Rui
-Stev	Bobbey	Rui
-Paulson	Steffi	Jacobson
-Jessica	Bracha	Jacobson
+Employee	Manager	    ManagersManager
+Jacob	    NULL	    NULL
+Rui	        NULL	    NULL
+Jacobson	NULL	    NULL
+Jess	    Jacob	    NULL
+Steve	    Jacob	    NULL
+Bob	        Jacob	    NULL
+Smith	    Rui	        NULL
+Bobbey	    Rui	        NULL
+Steffi	    Jacobson	NULL
+Bracha	    Jacobson	NULL
+John	    Steve	    Jacob
+Michael	    Bob	        Jacob
+Paul	    Bob	        Jacob
+Lana	    Smith	    Rui
+Johnson	    Smith	    Rui
+Mic	        Bobbey	    Rui
+Stev	    Bobbey	    Rui
+Paulson	    Steffi	    Jacobson
+Jessica	    Bracha	    Jacobson
 */
 
 --Create Table
@@ -2935,7 +2935,7 @@ OUTER APPLY
 SELECT E.EmpName, r.EmpName ManagerName, s.EmpName ManagersManager
 FROM Employees E
 LEFT JOIN Employees r ON r.EmpId= E.ReportsTo
-LEFT JOIN Employees s ON s.EmpId= E.ReportsTo
+LEFT JOIN Employees s ON s.EmpId= r.ReportsTo
 
 /*
 Update one table & Insert in another table using single T-SQL statement at same time

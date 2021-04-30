@@ -7,7 +7,7 @@ namespace ConsoleApp1
     public class AllSubstring
     {
         //O(n3) time
-
+        //https://www.geeksforgeeks.org/program-print-substrings-given-string/
         // Function to print all sub strings
         static void subString(char[] str)
         {
@@ -85,9 +85,35 @@ Starting from right, 1 at ith position shows that the ith element of the set is 
                 Console.WriteLine("}");
             }
         }
+        static Boolean CheckEvenCharCount(String s)
+        {
+
+            // creating a frequency array
+            int[] freq = new int[26];
+
+            // Finding length of s
+            int n = s.Length;
+
+            // counting frequency of all characters
+            for (int i = 0; i < s.Length; i++)
+            {
+                freq[s[i] - 97] += 1;
+            }
+
+            // checking if any odd frequency
+            // is there or not
+            for (int i = 0; i < freq.Length; i++)
+            {
+                if (freq[i] % 2 == 1)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         public static void Main(string[] args)
         {
-            string ss = "abcd";
+            string ss = "abbaa";
             //for (int i = 0; i < ss.Length; i++)
             //{
             //    for (int j = 1; j <= ss.Length - i; j++)
@@ -99,10 +125,13 @@ Starting from right, 1 at ith position shows that the ith element of the set is 
             {
                 for (int j = 0; j <= ss.Length - i; j++)
                 {
-                    Console.WriteLine(ss.Substring(j, i));
+                    string temp = ss.Substring(j, i);
+                    Console.WriteLine(temp);
+                    if(CheckEvenCharCount(temp))
+                        Console.WriteLine("has even frequency");
                 }
             }
-            subString(ss.ToCharArray());
+            //subString(ss.ToCharArray());
         }
     }
 }

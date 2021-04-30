@@ -118,7 +118,8 @@ Below is Implementation of hashing based solution.
             }
         }
         /*
-         Group all occurrences of characters according to first appearance
+ https://www.geeksforgeeks.org/group-occurrences-characters-according-first-appearance/
+        Group all occurrences of characters according to first appearance
 Difficulty Level : Easy
  Last Updated : 26 Aug, 2019
 Given a string of lowercase characters, the task is to print the string in a manner such that a character comes first in string displays first with all its occurrences in string.
