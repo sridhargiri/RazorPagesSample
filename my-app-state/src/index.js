@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Link,BrowserRouter, Route, Switch} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TraditionalComponent from './TraditionalComponent';
-import UseEffectExample from './UseEffectExample';
+import Homepage from './Homepage';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <UseEffectExample />
-  </React.StrictMode>,
+             <Homepage />
+  ,
   document.getElementById('root')
 );
 
