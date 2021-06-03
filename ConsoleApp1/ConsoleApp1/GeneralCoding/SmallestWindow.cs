@@ -133,6 +133,11 @@ A diagram to explain the stated algorithm:https://media.geeksforgeeks.org/wp-con
 
             Console.WriteLine("Smallest window is :\n "
                               + findSubString(str, pat));
+            /*
+             Output
+Smallest window is : 
+t stri
+            */
         }
     }
 }

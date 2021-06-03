@@ -99,5 +99,10 @@ namespace ConsoleApp1
             //Output: 3             The possible decodings are “ABCD”, “LCD”, “AWD”
         }
     }
+    public class WaysToReachStation
+    {
+        //https://www.geeksforgeeks.org/count-ways-to-reach-the-nth-station/
+        //C++
+    }
 }
 // This code is contributed by Amit Katiyar

@@ -174,4 +174,74 @@ Auxiliary Space: O(1)
             */
         }
     }
+    /*
+https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
+     Method 2: Dynamic Programming.
+We can see that there are many subproblems in the above recursive solution which are solved again and again. So this problem has Overlapping Substructure property and recomputation of same subproblems can be avoided by either using Memoization or Tabulation.
+
+
+
+The simulation of approach will make things clear:  
+
+Input  : arr[] = {3, 10, 2, 11}
+LIS[] = {1, 1, 1, 1} (initially)
+Iteration-wise simulation : 
+
+arr[2] > arr[1] {LIS[2] = max(LIS [2], LIS[1]+1)=2}
+arr[3] < arr[1] {No change}
+arr[3] < arr[2] {No change}
+arr[4] > arr[1] {LIS[4] = max(LIS [4], LIS[1]+1)=2}
+arr[4] > arr[2] {LIS[4] = max(LIS [4], LIS[2]+1)=3}
+arr[4] > arr[3] {LIS[4] = max(LIS [4], LIS[3]+1)=3}
+We can avoid recomputation of subproblems by using tabulation as shown in the below code: 
+
+Below is the implementation of the above approach:  
+    */
+    public class LongestIncreasingSubsequence
+    {
+        /* lis() returns the length of the longest increasing
+        subsequence in arr[] of size n */
+        static int lis(int[] arr, int n)
+        {
+            int[] lis = new int[n];
+            int i, j, max = 0;
+
+            /* Initialize LIS values for all indexes */
+            for (i = 0; i < n; i++)
+                lis[i] = 1;
+
+            /* Compute optimized LIS values in bottom up manner
+             */
+            for (i = 1; i < n; i++)
+                for (j = 0; j < i; j++)
+                    if (arr[i] > arr[j] && lis[i] < lis[j] + 1)
+                        lis[i] = lis[j] + 1;
+
+            /* Pick maximum of all LIS values */
+            for (i = 0; i < n; i++)
+                if (max < lis[i])
+                    max = lis[i];
+
+            return max;
+        }
+
+        public static void Main()
+        {
+            int[] arr = { 10, 22, 9, 33, 21, 50, 41, 60 };
+            int n = arr.Length;
+            Console.WriteLine("Length of lis is " + lis(arr, n) + "\n");
+            /*
+             Output
+Length of lis is 5
+Complexity Analysis: 
+
+Time Complexity: O(n2). 
+As nested loop is used.
+Auxiliary Space: O(n). 
+Use of any array to store LIS values at each index.
+            */
+        }
+
+        // This code is contributed by Ryuga
+    }
 }

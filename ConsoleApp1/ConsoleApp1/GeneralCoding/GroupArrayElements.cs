@@ -194,17 +194,20 @@ Implementation:
         /* Driver code */
         public static void Main(String[] args)
         {
-            int[] arr = {4, 6, 9, 2, 3, 4,
-                        9, 6, 10, 4};
+            int[] arr = { 4, 6, 9, 2, 3, 4, 9, 6, 10, 4 };
             int n = arr.Length;
             groupElements(arr, n);
-
+            //output 4 4 4 6 6 9 9 2 3 10
+            Console.WriteLine();
 
             int[] arr1 = { 10, 5, 3, 10, 10, 4, 1, 3 };
             orderedGroup(arr1);
-
+            Console.WriteLine();
+            //outpput 10 10 10 5 3 3 4 1
             string str = "geeksforgeeks";
             printGrouped(str);
+            //Output:
+            //ggeeeekkssfor
         }
     }
 }

@@ -203,6 +203,8 @@ See the below diagram for more clarity about execution of the recursive function
             //Height of tree is 2
             //https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
             //http://cslibrary.stanford.edu/110/BinaryTrees.html
+            //try all below for AMZ binary tree
+            //https://www.geeksforgeeks.org/amazon-interview-experience-for-sde-off-campus/
         }
     }
 
