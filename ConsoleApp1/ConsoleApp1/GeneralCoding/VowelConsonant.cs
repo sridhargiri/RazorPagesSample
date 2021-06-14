@@ -5,6 +5,70 @@ using System.Text;
 
 namespace ConsoleApp1
 {
+    /*
+     https://www.geeksforgeeks.org/count-characters-at-same-position-as-in-english-alphabet/
+    Count characters at same position as in English alphabet
+Difficulty Level : Basic
+Last Updated : 29 Apr, 2021
+Given a string of lower and uppercase characters, the task is to find that how many characters are at same position as in English alphabet.
+Examples: 
+ 
+
+Input:  ABcED 
+Output :  3
+First three characters are at same position
+as in English alphabets.
+
+Input:  geeksforgeeks 
+Output :  1
+Only 'f' is at same position as in English
+alphabet
+
+Input :  alphabetical 
+Output :  3
+ 
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+For this we can have simple approach: 
+ 
+
+1) Initialize result as 0.
+2) Traverse input string and do following for every 
+   character str[i]
+     a) If 'i' is same as str[i] - 'a' or same as 
+        str[i] - 'A', then do result++
+3) Return result
+     */
+    public class AlphabetCorrectOrder
+    {
+        static int findCount(string str)
+        {
+            int result = 0;
+
+            // Traverse input string
+            for (int i = 0; i < str.Length; i++)
+
+                // Check that index of characters
+                // of string is same as of English
+                // alphabets by using ASCII values
+                // and the fact that all lower case
+                // alphabetic characters come together
+                // in same order in ASCII table. And
+                // same is true for upper case.
+                if (i == (str[i] - 'a') ||
+                    i == (str[i] - 'A'))
+                    result++;
+
+            return result;
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            string str = "AbgdeF";
+            Console.Write(findCount(str));//output 5
+        }
+    }
     public class VowelConsonant
     {
         static String remVowel(String str)

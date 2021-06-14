@@ -38,7 +38,7 @@ namespace ConsoleApp1
         public abstract override void DoWork(int i);
     }
 
-    public class G : F
+    public class GTest : F
     {
         public override void DoWork(int i)
         {

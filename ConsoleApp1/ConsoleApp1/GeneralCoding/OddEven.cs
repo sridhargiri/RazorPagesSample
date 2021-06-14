@@ -88,4 +88,30 @@ Modified Array: 6 3 12 1 8 5
 Time Complexity: O(n). 
 Auxiliary Space: O(1).
     */
+    /*
+https://www.geeksforgeeks.org/even-or-odd-without-using-condtional-statement/
+Print “Even” or “Odd” without using conditional statement
+Difficulty Level : Easy
+Last Updated : 31 Mar, 2021
+Write a program that accepts a number from the user and prints “Even” if the entered number is even and prints “Odd” if the number is odd. You are not allowed to use any comparison (==, <,>,…etc) or conditional statements (if, else, switch, ternary operator,. Etc).
+
+Method 1 
+Below is a tricky code can be used to print “Even” or “Odd” accordingly.
+    */
+    public class OddOrEven
+    {
+        static void Main()
+        {
+            string[] arr = { "Even", "Odd" };
+
+            Console.Write("Enter the number: ");
+
+            string val;
+            val = Console.ReadLine();
+            int no = Convert.ToInt32(val);
+
+            Console.WriteLine(arr[no % 2]);
+        }
+    }
+
 }

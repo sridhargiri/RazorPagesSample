@@ -146,4 +146,94 @@ Below is the implementation of the above approach:
             bin1(3);
         }
     }
+    /*
+https://www.geeksforgeeks.org/smallest-string-obtained-by-removing-all-occurrences-of-01-and-11-from-binary-string-set-2/
+Smallest string obtained by removing all occurrences of 01 and 11 from Binary String | Set 2
+Last Updated : 10 Jun, 2021
+Given a binary string S of length N, the task is to find the smallest string possible by removing all occurrences of substrings “01” and “11”. After removal of any substring, concatenate the remaining parts of the string.
+
+Examples:
+
+Input: S = “1010”
+Output: 2
+Explanation: Removal of substring “01” modifies string S to “10”.
+
+Input: S = “111”
+Output: 1 
+
+ 
+Stack-based Approach: Refer to the previous article to find the length of the smallest string possible by given operations.
+Time Complexity: O(N)
+Auxiliary Space: O(N)
+
+Spac-Optimized Approach: The above approach can be space-optimized by only storing the length of the characters not removed. Follow the steps below to solve the problem:
+
+
+
+Initialize a variable, say st as 0, to store the length of the smallest string possible.
+Iterate over the characters of the string S and perform the following steps:
+If st is greater than 0 and S[i] is equal to ‘1‘, then pop the last element by decrementing st by 1.
+Otherwise, increment st by 1.
+Finally, after completing the above steps, print the answer obtained in st.
+Below is the implementation of the above approach:
+    */
+    public class BinaryStringRemoveZeroOne
+    {
+
+        // Function to find the length of
+        // the smallest string possible by
+        // removing substrings "01" and "11"
+        static int shortestString(string S, int N)
+        {
+
+            // Stores the length of
+            // the smallest string
+            int st = 0;
+
+            // Traverse the string S
+            for (int i = 0; i < N; i++)
+            {
+
+                // If st is greater
+                // than 0 and S[i] is '1'
+                if (st > 0 && S[i] == '1')
+                {
+
+                    // Delete the last
+                    // character and
+                    // decrement st by 1
+                    st--;
+                }
+
+                // Otherwise
+                else
+                {
+
+                    // Increment st by 1
+                    st++;
+                }
+            }
+
+            // Return the answer in st
+            return st;
+        }
+
+        // Driver code
+        public static void Main(string[] args)
+        {
+            // Input
+            string S = "1010";
+            int N = S.Length;
+
+            // Function call
+            Console.WriteLine(shortestString(S, N));
+            /*
+             Output: 
+2
+
+Time Complexity: O(N)
+Auxiliary Space: O(1)
+            */
+        }
+    }
 }

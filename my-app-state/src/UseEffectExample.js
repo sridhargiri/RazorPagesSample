@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import  * as UUID  from "uuid";
-//https://programmingwithmosh.com/javascript/react-lifecycle-methods/
+import * as UUID from "uuid";
 const UseEffectExample = () => {
   const [button, setButton] = useState("");
 
@@ -24,7 +23,6 @@ const UseEffectExample = () => {
   const onNoPress = () => {
     setButton("No");
   };
-  
 
   const onAddPosts = () => {
     setBlogPosts([...blogPosts, { title: "My new post", id: UUID.v4() }]);
@@ -32,8 +30,8 @@ const UseEffectExample = () => {
 
   return (
     <div>
-        <button onClick={() => onYesPress()}>Yes</button>
-        <button onClick={() => onNoPress()}>No</button>
+      <button onClick={() => onYesPress()}>Yes</button>
+      <button onClick={() => onNoPress()}>No</button>
       <ul>
         {blogPosts.map(blogPost => {
           return <li key={blogPost.id}>{blogPost.title}</li>;
