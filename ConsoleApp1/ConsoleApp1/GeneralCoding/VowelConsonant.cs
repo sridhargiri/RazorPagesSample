@@ -258,4 +258,65 @@ Auxiliary Space: O(N)
             Console.Write(remConsonants(str));
         }
     }
+
+    public class LongestWithoutVowel
+    {
+        static bool vowel(char ch)
+        {
+            if (ch == 'a' || ch == 'e'
+                || ch == 'i' || ch == 'o'
+                || ch == 'u' || ch == 'A'
+                || ch == 'E' || ch == 'I'
+                || ch == 'O' || ch == 'U')
+            {
+                return true;
+            }
+            return false;
+        }
+        static int maxLengthString(string s)
+        {
+            // Stores the length of
+            // the longest substring
+            int maximum = 0;
+
+            int count = 0;
+
+            // Traverse the string, S
+            for (int i = 0; i < s.Length; i++)
+            {
+
+                // If the current character
+                // is vowel, set count as 0
+                if (vowel(s[i]))
+                {
+                    count = 0;
+                }
+
+                // If the current
+                // character is a consonant
+                else
+                {
+
+                    // Increment count by 1
+                    count++;
+                }
+
+                // Update the maximum length
+                maximum = Math.Max(maximum, count);
+            }
+
+            // Return the result
+            return maximum;
+        }
+        public static void Main(string[] args)
+        {
+            int S = maxLengthString("geeksforgeeks"); Console.WriteLine(S);
+            /*
+             Output:
+3
+Time Complexity: O(N)
+Auxiliary Space: O(1)
+            */
+        }
+    }
 }

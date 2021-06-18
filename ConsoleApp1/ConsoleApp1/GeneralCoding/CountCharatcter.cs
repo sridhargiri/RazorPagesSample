@@ -87,4 +87,56 @@ In:AABBCCDDEEFF out:A2B2C2D2E2F2
             printRLE(str);
         }
     }
+    /*
+     https://www.geeksforgeeks.org/remove-all-occurrences-of-a-character-in-a-string/
+    Remove all occurrences of a character in a string
+Difficulty Level : Easy
+Last Updated : 12 May, 2021
+Given a string. Write a program to remove all the occurrences of a character in the string.
+
+Examples: 
+
+Input : s = "geeksforgeeks"
+        c = 'e'
+Output : s = "gksforgks"
+
+
+Input : s = "geeksforgeeks"
+        c = 'g'
+Output : s = "eeksforeeks"
+The idea is to maintain an index of the resultant string.  
+     */
+    public class RemoveAllCharacter
+    {
+        static void removeChar(string s,
+                               char c)
+        {
+            int j, count = 0, n = s.Length;
+            char[] t = s.ToCharArray();
+            for (int i = j = 0; i < n; i++)
+            {
+                if (s[i] != c)
+                    t[j++] = s[i];
+                else
+                    count++;
+            }
+
+            while (count > 0)
+            {
+                t[j++] = '\0';
+                count--;
+            }
+
+            Console.Write(t);
+        }
+
+        // Driver Code
+        public static void Main()
+        {
+            string s = "geeksforgeeks";
+            removeChar(s, 'g');
+            //Output: 
+            //eeksforeeks
+        }
+    }
 }
