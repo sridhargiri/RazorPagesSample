@@ -84,3 +84,45 @@ wood
 ----
 give n palindromes
 
+Agilysys (old 2019) MCQ
+------------------------
+complete binary tree
+Time required to merge two sorted lists
+Time required to delete a node from doubly linked list
+multiple classes through which request is passed but oly relevant classes carry out operations
+creating duplicate objects while keeping performance in mind
+Visitor classes which changes execution algorithm
+Which design pattern provides a single class which provides simplified methods for clients and delegates calls to those clients
+Order of execution of derived and base class constructor
+SQL DDL & DML Triggers
+Cookie with secure attribute
+bcrypt cost parameter
+Manual WCF Proxy implement
+Web api configuration
+
+Mphasis, infy & hexaware (mixed) - same day - 19 june 2021
+----------------------------------------------------------
+component communication angular
+component interaction react
+useclass useexisting usefactory
+LB vs AGW
+Availability set
+Two component same selector
+More than one router outlet
+Angular template check navigate save without changes
+identify which VM code is running
+Pass status success from one step to other in devops
+Bundling in .NET Core
+deploy to VM in devops
+Page caching in MVC
+SQL Server compatibility levels
+sql server materialised view
+Azure function authentication
+Azure View vm logs 
+Why event used when delegate also serve same purpose
+Active directory federation services
+Web api global variable
+.NET core web api route for application home page
+Azure SQL vs Managed instance
+
+

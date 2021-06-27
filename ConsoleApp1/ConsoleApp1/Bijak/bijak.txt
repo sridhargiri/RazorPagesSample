@@ -1,0 +1,101 @@
+﻿//get max, min and validate if it is within range
+function makeInputVerifier(minimum, maximum) {
+  // write your code here
+  var mini=minimum;
+  var maxi=maximum;
+
+  return function verify(val){
+    if(val < mini)return "Input is less than minimum value";
+    if(val >= mini && val <= maxi)return "Input is in range";
+    return "Input is more than maximum value";
+  }
+}
+
+//edit, delete 
+function manipulateStudentRecord(obj, operation, prop, newValue) {
+  if(operation === 'delete') {
+    if(obj && obj.hasOwnProperty(prop)){
+      delete obj[prop]
+    }
+    return obj
+    
+  } else if(operation === 'edit') {
+    if(obj && obj.hasOwnProperty(prop)){
+      obj[prop] = newValue
+      return obj;
+    } else {
+     return obj
+    }
+  }
+}
+
+const obj = {
+  name: 'John',
+  lastName: 'Bliss',
+  city: 'Florida'
+}
+
+console.log(manipulateStudentRecord(obj, "edit", "city", "Seattle"))
+console.log(manipulateStudentRecord(obj, "edit", "abc", "Seattle"))
+console.log(manipulateStudentRecord(obj, "delete", "city", "Seattle"))
+
+
+//get movies list
+var https = require('https');
+
+function fetchData(substr) {
+    pageNum = 1;
+    let url = 'https://jsonmock.hackerrank.com/api/movies/search/?Title=' + substr;
+    https.get(url, (res) => {
+        res.setEncoding('utf8');
+        res.on('data', function(body) {
+            let dataRec = JSON.parse(body);
+            let movies = dataRec.data;
+            let totPages = dataRec.total_pages;
+            let sortArray = [];
+            movies.map((a) => {
+              sortArray.push(a.Title)
+            })
+            if(totPages >1)
+                {
+                    
+                        for (let i = 2; i <= totPages; i++) {
+                let newPage = i;
+                let url1 = 'https://jsonmock.hackerrank.com/api/movies/search/?Title=' + substr + "&page=" + newPage;
+                https.get(url1, (res) => {
+                    res.setEncoding('utf8');
+                    res.on('data', function(body) {
+                        let newData = JSON.parse(body);
+                        let newMovies = newData.data;
+                        for (let i = 0; i < newMovies.length; i++) {
+                            sortArray.push(newMovies[i].Title);
+                        }
+                        let sorted= sortArray.sort()
+                        let final = sorted.join("\n");
+                        console.log(final);
+                    })
+                })
+            }
+                    
+                    
+                    
+                    
+                }
+            else{
+                let sorted= sortArray.sort()
+                       console.log(sorted.join("\n"));
+            }
+        
+        })
+    })
+}
+
+//primary function 
+function getMovieTitles(substr) {
+    fetchData(substr);
+}
+
+// Got from SO
+
+//Stock list
+https://gist.github.com/obbap1/c362a331312264f864ff8a805aa32e0d
