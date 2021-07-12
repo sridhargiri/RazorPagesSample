@@ -5,7 +5,8 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     Check if sequence of removed middle elements from an array is sorted or not
+https://www.geeksforgeeks.org/check-if-sequence-of-removed-middle-elements-from-an-array-is-sorted-or-not/
+Check if sequence of removed middle elements from an array is sorted or not
 Last Updated : 23 Mar, 2021
 Given an array arr[] consisting of N integers, the task is to check if the sequence of numbers formed by repeatedly removing the middle elements from the given array arr[] is sorted or not. If there are two middle elements, then remove any one of them.
 

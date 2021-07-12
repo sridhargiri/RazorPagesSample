@@ -7,8 +7,9 @@ namespace ConsoleApp1
     class PalindromeMinSwap
     {
         /*
-         https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
-        Count minimum swap to make string palindrome
+https://www.geeksforgeeks.org/count-minimum-swap-to-make-string-palindrome/
+
+Count minimum swap to make string palindrome
 Difficulty Level : Medium
 Last Updated : 19 Oct, 2020
 Given a string s, the task is to find out the minimum no of adjacent swaps required to make string s palindrome. If it is not possible, then return -1.
@@ -129,6 +130,75 @@ Below is the implementation of the above approach:
              Complexity Analysis 
 Time Complexity: Since we are running two nested loops on the length of string, the time complexity is O(n2) 
 Auxiliary Space: Since we aren’t using any extra space, Therefore Auxiliary space used is O(1)
+            */
+        }
+    }
+
+
+    /*
+     https://www.geeksforgeeks.org/check-if-string-formed-by-first-and-last-x-characters-of-a-string-is-a-palindrome/
+    Check if String formed by first and last X characters of a String is a Palindrome
+Last Updated : 28 Jun, 2021
+Given a string str and an integer X. The task is to find whether the first X characters of both string str and reversed string str are same or not. If it is equal then print true, otherwise print false.
+
+Examples:
+
+Input: str = abcdefba, X = 2
+Output: true
+Explanation: 
+First 2 characters of both string str and reversed string str are same.
+
+Input: str = GeeksforGeeks, X = 3
+Output: false
+
+Approach: This problem can be solved by iterating over the characters of the string str. Follow the steps below to solve this problem: 
+
+
+
+Initialize two variables say, i as 0 and n as length of str to store position of current character and length of the string str respectively.
+Iterate while i less than n and x:
+If ith character from starting and ith from the last are not equal, then print false and return.
+After completing the above steps, print true as the answer.
+Below is the implementation of the above approach : 
+     */
+
+    public class PalindromeFirstLastX
+    {
+        static void is_palindrome_first_last_X_Characters(string str, int x)
+        {
+            // Length of the string str
+            int n = str.Length;
+            int i = 0;
+
+            // Traverse over the string while
+            // first and last x characters are
+            // not equal
+            while (i < n && i < x)
+            {
+
+                // If the current and n-k-1 from last
+                // character are not equal
+                if (str[i] != str[n - i - 1])
+                {
+                    Console.WriteLine("false");
+                    return;
+                }
+                i++;
+            }
+            Console.WriteLine("true");
+        }
+        static void Main(string[] args)
+        {
+            string str = "GeeksforGeeks";
+            int x = 3;
+
+            // Function Call
+            is_palindrome_first_last_X_Characters(str, x);
+            /*
+             Output
+false
+Time complexity: O(min(n, k))
+Auxiliary Space: O(1)
             */
         }
     }

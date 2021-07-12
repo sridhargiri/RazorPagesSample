@@ -54,7 +54,7 @@ filter_none
  */
 namespace ConsoleApp1
 {
-    class CheckforPairWithSum
+    public class CheckforPairWithSum
     {
         static bool hasArrayTwoCandidates(int[] A,
                            int arr_size, int sum)
@@ -226,4 +226,70 @@ Note: If the range of numbers includes negative numbers then also it will work f
     // This code is contributed by
     // Manish Shaw(manishshaw1)
 
+    /*
+ https://www.geeksforgeeks.org/count-pairs-difference-equal-k/
+    Count all distinct pairs with difference equal to k
+Difficulty Level : Medium
+Last Updated : 18 Jun, 2021
+Geek-O-Lympics
+Given an integer array and a positive integer k, count all distinct pairs with differences equal to k. 
+
+Examples: 
+
+Input: arr[] = {1, 5, 3, 4, 2}, k = 3
+Output: 2
+There are 2 pairs with difference 3, the pairs are {1, 4} and {5, 2} 
+
+Input: arr[] = {8, 12, 16, 4, 0, 20}, k = 4
+Output: 5
+There are 5 pairs with difference 4, the pairs are {0, 4}, {4, 8}, 
+{8, 12}, {12, 16} and {16, 20} 
+Recommended: Please solve it on “PRACTICE ” first, before moving on to the solution. 
+ 
+Method 1 (Simple) 
+A simple solution is to consider all pairs one by one and check difference between every pair. Following program implements the simple solution. We run two loops: the outer loop picks the first element of pair, the inner loop looks for the other element. This solution doesn’t work if there are duplicates in array as the requirement is to count only distinct pairs.
+    */
+    public class CheckforPairWithDifference
+    {
+
+        static int countPairsWithDiffK(int[] arr,
+                                    int n, int k)
+        {
+            int count = 0;
+
+            // Pick all elements one by one
+            for (int i = 0; i < n; i++)
+            {
+
+                // See if there is a pair
+                // of this picked element
+                for (int j = i + 1; j < n; j++)
+                    if (arr[i] - arr[j] == k ||
+                          arr[j] - arr[i] == k)
+                        count++;
+            }
+
+            return count;
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            int[] arr = { 1, 5, 3, 4, 2 };
+            int n = arr.Length;
+            int k = 3;
+
+            Console.WriteLine("Count of pairs with "
+                                 + " given diff is "
+                   + countPairsWithDiffK(arr, n, k));
+            /*
+             Output: 
+
+Count of pairs with given diff is 2
+Time Complexity of O(n2)
+            */
+        }
+    }
+    //check this also
+    //https://www.geeksforgeeks.org/find-number-pairs-xy-yx/
 }

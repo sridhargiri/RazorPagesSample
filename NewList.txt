@@ -125,4 +125,13 @@ Web api global variable
 .NET core web api route for application home page
 Azure SQL vs Managed instance
 
+EY 3rd July 2021
+-------------------------
+azure webjob types
+react immutable props
+azure private container
 
+kendo-grid-popup
+----------------
+http://dojo.telerik.com/IWEGoYAM
+https://demos.telerik.com/kendo-ui/content/shared/js/people.js
