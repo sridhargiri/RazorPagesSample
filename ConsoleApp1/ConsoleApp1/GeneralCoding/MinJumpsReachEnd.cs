@@ -1,7 +1,7 @@
 ﻿/*
  Minimum number of jumps to reach end | Set 2 (O(n) solution)
 Last Updated: 20-06-2020
-https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/?ref=leftbar-rightbar
+https://www.geeksforgeeks.org/minimum-number-jumps-reach-endset-2on-solution/
 Given an array of integers where each element represents the max number of steps that can be made forward from that element. Write a function to return the minimum number of jumps to reach the end of the array (starting from the first element). If an element is 0, then we cannot move through that element.
 
 Examples:
@@ -61,7 +61,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class MinJumpsOptimized
+    class MinJumps
     {
         static int minJumps(int[] arr)
         {
@@ -134,4 +134,219 @@ namespace ConsoleApp1
     //Only one traversal of the array is needed.
     //Auxiliary Space: O(1).
     //There is no space required.
+    /*
+     Naive Recursive Approach. 
+Approach: A naive approach is to start from the first element and recursively call for all the elements reachable from first element. The minimum number of jumps to reach end from first can be calculated using minimum number of jumps needed to reach end from the elements reachable from first. 
+
+minJumps(start, end) = Min ( minJumps(k, end) ) for all k reachable from start 
+https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/?ref=leftbar-rightbar
+
+     */
+    public class MinJumps1
+    {
+        // Returns minimum number of
+        // jumps to reach arr[h] from arr[l]
+        static int minJumps(int[] arr, int l, int h)
+        {
+            // Base case: when source
+            // and destination are same
+            if (h == l)
+                return 0;
+
+            // When nothing is reachable
+            // from the given source
+            if (arr[l] == 0)
+                return int.MaxValue;
+
+            // Traverse through all the points
+            // reachable from arr[l]. Recursively
+            // get the minimum number of jumps
+            // needed to reach arr[h] from these
+            // reachable points.
+            int min = int.MaxValue;
+            for (int i = l + 1; i <= h && i <= l + arr[l]; i++)
+            {
+                int jumps = minJumps(arr, i, h);
+                if (jumps != int.MaxValue && jumps + 1 < min)
+                    min = jumps + 1;
+            }
+            return min;
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            int[] arr = { 1, 3, 6, 3, 2, 3, 6, 8, 9, 5 };
+            int n = arr.Length;
+            Console.Write("Minimum number of jumps to reach end is "
+                          + minJumps(arr, 0, n - 1));
+            /*
+             Output: 
+
+Minimum number of jumps to reach end is 4
+Complexity Analysis: 
+
+Time complexity: O(n^n). 
+There are maximum n possible ways to move from a element. So maximum number of steps can be N^N so the upperbound of time complexity is O(n^n)
+Auxiliary Space: O(1). 
+There is no space required (if recursive stack space is ignored).
+Note: If the execution is traced for this method, it can be seen that there will be overlapping subproblems.
+            */
+        }
+    }
+    /*
+     Method 2: Dynamic Programming. 
+Approach: 
+
+In this way, make a jumps[] array from left to right such that jumps[i] indicate the minimum number of jumps needed to reach arr[i] from arr[0].
+To fill the jumps array run a nested loop inner loop counter is j and outer loop count is i.
+Outer loop from 1 to n-1 and inner loop from 0 to n-1.
+if i is less than j + arr[j] then set jumps[i] to minimum of jumps[i] and jumps[j] + 1. initially set jump[i] to INT MAX
+Finally, return jumps[n-1].
+    */
+    public class MinJumps2
+    {
+        static int minJumps(int[] arr, int n)
+        {
+            // jumps[n-1] will hold the
+            // result
+            int[] jumps = new int[n];
+
+            // if first element is 0,
+            if (n == 0 || arr[0] == 0)
+
+                // end cannot be reached
+                return int.MaxValue;
+
+            jumps[0] = 0;
+
+            // Find the minimum number of
+            // jumps to reach arr[i]
+            // from arr[0], and assign
+            // this value to jumps[i]
+            for (int i = 1; i < n; i++)
+            {
+                jumps[i] = int.MaxValue;
+                for (int j = 0; j < i; j++)
+                {
+                    if (i <= j + arr[j] && jumps[j] != int.MaxValue)
+                    {
+                        jumps[i] = Math.Min(jumps[i], jumps[j] + 1);
+                        break;
+                    }
+                }
+            }
+            return jumps[n - 1];
+        }
+
+        // Driver program
+        public static void Main()
+        {
+            int[] arr = { 1, 3, 6, 1, 0, 9 };
+            Console.Write("Minimum number of jumps to reach end is : " + minJumps(arr, arr.Length));
+            /*
+             Output: 
+
+Minimum number of jumps to reach end is 3
+Thanks to paras for suggesting this method. 
+Time Complexity: O(n^2) 
+            */
+        }
+    }
+    /*
+     Method 3: Dynamic Programming. 
+In this method, we build jumps[] array from right to left such that jumps[i] indicates the minimum number of jumps needed to reach arr[n-1] from arr[i]. Finally, we return jumps[0].
+    */
+    public class MinJumps3
+    {
+        // Returns Minimum number
+        // of jumps to reach end
+        public static int minJumps(int[] arr, int n)
+        {
+            // jumps[0] will
+            // hold the result
+            int[] jumps = new int[n];
+            int min;
+
+            // Minimum number of jumps needed to
+            // reach last element from last elements
+            // itself is always 0
+            jumps[n - 1] = 0;
+
+            // Start from the second element, move
+            // from right to left and construct the
+            // jumps[] array where jumps[i] represents
+            // minimum number of jumps needed to reach
+            // arr[m-1] from arr[i]
+            for (int i = n - 2; i >= 0; i--)
+            {
+                // If arr[i] is 0 then arr[n-1]
+                // can't be reached from here
+                if (arr[i] == 0)
+                {
+                    jumps[i] = int.MaxValue;
+                }
+
+                // If we can directly reach to the end
+                // point from here then jumps[i] is 1
+                else if (arr[i] >= n - i - 1)
+                {
+                    jumps[i] = 1;
+                }
+
+                // Otherwise, to find out the minimum
+                // number of jumps needed to reach
+                // arr[n-1], check all the points
+                // reachable from here and jumps[] value
+                // for those points
+                else
+                {
+                    // initialize min value
+                    min = int.MaxValue;
+
+                    // following loop checks with all
+                    // reachable points and takes the minimum
+                    for (int j = i + 1; j < n && j <= arr[i] + i; j++)
+                    {
+                        if (min > jumps[j])
+                        {
+                            min = jumps[j];
+                        }
+                    }
+
+                    // Handle overflow
+                    if (min != int.MaxValue)
+                    {
+                        jumps[i] = min + 1;
+                    }
+                    else
+                    {
+                        jumps[i] = min; // or Integer.MAX_VALUE
+                    }
+                }
+            }
+
+            return jumps[0];
+        }
+
+        // Driver Code
+        public static void Main(string[] args)
+        {
+            int[] arr = new int[] { 1, 3, 6, 1, 0, 9 };
+            int size = arr.Length;
+            Console.WriteLine("Minimum number of"
+                              + " jumps to reach end is " + minJumps(arr, size));
+            /*
+             Output: 
+
+Minimum number of jumps to reach end is 3
+Complexity Analysis: 
+
+Time complexity:O(n^2). 
+Nested traversal of the array is needed.
+Auxiliary Space:O(n). 
+To store the DP array linear space is needed.
+            */
+        }
+    }
 }
