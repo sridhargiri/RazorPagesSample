@@ -135,3 +135,7 @@ kendo-grid-popup
 ----------------
 http://dojo.telerik.com/IWEGoYAM
 https://demos.telerik.com/kendo-ui/content/shared/js/people.js
+
+something others
+----------------
+https://github.com/Robinyo/angular-wijmo-flexsheet

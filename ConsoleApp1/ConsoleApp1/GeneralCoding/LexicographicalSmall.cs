@@ -100,6 +100,12 @@ namespace ConsoleApp1
 
             // Function Call
             Console.WriteLine(removeDuplicateLetters(S));
+            /*
+             Output: abc
+
+Time Complexity: O(N)
+Auxiliary Space: O(N)
+            */
         }
     }
     /*

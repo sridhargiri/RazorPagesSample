@@ -1,0 +1,5 @@
+https://www.geeksforgeeks.org/sum-of-array-elements-after-reversing-each-element/
+https://www.geeksforgeeks.org/find-the-sum-of-digits-of-a-number-at-even-and-odd-places/
+border sort
+
+https://www.geeksforgeeks.org/remove-leading-zeros-from-an-array/

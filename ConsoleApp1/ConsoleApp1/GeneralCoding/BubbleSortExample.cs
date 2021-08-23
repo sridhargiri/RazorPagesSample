@@ -6,6 +6,33 @@ namespace ConsoleApp1
 {
     class BubbleSortExample
     {
+        /*
+         https://www.geeksforgeeks.org/bubble-sort/
+        Bubble Sort
+Difficulty Level : Easy
+Last Updated : 10 Aug, 2021
+ 
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+Example: 
+First Pass: 
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1. 
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4 
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2 
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+Second Pass: 
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ) 
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 ) 
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
+Third Pass: 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+         */
+
+
         // An optimized version of Bubble Sort 
         static void bubbleSort(int[] arr, int n)
         {
@@ -50,6 +77,20 @@ namespace ConsoleApp1
             bubbleSort(arr, n);
             Console.WriteLine("Sorted array");
             printArray(arr, n);
+            /*
+             Output: 
+
+Sorted array:
+11 12 22 25 34 64 90
+ 
+
+Worst and Average Case Time Complexity: O(n*n). Worst case occurs when array is reverse sorted.
+Best Case Time Complexity: O(n). Best case occurs when array is already sorted.
+Auxiliary Space: O(1)
+Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
+Sorting In Place: Yes
+Stable: Yes
+            */
         }
 
     }

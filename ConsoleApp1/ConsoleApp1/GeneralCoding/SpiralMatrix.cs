@@ -5,7 +5,8 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     Algorithm: 
+https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/
+Algorithm: 
 Create and initialize variables k – starting row index, m – ending row index, l – starting column index, n – ending column index
 Run a loop until all the squares of loops are printed.
 In each outer loop traversal print the elements of a square in a clockwise manner.
@@ -82,6 +83,16 @@ Print the left column, i.e. if l < n, then print the elements of lth column from
 
             // Function Call
             spiralPrint(R, C, a);
+            /*
+             Output
+1 2 3 4 5 6 12 18 17 16 15 14 13 7 8 9 10 11 
+Complexity Analysis: 
+
+Time Complexity: O(m*n). 
+To traverse the matrix O(m*n) time is required.
+Space Complexity: O(1). 
+No extra space is required.
+            */
         }
     }
 }
