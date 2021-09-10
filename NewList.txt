@@ -139,3 +139,21 @@ https://demos.telerik.com/kendo-ui/content/shared/js/people.js
 something others
 ----------------
 https://github.com/Robinyo/angular-wijmo-flexsheet
+
+UST Global
+-----------
+Identify which topic the message to send in Azure service bus topic
+App insights error configuration
+Azure logs App Logs
+SAS how you give it
+How identify error in deployments
+
+Pure software
+------------
+Circular dependency transaction
+core clr
+how concurrent collections work (Behind the scenes working)
+observer in angular
+IEnumerable with index retrieval time
+IEnumerable OrderBy with non existent column
+Table valued functions

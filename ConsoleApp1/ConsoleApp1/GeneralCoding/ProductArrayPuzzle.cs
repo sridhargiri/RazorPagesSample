@@ -287,4 +287,76 @@ The original array needs to be traversed only once, so the time complexity is co
             }
         }
     }
+    /*
+     https://www.geeksforgeeks.org/product-of-middle-row-and-column-in-an-odd-square-matrix/
+    Product of middle row and column in an odd square matrix
+Last Updated : 25 May, 2021
+Given an integer square matrix of odd dimensions (3 * 3, 5 * 5). The task is to find the product of the middle row & middle column elements.
+
+Examples:  
+
+Input: mat[][] = 
+{{2, 1, 7},
+ {3, 7, 2},
+ {5, 4, 9}}
+Output: Product of middle row = 42
+        Product of middle column = 28
+Explanation: Product of Middle row elements (3*7*2)
+Product of Middle Column elements (1*7*4)
+
+Input: mat[][] =
+{ {1, 3, 5, 6, 7},
+  {3, 5, 3, 2, 1},
+  {1, 2, 3, 4, 5},
+  {7, 9, 2, 1, 6},
+  {9, 1, 5, 3, 2}}
+Output: Product of middle row = 120
+        Product of middle column = 450 
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Approach: As the given matrix is of odd dimensions, so the middle row and column will be always at the n/2th. So, Run a loop from i = 0 to N and produce all the elements of the middle row i.e. row_prod *= mat[n / 2][i]. Similarly, the product of elements of the middle column will be col_prod *= mat[i][n / 2].
+
+Below is the implementation of the above approach:  
+     */
+    public class ProductMiddle
+    {
+        //static int MAX = 100;
+
+        static void middleProduct(int[,] mat, int n)
+        {
+
+            // loop for product of row and column
+            int row_prod = 1, col_prod = 1;
+            for (int i = 0; i < n; i++)
+            {
+                row_prod *= mat[n / 2, i];
+                col_prod *= mat[i, n / 2];
+            }
+
+            // Print result
+            Console.WriteLine("Product of middle row = "
+                + row_prod);
+
+            Console.WriteLine("Product of middle column = "
+                + col_prod);
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            int[,] mat = { { 2, 1, 7 },
+                    { 3, 7, 2 },
+                    { 5, 4, 9 } };
+
+            middleProduct(mat, 3);
+            /*
+             Output: 
+Product of middle row = 42
+Product of middle column = 28
+ 
+
+Time Complexity: O(n)
+ 
+             */
+        }
+    }
 }

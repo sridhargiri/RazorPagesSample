@@ -128,5 +128,90 @@ namespace ConsoleApp1
         }
     }
 
-    // This code is contributed by 29AjayKumar
+    /*
+     https://www.geeksforgeeks.org/maximum-balanced-string-partitions/
+    Maximum Balanced String Partitions
+Last Updated : 20 Jul, 2021
+Given a balanced string str of size N with an equal number of L and R, the task is to find a maximum number X, such that a given string can be partitioned into X balanced substring. A string called to be balanced if the number of ‘L’s in the string equals the number of ‘R’s. 
+Examples: 
+ 
+
+Input : str = “LRLLRRLRRL” 
+Output : 4 
+Explanation: { “LR”, “LLRR”, “LR”, “RL”} are the possible partitions.
+Input : “LRRRRLLRLLRL” 
+Output : 3 
+Explanation: {“LR”, “RRRLLRLL”, “RL”} are the possible partitions. 
+ 
+
+ 
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Approach: The approach to solving this problem is to loop through the string and keep incrementing the count of L and R whenever encountered. Any instant when the respective counts of L and R become equal, a balanced parenthesis is formed. Thus the count of such instances gives the desired maximum possible partitions.
+Below is the implementation of the above approach:
+     */
+    public class BalancedPartition
+    {
+
+        // Function to find a maximum number X, such
+        // that a given String can be partitioned
+        // into X subStrings that are each balanced
+        static int MaxBalancedPartition(string str, int n)
+        {
+
+            // If the size of the String is 0,
+            // then answer is zero
+            if (n == 0)
+                return 0;
+
+            // Variable that represents the
+            // number of 'R's and 'L's
+            int r = 0, l = 0;
+
+            // To store maximum number of
+            // possible partitions
+            int ans = 0;
+            for (int i = 0; i < n; i++)
+            {
+
+                // Increment the variable r if the
+                // character in the String is 'R'
+                if (str[i] == 'R')
+                {
+                    r++;
+                }
+
+                // Increment the variable l if the
+                // character in the String is 'L'
+                else if (str[i] == 'L')
+                {
+                    l++;
+                }
+
+                // If r and l are equal,
+                // then increment ans
+                if (r == l)
+                {
+                    ans++;
+                }
+            }
+
+            // Return the required answer
+            return ans;
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            string str = "LLRRRLLRRL";
+            int n = str.Length;
+
+            // Function call
+            Console.Write(MaxBalancedPartition(str, n) + "\n");
+            /*
+             Output 4
+Time Complexity: O(N) 
+Space Complexity: O(1)*/
+        }
+    }
 }
