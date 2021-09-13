@@ -136,5 +136,98 @@ Below is the implementation of the above approach:
                               //Auxiliary Space: O(1)
         }
     }
+    /*
+     https://www.geeksforgeeks.org/minimize-flips-to-make-binary-string-as-all-1s-by-flipping-characters-in-substring-of-size-k-repeatedly/
+    Minimize flips to make binary string as all 1s by flipping characters in substring of size K repeatedly
+Last Updated : 10 Sep, 2021
+Given a binary string S of size N and an integer K, the task is to find the minimum number of operations required to make all characters as 1s in the binary string by flipping characters in the substring of size K. If it is not possible to do so, then print “-1”.
 
+Examples:
+
+Input: S = “00010110 “, K = 3
+Output: 3
+Explanation:
+Below are the operations performed:
+
+Consider the substring S[0, 2] which is of size K(= 3) and flipping those characters modifies the string to “11110110”.
+Consider the substring S[4, 6] which is of size K(= 3) and flipping those characters modifies the string to “11111000”.
+Consider the substring S[5, 7] which is of size K(= 3) and flipping those characters modifies the string to “11111111”.
+After the above operations, all the 0s are converted to 1s, and the minimum number of operations required is 3.
+
+Input: S = “01010”, K = 4
+Output: -1
+
+
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Approach: The given problem can be solved using the Greedy Approach. Follow the below steps to solve the problem:
+
+Initialize a variable, say minOperations as 0 that stores the count of the minimum number of operations required.
+Traverse the string S using the variable i and if the characters S[i] is ‘0’ and the value of (i + K) is at most K, then flip all the characters of the substring S[i, i + K] and increment the value of minOperations by 1.
+After the above operations, traverse the string S and if there exists any character ‘0’ then print “-1” and break out of the loop.
+If all the characters of the string S are 1s, then print the minOperations as the resultant minimum number of operations.
+Below is the implementation of the above approach:
+     */
+    public class MinFlips
+    {
+        static void minFlipsToMakeAllZeroToOne(string S, int K, int N)
+        {
+
+            // Stores the minimum number of
+            // operations required
+            int min = 0;
+            var _s = S.ToCharArray();
+            int i;
+
+            // Traverse the string S
+            for (i = 0; i < N; i++)
+            {
+
+                // If the character is 0
+                if (_s[i] == '0' && i + K <= N)
+                {
+
+                    // Flip the substrings of
+                    // size K starting from i
+                    for (int j = i; j < i + K; j++)
+                    {
+                        if (_s[j] == '1')
+                            _s[j] = '0';
+                        else
+                            _s[j] = '1';
+                    }
+
+                    // Increment the minimum count
+                    // of operations required
+                    min++;
+                }
+            }
+
+            // After performing the operations
+            // check if string S contains any 0s
+            for (i = 0; i < N; i++)
+            {
+                if (_s[i] == '0')
+                    break;
+            }
+
+            // If S contains only 1's
+            if (i == N)
+                Console.WriteLine(min);
+            else
+                Console.WriteLine(-1);
+        }
+        static void Main(string[] args)
+        {
+            string S = "00010110";
+            int K = 3;
+            int N = S.Length;
+            minFlipsToMakeAllZeroToOne(S, K, N);
+            /*
+             Output:3
+Time Complexity: O(N*K)
+Auxiliary Space: O(1)
+            */
+        }
+    }
 }

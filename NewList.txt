@@ -157,3 +157,9 @@ observer in angular
 IEnumerable with index retrieval time
 IEnumerable OrderBy with non existent column
 Table valued functions
+
+Brillio (ciena)
+---------------
+Latency modes in gc
+strong/weak references
+
