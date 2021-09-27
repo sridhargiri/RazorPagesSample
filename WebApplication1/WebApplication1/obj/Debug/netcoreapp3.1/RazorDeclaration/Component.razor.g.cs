@@ -20,7 +20,7 @@ namespace WebApplication1
         }
         #pragma warning restore 1998
 #nullable restore
-#line 3 "C:\Temp\RazorPagesSample\WebApplication1\WebApplication1\Component.razor"
+#line 3 "D:\Practice\WebApplication1\WebApplication1\Component.razor"
        
 
     [Parameter]

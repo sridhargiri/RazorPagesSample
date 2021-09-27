@@ -5,7 +5,8 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-	 Reverse a linked list
+https://www.geeksforgeeks.org/reverse-a-linked-list/
+Reverse a linked list
 Difficulty Level : Medium
  
 Given pointer to the head node of a linked list, the task is to reverse the linked list. We need to reverse the list by changing the links between nodes.

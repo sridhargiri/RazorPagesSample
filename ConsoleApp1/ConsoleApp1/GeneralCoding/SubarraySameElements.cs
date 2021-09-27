@@ -89,4 +89,86 @@ Below is the implementation of the above approach:
 Time Complexity: O(N)
 Auxiliary Space: O(1)
     */
+    /*
+     https://www.geeksforgeeks.org/longest-subarray-consisting-of-unique-elements-from-an-array/
+    Longest Subarray consisting of unique elements from an Array
+Difficulty Level : Medium
+Last Updated : 13 Sep, 2021
+Given an array arr[] consisting of N integers, the task is to find the largest subarray consisting of unique elements only.
+
+Examples:
+
+Input: arr[] = {1, 2, 3, 4, 5, 1, 2, 3} 
+Output: 5 
+Explanation: One possible subarray is {1, 2, 3, 4, 5}.
+
+Input: arr[]={1, 2, 4, 4, 5, 6, 7, 8, 3, 4, 5, 3, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4} 
+Output: 8 
+Explanation: Only possible subarray is {3, 4, 5, 6, 7, 8, 1, 2}.
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Naive Approach: The simplest approach to solve the problem is to generate all subarrays from the given array and check if it contains any duplicates or not to use HashSet. Find the longest subarray satisfying the condition. 
+Time Complexity: O(N3logN) 
+Auxiliary Space: O(N)
+
+Efficient Approach: The above approach can be optimized by HashMap. Follow the steps below to solve the problem:
+
+
+
+Initialize a variable j, to store the maximum value of the index such that there are no repeated elements between index i and j
+Traverse the array and keep updating j based on the previous occurrence of a[i] stored in the HashMap.
+After updating j, update ans accordingly to store the maximum length of the desired subarray.
+Print ans, after traversal, is completed.
+Below is the implementation of the above approach:
+     */
+    public class SubarrayDistinctElement
+    {
+
+        // Function to find largest
+        // subarray with no duplicates
+        static int largest_subarray(int[] a, int n)
+        {
+
+            // Stores index of array elements
+            Dictionary<int, int> index = new Dictionary<int,
+                                                   int>();
+            int ans = 0;
+            for (int i = 0, j = 0; i < n; i++)
+            {
+
+                // Update j based on previous
+                // occurrence of a[i]
+                j = Math.Max(index.ContainsKey(a[i]) ?
+                                         index[a[i]] : 0, j);
+
+                // Update ans to store maximum
+                // length of subarray
+                ans = Math.Max(ans, i - j + 1);
+
+                // Store the index of current
+                // occurrence of a[i]
+                if (index.ContainsKey(a[i]))
+                    index[a[i]] = i + 1;
+                else
+                    index.Add(a[i], i + 1);
+            }
+
+            // Return readonly ans
+            return ans;
+        }
+
+        // Driver Code
+        public static void Main(String[] args)
+        {
+            int[] arr = { 1, 2, 3, 4, 5, 1, 2, 3 };
+            int n = arr.Length;
+
+            Console.Write(largest_subarray(arr, n));
+            /*
+             Output: 5
+Time Complexity: O(NlogN) 
+Auxiliary Space: O(N)
+            */
+        }
+    }
 }

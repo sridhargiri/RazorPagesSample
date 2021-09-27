@@ -5,13 +5,12 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     https://www.geeksforgeeks.org/trapping-rain-water/
-    
-     
+     https://www.geeksforgeeks.org/trapping-rain-water/   
+     Leetcode https://www.programcreek.com/2014/06/leetcode-trapping-rain-water-java/
      */
     class RainwaterTrap
     {
-
+       
         // Function to return the maximum
         // water that can be stored
         public static int maxWater(int[] arr, int n)
