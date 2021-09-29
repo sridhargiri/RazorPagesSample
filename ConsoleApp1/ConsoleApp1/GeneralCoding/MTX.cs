@@ -227,4 +227,286 @@ Output: true
             Console.WriteLine(floorSqrt(11));
         }
     }
+    /*
+     https://www.geeksforgeeks.org/replace-in-a-string-such-that-no-two-adjacent-characters-are-same/
+    Replace ‘?’ in a string such that no two adjacent characters are same
+Difficulty Level : Easy
+Last Updated : 16 Jul, 2021
+Given a string S of length N consisting of “?” and lowercase letters, the task is to replace “?” with lowercase letters such that no adjacent characters are the same. If more than one possible combination exists, print any one of them.
+
+Examples:
+
+Input: S = “?a?a”
+Output: baba
+Explanation:
+Replacing all ‘?’s with ‘b’ modifies the string to “baba”.
+Since no adjacent characters in “baba” are the same, print the string as the answer.
+
+Input: S = “???”
+Output: aca
+Explanation:
+Replace first ‘?’ with ‘a’.
+Replace second ‘?’ with ‘c’.
+Replace third ‘?’ with ‘a’. Now, the modified string is “aca”.
+Therefore, there are no adjacent characters in “ca” which are same.
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Naive Approach: The simplest approach is to try generating all possible permutations of the given string consisting of lowercase letters. There can be 26N strings. In each of these strings, check whether adjacent characters matches or not and all lowercase characters in the given string matches the chosen permutation of the string. 
+
+
+
+Time Complexity: O(N*26N), where N is the length of the given string.
+Auxiliary Space: O(N)
+
+Efficient Approach: To optimize the above approach, the idea is to replace every ‘?’ by the character ‘a’ and check if this character is equal to the adjacent character or not. If it is equal to the adjacent character then increment the current character. Below are the steps:
+
+If the first character of the string is ‘?’ then replace it with ‘a’ and if it is equal to the next character then increment the current character by 1
+Traverse the given string using a variable i over the range [1, N – 1] and if the current character is ‘?’ and do the following:
+Update character at index i as s[i] = ‘a’.
+Now if the character at index i and (i – 1) are the same then increment the current character by 1.
+Now if the character at index i and (i + 1) are the same then increment the current character by 1.
+Now if the character at index i and (i – 1) are the same again, then increment the current character by 1. This step is mandatory because after increment character in the above step it might be possible character at index i and  (i – 1) are the same.
+If the last character of the string is ‘?’ then replace it with ‘a’ and if it is equal to the previous character then increment the last character by 1
+Print the string after the above steps.
+Below is the implementation of the above approach:
+     */
+    public class QuestionMarkReplace
+    {
+
+        // Function that replace all '?' with
+        // lowercase alphabets such that each
+        // adjacent character is different
+        static string changeString(string S)
+        {
+
+            // Store the given String
+            char[] s = S.ToCharArray();
+
+            int N = S.Length;
+
+            // If the first character is '?'
+            if (s[0] == '?')
+            {
+                s[0] = 'a';
+                if (s[0] == s[1])
+                {
+                    s[0]++;
+                }
+            }
+
+            // Traverse the String [1, N - 1]
+            for (int i = 1; i < N - 1; i++)
+            {
+
+                // If the current
+                // character is '?'
+                if (s[i] == '?')
+                {
+
+                    // Change the character
+                    s[i] = 'a';
+
+                    // Check equality with
+                    // the previous character
+                    if (s[i] == s[i - 1])
+                    {
+                        s[i]++;
+                    }
+
+                    // Check equality with
+                    // the next character
+                    if (s[i] == s[i + 1])
+                    {
+                        s[i]++;
+                    }
+
+                    // Check equality with
+                    // the previous character
+                    if (s[i] == s[i - 1])
+                    {
+                        s[i]++;
+                    }
+                }
+            }
+
+            // If the last character is '?'
+            if (s[N - 1] == '?')
+            {
+
+                // Change character
+                s[N - 1] = 'a';
+
+                // Check with previous
+                // character
+                if (s[N - 1] == s[N - 2])
+                {
+                    s[N - 1]++;
+                }
+            }
+
+            string ans = "";
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                ans += s[i];
+            }
+
+            // Return the resultant String
+            return ans;
+        }
+
+        // Driver Code
+        public static void Main()
+        {
+            // Given String S
+            string S = "?a?a";
+
+            // Function Call
+            Console.WriteLine(changeString(S));
+            /*
+             Output:baba
+Time Complexity: O(N), where N is the length of the given string.
+Auxiliary Space: O(N)
+            */
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/clone-a-stack-without-using-extra-space-set-2/
+    Clone a stack without using extra space | Set 2
+Difficulty Level : Medium
+Last Updated : 25 Aug, 2021
+Given a stack S, the task is to copy the content of the given stack S to another stack T maintaining the same order.
+
+Examples:
+
+Input: Source:- |5| 
+                         |4|
+                         |3|
+                         |2|
+                         |1|
+Output: Destination:- |5| 
+                                   |4|
+                                   |3|
+                                   |2|
+                                   |1|
+
+Input: Source:- |12| 
+                         |13|
+                         |14|
+                         |15|
+                         |16|
+Output: Destination:- |12| 
+                                   |13|
+                                   |14|
+                                   |15|
+                                   |16|
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Reversing the Stack-Based Approach: Please refer to the previous post of this article for reversing the stack-based approach.
+
+
+
+Time Complexity: O(N2)
+Auxiliary Space: O(1)
+
+Linked List-Based Approach: Please refer to the previous post of this article for the linked list-based approach.
+
+Time Complexity: O(N)
+Auxiliary Space: O(1)
+
+Recursion-Based Approach: The given problem can also be solved by using recursion. Follow the steps below to solve the problem:
+
+Define a recursive function, say RecursiveCloneStack(stack<int> S, stack<int>Des) where S is the source stack and Des is the destination stack:
+Define a base case as if S.size() is 0 then return from the function.
+Store the top element of the source stack in a variable, say val, and then remove the top element of the stack S.
+Now call the recursive function with updated Source stack S i.e., RecursiveCloneStack(S, Des).
+After the above step, push the val into the Des stack.
+Initialize a stack, say Des to store the destination stack.
+Now call the function RecursiveCloneStack(S, Des) to copy the elements of the source stack to the destination stack.
+After completing the above steps, print the elements of the stack Des as the result.
+Below is the implementation of the above approach:
+     */
+    public class CloneStack
+    {
+
+        static Stack<int> S = new Stack<int>();
+        static Stack<int> Des = new Stack<int>(); // Stores the destination stack
+
+        // Auxiliary function to copy elements
+        // of source stack to destination stack
+        static void RecursiveCloneStack()
+        {
+            // Base case for Recursion
+            if (S.Count == 0)
+                return;
+
+            // Stores the top element of the
+            // source stack
+            int val = (int)S.Peek();
+
+            // Removes the top element of the
+            // source stack
+            S.Pop();
+
+            // Recursive call to the function
+            // with remaining stack
+            RecursiveCloneStack();
+
+            // Push the top element of the source
+            // stack into the Destination stack
+            Des.Push(val);
+        }
+
+        // Function to copy the elements of the
+        // source stack to destination stack
+        static void cloneStack()
+        {
+            // Recursive function call to copy
+            // the source stack to the
+            // destination stack
+            RecursiveCloneStack();
+
+            Console.Write("Destination:- ");
+            int f = 0;
+
+            // Iterate until stack Des is
+            // non-empty
+            while (Des.Count > 0)
+            {
+
+                if (f == 0)
+                {
+                    Console.Write(Des.Peek());
+                    f = 1;
+                }
+
+                else
+                    Console.Write("              " + Des.Peek());
+                Des.Pop();
+
+                Console.WriteLine();
+            }
+        }
+
+        static void Main()
+        {
+            S.Push(1);
+            S.Push(2);
+            S.Push(3);
+            S.Push(4);
+            S.Push(5);
+            cloneStack();
+            /*
+             Output: 
+Destination:- 5
+              4
+              3
+              2
+              1 
+
+Time Complexity: O(N) 
+Auxiliary Space: O(1)
+            */
+        }
+    }
 }
