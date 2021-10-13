@@ -48,7 +48,7 @@ If both the left and the right parts are present in Map M in one of the above co
 Below is the implementation of the above approach:
     
      */
-    class ArrayElementConcatenation
+    public class ArrayElementConcatenation
     {
         static void findConcatenatedNumbers(List<int> a, List<int> b)
         {
@@ -116,5 +116,99 @@ Below is the implementation of the above approach:
 Time Complexity: O(M*log(X)), where X is the largest element in the array brr[].
 Auxiliary Space: O(N)
         */
+    }
+    /*
+     https://www.geeksforgeeks.org/maximum-length-of-string-formed-by-concatenation-having-even-frequency-of-each-character/
+    Maximum length of string formed by concatenation having even frequency of each character
+Last Updated : 13 Oct, 2021
+Given N strings, print the maximum length of the string and the string formed by concatenating any of the N strings, such that every letter in the string occurs even number of times 
+
+Example: 
+Input: N = 5, str = [“ABAB”, “ABF”, “CDA”, “AD”, “CCC”]
+Output: ABABCDAADCCC 12
+Explanation: The string formed by concatenation is ABABCDAADCCC. Each letter in the string occurs even number of times
+
+
+
+Input: N = 3, str = [“AB”, “BC”, “CA”]
+Output: ABBCCA 6
+Explanation: The string formed by concatenation of all 3 strings is ABBCCA
+
+ 
+Approach: The given problem can be solved using recursion and backtracking. The idea is to either include the string or exclude the string at every iteration. After including a string, the frequency of all the characters in the concatenated string is calculated. If frequency of all the characters is even we update the maximum length max. Below steps can be followed to solve the problem:
+
+Initialize variable max to 0 for calculating maximum length of concatenated string having even frequency of all characters
+Initialize string ans1 to store the concatenated string of maximum length with all character having even frequency
+The base case of the recursive call is to return, if index becomes equal to the size of the input string list
+At every recursive call we perform the following operation:
+Include the string and check if the frequency of characters is even for the concatenated string
+If the frequency is even, update max and ans1
+Increment the index and make the next recursive call
+Exclude the string, increment the index and make the next recursive call
+Below is the implementation of the above approach:
+     */
+    public class EvenFrequencyString
+    {
+        static int maxi = 0;
+        static string ans1 = "";
+        static void calculate(string ans)
+        {
+
+            int[] dp = new int[26];
+            for (int i = 0; i < ans.Length; ++i)
+            {
+
+                // Count the frequency
+                // of the string
+                dp[ans[i] - 'A']++;
+            }
+
+            // Check the frequency of the string
+            for (int i = 0; i < 26; ++i)
+            {
+                if (dp[i] % 2 == 1)
+                {
+                    return;
+                }
+            }
+            if (maxi < ans.Length)
+            {
+
+                // Store the length
+                // of the new String
+                maxi = ans.Length;
+                ans1 = ans;
+            }
+        }
+
+        // Function to find the longest
+        // concatenated string having
+        // every character of even frequency
+        static void longestString(List<string> arr, int index,
+                             string str)
+        {
+
+            // Checking the string
+            if (index == arr.Count)
+            {
+                return;
+            }
+
+            // Dont Include the string
+            longestString(arr, index + 1, str);
+
+            // Include the string
+            str += arr[index];
+
+            calculate(str);
+            longestString(arr, index + 1, str);
+        }
+        public static void Main(string[] args)
+        {
+            List<string> A = new List<string> { "ABAB", "ABF", "CDA", "AD", "CCC" };
+            longestString(A, 0, "");
+            Console.WriteLine(ans1 + " " + ans1.Length);
+            // output ABABCDAADCCC 12
+        }
     }
 }

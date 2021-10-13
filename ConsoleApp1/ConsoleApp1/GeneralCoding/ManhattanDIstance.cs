@@ -90,4 +90,105 @@ Auxiliary Space: O(1)
             */
         }
     }
+    /*
+https://www.geeksforgeeks.org/distance-from-next-greater-element/
+Distance from Next Greater element
+Last Updated : 14 Apr, 2021
+Given an array arr[] of size N, the task is to print the distance of every array element from its next greater element. For array elements having no next greater element, print 0.
+
+Examples: 
+
+Input: arr[] = {73, 74, 75, 71, 69, 72, 76, 73} 
+Output: {1, 1, 4, 2, 1, 1, 0, 0} 
+Explanation: 
+The next greater element for 73 is 74, which is at position 1. Distance = 1 – 0 = 1 
+The next greater element for 74 is 75, which is at position 2. Distance = 2 – 1 = 1 
+The next greater element for 75 is 76, which is at position 6. Distance = 6 – 2 = 4 
+The next greater element for 71 is 72, which is at position 5. Distance = 5 – 3 = 2 
+The next greater element for 69 is 72, which is at position 5. Distance = 5 – 4 = 1 
+The next greater element for 72 is 76, which is at position 6. Distance = 6 – 5 = 1 
+No, next greater element for 76. Distance = 0 
+No, next greater element for 73. Distance = 0 
+
+Input: arr[] = {5, 4, 3, 2, 1} 
+Output: {0, 0, 0, 0, 0}
+
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Naive Approach: The simplest approach is to traverse the array and for every array element, traverse to its right to obtain its next greater element and calculate the difference between the indices.
+
+Time Complexity: O(N2) 
+Auxiliary Space: O(1)
+
+Efficient Approach: To optimize the above approach, the idea is to use Stack to find the next greater element. 
+Below are the steps: 
+
+Maintain a Stack which will contain the elements in non-increasing order.
+Check if the current element arr[i]is greater than the element at the top of the stack.
+Keep popping all the elements from the stack one by one from the top, that are found to be smaller than arr[i] and calculate the distance for each of them as the difference of current index and the index of the popped element.
+Push the current element into the stack and repeat the above steps.
+Below is the implementation of the above approach:
+     */
+    public class NextGreaterDistance
+    {
+
+        public static int[] distance_from_next_greater_element(int[] arr)
+        {
+            int N = arr.Length;
+
+            // Stores the required distances
+            int[] ans = new int[N];
+            int st = 0;
+
+            // Maintain a stack of elements
+            // in non-increasing order
+            for (int i = 0; i < N - 1; i++)
+            {
+                if (arr[i] < arr[i + 1])
+                {
+                    ans[i] = 1;
+                }
+                else
+                {
+                    st = i + 1;
+                    while (st <= N - 1)
+                    {
+                        if (arr[i] < arr[st])
+                        {
+                            ans[i] = st - i;
+                            break;
+                        }
+                        else
+                        {
+                            st++;
+                        }
+                    }
+                }
+            }
+            return ans;
+        }
+
+        // Driver code
+        public static void Main(String[] args)
+        {
+            int[] arr = new int[]{ 73, 74, 75, 71,
+                           69, 72, 76, 73 };
+
+            int[] x = distance_from_next_greater_element(arr);
+
+            Console.Write("[");
+            for (int i = 0; i < x.Length; i++)
+                Console.Write(x[i] + ", ");
+
+            Console.Write("]");
+            /*
+             Output: 
+[1, 1, 4, 2, 1, 1, 0, 0]
+ 
+
+Time Complexity: O(N) 
+Auxiliary Space: O(N)
+
+             */
+        }
+    }
 }

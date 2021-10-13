@@ -5,7 +5,8 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     https://www.geeksforgeeks.org/count-number-of-triplets-with-product-not-exceeding-a-given-number/
+https://www.geeksforgeeks.org/count-of-triplets-till-n-whose-product-is-at-most-n/
+https://www.geeksforgeeks.org/count-number-of-triplets-with-product-not-exceeding-a-given-number/
     Count number of triplets with product not exceeding a given number
 Last Updated : 30 Apr, 2021
 Given a positive integer N, the task is to find the number of triplets of positive integers (X, Y, Z), whose product is at most N.
