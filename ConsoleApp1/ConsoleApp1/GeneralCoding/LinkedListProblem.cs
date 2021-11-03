@@ -259,7 +259,230 @@ Below is the implementation of the above idea.
             Console.WriteLine("NULL");
         }
     }
+    /*
+     https://www.geeksforgeeks.org/sum-of-two-linked-lists/
+    Add two numbers represented by linked lists | Set 2
+Difficulty Level : Hard
+Last Updated : 12 Oct, 2021
+Given two numbers represented by two linked lists, write a function that returns the sum list. The sum list is linked list representation of the addition of two input numbers. It is not allowed to modify the lists. Also, not allowed to use explicit extra space (Hint: Use Recursion).
 
+Example :
+Input:
+  First List: 5->6->3  
+  Second List: 8->4->2 
+Output
+  Resultant list: 1->4->0->5
+Recommended: Please solve it on “PRACTICE ” first, before moving on to the solution. 
+ 
+We have discussed a solution here which is for linked lists where a least significant digit is the first node of lists and the most significant digit is the last node. In this problem, the most significant node is the first node and the least significant digit is the last node and we are not allowed to modify the lists. Recursion is used here to calculate sum from right to left.
+
+
+
+Following are the steps. 
+1) Calculate sizes of given two linked lists. 
+2) If sizes are same, then calculate sum using recursion. Hold all nodes in recursion call stack till the rightmost node, calculate the sum of rightmost nodes and forward carry to the left side. 
+3) If size is not same, then follow below steps: 
+….a) Calculate difference of sizes of two linked lists. Let the difference be diff 
+….b) Move diff nodes ahead in the bigger linked list. Now use step 2 to calculate the sum of the smaller list and right sub-list (of the same size) of a larger list. Also, store the carry of this sum. 
+….c) Calculate the sum of the carry (calculated in the previous step) with the remaining left sub-list of a larger list. Nodes of this sum are added at the beginning of the sum list obtained the previous step.
+
+Below is a dry run of the above approach
+     */
+    public class LinkedListSum
+    {
+        // Function to print linked list
+        void printlist(Node head)
+        {
+            while (head != null)
+            {
+                Console.Write(head.data + " ");
+                head = head.ptr;
+            }
+        }
+        void push(int val, int list)
+        {
+            Node newnode = new Node(val);
+
+            if (list == 1)
+            {
+                newnode.ptr = head1;
+                head1 = newnode;
+            }
+            else if (list == 2)
+            {
+                newnode.ptr = head2;
+                head2 = newnode;
+            }
+            else
+            {
+                newnode.ptr = result;
+                result = newnode;
+            }
+
+        }
+
+        // Adds two linked lists of same size represented by
+        // head1 and head2 and returns head of the resultant
+        // linked list. Carry is propagated while returning
+        // from the recursion
+        void addsamesize(Node n, Node m)
+        {
+
+            // Since the function assumes linked
+            // lists are of same size, check any
+            // of the two head pointers
+            if (n == null)
+                return;
+
+            // Recursively add remaining nodes
+            // and get the carry
+            addsamesize(n.ptr, m.ptr);
+
+            // Add digits of current nodes
+            // and propagated carry
+            int sum = n.data + m.data + carry;
+            carry = sum / 10;
+            sum = sum % 10;
+
+            // Push this to result list
+            push(sum, 3);
+        }
+
+        Node cur;
+
+        // This function is called after the smaller
+        // list is added to the bigger lists's sublist
+        // of same size. Once the right sublist is added,
+        // the carry must be added to the left side of
+        // larger list to get the final result.
+        void propogatecarry(Node head1)
+        {
+
+            // If diff. number of nodes are
+            // not traversed, add carry
+            if (head1 != cur)
+            {
+                propogatecarry(head1.ptr);
+                int sum = carry + head1.data;
+                carry = sum / 10;
+                sum %= 10;
+
+                // Add this node to the front
+                // of the result
+                push(sum, 3);
+            }
+        }
+
+        int getsize(Node head)
+        {
+            int count = 0;
+            while (head != null)
+            {
+                count++;
+                head = head.ptr;
+            }
+            return count;
+        }
+
+        // The main function that adds two linked
+        // lists represented by head1 and head2.
+        // The sum of two lists is stored in a
+        // list referred by result
+        void addlists()
+        {
+
+            // First list is empty
+            if (head1 == null)
+            {
+                result = head2;
+                return;
+            }
+
+            // Second list is empty
+            if (head2 == null)
+            {
+                result = head1;
+                return;
+            }
+
+            int size1 = getsize(head1);
+            int size2 = getsize(head2);
+
+            // Add same size lists
+            if (size1 == size2)
+            {
+                addsamesize(head1, head2);
+            }
+            else
+            {
+
+                // First list should always be
+                // larger than second list.
+                // If not, swap pointers
+                if (size1 < size2)
+                {
+                    Node temp = head1;
+                    head1 = head2;
+                    head2 = temp;
+                }
+
+                int diff = Math.Abs(size1 - size2);
+
+                // Move diff. number of nodes in
+                // first list
+                Node tmp = head1;
+
+                while (diff-- >= 0)
+                {
+                    cur = tmp;
+                    tmp = tmp.ptr;
+                }
+
+                // Get addition of same size lists
+                addsamesize(cur, head2);
+
+                // Get addition of remaining
+                // first list and carry
+                propogatecarry(head1);
+            }
+            // If some carry is still there,
+            // add a new node to the front of
+            // the result list. e.g. 999 and 87
+            if (carry > 0)
+                push(carry, 3);
+        }
+        Node head1, head2, result;
+        int carry;
+        // Driver code
+        public static void Main(string[] args)
+        {
+            LinkedListSum list = new LinkedListSum();
+            list.head1 = null;
+            list.head2 = null;
+            list.result = null;
+            list.carry = 0;
+
+            int[] arr1 = { 9, 9, 9 };
+            int[] arr2 = { 1, 8 };
+
+            // Create first list as 9->9->9
+            for (int i = arr1.Length - 1; i >= 0; --i)
+                list.push(arr1[i], 1);
+
+            // Create second list as 1->8
+            for (int i = arr2.Length - 1; i >= 0; --i)
+                list.push(arr2[i], 2);
+
+            list.addlists();
+
+            list.printlist(list.result);
+            /*
+             Output
+1 0 1 7
+Time Complexity: O(m+n) where m and n are the sizes of given two linked lists.
+            */
+        }
+    }
 
     class Node
     {

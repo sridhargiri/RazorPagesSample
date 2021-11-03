@@ -24,7 +24,7 @@ https://www.geeksforgeeks.org/c-program-to-print-a-pattern-of-numbers/?ref=rp
     If the pattern is increasing or decreasing per line?
     Implementation 
     */
-    class NumberPattern
+    public class NumberPattern
     {
 
         public static void Main()
@@ -191,7 +191,7 @@ Yes
             string temp = "";
             for (int i = 0; i < K; i++)
             {
-                temp += (char)(str1[i]+K-i);
+                temp += (char)(str1[i] + K - i);
             }
             if (temp == str2)
             {
@@ -205,6 +205,221 @@ Yes
         public static void Main(string[] args)
         {
             CanStringAttain("abc", "ddd", 3);
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/program-to-print-the-trapezium-pattern/
+    Program to Print the Trapezium Pattern
+Last Updated : 30 May, 2021
+Given ‘num’ which indicates number of lines.The task is to print a trapezium pattern in num lines.
+Examples: 
+ 
+
+Input  : 4 
+Output :
+1*2*3*4*17*18*19*20
+  5*6*7*14*15*16
+    8*9*12*13
+      10*11
+
+
+Input : 2
+Output :
+1*2*5*6
+  3*4
+Algorithm : 
+step 1. To read num which indicates the number of lines. 
+step 2.We are diving the pattern into 2 halves that is LHS part and the RHS part. 
+Ex : When num = 2 
+LHS – 
+1*2* 
+3*
+RHS – 
+5*6 
+4 
+step 3.Combining LHS and RHS we get the complete pattern.
+     */
+    public class TrapeziumPattern
+    {
+
+        public static void Main(String[] args)
+        {
+
+            // Scanner scn = new Scanner(System.in);
+            int num = 3;
+            int space;
+            // System.out.println("Enter number of lines : ");
+            // num = scn.nextInt();
+
+            int i, j, lterm, rterm;
+
+            lterm = 1; // The terms on the LHS of the pattern
+
+            // The terms on the RHS of the pattern
+            rterm = num * num + 1;
+
+            for (i = num; i > 0; i--)
+            {
+
+                // To print number of spaces
+                for (space = num; space > i; space--)
+                    Console.Write(" ");
+
+                for (j = 1; j <= i; j++)
+                {
+                    Console.Write(lterm);
+                    Console.Write("*");
+                    lterm++;
+                }
+                for (j = 1; j <= i; j++)
+                {
+                    Console.Write(rterm);
+                    if (j < i)
+                        Console.Write("*");
+                    rterm++;
+                }
+
+                // To get the next term on RHS of the Pattern
+                rterm = rterm - (i - 1) * 2 - 1;
+                Console.WriteLine();
+                /*
+                 Output: 
+
+Enter number of lines : 3
+1*2*3*10*11*12
+  4*5*8*9
+    6*7
+                */
+            }
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/print-following-pyramid-pattern/
+    Print the following pyramid pattern
+Difficulty Level : Medium
+Last Updated : 29 Apr, 2021
+Given a positive integer n. The problem is to print the pyramid pattern as described in the examples below.
+
+Examples: 
+Input : n = 4
+Output : 
+1
+3*2
+4*5*6
+10*9*8*7
+
+Input : n = 5
+Output :
+1
+3*2
+4*5*6
+10*9*8*7
+11*12*13*14*15
+Source: Amdocs Interview Experience | Set 1- https://www.geeksforgeeks.org/amdocs-interview-experience-set-1-on-campus/
+Approach: For odd number row, values are being displayed in increasing order and for even number row, values are being displayed in decreasing order. 
+    The only other trick is to how to iterate the loops.
+
+Algorithm: 
+
+printPattern(int n)
+    Declare j, k
+    Initialize k = 0
+
+    for i = 1 to n
+
+    if i%2 != 0
+        for j = k+1, j < k+i, j++
+        print j and "*"
+        print j and new line    
+        k = ++j
+
+    else
+        k = k+i-1
+        for j = k, j > k-i+1, j--
+        print j and "*";
+        print j and new line
+     */
+    public class PeculiarPyramidPattern
+    {
+
+        // function to print the following pyramid
+        // pattern
+        static void printPattern(int n)
+        {
+            int j, k = 0;
+
+            // loop to decide the row number
+            for (int i = 1; i <= n; i++)
+            {
+
+                // if row number is odd
+                if (i % 2 != 0)
+                {
+
+                    // print numbers with the '*'
+                    // sign in increasing order
+                    for (j = k + 1; j < k + i; j++)
+                        Console.Write(j + "*");
+                    Console.WriteLine(j);
+
+                    // update value of 'k'
+                    k = ++j;
+                }
+
+                // if row number is even
+                else
+                {
+
+                    // update value of 'k'
+                    k = k + i - 1;
+
+                    // print numbers with the '*' in
+                    // decreasing order
+                    for (j = k; j > k - i + 1; j--)
+                        Console.Write(j + "*");
+                    Console.WriteLine(j);
+                }
+            }
+        }
+
+        // Driver program to test above
+        public static void Main()
+        {
+            int n = 5;
+            printPattern(n);
+            /*
+             Output: 
+
+1
+3*2
+4*5*6
+10*9*8*7
+11*12*13*14*15
+Time Complexity: O((n * (n + 1)) / 2)
+            */
+        }
+    }
+    /*
+Print below pattern
+A
+BB
+CCC
+DDDD
+EEEEE
+    */
+    class AlphabetPattern
+    {
+        public static void Main(string[] args)
+        {
+            int i, j, n = 5;
+            for (i = 1; i <= n; i++)
+            {
+                for (j = 1; j <= i; j++)
+                {
+                    Console.Write((char)(i + 64));
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

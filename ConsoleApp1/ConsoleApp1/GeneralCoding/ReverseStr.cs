@@ -188,7 +188,7 @@ Below is the implementation of the above approach
                 // i.e., s[start..end-1]
                 if (s[end] == ' ')
                 {
-                    if(end-start>1)reverse_words_only(s, start, end-1);
+                    if (end - start > 1) reverse_words_only(s, start, end - 1);
                     start = end + 1;
                 }
             }
@@ -337,7 +337,7 @@ Below is the implementation of the above approach
 
         // Reverse the letters
         // of the word
-        static void reverse_words_only(char[] str,
+        static void reverse(char[] str,
                             int start,
                             int end)
         {
@@ -362,12 +362,13 @@ Below is the implementation of the above approach
         // Function to reverse words
         static char[] reverseWords(char[] s)
         {
-
+            char[] s1 = new char[s.Length + 1];
+            Array.Copy(s, s1, s.Length);s1[s1.Length - 1] = ' ';
             // Reversing individual words as
             // explained in the first step
 
             int start = 0;
-            for (int end = 0; end < s.Length; end++)
+            for (int end = 0; end < s1.Length; end++)
             {
 
                 // If we see a space, we
@@ -375,49 +376,32 @@ Below is the implementation of the above approach
                 // word (word between
                 // the indexes start and end-1
                 // i.e., s[start..end-1]
-                if (s[end] == ' ')
+                if (s1[end] == ' ')
                 {
-                    reverse_words_only(s, start, end);
+                    reverse(s1, start, end);
                     start = end + 1;
                 }
             }
 
             // Reverse the last word
-            reverse_words_only(s, start, s.Length - 1);
+            reverse(s1, start, s1.Length - 1);
 
             // Reverse the entire String
-            reverse_words_only(s, 0, s.Length - 1);
-            return s;
+            reverse(s1, 0, s1.Length - 1);
+            return s1;
         }
-        /*Another Approach:
 
-we can do the above task by splitting and saving the string in a reverse manner. 
-
-Below is the implementation of the above approach:
-
-
-         */
-        static void ReverseWordsSentence()
-        {
-            string[] s = "i like this program very much".
-                                             Split(' ');
-            string ans = "";
-            for (int i = s.Length - 1; i >= 0; i--)
-            {
-                ans += s[i] + " ";
-            }
-            Console.Write("Reversed String:\n");
-            Console.Write(ans.Substring(0,
-                                        ans.Length - 1));
-        }
+        // Driver Code
         public static void Main(String[] args)
         {
             String s = "i like this program very much";
             char[] p = reverseWords(s.ToCharArray());
             Console.Write(p);
+            //Output
+            //much very program this like i
         }
-
     }
+
     /*
 https://www.geeksforgeeks.org/reverse-string-according-number-words/
     Reverse String according to the number of words

@@ -32,7 +32,7 @@ namespace ConsoleApp1
             ConvertSectoDay(n);
             string T = "21:39";
             int K = 43;
-            findTime(T, K);
+            TimeToWords(T, K);
 
             //lag
             int h1 = 12, m1 = 0;
@@ -226,7 +226,7 @@ The clock initially displays 12:00. After 1 hour it must show 13:00. But at this
         //Convert the M minutes in 24 hours format accordingly.
         //Below is the implementation of the above approach:
 
-        static void findTime(string T, int K)
+        static void TimeToWords(string T, int K)
         {
 
             // convert the given time in minutes  
@@ -266,6 +266,188 @@ The clock initially displays 12:00. After 1 hour it must show 13:00. But at this
             {
                 Console.Write(min);
             }
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/maximum-possible-time-that-can-be-formed-from-four-digits/
+    Maximum possible time that can be formed from four digits
+Difficulty Level : Medium
+Last Updated : 10 Jun, 2021
+Given an array arr[] having 4 integer digits only. The task is to return the maximum 24 hour time that can be formed using the digits from the array. 
+Note that the minimum time in 24 hour format is 00:00, and the maximum is 23:59. If a valid time cannot be formed then return -1.
+Examples: 
+ 
+
+Input: arr[] = {1, 2, 3, 4} 
+Output: 23:41
+Input: arr[] = {5, 5, 6, 6} 
+Output: -1 
+ 
+ 
+Approach: Create a HashMap and store the frequency of each digit in the map which can be used to know how many of such digits are available. 
+Now, in order to generate a valid time following conditions must be satisfied: 
+ 
+
+First digit of hours must be from the range [0, 2]. Start checking in decreasing order in order to maximize the time i.e. from 2 to 0. Once the digit is chosen, decrement its occurrence in the map by 1.
+Second digit of hours must be from the range [0, 3] if first digit was chosen as 2 else [0, 9]. Update the HashMap accordingly after choosing the digit.
+First digit of minutes must be from the range [0, 5] and second digit of minutes must be from the range [0, 9].
+If any of the above condition fails i.e. no digit could be chosen at any point then print -1 else print the time.
+Below is the implementation of the above approach: 
+     */
+    public class MaxTimeFromArray
+    {
+
+        // Function to return the updated frequency map
+        // for the array passed as argument
+        static Dictionary<int, int> getFrequencyMap(int[] arr)
+        {
+            Dictionary<int, int> hashMap = new Dictionary<int, int>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (hashMap.ContainsKey(arr[i]))
+                {
+                    hashMap[arr[i]] = hashMap[arr[i]] + 1;
+                }
+                else
+                {
+                    hashMap.Add(arr[i], 1);
+                }
+            }
+            return hashMap;
+        }
+
+        // Function that returns true if the passed digit is present
+        // in the map after decrementing it's frequency by 1
+        static bool hasDigit(Dictionary<int, int> hashMap, int digit)
+        {
+
+            // If map contains the digit
+            if (hashMap.ContainsKey(digit) && hashMap[digit] > 0)
+            {
+
+                // Decrement the frequency of the digit by 1
+                hashMap[digit] = hashMap[digit] - 1;
+
+                // True here indicates that the
+                // digit was found in the map
+                return true;
+            }
+
+            // Digit not found
+            return false;
+        }
+
+        // Function to return the maximum
+        // possible time in 24-Hours format
+        static String getMaxTime(int[] arr)
+        {
+            Dictionary<int, int> hashMap = getFrequencyMap(arr);
+            int i;
+            bool flag;
+            String time = "";
+
+            flag = false;
+
+            // First digit of hours can be from the range [0, 2]
+            for (i = 2; i >= 0; i--)
+            {
+                if (hasDigit(hashMap, i))
+                {
+                    flag = true;
+                    time += i;
+                    break;
+                }
+            }
+
+            // If no valid digit found
+            if (!flag)
+            {
+                return "-1";
+            }
+
+            flag = false;
+
+            // If first digit of hours was chosen as 2 then
+            // the second digit of hours can be
+            // from the range [0, 3]
+            if (time[0] == '2')
+            {
+                for (i = 3; i >= 0; i--)
+                {
+                    if (hasDigit(hashMap, i))
+                    {
+                        flag = true;
+                        time += i;
+                        break;
+                    }
+                }
+            }
+
+            // Else it can be from the range [0, 9]
+            else
+            {
+                for (i = 9; i >= 0; i--)
+                {
+                    if (hasDigit(hashMap, i))
+                    {
+                        flag = true;
+                        time += i;
+                        break;
+                    }
+                }
+            }
+            if (!flag)
+            {
+                return "-1";
+            }
+
+            // Hours and minutes separator
+            time += ":";
+
+            flag = false;
+
+            // First digit of minutes can be from the range [0, 5]
+            for (i = 5; i >= 0; i--)
+            {
+                if (hasDigit(hashMap, i))
+                {
+                    flag = true;
+                    time += i;
+                    break;
+                }
+            }
+            if (!flag)
+            {
+                return "-1";
+            }
+
+            flag = false;
+
+            // Second digit of minutes can be from the range [0, 9]
+            for (i = 9; i >= 0; i--)
+            {
+                if (hasDigit(hashMap, i))
+                {
+                    flag = true;
+                    time += i;
+                    break;
+                }
+            }
+            if (!flag)
+            {
+                return "-1";
+            }
+
+            // Return the maximum possible time
+            return time;
+        }
+
+        // Driver code
+        public static void Main(String[] args)
+        {
+            int[] arr = { 0, 0, 0, 9 };
+            Console.WriteLine(getMaxTime(arr));
+            //Output:            09:00
         }
     }
 }

@@ -29,9 +29,9 @@ Below is the implementation of the above approach:
     */
     class AlphabetSingleDigitSum
     {
-       static int findTheSum(string str)
+        static int findTheSum(string str)
         {
-            string alpha="";
+            string alpha = "";
 
             // Traverse the given string
             for (int i = 0; i < str.Length; i++)
@@ -40,7 +40,7 @@ Below is the implementation of the above approach:
                 // If character is an alphabet
                 if ((str[i] >= 'A' && str[i] <= 'Z')
                     || (str[i] >= 'a' && str[i] <= 'z'))
-                    alpha+=str[i];
+                    alpha += str[i];
             }
 
             // Stores the sum of order of values
@@ -81,6 +81,62 @@ Below is the implementation of the above approach:
 Time Complexity: O(N)
 Auxiliary Space: O(1)
             */
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/sum-of-the-alphabetical-values-of-the-characters-of-a-string/
+    Sum of the alphabetical values of the characters of a string
+Difficulty Level : Medium
+Last Updated : 19 Mar, 2021
+You are given an array of strings str, the task is to find the score of a given string s from the array. The score of a string is defined as the product of the sum of its characters’s alphabetical values with the position of the string in the array.
+Examples: 
+ 
+
+Input: str[] = {“sahil”, “shashanak”, “sanjit”, “abhinav”, “mohit”}, s = “abhinav” 
+Output: 228 
+Sum of alphabetical values of “abhinav” = 1 + 2 + 8 + 9 + 14 + 1 + 22 = 57 
+Position of “abhinav” in str is 4, 57 x 4 = 228 
+Input: str[] = {“geeksforgeeks”, “algorithms”, “stack”}, s = “algorithms” 
+Output: 244 Approach: 
+ 
+
+Find the given string in the array and store the position of the string.
+Then calculate the sum of the alphabetical values of the given string.
+Multiply the position of the string in the given array with the value calculated in the previous step and print the result.
+Below is the implementation of the above approach: 
+     */
+    public class AlphabetSum
+    {
+
+        // Function to find string score
+        static int sum_of_alphabets_in_strings(String[] str,
+                            String s, int n)
+        {
+            int score = 0, index = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (str[i] == s)
+                {
+                    for (int j = 0; j < s.Length; j++)
+                        score += s[j] - 'a' + 1;
+                    index = i + 1;
+                    break;
+                }
+            }
+
+            score = score * index;
+            return score;
+        }
+
+        // Driver code
+        public static void Main(String[] args)
+        {
+            String[] str = { "sahil", "shashanak", "sanjit",
+                     "abhinav", "mohit" };
+            String s = "abhinav";
+            int n = str.Length;
+            int score = sum_of_alphabets_in_strings(str, s, n);
+            Console.Write(score);
         }
     }
 }

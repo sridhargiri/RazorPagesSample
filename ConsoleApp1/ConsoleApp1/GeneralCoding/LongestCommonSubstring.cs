@@ -28,7 +28,7 @@ Output : 6
 Explanation:
 The longest common substring is “abcdez” and is of length 6.
 https://www.geeksforgeeks.org/longest-common-substring-dp-29/
-
+https://www.hackerrank.com/challenges/common-child/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=30-day-campaign
 geeksforgeeks
 geeksforquiz
 ans : geeks
@@ -171,7 +171,7 @@ Here is the recursive solution of above approach.
             }
             count = Math.Max(count, Math.Max(lcs(i, j - 1, 0),
                                              lcs(i - 1, j, 0)));
-            return count;
+            return count;//op 4
         }
 
     }

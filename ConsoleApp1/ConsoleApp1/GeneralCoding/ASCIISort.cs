@@ -69,4 +69,109 @@ Auxiliary Space: O(256)
 			*/
         }
     }
+    /*
+https://www.geeksforgeeks.org/sums-of-ascii-values-of-each-word-in-a-sentence/
+    Sums of ASCII values of each word in a sentence
+Last Updated : 05 May, 2021
+We are given a sentence of English language(can also contain digits), we need to compute and print the sum of ASCII values of characters of each word in that sentence.
+Examples: 
+ 
+
+Input :  GeeksforGeeks, a computer science portal for geeks
+Output : Sentence representation as sum of ASCII each character in a word:
+         1361 97 879 730 658 327 527 
+         Total sum -> 4579
+Here, [GeeksforGeeks, ] -> 1361, [a] -> 97, [computer] -> 879, [science] -> 730
+      [portal] -> 658, [for] -> 327, [geeks] -> 527 
+
+Input : I am a geek
+Output : Sum of ASCII values:
+         73 206 97 412 
+Approach: 
+ 
+
+
+
+Iterate over the length of the string and keep converting the characters to their ASCII
+Keep adding up the values till the end of sentence.
+When we come across a space character, we store the sum calculated for that word and set the sum equal to zero again.
+Later, we print elements
+ 
+     */
+    public class ASCIISum
+    {
+
+        // Function to compute the sum of ASCII
+        // values of each word separated by a
+        // space and return the total sum of
+        // the ASCII values, excluding the space.
+        static long ASCIIWordSum(String str, long[] sumArr)
+        {
+            int l = str.Length;
+            int pos = 0;
+            long sum = 0;
+            long bigSum = 0;
+            for (int i = 0; i < l; i++)
+            {
+
+                // Separate each word by
+                // a space and store values
+                // corresponding to each word
+                if (str[i] == ' ')
+                {
+                    bigSum += sum;
+                    sumArr[pos++] = sum;
+                    sum = 0;
+                }
+                else
+
+                    // Implicit type casting
+                    sum += str[i];
+            }
+
+            // Storing the sum of last word
+            sumArr[pos] = sum;
+            bigSum += sum;
+            return bigSum;
+        }
+
+        // Driver function
+        public static void Main()
+        {
+            String str = "GeeksforGeeks, a computer " +
+                         "science portal for geeks";
+
+            // Counting the number of words
+            // in the input sentence
+            int ctr = 0;
+            for (int i = 0; i < str.Length; i++)
+                if (str[i] == ' ')
+                    ctr++;
+
+            long[] sumArr = new long[ctr + 1];
+
+            // Calling function
+            long sum = ASCIIWordSum(str, sumArr);
+
+            // Printing equivalent sum of
+            // the words in the sentence
+            Console.WriteLine("Sum of ASCII values:");
+            for (int i = 0; i <= ctr; i++)
+                Console.Write(sumArr[i] + " ");
+
+            Console.WriteLine();
+            Console.Write("Total sum -> " + sum);
+            /*
+             Output:  
+
+Sum of ASCII values:
+1317 97 879 730 658 327 495 
+Total sum -> 4503
+The complexity of the approach is O(len)  
+ 
+
+https://youtu.be/B3dghSG2R
+            */
+        }
+    }
 }

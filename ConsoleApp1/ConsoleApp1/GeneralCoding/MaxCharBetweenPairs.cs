@@ -99,6 +99,53 @@ Time Complexity : O(n)
             */
         }
     }
+    //https://www.geeksforgeeks.org/fastenal-interview-experience-on-campus/
+    public class Fastenal
+    {
+        /*
+         1. String Letter Search: You are given a String X and a string containing single character Y. Your task is to find the largest distance between any two occurrences of the character Y in string X.
+
+The Distance is defined by the no of distinct characters between any two occurrences of char Y in string X (Exclude whitespaces).
+
+If there is no occurrences or only one occurrences of the given character, the function should return -1.
+
+Example:
+
+Input1: my name is ranary
+
+Input2: a
+
+Output: 7
+        */
+        public static void SameChar(String str)
+        {
+            int n = str.Length, count = -1, max_count = -1;
+            for (int i = 0; i < n; i++)
+            {
+
+                // Count occurrences of current character
+                if (str[i] == 'a')
+                {
+                    while (i < n - 1)
+                    {
+                        i++;
+                        if (str[i] == ' ' && i < n - 1) continue;
+                        count++;
+                        if (str[i] == 'a' && i < n - 1) max_count = Math.Max(max_count, count);
+                    }
+                }
+            }
+
+
+            // Print character and its count
+            Console.Write(max_count);
+        }
+        static void Main(string[] args)
+        {
+            SameChar("my name is rankkkkkary");
+        }
+
+    }
     /*
      Encora coderbyte
      */

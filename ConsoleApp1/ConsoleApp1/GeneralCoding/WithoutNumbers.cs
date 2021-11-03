@@ -22,8 +22,8 @@ namespace ConsoleApp1
         }
         public static void Print_1_to_100_without_using_numbers()
         {
-            int one = 'A' / 'A'; string oe1 = "**********";
-            for (int i = one; i <= 'd'; i++)
+            string oe1 = "**********";
+            for (int i = 'A'/'A'; i <= 'd'; i++)
             {
                 Console.WriteLine(i);
             }
@@ -34,8 +34,8 @@ namespace ConsoleApp1
         }
         public static void Main(string[] args)
         {
-            //Print_1_to_100_without_using_numbers();
-            printNos(100);
+            Print_1_to_100_without_using_numbers();
+            //printNos(100);
         }
     }
 }

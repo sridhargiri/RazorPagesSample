@@ -6,9 +6,10 @@ namespace ConsoleApp1
 {
     class PrimeNumberProblem
     {
-
         /*
-         
+May related to https://www.hackerrank.com/challenges/alice-and-bobs-silly-game/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
+https://www.geeksforgeeks.org/sieve-of-eratosthenes/
+Given a number n, print all primes smaller than or equal to n. It is also given that n is a small number.     
 Create a list of consecutive integers from 2 to n: (2, 3, 4, …, n).
 Initially, let p equal 2, the first prime number.
 Starting from p2, count up in increments of p and mark each of these numbers greater than or equal to p2 itself in the list. 
@@ -73,6 +74,19 @@ Find the first number greater than p in the list that is not marked.
 
             else
                 Console.Write(" false");
+            int n = 30;
+            Console.WriteLine("Following are the prime numbers smaller than or equal to " + n);
+            SieveOfEratosthenes(n);
+            /*
+Output
+true
+
+Following are the prime numbers smaller than or equal to 30
+2 3 5 7 11 13 17 19 23 29
+Time Complexity: O(n*log(log(n)))
+Auxiliary Space: O(n)
+ 
+             */
         }
     }
 }

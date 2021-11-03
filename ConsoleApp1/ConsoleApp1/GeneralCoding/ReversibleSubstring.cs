@@ -90,4 +90,70 @@ Auxiliary Space: O(1)
             */
         }
     }
+    /*
+     https://www.geeksforgeeks.org/check-two-strings-common-substring/
+     Check if two strings have a common substring (satisfy - atleast one char is common)
+Difficulty Level : Easy
+Last Updated : 30 Apr, 2021
+You are given two strings str1 and str2. You have to check if the two strings share a common substring.
+Examples : 
+ 
+
+Input : str1 = "HELLO"
+        str2 = "WORLD"
+Output : YES
+Explanation :  The substrings "O" and
+"L" are common to both str1 and str2
+
+Input : str1 = "HI"
+        str2 = "ALL"
+Output : NO
+Explanation : Because str1 and str2 
+have no common substrings
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+A basic approach runs in O(n^2), where we compare every character of string 1 with every character of string 2 and replace every matched character with a “_” and set flag variable as true.
+An efficient approach works in O(n). 
+    We basically need to check if there is a common character or not. 
+    We create a vector of size 26 for alphabets and initialize them as 0. 
+    For every character in string 1 we increment vector index of that character eg: v[s1[i]-‘a’]++, for every character of string 2 we check vector for the common characters if v[s2[i]-‘a’] > 0 then set flag = true and v[s2[i]-‘a’]– such that one character of string 2 is compared with only one character of string 1.
+ 
+     */
+    public class CommonStrings
+    {
+        static int MAX_CHAR = 26;
+
+        // function to return true if strings have
+        // common substring and no if strings have
+        // no common substring
+        static bool CommonStringBetweenTwoString(String s1, String s2)
+        {
+            // vector for storing character occurrences
+            bool[] v = new bool[MAX_CHAR];
+
+            // increment vector index for
+            // every character of str1
+            for (int i = 0; i < s1.Length; i++)
+                v[s1[i] - 'a'] = true;
+
+            // checking common substring of str2 in str1
+            for (int i = 0; i < s2.Length; i++)
+                if (v[s2[i] - 'a'])
+                    return true;
+
+            return false;
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            String str1 = "hello";
+            String str2 = "world";
+            if (CommonStringBetweenTwoString(str1, str2))
+                Console.Write("Yes");
+            else
+                Console.Write("No");
+            //op yes
+            //Time Complexity : O(n) 
+        }
+    }
 }
