@@ -1,0 +1,14 @@
+﻿@model ooid.ViewModels.LoginViewModel
+<form autocomplete="off" asp-controller="connect" asp-action="token">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div class="card">
+        <input type="text" class="form-control form-control-lg" placeholder="Username" asp-for="username" autofocus>
+        <input type="password" class="form-control form-control-lg form-control-last" placeholder="Password" asp-for="password">
+        <input type="hidden" asp-for="grant_type" value="password" />
+        <input type="hidden" asp-for="client_id" value="default-client" />
+        <input type="hidden" asp-for="client_secret" value="499D56FA-B47B-5199-BA61-B298D431C318" />
+    </div>
+    <p>
+        <button type="submit" class="btn btn-dark btn-block mt-3">Login</button>
+    </p>
+</form>
