@@ -22,6 +22,7 @@ Input : Geek
 Output : False
 "Geek" has 'e' as repeating character, 
 it is not an Isogram
+     Efficient approach : In this, count of characters of string are stored in hashmap, and wherever it is found to be greater than 1 for any char, return false else return true. 
      */
     class IsogramProblem
     {

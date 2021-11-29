@@ -43,7 +43,7 @@ This algorithm was based on a thorough analysis of the behavior and possibility 
 5. If (number of unmatched items = 0) – palindrome is possible if we swap the position of any same characters.
     https://www.geeksforgeeks.org/palindrome-by-swapping-only-one-character/
     */
-    class PalindromePossible
+    public class PalindromePossible
     {
 
         public static bool isPalindromePossible(String input)
@@ -211,6 +211,110 @@ Below is the implementation of the above approach.
 
 No
 Yes
+            */
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/check-if-given-string-can-be-made-palindrome-by-removing-only-single-type-of-character/
+    Check if given string can be made Palindrome by removing only single type of character
+    Given a string S, the task is to whether a string can be made palindrome after removing the occurrences of the same character, any number of times
+     Input: S = “abczdzacb”
+ Output: Yes
+ Explanation: Remove first and second occurrence of character ‘a’, string S becomes “bczdzcb”, which is a palindrome . 
+ 
+Input: S = “madem”
+Output: No (bcos already palindrome)
+    Approach: 
+    The task can be solved by iterating over each unique character in the given string, and removing its occurrences wherever there is a mismatch, if a valid palindrome is found, after removing occurrences of the same character any number of times, return “Yes” else return “No“.
+
+Follow the below steps to solve the problem:
+
+Start iterating over each unique character of the string, whose occurrences are to be deleted
+Use the two-pointer technique, to check for a mismatch, Place l at the start of the string and r at the end of the string
+If S[l] == S[r], increment l, and decrement r.
+If S[l]!= S[r], check if S[l[ == char, do l++, else if S[r] == char, do r–
+If none of the conditions hold, means the given can’t be converted into a palindrome
+ Below is the implementation of the above approach:
+
+     */
+    public class PalindromPossibleAfterRemoval
+    {
+        static string isPalindromePossible(string S)
+        {
+            int n = S.Length;
+            HashSet<char> st = new HashSet<char>();
+            for (int i = 0; i < n; i++)
+            {
+                st.Add(S[i]);
+            }
+
+            // Check if valid palindrome is
+            // possible or not
+            bool check = false;
+            foreach (var ele in st)
+            {
+                // Pointers to check the condition
+                int low = 0, high = n - 1;
+                bool flag = true;
+
+                // Iterating over the string
+                for (int i = 0; i < n; i++)
+                {
+                    if (S[low] == S[high])
+                    {
+
+                        // Updating low and high
+                        low++;
+                        high--;
+                    }
+
+                    else
+                    {
+                        if (S[low] == ele)
+                        {
+
+                            // Updating low
+                            low++;
+                        }
+                        else if (S[high] == ele)
+                        {
+
+                            // Updating high
+                            high--;
+                        }
+                        else
+                        {
+
+                            // It is impossible
+                            // to make palindrome
+                            // by removing
+                            // occurrences of char
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+                // If palindrome is formed
+                // break the loop
+                if (flag == true)
+                {
+                    check = true;
+                    break;
+                }
+            }
+
+            if (check)
+                return "Yes";
+            else
+                return "No";
+        }
+        public static void Main(string[] args)
+        {
+            isPalindromePossible("abczdzacb");
+            /*
+             Output:Yes
+Time Complexity: O(n*26)
+Auxiliary Space:  O(n) 
             */
         }
     }

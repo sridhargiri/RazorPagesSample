@@ -14,10 +14,6 @@ Given a sorted array arr[] consisting of N integers, the task is to find the max
 
 Examples:
 
-Attention reader! Don’t stop learning now. Get hold of all the important DSA concepts with the DSA Self Paced Course at a student-friendly price and become industry ready.  To complete your preparation from learning a language to DS Algo and many more,  please refer Complete Interview Preparation Course.
-
-In case you wish to attend live classes with experts, please refer DSA Live Classes for Working Professionals and Competitive Programming Live for Students.
-
 Input: arr[] = {-9, -7, -4, 1, 5, 8, 9}
 Output: 4
 Explanation:
@@ -35,7 +31,7 @@ If the value of arr[mid] is positive, then skip the right half by updating the v
 After completing the above steps, print the maximum of low and (N – low) as the result.
  Below is the implementation of the above approach
      */
-    class MaxNegativePositive
+    public class MaxNegativePositive
     {
         static int findMaximumOfNegativePositive(int[] arr, int size)
         {
@@ -72,6 +68,82 @@ After completing the above steps, print the maximum of low and (N – low) as th
              Output:
 4
 Time Complexity: O(log N)
+Auxiliary Space: O(1)
+            */
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/find-the-only-positive-or-only-negative-number-in-the-given-array/
+    Find the only positive or only negative number in the given Array
+Last Updated : 25 Nov, 2021
+Given an array arr[] of either entirely positive integers or entirely negative integers except for one number. The task is to find that number.
+
+ Examples:
+    Input: arr[] = {3, 5, 2, 8, -7, 6, 9}
+Output: -7
+Explanation: Except -7 all the numbers in arr[] are posisitve integers. 
+    Input: arr[] = {-3,  5,  -9}
+Output: 5
+    Approach: The given problem can be solved by just comparing the first three numbers of arr[]. After that apply Linear Search and find the number. Follow the steps below to solve the problem. 
+
+If the size of arr[] is smaller than 3, then return 0.
+Initialize the variable Cp and Cn.
+Where Cp = Count of positive integers and Cn = Count of negative integers.
+Iterate over the first 3 element
+If (arr[i]>0), Increment Cp by 1.
+Else Increment Cn by 1.
+Cp can be 2 or 3 and similarly Cn can also either 2 or 3.
+If Cp<Cn, then the single element is positive, apply linear search and find it.
+If Cn<Cp, then the single element is negative, apply linear search and find it.
+Below is the implementation of the above approach: 
+
+     */
+    public class OnlyNegativePositive
+    {
+        static int find_OnlyNegativePositive(int[] a, int N)
+        {
+            // Size can not be smaller than 3
+            if (N < 3)
+                return 0;
+
+            // Initialize the variable
+            int i, Cp = 0, Cn = 0, found = 0;
+
+            // Check the single element is
+            // positive or negative
+            for (i = 0; i < 3; i++)
+            {
+
+                if (a[i] > 0)
+                    Cp++;
+                else
+                    Cn++;
+            }
+
+            // Check for positive single element
+            if (Cp < Cn)
+            {
+                for (i = 0; i < N; i++)
+                    if (a[i] > 0)
+                        found = a[i];
+            }
+
+            // Check for negative single element
+            else
+            {
+                for (i = 0; i < N; i++)
+                    if (a[i] < 0)
+                        found = a[i];
+            }
+            return found;
+        }
+        public static void Main(string[] args)
+        {
+            int[] arr = { 3, 5, 2, 8, -7, 6, 9 };
+            Console.WriteLine(find_OnlyNegativePositive(arr, arr.Length));
+            /*
+             Output -7
+Time Complexity: O(N)
 Auxiliary Space: O(1)
             */
         }

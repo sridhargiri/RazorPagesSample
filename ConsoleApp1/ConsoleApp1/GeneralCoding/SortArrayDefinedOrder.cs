@@ -48,8 +48,7 @@ Below image is a dry run of the above approach:
                 if ((mid == 0 || x > arr[mid - 1]) && arr[mid] == x)
                     return mid;
                 if (x > arr[mid])
-                    return first(arr, (mid + 1), high,
-                                 x, n);
+                    return first(arr, (mid + 1), high, x, n);
                 return first(arr, low, (mid - 1), x, n);
             }
             return -1;

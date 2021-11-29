@@ -86,7 +86,11 @@ namespace ConsoleApp1
                 Console.WriteLine("Both Strings are Unequal");
         }
     }
-    //https://www.techbeamers.com/csharp-coding-interview-questions-developers/
+    /*
+    https://www.techbeamers.com/csharp-coding-interview-questions-developers/
+    guess the output of below fragment
+    answer will be 32333435363738394041 because space ascii value = 32 that will get summed upon each iteration
+    */
     public class OneTwoThree
     {
         public static void Main()

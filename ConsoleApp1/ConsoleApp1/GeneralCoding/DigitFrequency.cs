@@ -67,7 +67,7 @@ namespace ConsoleApp1
         }
         static public void Main(String[] args)
         {
-            long n = 1552793;
+            long n = 15527931;
             if (validate(n))
                 Console.WriteLine("True");
             else
@@ -76,6 +76,62 @@ namespace ConsoleApp1
                 Console.WriteLine("True");
             else
                 Console.WriteLine("False");
+            //output true
+        }
+    }
+
+    public class FrequencyDigits
+    {
+
+        // Function to find counts of all elements
+        // present in arr[0..n-1]. The array elements
+        // must be range from 1 to n
+        public static void findFrequencyOfDigits(int[] arr, int n)
+        {
+
+            // Hashmap
+            int[] hash = new int[n];
+
+            // Traverse all array elements
+            int i = 0;
+            while (i < n)
+            {
+
+                // Update the frequency of array[i]
+                hash[arr[i] - 1]++;
+
+                // Increase the index
+                i++;
+            }
+            Console.WriteLine("\nBelow are counts "
+                              + "of all elements");
+            for (i = 0; i < n; i++)
+            {
+                Console.WriteLine((i + 1) + " -> " + hash[i]);
+            }
+        }
+
+        // Driver code
+        static public void Main()
+        {
+            int[] arr = new int[] { 2, 3, 3, 2, 5 };
+            findFrequencyOfDigits(arr, arr.Length);
+            int[] arr1 = new int[] { 1 };
+            findFrequencyOfDigits(arr1, arr1.Length);
+            int[] arr3 = new int[] { 4, 4, 4, 4 };
+            findFrequencyOfDigits(arr3, arr3.Length);
+            int[] arr2
+              = new int[] { 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1 };
+            findFrequencyOfDigits(arr2, arr2.Length);
+            int[] arr4
+              = new int[] { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 };
+            findFrequencyOfDigits(arr4, arr4.Length);
+            int[] arr5 = new int[] { 1, 2, 3, 4,  5, 6,
+                            7, 8, 9, 10, 11 };
+            findFrequencyOfDigits(arr5, arr5.Length);
+            int[] arr6 = new int[] { 11, 10, 9, 8, 7, 6,
+                            5,  4,  3, 2, 1 };
+            findFrequencyOfDigits(arr6, arr6.Length);
         }
     }
 }

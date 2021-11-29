@@ -483,7 +483,114 @@ Time Complexity: O(m+n) where m and n are the sizes of given two linked lists.
             */
         }
     }
+    public class LinkedListDeleteAltNode
+    {
+        Node head;
+        /// <summary>
+        /// iterative method
+        /// </summary>
+        void deleteAlt()
+        {
+            if (head == null)
+                return;
 
+            Node prev = head;
+            Node now = head.ptr;
+
+            while (prev != null && now != null)
+            {
+                /* Change next link of previous node */
+                prev.ptr = now.ptr;
+
+                /* Free node */
+                now = null;
+
+                /*Update prev and now */
+                prev = prev.ptr;
+                if (prev != null)
+                    now = prev.ptr;
+            }
+        }
+        /// <summary>
+        /// recursive method time complexity O(n)
+        /// </summary>
+        Node deleteAlt(Node head)
+        {
+            if (head == null)
+                return null;
+
+            Node node = head.ptr;
+
+            if (node == null)
+                return null;
+
+            /* Change the next link of head */
+            head.ptr = node.ptr;
+
+
+            /* Recursively call for the new next of head */
+            head.ptr = deleteAlt(head.ptr);
+            return head.ptr;
+        }
+
+        /* Utility functions */
+
+        /* Inserts a new Node at front of the list. */
+        void push(int new_data)
+        {
+            /* 1 & 2: Allocate the Node &
+                    Put in the data*/
+            Node new_node = new Node(new_data);
+
+            /* 3. Make next of new Node as head */
+            new_node.ptr = head;
+
+            /* 4. Move the head to point to new Node */
+            head = new_node;
+        }
+        void printList()
+        {
+            Node temp = head;
+            while (temp != null)
+            {
+                Console.Write(temp.data + " ");
+                temp = temp.ptr;
+            }
+            Console.WriteLine();
+        }
+
+        /* Driver code*/
+        public static void Main(String[] args)
+        {
+            LinkedListDeleteAltNode llist = new LinkedListDeleteAltNode();
+
+            /* Constructed Linked List is
+            1->2->3->4->5->null */
+            llist.push(5);
+            llist.push(4);
+            llist.push(3);
+            llist.push(2);
+            llist.push(1);
+
+            Console.WriteLine("Linked List before" +
+                                "calling deleteAlt() ");
+            llist.printList();
+
+            llist.deleteAlt();
+
+            Console.WriteLine("Linked List after" +
+                                "calling deleteAlt() ");
+            llist.printList();
+            /*
+output
+List before calling deleteAlt() 
+1 2 3 4 5 
+List after calling deleteAlt() 
+1 3 5 
+Time Complexity: O(n) where n is the number of nodes in the given Linked List.
+            */
+        }
+    }
     class Node
     {
         public int data;

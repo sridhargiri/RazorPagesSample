@@ -125,4 +125,75 @@ Example
             int a = Solution(arr); Console.WriteLine(a);//output 93
         }
     }
+    /*
+     https://www.geeksforgeeks.org/program-for-sum-of-the-digits-of-a-given-number/?ref=lbp
+    Program for Sum of the digits of a given number
+Difficulty Level : Easy
+Last Updated : 03 Jun, 2021
+Given a number, find sum of its digits.
+
+Examples : 
+
+Take a step-up from those "Hello World" programs. Learn to implement data structures like Heap, Stacks, Linked List and many more! Check out our Data Structures in C course to start learning today.
+Input : n = 687
+Output : 21
+
+Input : n = 12
+Output : 3
+Recommended: Please solve it on “PRACTICE ” first, before moving on to the solution. 
+ 
+General Algorithm for sum of digits in a given number: 
+
+Get the number
+Declare a variable to store the sum and set it to 0
+Repeat the next two steps till the number is not 0
+Get the rightmost digit of the number with help of the remainder ‘%’ operator by dividing it by 10 and add it to sum.
+Divide the number by 10 with help of ‘/’ operator to remove the rightmost digit.
+Print or return the sum
+Below are the solutions to get sum of the digits. 
+1. Iterative:
+     */
+    public class SumDigits
+    {
+        /* Function to get sum of digits */
+        static int getSum(int n)
+        {
+            int sum = 0;
+
+            while (n != 0)
+            {
+                sum = sum + n % 10;
+                n = n / 10;
+            }
+
+            return sum;
+        }
+        /*
+         how to compute in a single line? 
+The below function has three lines instead of one line, but it calculates the sum in line. It can be made one-line function if we pass the pointer to sum. 
+        */
+        static int getSumSingleLine(int n)
+        {
+            int sum;
+
+            /* Single line that calculates sum */
+            for (sum = 0; n > 0; sum += n % 10, n /= 10)
+                ;
+
+            return sum;
+        }
+        /* Function to get sum of digits Recursive */
+        static int sumDigitsRecursive(int no)
+        {
+            return no == 0 ? 0 : no % 10 + sumDigitsRecursive(no / 10);
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            int n = 687;
+            Console.Write(getSum(n));//op 21
+        }
+    }
+
 }

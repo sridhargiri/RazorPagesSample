@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 /*
- Given a binary tree, find the maximum path sum. The path may start and end at any node in the tree.
+https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/
+Given a binary tree, find the maximum path sum. The path may start and end at any node in the tree.
 
 Example:
 
@@ -206,6 +207,10 @@ See the below diagram for more clarity about execution of the recursive function
             //https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
             //try all below for AMZ binary tree
             //https://www.geeksforgeeks.org/amazon-interview-experience-for-sde-off-campus/
+            /*
+             Output: Max path sum is 42
+             Time Complexity: O(n) where n is number of nodes in Binary Tree.
+            */
         }
     }
 
