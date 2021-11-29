@@ -1,0 +1,78 @@
+<h1 mat-dialog-title appDraggableDialog>{{data.days.ProjectName}} | {{data.days.TEDate.substr(0,10)}}</h1>
+<!-- <div mat-dialog-content> -->
+<div class="" *ngFor="let pn of data let i = index">
+
+      <div *ngIf="i == 0">
+
+       <mat-form-field class="block">
+            <mat-label>Reason Code</mat-label>            
+              <select matNativeControl required [(ngModel)]="data.days.ReasonId">
+                  <option [value]="0">None</option>
+                   <option *ngFor="let p of pn.reasonList" [value]="p.Text">{{p.Text}}
+                   </option>
+              </select>
+        </mat-form-field>
+        <mat-form-field class="block">  
+             <mat-label>Approver </mat-label>
+
+              <select matNativeControl required>
+                  <option [value]="0">None</option>
+                   <option *ngFor="let p of pn.approverList" [value]="p.Text">{{p.Text}}
+                   </option>
+              </select>
+        </mat-form-field>
+         <mat-form-field class="block">  
+             <mat-label>External Note: </mat-label>
+
+              <select matNativeControl required>
+                  <option >None</option>
+                   <option >External Note</option>
+              </select>
+        </mat-form-field>
+
+             <mat-label>Copy to Internal Note</mat-label>
+              <a mat-raised-button class="project-save-btn">Copy</a>
+        <mat-form-field class="block">  
+             <mat-label>Internal Note: </mat-label>
+               <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
+        <mat-form-field class="block">  
+             <mat-label>SR# </mat-label>
+               <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
+        <mat-checkbox>Travel</mat-checkbox>
+        <div mat-dialog-actions>
+          <a mat-raised-button class="project-save-btn">SAVE</a>
+          <a mat-raised-button style="border: 1px solid #ccc;"  (click)="onNoClick()">CANCEL</a>
+        </div>
+    </div>
+<!--<div *ngFor="let project of data let i = index">
+      <div *ngIf="ProjectName ==project.ProjName">
+
+                  <span class="project-role"> 
+                    <select matNativeControl required>
+                    <option [value]="Select">Select</option>
+                            <option *ngFor="let pn of project.ProjectRoles" [value]="pn.Text">{{pn.Text}}
+                            </option>
+                    </select>
+                  </span>
+
+                  <span class="project-task"> 
+                    <select matNativeControl required>
+                    <option [value]="Select">Select</option>
+                           <option *ngFor="let pq of project.SubProjects let i = index" [value]="pq.SubProjName">{{pq.SubProjName}}
+                           </option>
+                    </select>
+                  </span>
+                  <span class="project-activities"> 
+                    <select matNativeControl>
+                    <option [value]="Select">Select</option>
+                          <option *ngFor="let pe of project.ProjectActivities" [value]="pe.Text">{{pe.Text}}
+                          </option>
+                    </select>
+                  </span>
+      </div>
+</div>
+</div> -->
+
+</div>

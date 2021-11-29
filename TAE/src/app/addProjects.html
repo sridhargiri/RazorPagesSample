@@ -1,0 +1,98 @@
+<h1 mat-dialog-title appDraggableDialog>Timesheet Configuration</h1>
+<div class="clearfix" >
+      <div class="addprojects-configuration">
+             <mat-form-field class="block">
+             <mat-label>Project Name</mat-label> 
+              <select matNativeControl required [(ngModel)] = "ProjectName">
+                  <option [value]="Select">Select</option>
+                   <option *ngFor="let pn of data" [value]="pn.ProjName">{{pn.ProjName}}
+                   </option>
+              </select>
+            </mat-form-field>
+            <div *ngFor="let project of data let i = index">
+              <div *ngIf="ProjectName ==project.ProjName">
+                 <mat-form-field class="block">
+                  <mat-label>Role Name</mat-label> 
+                    <select matNativeControl required>
+                    <option [value]="Select">Select</option>
+                            <option *ngFor="let pn of project.ProjectRoles" [value]="pn.Text">{{pn.Text}}
+                            </option>
+                    </select>
+                 </mat-form-field>
+
+                   <mat-form-field class="block">
+                    <mat-label>Project Task</mat-label>  
+                    <select matNativeControl required>
+                    <option [value]="Select">Select</option>
+                           <option *ngFor="let pq of project.SubProjects let i = index" [value]="pq.SubProjName">{{pq.SubProjName}}
+                           </option>
+                    </select>
+                 </mat-form-field>
+                  <mat-form-field class="block">
+                    <mat-label>Activity Name</mat-label>   
+                    <select matNativeControl>
+                    <option [value]="Select">Select</option>
+                          <option *ngFor="let pe of project.ProjectActivities" [value]="pe.Text">{{pe.Text}}
+                          </option>
+                    </select>
+                 </mat-form-field>
+
+                  <mat-form-field class="block">
+                    <mat-label>Project Type</mat-label>
+                  <select matNativeControl>
+                    <option [value]="Select">Select</option>
+                          <option [value]="project.ProjType">{{project.ProjType}}
+                          </option>
+                    </select>            
+                  </mat-form-field>
+
+              </div>
+              
+            </div>
+     <div mat-dialog-actions>
+                <a mat-raised-button class="project-save-btn">SAVE</a>
+                <a mat-raised-button style="border: 1px solid #ccc;"  (click)="onNoClick()">CANCEL</a>
+     </div>
+</div>
+<br>
+
+</div>
+<div class="clearfix" >
+          <div class="timesheet-table timesheet-table-header clearfix">
+                <div class="timesheet-table-leftblock hidden-xs">
+                   <span><strong>Is Default</strong></span>
+                   <span class="project-name"><strong>Project Name</strong></span>
+                   <span class="project-role"><strong>Role Name</strong></span>
+                   <span class="project-task"><strong>Project Task</strong></span>
+                   <span class="project-activities"><strong>Activity Name</strong></span>
+                   <span class="project-type"><strong>Project Type</strong></span>
+                   <span class="project-type"><strong>Delete</strong></span>
+                </div>
+          </div>
+      
+
+
+<div class="timesheet-table clearfix" *ngFor="let userDefault of data.userDefaults">
+    
+          <div class="timesheet-table-leftblock hidden-xs"> 
+              <mat-radio-button [value]="userDefault.IsDefault" [checked] = "userDefault.IsDefault"></mat-radio-button> 
+              
+                      <span class="project-name" >{{userDefault.ProjName}}</span>
+                       <span class="project-role">{{userDefault.RoleName}}</span>
+                       <span class="project-task">{{userDefault.SubProjName}}</span>
+                       <span class="project-activities">{{userDefault.ActName}}</span>
+                       <span class="project-type">{{userDefault.Type}}</span>
+                       <span class="project-type" ><img [class.disabled]="disableButton" src="../assets/images/delete-icon.png" alt="Delete" (click)="deleteSelectedDefaultRows(userDefault)" /></span>
+
+          </div>
+      
+  </div>
+
+</div>
+
+
+
+<div mat-dialog-actions>
+                <a mat-raised-button class="project-save-btn" (click)="onNoClick()">SAVE DEFAULT</a>
+                <a mat-raised-button style="border: 1px solid #ccc;"  (click)="onNoClick()">CANCEL</a>
+     </div>

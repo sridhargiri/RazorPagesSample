@@ -1,0 +1,29 @@
+<h1 mat-dialog-title appDraggableDialog>Add Locations</h1>
+
+
+<div *ngFor="let pn of data let i = index">
+    <div *ngIf = "i == 0">
+            <div *ngFor="let date of data.WeekDates let j = index">
+                  <mat-form-field class="block">
+                        <mat-label>
+                         {{date.Date}}{{' ' }}  {{data.Month}} {{' ' }} {{date.Day}} Work Location :
+                       </mat-label>
+                         <div *ngFor="let loc of data.UserWorkLocationIdArray let k = index">
+                         <div *ngIf = "j == k">
+                                <select matNativeControl [(ngModel)] = "loc">
+                                <option [value]="0">Select a Location...</option>
+                                <option *ngFor="let p of data" [value]="p.Id">{{p.Text}}
+                                     </option>
+                                </select>
+                          </div>
+                          </div>
+                   </mat-form-field>
+            </div>
+    </div>
+</div>
+        
+
+<div mat-dialog-actions>
+          <a mat-raised-button class="project-save-btn" (click)="onNoClick()">SAVE</a>
+          <a mat-raised-button style="border: 1px solid #ccc;"  (click)="onNoClick()">CANCEL</a>
+</div>

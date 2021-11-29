@@ -1,0 +1,608 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+	background: #fff;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.errorMessage{
+	color: red;
+}
+
+tr:hover {
+  background-color: lightyellow;
+}
+
+/*to enable progress bar*/
+.ng-star-inserted {
+    animation: 1px !important;
+    transition-property: stroke !important;
+    animation-duration: 4s !important;
+    animation-timing-function: cubic-bezier(.35,0,.25,1) !important;
+    animation-iteration-count: infinite !important;
+  }
+/*to enable progress bar*/
+
+.sg-logo{
+   text-align: center; 
+   margin-top: 10px;
+   border-bottom: 1px solid #024f7e;
+   box-shadow: inset 0 -1px 0px #067ac1; 
+   padding-bottom: 10px;
+}
+.mobile-menu{
+	float: left;
+	padding: 19px 15px 20px 20px;
+	border-right: 1px solid #ddd;
+}
+header{
+	box-shadow: 0 1px 13px 2px #ccc;
+    margin-bottom: 20px;
+}
+.header-menu-list{
+	float: right;
+	list-style: none;
+	margin: 0;
+    padding: 0;
+}
+.header-menu-list li:first-child{
+	border-left: 1px solid #ddd;
+}
+.header-menu-list li{
+    padding: 0 15px;
+    line-height: 41px;
+    border-right: 1px solid #ddd;
+    float: left;
+    cursor: pointer;
+    position: relative;
+}
+.alert-count{
+    position: absolute;
+    background: #f74d4d;
+    top: 3px;
+    right: 2px;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+.header-menu-list li img{
+	padding-top: 17px;
+}
+.leftmenu-list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+}
+.leftmenu-list a{
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 10px 10px 10px 25px;
+}
+.user-details{
+	padding: 11px 10px 0 10px;
+	position: relative;
+}
+.user-details img{
+	float: left;
+	margin-right:10px;
+}
+.user-details span{
+	margin-left:5px;
+	display: block;
+	font-size: 13px;
+	white-space: nowrap;
+	padding-right: 25px;
+}
+.left-side-section{
+	width: 230px;
+	float: left;
+}
+.mar-0{
+	margin: 0px!important;
+}
+.text-right{
+	text-align: right;
+}
+.hidden{
+	display: none;
+}
+main.active .left-side-section{
+	left: -230px;
+    transition: left 1s;
+    -webkit-transition: left 1s;
+}
+main.active .right-side-section{
+	margin-left:0;
+}
+.left-side-section .mat-expansion-panel, 
+.left-side-section .mat-list .mat-list-item, .left-side-section .mat-nav-list .mat-list-item, 
+.left-side-section .mat-selection-list .mat-list-item,
+.left-side-section .mat-expansion-indicator::after, 
+.left-side-section .mat-expansion-panel-header-description{
+	background: transparent;
+	color: #fff;
+}
+.left-side-section{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 230px;
+	background: #0066a4;
+	transition: left 1s;
+    -webkit-transition: left 1s;
+}
+
+.left-side-section{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 230px;
+	} .mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.left-side-section .mat-expansion-panel-header{
+	height: 40px !important;
+}
+.left-side-section .mat-expansion-panel-header-title{
+	color: #fff;
+}
+
+.left-side-section mat-accordion{
+    display: block;
+}
+
+.left-side-section .mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow:none;
+}
+.left-side-section .mat-expansion-panel-header{
+	border-bottom: 1px solid #024f7e;
+	box-shadow: inset 0 -1px 0px #067ac1;
+}
+.left-side-section .mat-expansion-panel-body{
+	padding: 0;
+}
+.left-side-section .mat-line img{
+	width: 20px;
+    margin-right: 10px;
+}
+
+.left-side-section .mat-list-option:focus, 
+.left-side-section .mat-list-option:hover, 
+.left-side-section .mat-nav-list .mat-list-item:focus, 
+.left-side-section .mat-nav-list .mat-list-item:hover{
+	background: #02395b;
+	box-shadow: 0 3px 0px #012b44;
+}
+.right-side-section{	
+	margin-left: 230px;
+	 transition: margin-left 1s;
+    -webkit-transition: margin-left 1s;
+}
+ .right-side-section .timesheet-table-block{
+	margin: 0 10px;
+	background: #fff;
+	padding: 10px;	
+}
+.page-title{
+	background: #0066a4;
+	margin: 10px 20px;
+	color: #fff;
+	line-height: 35px;
+	letter-spacing: 1px;
+}
+.page-title img{
+    float: left;
+    width: 20px;
+    margin-right: 5px;
+    background: #034e7b;
+    padding: 8px;
+}
+.bg-primary{
+	background: #0066a4;
+}
+.weekly-choose-block{
+	    margin: 10px 10px 0 10px;
+}
+.weekly-choose{
+	float: left;
+	margin-top: 10px;
+    margin-left: 10px;
+}
+.prev-icon{
+	float: left;
+	margin-right: 10px;
+}
+.next-icon{
+	float: left;
+	margin-left: 10px;
+}
+.year-datepicker .mat-form-field-infix{
+	display: none;
+}
+mat-form-field.year-datepicker{
+    border: 1px solid #ccc;
+    height: 30px;
+    margin-left: -1px;
+    font-size: 20px;
+  }
+.weekly-choose .mat-form-field{
+    float: left;
+}
+.weekly-choose .mat-form-field-infix{
+    background: #fff;
+    width: 155px;
+    padding: 8px 15px 8px 5px;
+    line-height: initial;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+.weekly-choose .mat-form-field-wrapper{
+	padding: 0;
+}
+.weekly-choose .mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+}
+.next-icon{
+	transform: rotate(180deg);
+}
+.copy-paste-filter{
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.copy-paste-filter li{
+	display: inline-block;
+	font-size: 11px;
+	text-align: center;
+	margin-right: 15px;
+	cursor: pointer;
+}
+.disabled{
+	opacity: 0.3;
+	text-decoration: none;
+}
+.copy-paste-filter li div{
+	margin-top: -5px;
+}
+.timesheet-table{
+    padding: 13px 0px 13px 10px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+}
+.timesheet-table:last-child{
+	border: none;
+}
+/*.timesheet-table:nth-child(odd){
+	background: #dedede;
+}*/
+.timesheet-table-leftblock{
+    float: left;
+    margin-top: 13px;
+    font-size: 13px;
+}
+.timesheet-table-leftblock img{
+	width: 20px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.timesheet-table-leftblock .mat-checkbox-inner-container{
+	width: 18px!important;
+	height: 18px!important;
+	margin-right: 10px;
+}
+.timesheet-table-leftblock *{
+	display: inline-block;
+}
+.timesheet-table-leftblock .no-count{
+	padding-right:10px; 
+}
+.timesheet-table-leftblock .project-name{
+	padding-left:10px; 
+	width: 200px;
+	padding-right: 10px;
+}
+.timesheet-table-leftblock .project-role{
+	width: 110px;
+	padding-right: 10px;
+}
+.timesheet-table-leftblock .project-task{
+	width: 150px;
+	padding-right: 10px;
+}
+.timesheet-table-leftblock .project-activities{
+	width: 150px;
+	padding-right: 10px;
+}
+.timesheet-table-leftblock .project-type{
+	width: 40px;
+}
+.timesheet-table-rightblock{
+    float: right;
+    width: 460px;
+    height: 34px;
+}
+.timesheet-table-header{
+	background: #b7b7b7!important;
+}
+.table-title-calendar{
+	border: 1px solid #04588b;
+	display: inline-block;
+	width: 35px;
+	text-align: center;
+	margin:0 10px;
+	background: #fff;
+}
+.table-title-calendar.title .title{
+	font-size: 14px;
+	line-height: 19px;
+}
+.table-calendar-notes{
+	border: 1px solid #a1a1a1;
+	display: inline-block;
+	width: 35px;
+	text-align: center;
+	margin:0 10px;
+	background: #fff;
+	cursor: pointer;
+}
+.table-calendar-notes:hover{
+	box-shadow: 0 0 7px #616060;
+}
+.table-calendar-notes img{
+	margin: 3px 0 0 3px;
+}
+.table-title-calendar .description{
+	background: #04588b;
+	color: #fff;
+	font-size: 12px;
+}
+.timesheet-table-rightblock mat-form-field{	
+	margin:0 10px;
+}
+
+.timesheet-table-rightblock mat-form-field img{
+    position: absolute;
+    right: -15px;
+    top: 23px;
+    cursor: pointer;
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;	
+}
+.timesheet-table-rightblock mat-form-field.active img{
+	opacity: 1;
+	width: auto;
+	height: 20px;
+}
+.timesheet-table-rightblock .mat-form-field-infix{
+	width: 35px;
+	border: 1px solid #a1a1a1;
+	text-align: center;
+	background: #fff;
+}
+.timesheet-table-rightblock mat-form-field.error .mat-form-field-infix{
+	border: 1px solid #fb3030;
+}
+.rightside-totalhours .mat-form-field-infix{
+    border: 1px solid transparent;    
+    box-shadow: 0 0 10px 3px #e0e0e0;
+}
+.timesheet-table-rightblock.project-hours .mat-form-field-infix {
+    border: 1px solid transparent;    
+    box-shadow: 0 0 10px 3px #e0e0e0;
+}
+.timesheet-table-rightblock .mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+}
+.add-project-btn{
+	background: #04588b;
+	color: #fff;
+}
+.add-project-btn img{
+	float: left;
+	margin-right: 5px;
+}
+.project-save-btn{
+	background: #04588b;
+	color: #fff;
+	float: right;
+}
+.total-hours{
+	background: #04588b;
+	color: #fff;
+	width: 35px;
+	line-height: 35px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 10px;
+}
+footer{
+	text-align: center;
+	font-size: 13px;
+	padding: 10px 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+/* dialog modal design */
+mat-dialog-container .mat-dialog-title{
+	margin-left: -24px;
+    margin-right: -24px;
+    background: #00456f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: -24px;
+    padding-left: 20px;
+}
+mat-form-field.block{
+	display: block;
+}
+/* dialog modal design */
+@media screen and (min-width: 1400px) {
+	.timesheet-table-leftblock .project-name {
+	    width: 170px;
+	}
+	.timesheet-table-leftblock .project-activities {
+	    width: 130px;
+	}
+}
+@media screen and (max-width: 1395px) {
+	.timesheet-table-rightblock{
+	    width: 400px;
+	}
+	.timesheet-table-leftblock .project-name {
+	    width: 175px;
+	}
+	.timesheet-table-leftblock .project-task {
+	    width: 110px;
+	}
+	.timesheet-table-leftblock .project-activities {
+	    width: 105px;
+	}
+	.timesheet-table-rightblock mat-form-field {
+	    margin: 0 6px;
+	}
+	.table-title-calendar{
+		margin: 0 6px;
+	}
+	footer{
+		position: relative;
+		margin-top: 25px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.left-side-section{
+		display: none;
+	}
+	.js-leftsidemenu-mobile{
+		display:block;
+	}
+	.tae-logo{
+		width: 180px;
+		left: 10px;
+	}
+	.right-side-section {
+		     width: 100%;
+		     margin:0;
+	}
+}
+@media screen and (max-width: 767px) {
+	.timesheet-table-leftblock .mat-checkbox-inner-container{
+		margin-right: 0;
+	}
+	.timesheet-table-leftblock {
+		width: 99%;
+		margin-bottom: 10px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.timesheet-table-leftblock *{
+	    width: auto!important;
+	}
+	.timesheet-table-leftblock .no-count {
+		display: none;
+	}
+	.timesheet-table-leftblock .project-name,
+	.timesheet-table-leftblock .project-role,
+	.timesheet-table-leftblock .project-task,
+	.timesheet-table-leftblock .project-activities,
+	.timesheet-table-leftblock .project-type{
+		padding-right: 10px;
+	}
+	.timesheet-table-rightblock {
+	    float: none;
+	    height: auto;
+	     width: 100%;
+	     text-align: right;
+	}
+	.timesheet-table-rightblock .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+	    padding-bottom: 0.7em;
+	}
+	.timesheet-table-header	.timesheet-table-rightblock{
+		padding-bottom: 5px;
+	}
+	.hidden-xs{
+		display: none!important;
+	}	
+	.visible-xs{
+		display: block!important;
+	}
+	.hidden.visible-xs{
+		display: inline-block!important;
+	}
+	.table-calendar-notes{
+		margin-bottom: 5px!important;
+	}
+}
+@media screen and (max-width: 460px) {
+	/*.timesheet-table{
+		padding-left: 5px;
+	}*/
+	.timesheet-table-rightblock mat-form-field, 
+	.table-title-calendar, 
+	.table-calendar-notes {
+	    margin: 0 10px 0 5px;
+	}
+
+}
+@media screen and (max-width: 420px) {
+	.timesheet-table-rightblock .mat-form-field-infix , 
+	.table-title-calendar,
+	.table-calendar-notes{
+	    width: 30px;
+	}
+	.right-side-section .timesheet-table-block{
+		margin: 0;
+	}
+	
+}
+@media screen and (max-width: 368px) {	
+	.tae-logo, .sg-logo img{
+		width: 120px;
+	}
+	.timesheet-table-rightblock mat-form-field,
+	.table-title-calendar,
+	.table-calendar-notes {
+	    margin: 0px 7px 0 0px;
+	}
+	.weekly-choose .mat-form-field-infix{
+		font-size: 13px;
+		padding: 7px 15px 7px 0;
+	}
+}
+@media screen and (max-width: 325px){
+	.tae-logo, .sg-logo img{
+		width: 110px;
+	}
+	.timesheet-table-rightblock mat-form-field , 
+	.table-title-calendar,
+	.table-calendar-notes{
+	    margin: 0px 5px 0 0px;
+	}
+	.weekly-choose .mat-form-field-infix{
+		font-size: 12px;
+		padding: 8px 15px 8px 0;
+	}
+}

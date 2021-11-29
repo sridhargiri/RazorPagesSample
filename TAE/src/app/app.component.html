@@ -1,0 +1,310 @@
+<main>
+<!-- Left side menu block start-->
+<section  class="left-side-section " id="sampleAdd">
+  <div class="sg-logo">
+      <img width="135" class="" src="../assets/images/sg-logo-white.png" alt="SGLogo"/>
+   </div> 
+ 
+   <mat-accordion>
+       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              USER AREA
+            </mat-panel-title>     
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <mat-list-item>
+             <a matLine href="..."> <img src="../assets/images/timesheet-icon.png" alt="Time Sheet" /> Time Sheet</a>    
+          </mat-list-item>
+          <mat-list-item>
+             <a matLine href="..."> <img src="../assets/images/timesheet-configuration-icon.png" alt="Time " /> Time Configuration</a>    
+          </mat-list-item>
+          <mat-list-item>
+             <a matLine href="..."><img src="../assets/images/time-inquiry-icon.png" alt="Time " /> Time Inquiry</a>    
+          </mat-list-item>
+          <mat-list-item>
+             <a matLine href="..."><img src="../assets/images/time-entry-icon.png" alt="Time " /> Time Entry</a>    
+          </mat-list-item>
+        </mat-nav-list>
+       </mat-expansion-panel>
+   </mat-accordion>
+   <mat-accordion>
+       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              REPORT
+            </mat-panel-title>     
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          
+          <mat-list-item>
+             <a matLine href="...">Time Inquiry</a>    
+          </mat-list-item>
+          <mat-list-item>
+             <a matLine href="...">Time Entry</a>    
+          </mat-list-item>
+        </mat-nav-list>
+       </mat-expansion-panel>
+   </mat-accordion>
+  </section>
+  <!-- Left side menu block end-->
+
+  <!-- right side block start-->
+  <section class="right-side-section"> 
+
+  <header class="clearfix">
+   <img matTooltip="Menu" class="mobile-menu" src="../assets/images/left-side-menu.png" alt="mobile Menu" />
+
+  <ul class="leftmenu-list">
+    <li>
+      <div class="user-details clearfix">
+        <img src="../assets/images/user-icon.png" alt="User Icon" />
+       <span style="margin-top: 4px;font-size: 11px;">Welcome,</span>
+       <span> {{userData}}</span>
+     </div>
+    </li> 
+ </ul>
+
+  <ul class="header-menu-list">    
+    <li matTooltip="Home"><img src="../assets/images/home-icon.png" alt="Home" /></li>
+    <li matTooltip="Help"> <img src="../assets/images/help-icon.png" alt="Help" /></li>
+    <li matTooltip="Alert"> 
+      <img src="../assets/images/alert-icon.png" alt="Alert" />
+      <span class="alert-count">10</span>
+    </li>
+    <li matTooltip="Logout"> <img src="../assets/images/logout.png" alt="logout" /></li>
+    <!--  <li> <img src="../assets/images/user-icon.png" alt="User" /></li> -->
+  </ul>
+<div style="float: right;line-height: 55px;padding-right: 15px;">Time Allocation Express</div>
+</header>       
+       <div class="page-title">
+      <img src="../assets/images/timesheet-title-icon.png" alt="Timesheet" />
+      Timesheet
+    </div>
+    <div class="weekly-choose-block clearfix">
+      <div class="weekly-choose">
+        <img class="prev-icon" src="../assets/images/prev-next-icon.png" alt="PREV NEXT" />
+            <mat-form-field>
+              <select matNativeControl required [(ngModel)] = "selectedValue" (ngModelChange)="weekLevelChangeAction(selectedValue)">
+                  <option *ngFor="let weeks of weekList" [value]="weeks.Week">{{weeks.Week}}
+                  </option>
+              </select>
+            </mat-form-field>
+             <mat-form-field class="year-datepicker">
+              <input style="display: none;" matInput [matDatepicker]="picker" [(ngModel)] = "eventDate" (dateChange)="dateChangeEvent($event)" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker (ngModelChange)="dateChangeEvent($event)"></mat-datepicker>
+           </mat-form-field>
+        <img  class="next-icon" src="../assets/images/prev-next-icon.png" alt="PREV NEXT" />
+
+       
+
+      </div>
+      <ul class="copy-paste-filter">
+
+      <li (click)="addNewRow()">
+           <img src="../assets/images/add-icon.png" alt="Add" />
+           <div>Add Row</div>
+        </li>
+
+       <li (click)="openDialogToAddProject()">
+           <img src="../assets/images/add-icon.png" alt="Add" />
+           <div>Add</div>
+        </li>
+        <li (click)="openAddLocationsDialog(selectedValue)">
+           <img src="../assets/images/location-icon.png" alt="Copy" />
+           <div>Work</div>
+        </li>
+        <li>
+           <img [class.disabled]="disableButton" src="../assets/images/copy-icon.png" alt="Copy" (click)="copySelectedRows()" />
+           <div [class.disabled]="disableButton">Copy</div>
+        </li>
+        <li>
+           <img [class.disabled]="copied" src="../assets/images/paste-icon.png" alt="Paste" (click)="pasteSelectedRows()" />
+           <div [class.disabled]="copied">Paste</div>
+        </li>
+        <li>
+           <img src="../assets/images/edit-icon.png" alt="Edit" />
+           <div>Edit</div>
+        </li>
+        <li>
+           <img [class.disabled]="disableButton" src="../assets/images/delete-icon.png" alt="Delete" (click)="deleteSelectedRows()" />
+          <div [class.disabled]="disableButton">Delete</div> 
+          <!--  <a [disabled]="disabledAgreement" (click)="Save(weekEntries)">Delete</a>-->
+        </li>
+      </ul>
+    </div>
+    <div class="timesheet-table-block">
+    <div class="timesheet-table timesheet-table-header clearfix">
+      <div class="timesheet-table-leftblock hidden-xs">
+         <mat-checkbox style="visibility: hidden;"></mat-checkbox> 
+         <span class="no-count"><strong>#</strong></span>
+         <span class="project-name"><strong>PROJECTS</strong></span>
+         <span class="project-role"><strong>ROLE</strong></span>
+         <span class="project-task"><strong>PROJECTS TASK</strong></span>
+         <span class="project-activities"><strong>ACTIVITIES</strong></span>
+         <span class="project-type"><strong>TYPE</strong></span>
+      </div>
+      <div class="timesheet-table-rightblock"> 
+              <div class="table-title-calendar" *ngFor="let days of weekDays let i = index">
+                    <div class="title">{{days.Date}}</div>
+                    <div class="description">{{days.Day}}</div>
+              </div>
+              <div class="table-title-calendar title hidden-xs">
+                  <div class="title">Total</div>
+                  <div class="description">HRS</div>
+              </div>
+      </div>
+    </div>
+
+
+    <div class="timesheet-table clearfix" *ngFor="let days of weekEntries let i = index">
+      <div class="timesheet-table-leftblock">
+            <mat-checkbox id="{{i}}" (change)="changeCheck($event, days)" [(ngModel)] = "checkedBox[i]"></mat-checkbox> 
+            <span class="no-count">{{i+1}}</span> 
+            <span class="project-name"> 
+              <select matNativeControl required [(ngModel)] = "days.ProjName" (ngModelChange)="projectLevelChangeAction(days, index)">
+                   <option  *ngFor="let q of projects let i" [value]="q.ProjName">{{q.ProjName}}
+                   </option>
+              </select>
+            </span>
+
+            <span class="project-role"> 
+              <select matNativeControl required [(ngModel)] ="days.RoleName">
+                      <option *ngFor="let pn of days.prjs.ProjectRoles" [value]="pn.Text">{{pn.Text}}
+                      </option>
+              </select>
+            </span>
+
+            <span class="project-task"> 
+              <select matNativeControl required [(ngModel)] ="days.SubProjName">
+                     <option *ngFor="let pq of days.prjs.SubProjects let i = index" [value]="pq.SubProjName">{{pq.SubProjName}}
+                     </option>
+              </select>
+            </span>
+            <span class="project-activities"> 
+              <select matNativeControl [(ngModel)] ="days.ActName" name="days.ActName">
+                    <option *ngFor="let pe of days.prjs.ProjectActivities" [value]="pe.Text">{{pe.Text}}
+                    </option>
+              </select>
+            </span>
+
+            <span class="project-type">{{days.Type}}              
+            </span>
+
+      </div>
+      <div class="timesheet-table-rightblock">  
+            <mat-form-field [ngClass]="{'active': days.Day1.Hours > '0' && days.Day1.Hours*1 < '25', 'error': days.Day1.Hours*1 > '24'}">
+                <input matInput type="text" [(ngModel)] ="days.Day1.Hours" value="{{days.Day1 != null ? days.Day1.Hours: '0'}}" (keypress)="restrictNumeric($event)" (focusout)="restrictHours(days.Day1.Hours)"> 
+                <img src="../assets/images/note-icon.png" alt="Notes Icon" (click)="openAddNotesDialog(days.Day1)">
+            </mat-form-field> 
+            <mat-form-field [ngClass]="{'active': days.Day2.Hours > '0' && days.Day2.Hours*1 < '25', 'error': days.Day2.Hours*1 > '24'}">
+                <input matInput type="text" [(ngModel)] ="days.Day2.Hours" value="{{days.Day2 != null ? days.Day2.Hours: '0'}}" (keypress)="restrictNumeric($event)" (focusout)="restrictHours(days.Day2.Hours)">
+                <img src="../assets/images/note-icon.png" alt="Notes Icon" (click)="openAddNotesDialog(days.Day2)">
+            </mat-form-field> 
+            <mat-form-field [ngClass]="{'active': days.Day3.Hours > '0' && days.Day3.Hours*1 < '25', 'error': days.Day3.Hours*1 > '24'}">
+                <input matInput type="text" [(ngModel)] = "days.Day3.Hours" value="{{days.Day3 != null ? days.Day3.Hours: '0'}}"
+                (keypress)="restrictNumeric($event)" (focusout)="restrictHours(days.Day3.Hours)">
+                <img src="../assets/images/note-icon.png" alt="Notes Icon" (click)="openAddNotesDialog(days.Day3)">
+            </mat-form-field> 
+            <mat-form-field [ngClass]="{'active': days.Day4.Hours > '0' && days.Day4.Hours*1 < '25', 'error': days.Day4.Hours*1 > '24'}">
+                <input matInput type="text" name="days.Day4" value="{{days.Day4 != null ? days.Day4.Hours: '0'}}" [(ngModel)] = "days.Day4.Hours"
+                 (keypress)="restrictNumeric($event)" (focusout)="restrictHours(days.Day4.Hours)"> 
+                <img src="../assets/images/note-icon.png" alt="Notes Icon" (click)="openAddNotesDialog(days.Day4)">
+            </mat-form-field> 
+            <mat-form-field [ngClass]="{'active': days.Day5.Hours > '0' && days.Day5.Hours*1 < '25', 'error': days.Day5.Hours*1 > '24'}">
+                <input matInput type="text" name="days.Day5" value="{{days.Day5 != null ? days.Day5.Hours: '0'}}" [(ngModel)] = "days.Day5.Hours"
+                 (keypress)="restrictNumeric($event)" (focusout)="restrictHours(days.Day5.Hours)">
+                <img src="../assets/images/note-icon.png" alt="Notes Icon" (click)="openAddNotesDialog(days.Day5)">
+            </mat-form-field> 
+            <mat-form-field [ngClass]="{'active': days.Day6.Hours > '0' && days.Day6.Hours*1 < '25', 'error': days.Day6.Hours*1 > '24'}">
+                <input matInput type="text" name="days.Day6" value="{{days.Day6 != null ? days.Day6.Hours: '0'}}" [(ngModel)] = "days.Day6.Hours"
+                 (keypress)="restrictNumeric($event)" (focusout)="restrictHours(days.Day6.Hours)">
+                <img src="../assets/images/note-icon.png" alt="Notes Icon" (click)="openAddNotesDialog(days.Day6)">
+            </mat-form-field> 
+            <mat-form-field [ngClass]="{'active': days.Day7.Hours > '0' && days.Day7.Hours*1 < '25', 'error': days.Day7.Hours*1 > '24'}">
+                <input matInput type="text" name="days.Day7" value="{{days.Day7 != null ? days.Day7.Hours: '0'}}" [(ngModel)] = "days.Day7.Hours"
+                 (keypress)="restrictNumeric($event)" (focusout)="restrictHours(days.Day7.Hours)">
+                <img src="../assets/images/note-icon.png" alt="Notes Icon" (click)="openAddNotesDialog(days.Day7)">
+            </mat-form-field>   
+         
+             <mat-form-field class="rightside-totalhours hidden-xs">
+               <input matInput type="text" value="{{total(days)}}">             
+             </mat-form-field>
+      </div>
+    </div>
+       
+   
+   <mat-card *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">
+       <mat-card-content *ngIf="isLoading">
+            <mat-progress-spinner 
+            color="primary" mode="indeterminate" >
+              
+            </mat-progress-spinner>
+        </mat-card-content>
+  </mat-card>
+   
+    
+
+    <div class="timesheet-table clearfix">
+      <div class="timesheet-table-leftblock hidden-xs">
+         <span class="project-name"></span>
+      </div>
+      <div class="timesheet-table-rightblock project-hours">    
+         <mat-form-field>
+           <input matInput type="text" value="{{dayOneTotalHours}}">
+         </mat-form-field>
+      
+         <mat-form-field>
+           <input matInput type="text" value="{{dayTwoTotalHours}}">
+         </mat-form-field>
+      
+         <mat-form-field>
+           <input matInput type="text" value="{{dayThreeTotalHours}}">
+         </mat-form-field>
+       
+         <mat-form-field>
+           <input matInput type="text" value="{{dayFourTotalHours}}">
+         </mat-form-field>
+       
+         <mat-form-field>
+           <input matInput type="text" value="{{dayFiveTotalHours}}">
+         </mat-form-field>
+      
+         <mat-form-field>
+           <input matInput type="text" value="{{daySixTotalHours}}">
+         </mat-form-field>
+       
+         <mat-form-field>
+           <input matInput type="text" value="{{daySevenTotalHours}}">
+         </mat-form-field>
+         <br class="hidden visible-xs">
+           <span class="hidden  visible-xs">Total Hours</span>
+         <mat-form-field>           
+           <input matInput type="text" value="{{dayTotalHours}}">
+         </mat-form-field>
+      </div>
+    </div>
+
+       
+
+        <div class="timesheet-table clearfix">
+      <div class="mar-0 ">
+          <a mat-raised-button [disabled]="hoursError" (click)="Save(weekEntries)" id="sampleAdd" class="project-save-btn">SAVE</a>
+          <a mat-raised-button style="border: 1px solid #ccc;">CANCEL</a>
+      </div>
+    </div>
+
+       <!-- <div [class.errorMessage]="hoursError">{{errorText}}</div> -->
+
+        <div [class.errorMessage]="hoursError" *ngFor="let s of errorText.split('  ')">
+      {{s}} <br/>
+        </div> 
+
+    </div>   
+  </section>
+</main>
+
+<footer>© 2018 Scientific Games. All Rights Reserved.</footer>
+
+
