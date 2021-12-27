@@ -344,4 +344,73 @@ Time Complexity: O(n)
             */
         }
     }
+    /*
+     https://www.geeksforgeeks.org/length-of-longest-subarray-with-smaller-elements-on-immediate-left-for-each-array-element/
+    Length of longest subarray with smaller elements on immediate left for each Array element
+Difficulty Level : Basic
+Last Updated : 13 Dec, 2021
+Given an array arr[] of length N, the task is to find the length of the longest subarray with smaller elements on the immediate left for each element in the given array.
+
+Example:
+Input: arr[] = { 2, 1, 7, 6, 7 }
+Output: 0 0 2 0 1
+Explanation: 
+Index 0 (2): No substring is present to the immediate left having all smaller elements. So, length=0
+Index 1 (1): No substring is present to the immediate left having all smaller elements. So, length=0
+Index 2 (7): Substring {2, 1} is present to the immediate left having all smaller elements. So, length=2
+Index 3 (6): No substring is present to the immediate left having all smaller elements. So, length=0
+Index 4 (2): Substring {6} is present to the immediate left having all smaller elements. So, length=1
+
+
+
+Input: arr[] = { 4, 5, 7, 6, 10 }
+Output: 0 1 2 0 4
+
+ 
+Approach: For every element travel to its left until the element to the left is greater or the array ends to find the length of the longest subarray with smaller elements on the immediate left. Follow the below steps, to solve this problem:
+
+Traverse each element in array arr[].
+For each element run another loop in the left direction.
+Count all the elements smaller than the current element until a greater element comes or the array ends.
+Print the answer according to the above observation.
+Below is the implementation of the above approach:
+     */
+    public class SubarrayLeftSmall
+    {
+        static void subarraySmallElementsToLeft(int[] arr, int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                int ans = 0;
+                for (int j = i - 1; j >= 0; j--)
+                {
+
+                    // If a greater element comes
+                    if (arr[i] <= arr[j])
+                    {
+                        break;
+                    }
+                    // Else
+                    ans++;
+                }
+                Console.WriteLine(ans + " ");
+            }
+        }
+        public static void Main(string[] args)
+        {
+            int n = 5;
+            int[] arr = { 1, 4, 2, 6, 3 };
+            subarraySmallElementsToLeft(arr, n);
+            /*
+             Output
+0 1 0 3 0 
+ 
+
+Time Complexity: O(N2)
+Auxiliary Space: O(1)
+
+ 
+             */
+        }
+    }
 }

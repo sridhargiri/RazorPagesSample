@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class ZigZag
+    public class ZigZag
     {
         /*
          Approach 1: Sort by Row
@@ -21,7 +21,7 @@ Iterate through ss from left to right, appending each character to the appropria
 The current direction changes only when we moved up to the topmost row or moved down to the bottommost row.
          */
 
-        public String convert(String s, int numRows)
+        public static String convert(String s, int numRows)
         {
 
             if (numRows == 1) return s;
@@ -46,7 +46,7 @@ The current direction changes only when we moved up to the topmost row or moved 
         }
         //Approach 2 visit by row
 
-        public String convert_(String s, int numRows)
+        public static String convert_(String s, int numRows)
         {
 
             if (numRows == 1) return s;
@@ -65,6 +65,10 @@ The current direction changes only when we moved up to the topmost row or moved 
                 }
             }
             return ret.ToString();
+        }
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(convert_("abcde",4));
         }
     }
 }

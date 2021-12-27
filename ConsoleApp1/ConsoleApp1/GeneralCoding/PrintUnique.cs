@@ -194,4 +194,113 @@ No extra space is needed, so the space complexity is constant.
              */
         }
     }
+    /*
+     https://www.geeksforgeeks.org/remove-duplicates-from-string-keeping-the-order-according-to-last-occurrences/
+    Remove duplicates from string keeping the order according to last occurrences
+Difficulty Level : Easy
+Last Updated : 10 Nov, 2021
+Given a string, remove duplicate characters from the string, retaining the last occurrence of the duplicate characters. Assume the characters are case-sensitive.
+Examples:
+ 
+
+Input : geeksforgeeks 
+Output : forgeks 
+Explanation : Please note that we keep only last occurrences of repeating characters in same order as they appear in input. If we see result from right side, we can notice that we keep last ‘s’, then last ‘k’ , and so on.
+Input : hi this is sample test 
+Output : hiampl est 
+Explanation : Here, the output contains last occurrence of every character, even ” “(spaces), and removing the duplicates. Like in this example, there are 4 spaces count, so we have only the last occurrence of space in it removing the others. And there is only last occurrence of each character without repetition. 
+Input : Abcda 
+Output : Abcda
+     */
+    public class RemoveDuplicatesOrder
+    {
+
+        /*
+         Naive Solution : Traverse the given string from left to right. For every character check if it appears on right side also. If it does, then do not include in output, otherwise include it. 
+        */
+        static String removeDuplicates_Naive(String str)
+        {
+
+            // Used as index in the modified String
+            int n = str.Length;
+
+            // Traverse through all characters
+            String res = "";
+            for (int i = 0; i < n; i++)
+            {
+
+                // Check if str[i] is present before it
+                int j;
+                for (j = i + 1; j < n; j++)
+                    if (str[i] == str[j])
+                        break;
+
+                // If not present, then add it to
+                // result.
+                if (j == n)
+                    res = res + str[i];
+            }
+
+            return res;
+        }
+        //output forgeks
+
+        /*
+         Efficient Solution : The idea is to use hashing. 
+1) Initialize an empty hash table and res = “” 
+2) Traverse input string from right to left. If the current character is not present in the hash table, append it to res and insert it in the hash table. Else ignore it. 
+        */
+        static String removeDuplicates_opt(String str)
+        {
+
+            // Used as index in the modified String
+            int n = str.Length;
+
+            // Create an empty hash table
+            HashSet<char> s = new HashSet<char>();
+
+            // Traverse through all characters
+            // from right to left
+            String res = "";
+            for (int i = n - 1; i >= 0; i--)
+            {
+
+                // If current character is not in
+                if (!s.Contains(str[i]))
+                {
+                    res = res + str[i];
+                    s.Add(str[i]);
+                }
+            }
+
+            // Reverse the result String
+            res = reverse(res);
+            return res;
+        }
+
+        static String reverse(String input)
+        {
+            char[] a = input.ToCharArray();
+            int l, r = a.Length - 1;
+
+            for (l = 0; l < r; l++, r--)
+            {
+                char temp = a[l];
+                a[l] = a[r];
+                a[r] = temp;
+            }
+            return String.Join("", a);
+        }
+
+        public static void Main(String[] args)
+        {
+            String str = "geeksforgeeks";
+            Console.Write(removeDuplicates_opt(str));
+            /*
+             output forgeks
+             Time Complexity naive: O(n) 
+             Time Complexity opt: O(n*n)
+            */
+        }
+    }
 }

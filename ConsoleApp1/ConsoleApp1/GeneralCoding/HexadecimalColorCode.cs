@@ -40,7 +40,7 @@ If all the conditions mentioned above are satisfied, then return true.
 Print answer according to the above observation.
 Below is the implementation of the above approach:
     */
-    public class HexaCode
+    public class HexadecimalColorCode
     {
         static bool isValidHexaCode(string str)
         {
@@ -74,6 +74,43 @@ Below is the implementation of the above approach:
              Output:Yes 
 
 Time Complexity: O(N)
+Auxiliary Space: O(1)
+            */
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/check-if-the-given-rgb-color-code-is-valid-or-not/
+    Check if the given RGB color code is valid or not
+    RGB Format: The RGB(Red, Green, Blue) format is used to define the color of an HTML element by specifying the R, G, B values range between 0 to 255. For example: RGB value of Red color is (255, 0, 0), Green color is (0, 255, 0), Blue color is (0, 0, 255) etc
+
+     */
+    public class RGB
+    {
+        static bool isValidRGB(int R, int G, int B)
+        {
+
+            if (R < 0 || R > 255)
+                return false;
+            else if (G < 0 || G > 255)
+                return false;
+            else if (B < 0 || B > 255)
+                return false;
+            else
+                return true;
+        }
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(isValidRGB(0, 0, 0));
+            Console.WriteLine(isValidRGB(0, 100, 255));
+            Console.WriteLine(isValidRGB(0, 200, 355));
+            Console.WriteLine(isValidRGB(-100, 0, 255));
+            /*
+             Output
+true
+true
+false
+false
+Time Complexity: O(1)
 Auxiliary Space: O(1)
             */
         }

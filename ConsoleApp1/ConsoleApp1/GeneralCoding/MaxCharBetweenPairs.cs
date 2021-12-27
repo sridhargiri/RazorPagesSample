@@ -74,8 +74,7 @@ Approach 1 (Simple): Use two nested loops. The outer loop picks characters from 
             for (int i = 0; i < n - 1; i++)
                 for (int j = i + 1; j < n; j++)
                     if (str[i] == str[j])
-                        res = Math.Max(res,
-                             Math.Abs(j - i - 1));
+                        res = Math.Max(res, Math.Abs(j - i - 1));
 
             return res;
         }
@@ -91,11 +90,11 @@ Approach 1 (Simple): Use two nested loops. The outer loop picks characters from 
              Output:  
 
 2
-Time Complexity : O(n^2)
+Time Complexity : O(n)
             Output:  
 
 2
-Time Complexity : O(n)
+Time Complexity : O(n^2)
             */
         }
     }
@@ -185,4 +184,171 @@ Another example: if str is "ghececgkaem" then your program should return 5 becau
         */
 
     }
+    /*
+     https://www.geeksforgeeks.org/count-strings-that-does-not-contain-any-alphabets-both-uppercase-and-lowercase/
+    Count Strings that does not contain any alphabet’s both uppercase and lowercase
+    Given an array of strings arr[], containing N strings, the task is to count the number of strings that do not contain both the uppercase and the lowercase character of an alphabet.
+    Input: arr[]={ “abcdA”, “abcd”, “abcdB”, “abc” }
+Output: 2
+Explanation: The first string contains both the uppercase and the lowercase character for alphabet ‘a’. Similarly 3rd string also contains the uppercase and the lowercase character for alphabet ‘b’. Hence the count of valid strings is 3.
+    Input: arr[]={ “xyz”, “abc”, “nmo” }
+Output: 3
+    Approach: The given problem can be solved using a greedy approach by iterating through all the given strings and for each alphabet check if the given string contains both its uppercase and the lowercase counterparts. Follow the below steps to solve this problem:
+
+Create a variable count to store the required count. Initialize it with 0.
+Now, traverse on each string in array arr[] and for each string store the frequency of its lowercase characters in an unordered map, M.
+Now traverse on that string, and for each uppercase letter check if the frequency of its lowercase counterpart is greater than zero. if it is, then increment the value of count by 1.
+Return count as the final answer.
+Below is the implementation of the above approach:
+
+     */
+    public class SameCharUpperLower
+    {
+
+        static int SameLetterUpperLower(List<string> arr)
+        {
+            // Variable to store the answer
+            int count = 0;
+
+            // Loop to iterate through
+            // the array arr[]
+            foreach (var x in arr)
+            {
+                bool isAllowed = true;
+
+                // Vector to store the frequency
+                // of lowercase characters
+                Dictionary<char, int> M = new Dictionary<char, int>();
+
+                // Iterater through the
+                // current string
+                foreach (var y in x)
+                {
+                    if (y - 'a' >= 0 && y - 'a' < 26)
+                    {
+                        M[y]++;
+                    }
+                }
+
+                foreach (var y in x)
+                {
+
+                    // Check if any uppercase letter
+                    // have its lowercase version
+                    if (y - 'A' >= 0 && y - 'A' < 26 && M[char.ToLower(y)] > 0)
+                    {
+                        isAllowed = false;
+                        break;
+                    }
+                }
+
+                // If current string is not a valid
+                // string, increment the count
+                if (isAllowed)
+                {
+                    count += 1;
+                }
+            }
+
+            // Return Answer
+            return count;
+        }
+        static void Main(string[] args)
+        {
+            List<string> arr = new List<string> { "abcdA", "abcd", "abcdB", "abc" };
+            Console.WriteLine(SameLetterUpperLower(arr));
+            /*
+             Output
+2
+Time Complexity: O(N * M), where M is the length of the longest string
+Auxiliary Space: O(1)
+            */
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/remove-characters-from-the-first-string-which-are-present-in-the-second-string/
+    Remove characters from the first string which are present in the second string
+    Algorithm: Let the first input string be a ”test string” and the string which has characters to be removed from the first string be a “mask”
+
+    Initialize:  res_ind = 0 // index to keep track of the processing of each character in i/p string 
+    ip_ind = 0  // index to keep track of the processing of each character in the resultant string 
+Construct count array from mask_str.The count array would be: 
+(We can use a Boolean array here instead of an int count array because we don’t need a count, we need to know only if the character is present in a mask string) 
+count[‘a’] = 1 
+count[‘k’] = 1 
+count[‘m’] = 1 
+count[‘s’] = 1
+Process each character in the input string and if the count of that character is 0, then only add the character to the resultant string. 
+str = “tet tringng” // ’s’ has been removed because ’s’ was present in mask_str, but we have got two extra characters “ng” 
+ip_ind = 11 
+res_ind = 9
+Put a ‘\0′ at the end of the string?
+
+     */
+    public class ExceptStringTwo
+    {
+        static int NO_OF_CHARS = 256;
+
+        /* Returns an array of size
+        256 containing count of
+        characters in the passed
+        char array */
+        static int[] getCharCountArray(String str)
+        {
+            int[] count = new int[NO_OF_CHARS];
+            for (int i = 0; i < str.Length; i++)
+                count[str[i]]++;
+
+            return count;
+        }
+
+        /* removeDirtyChars takes two
+        string as arguments: First
+        string (str) is the one from
+        where function removes dirty
+        characters. Second string is
+        the string which contain all
+        dirty characters which need
+        to be removed from first string */
+        static String removeDirtyChars(String str,
+                                       String mask_str)
+        {
+            int[] count = getCharCountArray(mask_str);
+            int ip_ind = 0, res_ind = 0;
+
+            char[] arr = str.ToCharArray();
+
+            while (ip_ind != arr.Length)
+            {
+                char temp = arr[ip_ind];
+                if (count[temp] == 0)
+                {
+                    arr[res_ind] = arr[ip_ind];
+                    res_ind++;
+                }
+                ip_ind++;
+            }
+
+            str = new String(arr);
+
+            /* After above step string
+            is ngring. Removing extra
+            "iittg" after string*/
+            return str.Substring(0, res_ind);
+        }
+
+        // Driver Code
+        public static void Main()
+        {
+            String str = "geeksforgeeks";
+            String mask_str = "mask";
+            Console.WriteLine(removeDirtyChars(str, mask_str));
+            /*
+             output
+            geeforgee
+Time Complexity: O(m+n) Where m is the length of the mask string and n is the length of the input string. 
+            */
+        }
+    }
+
 }

@@ -130,7 +130,11 @@ We can avoid the repeated work done is method 1 by storing the Fibonacci numbers
          Method 3 ( Space Optimized Method 2 ) 
 We can optimize the space used in method 2 by storing the previous two numbers only because that is all we need to get the next Fibonacci number in series. 
          */
-
+        /*
+Input = 9 Output = 34
+Time Complexity:O(n) 
+Extra Space: O(1)
+        */
         static int Fib2(int n)
         {
             int a = 0, b = 1, c = 0;

@@ -318,4 +318,71 @@ Auxiliary Space:  O(n)
             */
         }
     }
+    /*
+     https://www.geeksforgeeks.org/check-if-a-number-is-palindrome-or-not-without-using-any-extra-space-set-2/
+    Check if a number is palindrome or not without using any extra space | Set 2
+    Given a number ‘n’ and our goal is to find out it is palindrome or not without using any extra space. We can’t make a new copy of number.
+Examples
+    Input: n = 2332
+Output: Yes
+Explanation:
+original number = 2332
+reversed number = 2332
+Both are same hence the number is palindrome.
+
+Input: n=1111
+Output: Yes.
+    Input: n = 1234
+Output: No
+Other Approach: The other recursive approaches and the approach to compare the digits are discussed in Set-1 of this article. 
+    Here, we are discussing the other approaches. set 1 https://www.geeksforgeeks.org/check-number-palindrome-not-without-using-extra-space/
+
+Approach: This approach depends upon 3 major steps, find the number of digits in the number. Partition the number into 2 parts from the middle. Take care of the case when the length is odd, in which we will have to use the middle element twice. Check whether the number in both numbers are the same or not. Follow the steps below to solve the problem:
+
+Initialize the variable K as the length of the number n.
+Initialize the variable ans as 0.
+Iterate over the range [0, K/2) using the variable i and perform the following tasks:
+Put the value of n%10 in the variable ans and divide n by 10.
+If K%2 equals 1 then put the value of n%10 in the variable ans.
+After performing the above steps, if ans equals n then it’s a pallindrome otherwise not.
+Below is the implementation of the above approach.
+     */
+    public class CheckPalindrome
+    {
+        static bool CheckIfPalindromeNoExtraSpace(int n)
+        {
+            if (n < 0)
+                return false;
+            if (n < 10)
+                return true;
+
+            // Find the length of the number
+            int K = (int)Math.Floor(Math.Log10(n) + 1);
+
+            int ans = 0;
+
+            // Partition the number into 2 halves
+            for (int i = 0; i < K / 2; i++)
+            {
+                ans = ans * 10 + n % 10;
+                n = n / 10;
+            }
+            if (K % 2 == 1)
+                ans = ans * 10 + n % 10;
+
+            // Equality Condition
+            return (ans == n);
+        }
+        static void Main(string[] args)
+        {
+            string s = CheckIfPalindromeNoExtraSpace(1001) ? "yes" : "no";
+            Console.WriteLine(s);
+            /*
+             Output yes
+
+Time Complexity: O(K), where K is the number of digits
+Auxiliary Approach: O(1)
+            */
+        }
+    }
 }

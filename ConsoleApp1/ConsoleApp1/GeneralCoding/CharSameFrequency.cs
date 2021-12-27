@@ -221,5 +221,106 @@ We traverse string only once. Also the three loops after the first loop run CHAR
             Console.WriteLine(checkForVariation("abcbc"));//output true
         }
     }
+    /*
+     https://www.geeksforgeeks.org/print-characters-in-decreasing-order-of-frequency/
+    Print characters in decreasing order of frequency
+Last Updated : 09 Sep, 2021
+Given string str, the task is to print the characters in decreasing order of their frequency. If the frequency of two characters is the same then sort them in descending order alphabetically.
+Examples: 
+ 
+
+Input: str = “geeksforgeeks” 
+Output: 
+e – 4 
+s – 2 
+k – 2 
+g – 2 
+r – 1 
+o – 1 
+f – 1
+Input: str = “bbcc” 
+Output: 
+c – 2 
+b – 2
+     */
+    public class CharFrequencyDecreasingOrder
+    {
+        /*
+         Approach 1: 
+
+
+        Use an unordered_map to store the frequencies of all the elements of the given string.
+        Find the maximum frequency element from the map, print it with its frequency, and remove it from the map.
+        Repeat the previous step while the map is not empty.
+        Below is the implementation of the above approach:
+        */
+        static void printChar(char[] arr, int len)
+        {
+
+            // To store the
+            Dictionary<char,
+                       int> occ = new Dictionary<char,
+                                                 int>();
+            for (int i = 0; i < len; i++)
+                if (occ.ContainsKey(arr[i]))
+                {
+                    occ[arr[i]] = occ[arr[i]] + 1;
+                }
+                else
+                {
+                    occ.Add(arr[i], 1);
+                }
+
+            // Map's size
+            int size = occ.Count;
+
+            // While there are elements in the map
+            while (size-- > 0)
+            {
+
+                // Finding the maximum value
+                // from the map
+                int currentMax = 0;
+                char arg_max = (char)0;
+                foreach (KeyValuePair<char, int> it in occ)
+                {
+                    if (it.Value > currentMax ||
+                       (it.Value == currentMax &&
+                        it.Key > arg_max))
+                    {
+                        arg_max = it.Key;
+                        currentMax = it.Value;
+                    }
+                }
+
+                // Print the character
+                // alongwith its frequency
+                Console.Write(arg_max + " - " +
+                              currentMax + "\n");
+
+                // Delete the maximum value
+                occ.Remove(arg_max);
+            }
+        }
+
+        // Driver code
+        public static void Main(String[] args)
+        {
+            String str = "geeksforgeeks";
+            int len = str.Length;
+
+            printChar(str.ToCharArray(), len);
+            /*
+             Output
+e - 4
+s - 2
+k - 2
+g - 2
+r - 1
+o - 1
+f - 1
+            */
+        }
+    }
 
 }
