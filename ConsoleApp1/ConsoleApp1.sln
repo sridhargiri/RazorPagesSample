@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MM", "MM\MM.csproj", "{12C2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject_Test", "UnitTestProject_Test\UnitTestProject_Test.csproj", "{EDA96876-B9CA-4F8E-B98D-0ECCF687B4F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostExample", "HostExample\HostExample.csproj", "{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostExample", "HostExample\HostExample.csproj", "{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTextSharpSign", "Esignature_src\iTextSharpSign.csproj", "{43F20265-F369-4B21-96E5-83A5AE2E4486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C145A637-FC9E-4C4B-B9A6-3ACCA6FF3D46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F20265-F369-4B21-96E5-83A5AE2E4486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F20265-F369-4B21-96E5-83A5AE2E4486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F20265-F369-4B21-96E5-83A5AE2E4486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F20265-F369-4B21-96E5-83A5AE2E4486}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
