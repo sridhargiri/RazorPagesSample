@@ -239,7 +239,7 @@ As no extra space is required.
     {
 
         // function to segregate 0s and 1s
-        static void segregate0and1(int[] arr, int n)
+        static void seggregate0and1(int[] arr, int n)
         {
             // counts the no of zeros in arr
             int count = 0;
@@ -273,7 +273,7 @@ As no extra space is required.
             int[] arr = new int[] { 0, 1, 0, 1, 1, 1 };
             int n = arr.Length;
 
-            segregate0and1(arr, n);
+            seggregate0and1(arr, n);
             print(arr, n);
 
         }

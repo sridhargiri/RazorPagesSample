@@ -63,4 +63,57 @@ Auxiliary Space: O(1)
             b*/
         }
     }
+    /*
+     https://www.geeksforgeeks.org/concatenate-given-array-twice/
+    Concatenate given array twice
+Last Updated : 26 Jan, 2022
+Given an array arr[] of N elements, the task is to concatenate it twice, i.e. create an array of size 2*N by appending the copy of the given array to itself.
+
+Example:
+
+Input: arr[] = {1, 2, 1}
+Output: 1 2 1 1 2 1
+Explantation: The given array arr[] = {1, 2, 1}, can be appended to itself resulting in arr[] = {1, 2, 1, 1, 2, 1}.
+
+Input: arr[] = {1, 3, 2, 1}
+Output: 1 3 2 1 1 3 2 1
+
+Approach: The given problem is an implementation-based problem. It can be solved by creating a array newArr[] of size 2*N. 
+    Iterate the given array arr[] using a variable i in the range [0, N) and append the assign newArr[i] = arr[i] and newArr[i + N] = arr[i].
+
+Below is the implementation of the above approach
+     */
+    public class AppendArray
+    {
+
+        static void ConcatArrayTwice(int[] arr, int N)
+        {
+            // Stores array after
+            // concatination
+            int[] newArr = new int[2 * N];
+
+            // Loop to iterate arr[]
+            for (int i = 0; i < N; i++)
+            {
+                newArr[i] = arr[i];
+                newArr[i + N] = arr[i];
+            }
+
+            // Print Answer
+            for (int i = 0; i < 2 * N; i++)
+            {
+                Console.WriteLine(newArr[i]);
+            }
+        }
+        static void Main(string[] args)
+        {
+            int[] arr = { 1, 2, 3 }; ConcatArrayTwice(arr, arr.Length);
+            /*
+             Output
+1 2 3 1 2 3 
+Time Complexity: O(N)
+Auxiliary Space: O(N)
+            */
+        }
+    }
 }

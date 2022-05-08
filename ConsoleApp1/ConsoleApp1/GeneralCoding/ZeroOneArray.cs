@@ -58,8 +58,11 @@ Time Complexity : O(n)
         //c) If left<right then exchange arr[left] and arr[right]
 
         //Implementation:
-        /*Function to put all 0s on 
-      left and all 1s on right*/
+        /*
+{ 1, 0, 1, 0, 1, 0 } => initial input
+{ 0, 0, 1, 0, 1, 1 } swap index => (0,5)
+{ 0, 0, 0, 1, 1, 1 } swap index => (2,3)
+         */
         static void segregate0and1_1(int[] arr, int size)
         {
             /* Initialize left and right indexes */
@@ -125,7 +128,7 @@ Initialize type0 = 0 and type1 = array.length-1
 
             segregate0and1(arr, n);
             print(arr, n);
-            arr = new int[] { 0, 1, 0, 1, 1, 1 };
+            arr = new int[] { 1, 0, 1, 0, 1, 0 };
             int i, arr_size = arr.Length;
             segregate0and1_1(arr, arr_size);
             Console.WriteLine("Array after segregation is ");
