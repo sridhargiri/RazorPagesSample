@@ -33,7 +33,7 @@ namespace ConsoleApp1
                 {
                     Console.Write("Pair with given sum " + sum + " is (" + arr[i] + ", " + temp + ")");
                 }
-                s.Add(arr[i]);
+                s.Add(arr[i]);s.ToArray();
             }
         }
         static void printPairs_(int[] arr, int sum)
