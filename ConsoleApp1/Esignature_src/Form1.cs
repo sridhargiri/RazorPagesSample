@@ -106,7 +106,7 @@ namespace iTextSharpSign
 
             debug("Signing document ... ");
             PDFSigner pdfs = new PDFSigner(inputBox.Text, outputBox.Text, myCert, MyMD);
-            pdfs.Sign(Reasontext.Text, Contacttext.Text, Locationtext.Text, SigVisible.Checked);
+            pdfs.Sign(Reasontext.Text, Contacttext.Text, Locationtext.Text, SigVisible.Checked, dateTimePicker1.Value);
 
             debug("Done :)");
 

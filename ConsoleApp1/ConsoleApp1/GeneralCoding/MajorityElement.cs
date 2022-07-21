@@ -4,13 +4,14 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class MajorityElement
+    class MajorityElement_Nagarro
     {
         /*https://www.geeksforgeeks.org/majority-element/
          Majority Element
 Difficulty Level : Medium
 Last Updated : 19 Apr, 2021
-Write a function which takes an array and prints the majority element (if it exists), otherwise prints “No Majority Element”. A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element). 
+Write a function which takes an array and prints the majority element (if it exists), otherwise prints “No Majority Element”. 
+        A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element). 
 
 Examples : 
 

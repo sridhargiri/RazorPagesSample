@@ -36,7 +36,7 @@ If the value of the string ans is the same as the string pre, then break out of 
 After completing the above steps, print the string ans as the resultant string.
 Below is the implementation of the above approach:
     */
-    class ShortestStringReduced
+    public class ShortestStringReduced
     {
         // Function to delete pair of adjacent
         // characters which are equal
@@ -124,7 +124,7 @@ Below is the implementation of the above approach:
         }
 
         // Driver Code
-        public static void main(String[] args)
+        public static void Main(String[] args)
         {
             String S = "aaabccddd";
             reduceString(S);

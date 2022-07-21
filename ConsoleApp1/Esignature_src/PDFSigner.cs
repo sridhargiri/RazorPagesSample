@@ -206,7 +206,7 @@ namespace iTextSharpSign
         }
 
 
-        public void Sign(string SigReason, string SigContact, string SigLocation, bool visible)
+        public void Sign(string SigReason, string SigContact, string SigLocation, bool visible, DateTime signdate)
         {
             PdfReader reader = new PdfReader(this.inputPDF);
             //Activate MultiSignatures
@@ -219,7 +219,7 @@ namespace iTextSharpSign
             PdfSignatureAppearance sap = st.SignatureAppearance;
             
             sap.SetCrypto(this.myCert.Akp, this.myCert.Chain, null, PdfSignatureAppearance.VERISIGN_SIGNED);
-            DateTime signdate= new DateTime(2022, 04, 10, 10, 00, 32,DateTimeKind.Local); signdate = signdate.ToLocalTime();
+            //DateTime signdate= new DateTime(2022, 04, 10, 10, 00, 32,DateTimeKind.Local); signdate = signdate.ToLocalTime();
             sap.SignDate = signdate;
             sap.Reason = SigReason;
             sap.Contact = SigContact;

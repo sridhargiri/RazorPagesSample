@@ -209,7 +209,7 @@ Stack is required to store the columns, so so space complexity is O(C)
         }
     }
     /*
-     Maximum size square sub-matrix with all 1s
+(Tekion) Maximum size square sub-matrix with all 1s
 Difficulty Level : Medium
 Last Updated : 18 Jul, 2019
 Given a binary matrix, find out the maximum size square sub-matrix with all 1s.
@@ -231,6 +231,13 @@ Let the given binary matrix be M[R][C]. The idea of the algorithm is to construc
 2) Find the maximum entry in S[R][C]
 3) Using the value and coordinates of maximum entry in S[i], print
    sub-matrix of M[][]
+
+   0  1  1  0  1
+   1  1  0  1  0
+   0  1  1  1  0
+   1  1  1  1  0
+   1  1  1  1  1
+   0  0  0  0  0
 For the given M[R][C] in above example, constructed S[R][C] would be:
 
    0  1  1  0  1
@@ -242,7 +249,7 @@ For the given M[R][C] in above example, constructed S[R][C] would be:
 The value of maximum entry in above matrix is 3 and coordinates of the entry are(4, 3). Using the maximum value and its coordinates, we can find out the required sub-matrix
         https://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/
     */
-    public class MaxSubMatrix
+    public class MaxSubBinaryMatrix
     {
         // method for Maximum size square sub-matrix with all 1s
         static void printMaxSubSquare(int[,] M)
@@ -327,5 +334,78 @@ Algorithmic Paradigm: Dynamic Programming
             */
         }
 
+    }
+    /*
+(Tekion) Space Optimized Solution: In order to compute an entry at any position in the matrix we only need the current row and the previous row
+    */
+    public class MaxSubBinaryMatrixOptimised
+    {
+
+        static int R = 6;
+        static int C = 5;
+
+        static void printMaxSubSquare(int[,] M)
+        {
+            int[,] S = new int[2, C];
+            int Maxx = 0;
+
+            // set all elements of S to 0 first
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < C; j++)
+                {
+                    S[i, j] = 0;
+                }
+            }
+
+            // Construct the entries
+            for (int i = 0; i < R; i++)
+            {
+                for (int j = 0; j < C; j++)
+                {
+
+                    // Compute the entrie at the current position
+                    int Entrie = M[i, j];
+                    if (Entrie != 0)
+                    {
+                        if (j != 0)
+                        {
+                            Entrie = 1 + Math.Min(S[1, j - 1], Math.Min(S[0, j - 1], S[1, j]));
+                        }
+                    }
+
+                    // Save the last entrie and add the new one
+                    S[0, j] = S[1, j];
+                    S[1, j] = Entrie;
+
+                    // Keep track of the max square length
+                    Maxx = Math.Max(Maxx, Entrie);
+                }
+            }
+
+            // Print the square
+            Console.Write("Maximum size sub-matrix is: \n");
+            for (int i = 0; i < Maxx; i++)
+            {
+                for (int j = 0; j < Maxx; j++)
+                {
+                    Console.Write("1 ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        // Driver Code
+        public static void Main(string[] args)
+        {
+            int[,] M = {{0, 1, 1, 0, 1},
+                 {1, 1, 0, 1, 0},
+                 {0, 1, 1, 1, 0},
+                 {1, 1, 1, 1, 0},
+                 {1, 1, 1, 1, 1},
+                 {0, 0, 0, 0, 0}};
+
+            printMaxSubSquare(M);
+        }
     }
 }

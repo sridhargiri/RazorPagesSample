@@ -1,4 +1,6 @@
-﻿namespace iTextSharpSign
+﻿using System.Windows.Forms;
+
+namespace iTextSharpSign
 {
     partial class Form1
     {
@@ -67,6 +69,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -260,7 +264,7 @@
             // DebugBox
             // 
             this.DebugBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DebugBox.Location = new System.Drawing.Point(12, 383);
+            this.DebugBox.Location = new System.Drawing.Point(12, 400);
             this.DebugBox.Multiline = true;
             this.DebugBox.Name = "DebugBox";
             this.DebugBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -317,7 +321,7 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.passwordBox);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 195);
+            this.groupBox3.Location = new System.Drawing.Point(12, 210);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(375, 182);
             this.groupBox3.TabIndex = 26;
@@ -326,7 +330,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(255, 153);
+            this.button1.Location = new System.Drawing.Point(240, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 23);
             this.button1.TabIndex = 27;
@@ -344,7 +348,7 @@
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.Reasontext);
             this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Location = new System.Drawing.Point(393, 195);
+            this.groupBox4.Location = new System.Drawing.Point(393, 210);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(385, 182);
             this.groupBox4.TabIndex = 28;
@@ -413,7 +417,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(15, 507);
+            this.label14.Location = new System.Drawing.Point(15, 514);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(109, 13);
             this.label14.TabIndex = 30;
@@ -434,17 +438,37 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(293, 507);
+            this.label15.Location = new System.Drawing.Point(293, 514);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(192, 13);
             this.label15.TabIndex = 30;
             this.label15.Text = "Author : Alaa-eddine KADDOURI";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(409, 194);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(30, 13);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Date";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(465, 188);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(293, 20);
+            this.dateTimePicker1.TabIndex = 32;
+            this.dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            this.dateTimePicker1.CustomFormat = "yyyy.MM.dd HH:mm:ss";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 533);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -509,6 +533,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

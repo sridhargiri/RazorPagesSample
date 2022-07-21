@@ -230,10 +230,121 @@ Following is the implementation of the above approach.
             char[] digits = { '1', '2', '3', '4' };
             int n = digits.Length;
             Console.WriteLine("Count is " +
-                    countDecodingDP(digits, n));//Count is 3
+                    countDecodingDP(digits, n));
+            //output: Count is 3
         }
 
+    }
+    /*
+     Method 3 : ( Top Down DP )
 
+Approach :  
+
+The above problem can be solved using Top down DP in the following way . 
+    One of the basic intuition is that we need to find the total number of  ways to decode the given string such that each and every number in the string must lie in between the range of [ 1 , 26 ] both inclusive and without any leading 0’s . Let us consider an example string .
+
+str = “123”
+
+If we observe carefully we can observe a pattern over here i.e., the number of ways a particular substring can be decoded depends on the number of ways the remaining string is going to be decoded . 
+   For example , we want the number of ways to decode the string with “1” as a prefix the result depends on the number of ways the remaining string, i.e., “23” can be decoded . 
+    The number of ways the string “23” can be decoded are “2” , “3” and “23” there are 2 ways in both of these cases we can just append “1” to get the number of ways the given string can be decoded with “1” as a prefix i.e., “1” , “2” , “3” and “1” , “23” . 
+    Now we have found the number of ways we can decode the given string with “1” as a prefix but “12” also lies in between the range of [ 1 , 26 ] both inclusive the number of ways to decode the given string with “12” as a prefix depends on the result on how the remaining string is decoded . 
+    Here the remaining string is “3” it can be decoded in only 1 way so we can just append “12” in front of the string “3” to get it i.e., “12” , “3” . 
+    So the total number of ways the given string can be decoded are 3 ways .
+
+But we can see some of the overlapping of subproblems over here i.e., when we are computing the total number of ways to decode the string “23” we are computing the number of ways the string “3” can be decoded as well as when we are computing the number of ways the string “12” can be decoded we are again computing the number of ways the string “3” can be decoded . So we can avoid this by storing the result of every substring . Here we can identify each and every sub problem through the index of the string . So , if at any point of time if we have already computed the number of ways the substring can be decoded we can directly return the result and that leads to a lot of optimization .
+
+Below is the C++ implementation
+    */
+    public class DecodeWaysDP_TopDownApproach
+    {
+
+        static int mod = 1000000007;
+
+        // function which returns the number of ways to decode the message
+        static int decodeMessage(int[] dp, int s, string str, int n)
+        {
+
+            // an empty string can also form 1 valid decoding
+            if (s >= n)
+                return 1;
+
+            /*
+                if we have already computed the number of
+                ways to decode the substring return the
+                answer directly
+            */
+            if (dp[s] != -1)
+                return dp[s];
+
+            int num, tc;
+            num = tc = 0;
+            for (int i = s; i < n; i++)
+            {
+                // generate the number
+                num = num * 10 + ((int)str[i] - '0');
+
+                // validate the number
+                if (num >= 1 && num <= 26)
+                {
+                    /*
+                            since the number of ways to decode any string
+                            depends on the result of
+                            how the remaining string is decoded so get the
+                            number of ways how the rest of the string can
+                            be decoded
+                        */
+                    int c = decodeMessage(dp, i + 1, str, n);
+
+                    // add all the ways that the substring
+                    // from the current index can be decoded
+                    tc = (tc % mod + c % mod) % mod;
+                }
+
+                // leading 0’s or the number
+                // generated so far is greater than 26
+                // we can just stop the process
+                // as it can never be a part of our solution
+                else
+                    break;
+            }
+
+            // store all the possible decodings and return the result
+            return (dp[s] = tc);
+        }
+        static int CountWays(string str)
+        {
+            int n = str.Length;
+
+            // empty string can form 1 valid decoding
+            if (n == 0)
+                return 1;
+
+            // dp vector to store the number of ways
+            // to decode each and every substring
+            int[] dp = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                dp[i] = -1;
+            }
+
+            // return the result
+            return decodeMessage(dp, 0, str, n);
+        }
+
+        // Driver Code
+        public static void Main()
+        {
+            string str = "1234";
+            Console.Write(CountWays(str));
+            /*
+             Output : 
+3
+Time Complexity   :  O ( N ) where N is the length of the string . As we are solving each and every sub – problem only once .
+
+Space Complexity :  O ( N ) as we are using vector to store the result of each and every substring
+            */
+        }
     }
     public class WaysToReachStation
     {
