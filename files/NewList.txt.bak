@@ -194,8 +194,8 @@ costrategix L1 16th sep 2022
 1. DependencyResolver in .net
 2. Task vs thread (cancel, async, background , so Task = cab)
 
-nagarro L1 on 17/09/2022 0am
------------------------------
+nagarro L1 on 17/09/2022
+------------------------
 1. multi layer vs multi tier
 2. why singleton over static class (unit test, loosely coupled by DI, free to decide when you want to invoke but static constructor invoke before class is loaded)
 3. angular singleton by default

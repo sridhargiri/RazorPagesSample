@@ -24,7 +24,7 @@ The idea is to simply apply the partition process of quicksort.
      */
     public class MoveNegativeBegin
     {
-        static void rearrange(int[] arr, int n)
+        static void ShiftNegativeToBeginning(int[] arr, int n)
         {
 
             int j = 0, temp;
@@ -53,7 +53,7 @@ The idea is to simply apply the partition process of quicksort.
             int[] arr = { -1, 2, -3, 4, 5, 6, -7, 8, 9 };
             int n = arr.Length;
 
-            rearrange(arr, n);
+            ShiftNegativeToBeginning(arr, n);
             printArray(arr, n);
             /*
              Output -1 -3 -7 4 5 6 2 8 9
@@ -71,11 +71,11 @@ Else if the left element is positive and the right element is also positive then
 Repeat the above 3 steps until the left pointer ≤ right pointer.
 Below is the implementation of the above approach:
      */
-    class NegativeBegin
+    public class MoveNegativeToBeginning
     {
         // Function to shift all the
         // negative elements on left side
-        static void shiftall(int[] arr, int left, int right)
+        static void ShiftNegativeToBeginning(int[] arr, int left, int right)
         {
 
             // Loop to iterate over the
@@ -132,7 +132,7 @@ Below is the implementation of the above approach:
         {
             int[] arr = { -12, 11, -13, -5, 6, -7, 5, -3, 11 };
             int arr_size = arr.Length;
-            shiftall(arr, 0, arr_size - 1);
+            ShiftNegativeToBeginning(arr, 0, arr_size - 1);
             display(arr, arr_size - 1);
             /*
              Output

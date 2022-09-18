@@ -182,10 +182,9 @@ for(i=0 to end)
   else 
     print arr[i], target-arr[i]
      */
-    class CheckforpairWithSum
+    public class CheckforpairWithSum
     {
-        static void printpairs(int[] arr,
-                               int sum)
+        static void printpairs(int[] arr, int sum)
         {
             HashSet<int> s = new HashSet<int>();
             for (int i = 0; i < arr.Length; ++i)
@@ -204,8 +203,7 @@ for(i=0 to end)
         // Driver Code
         static void Main()
         {
-            int[] A = new int[] { 1, 4, 45,
-                              6, 10, 8 };
+            int[] A = new int[] { 1, 4, 45, 6, 10, 8 };
             int n = 16;
             printpairs(A, n);
             /*

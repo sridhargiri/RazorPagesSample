@@ -123,7 +123,7 @@ namespace ConsoleApp1
         }
         public static void Main(string[] args)
         {
-            Boxunbox();  var o1 = Singleton.Instance;
+            Boxunbox(); var o1 = Singleton.Instance;
             var o2 = Singleton.Instance;
             var o3 = Singleton.Instance;
             var o4 = Singleton.Instance;
@@ -145,6 +145,38 @@ namespace ConsoleApp1
                 }
                 return instance;
             }
+        }
+    }
+
+    public interface IWork
+    {
+        void Func1();
+        void Func2();
+
+    }
+    public abstract class WorkClass : IWork
+    {
+        public void Func1()
+        {
+            Console.WriteLine("Calling Func1");
+        }
+        public abstract void Func2();
+
+    }
+
+    public class MyClass : WorkClass
+    {
+        public static void Main(string[] args)
+        {
+            MyClass myClass = new MyClass();
+            myClass.Func1();
+            myClass.Func2();
+        }
+
+        public override void Func2()
+        {
+            Console.WriteLine("Calling Func2");
+
         }
     }
 }

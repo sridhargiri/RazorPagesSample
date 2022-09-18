@@ -385,4 +385,43 @@ Auxiliary Approach: O(1)
             */
         }
     }
+    // i got stuck in maxerience interview for this question on 17th aug 2022
+    /*
+     Program to Check if a Given String is Palindrome
+    https://www.geeksforgeeks.org/c-program-check-given-string-palindrome/
+    Given a string, write a c function to check if it is palindrome or not. 
+
+A string is said to be palindrome if reverse of the string is same as string. For example, “abba” is palindrome, but “abbc” is not palindrome.
+    Algorithm: 
+
+isPalindrome(str) 
+
+Find length of str. Let length be n. 
+Initialize low and high indexes as 0 and n-1 respectively. 
+ Do following while low index ‘l’ is smaller than high index ‘h’. 
+If str[l] is not same as str[h], then return false. 
+Increment l and decrement h, i.e., do l++ and h–. 
+If we reach here, it means we didn’t find a mis
+    see below code
+     */
+    public class CheckValidPalindrome
+    {
+        public static bool Check_Valid_Palindrome(string str)
+        {
+            int l = 0;
+            int h = str.Length-1;
+            while (h > l)
+            {
+                if (str[l++] != str[h--])
+                    return false;
+            }
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            string str = "maddam";
+            bool b = Check_Valid_Palindrome(str);
+            Console.WriteLine(b);
+        }
+    }
 }

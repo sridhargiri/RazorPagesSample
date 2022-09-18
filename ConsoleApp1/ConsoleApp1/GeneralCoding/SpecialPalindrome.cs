@@ -6,6 +6,52 @@ namespace ConsoleApp1
 {
     // C# program to count special 
     // Palindromic substring 
+
+    /*
+     https://www.geeksforgeeks.org/count-special-palindromes-in-a-string/
+    Count special palindromes in a String
+    Given a String s, count all special palindromic substrings of size greater than 1. 
+    A Substring is called special palindromic substring if all the characters in the substring are same or only the middle character is different for odd length. 
+    Example “aabaa” and “aaa” are special palindromic substrings and “abcba” is not special palindromic substring.
+    Examples : 
+
+Input :  str = " abab"
+Output : 2
+All Special Palindromic  substring are: "aba", "bab"
+
+Input : str = "aabbb"
+Output : 4
+All Special substring are: "aa", "bb", "bbb", "bb"
+
+    Simple Solution is that we simply generate all substrings one-by-one and count how many substring are Special Palindromic substring. This solution takes O(n3) time.
+
+Efficient Solution 
+
+There are 2 Cases : 
+
+Case 1: All Palindromic substrings have same character : 
+We can handle this case by simply counting the same continuous character and using formula K*(K+1)/2 (total number of substring possible : Here K is count of Continuous same char). 
+ Lets Str = "aaabba"
+ Traverse string from left to right and Count of same char
+  "aaabba"  =  3, 2, 1
+   for "aaa" : total substring possible are
+   'aa' 'aa', 'aaa', 'a', 'a', 'a'  : 3(3+1)/2 = 6 
+   "bb" : 'b', 'b', 'bb' : 2(2+1)/2 = 3
+   'a'  : 'a' : 1(1+1)/2 = 1 
+Case 2: We can handle this case by storing count of same character in another temporary array called “sameChar[n]” of size n. and pick each character one-by-one and check its previous and forward character are equal or not if equal then there are min_between( sameChar[previous], sameChar[forward] ) substring possible. 
+Let's Str = "aabaaab"
+ Count of smiler char from left to right :
+ that we will store in Temporary array "sameChar"
+  Str         =    " a a b a a a b "
+sameChar[]  =      2 2 1 3 3 3 1
+According to the problem statement middle character is different:
+so we have only left with char "b" at index :2 ( index from 0 to n-1)
+substring : "aabaaa"
+so only two substring are possible : "aabaa", "aba"
+that is min (smilerChar[index-1], smilerChar[index+1] ) that is 2.
+
+
+     */
     using System;
 
     public class SpecialPalindrome
@@ -94,6 +140,12 @@ namespace ConsoleApp1
         {
             String str = "abccba";
             Console.Write(CountSpecialPalindrome(str));
+            /*
+Output : 1
+Time Complexity : O(n) 
+Auxiliary Space : O(n)
+            
+             */
         }
     }
 
