@@ -1,0 +1,128 @@
+Given json object assume you stored in some
+persistent storage, after retriving you need 
+to transform this json object into below shown 
+structure as your API response so that UI can 
+consume this output.
+
+{
+   "category":[
+      {
+         "id":1,
+         "name":"Clothing",
+         "parentId":0
+      },
+      {
+         "id":2,
+         "name":"Men",
+         "parentId":1
+      },
+      {
+         "id":4,
+         "name":"Women",
+         "parentId":1
+      },
+      {
+         "id":6,
+         "name":"Ethinic Wear",
+         "parentId":4
+      },
+      {
+         "id":9,
+         "name":"Western Wear",
+         "parentId":4
+      },
+      {
+         "id":10,
+         "name":"Sarees",
+         "parentId":6
+      },
+      {
+         "id":12,
+         "name":"Seasonal Wear",
+         "parentId":2
+      },
+      {
+         "id":14,
+         "name":"Appliances",
+         "parentId":0
+      },
+      {
+         "id":15,
+         "name":"TV",
+         "parentId":14
+      }
+   ]
+}
+
+/*
+ =============== Output ==================
+*/
+
+{
+   "category":[
+      {
+         "id":1,
+         "name":"Clothing",
+         "parentId":0,
+         "children":[
+            {
+               "id":2,
+               "name":"Men",
+               "parentId":1,
+               "children":[
+                  {
+                     "id":12,
+                     "name":"Seasonal Wear",
+                     "parentId":2,
+                     "children":[
+
+                     ]
+                  }
+               ]
+            },
+            {
+               "id":4,
+               "name":"Women",
+               "parentId":1,
+               "children":[
+                  {
+                     "id":6,
+                     "name":"Ethinic Wear",
+                     "parentId":4,
+                     "childern":[
+                        {
+                           "id":10,
+                           "name":"Sarees",
+                           "parentId":6,
+                           "children":[
+
+                           ]
+                        }
+                     ]
+                  },
+                  {
+                     "id":9,
+                     "name":"Western Wear",
+                     "parentId":4,
+                     "children":[
+
+                     ]
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "id":14,
+         "name":"Appliances",
+         "parentId":0,
+         "children":[
+            {
+               "id":15,
+               "name":"TV",
+               "parentId":14
+            }
+         ]
+      }
+   ]
+}

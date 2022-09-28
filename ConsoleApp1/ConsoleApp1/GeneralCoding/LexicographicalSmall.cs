@@ -335,4 +335,94 @@ Below is the implementation of the above approach:
             isPossible(S, S.Length);
         }
     }
+    /*
+     https://www.geeksforgeeks.org/lexicographical-maximum-substring-string/
+    Lexicographical Maximum substring of string
+    Given a string s we have to find the lexicographical maximum substring of a string
+
+Examples: 
+
+Input : s = "ababaa"
+Output : babaa
+Explanation : "babaa" is the maximum lexicographic substring formed from this string
+
+Input : s = "asdfaa"
+Output : sdfaa
+    The idea is simple, we traverse through all substrings. For every substring, we compare it with the current result and update the result if needed.
+
+    Output
+babaa
+Complexity Analysis:
+
+Time complexity : O(n2) 
+Auxiliary Space : O(n)
+     */
+    public class LexicographicalMaxSubstring
+    {
+
+        static String LexicographicalMaximumSubstring(String str)
+        {
+            // loop to find the max lexicographic
+            // substring in the substring array
+            String mx = "";
+            for (int i = 0; i < str.Length; ++i)
+            {
+                if (mx.CompareTo(str.Substring(i)) <= 0)
+                {
+                    mx = str.Substring(i);
+                }
+            }
+
+            return mx;
+        }
+        /*
+         Optimization: We find the largest character and all its indexes. Now we simply traverse through all instances of the largest character to find lexicographically maximum substring.
+
+Here we follow the above approach.
+
+         Output
+cbc
+Complexity Analysis:
+
+Time Complexity: O(n*m) where n is the length of the string and m is the size of index array.
+Auxiliary Space: O(n + m) where n is the length of the string and m is the size of index array.
+        */
+
+        static string LexicographicalMaxString(string str)
+        {
+            char maxchar = 'a';
+            List<int> index = new List<int>();
+
+            // We store all the indexes of maximum
+            // characters we have in the string
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] >= maxchar)
+                {
+                    maxchar = str[i];
+                    index.Add(i);
+                }
+            }
+            string maxstring = "";
+
+            // We form a substring from that maximum
+            // character index till end and check if
+            // its greater that maxstring
+            for (int i = 0; i < index.Count; i++)
+            {
+                if (str.Substring(index[i]).CompareTo(maxstring) > 0)
+                {
+                    maxstring = str.Substring(index[i]);
+                }
+            }
+            return maxstring;
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            String str = "dkhc";
+            Console.WriteLine(LexicographicalMaximumSubstring(str));
+        }
+    }
 }

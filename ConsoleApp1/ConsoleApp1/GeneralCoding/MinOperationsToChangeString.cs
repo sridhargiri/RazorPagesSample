@@ -93,4 +93,72 @@ Replace 'n' with 'r', insert t, insert a
                                      str2.Length));
         }
     }
+    /*
+     https://www.geeksforgeeks.org/minimum-number-of-given-operations-required-to-convert-a-string-to-another-string/
+    Minimum number of given operations required to convert a string to another string
+    Given two strings S and T of equal length. Both strings contain only the characters ‘0’ and ‘1’. The task is to find the minimum number of operations to convert string S to T. There are 2 types of operations allowed on string S: 
+
+Swap any two characters of the string.
+Replace a ‘0’ with a ‘1’ or vice versa.
+Examples: 
+
+Input: S = “011”, T = “101” 
+Output: 1 
+Swap the first and second character.
+
+Input: S = “010”, T = “101” 
+Output: 2 
+Swap the first and second character and replace the third character with ‘1’. 
+    Approach: Find 2 values for the string S, the number of indices that have 0 but should be 1 and the number of indices that have 1 but should be 0. The result would be the maximum of these 2 values since we can use swaps on the minimum of these 2 values and the remaining unmatched characters can be inverted i.e. ‘0’ can be changed to ‘1’ and ‘1’ can be changed to ‘0’.
+
+Below is the implementation of the above approach:
+
+     */
+
+    public class MinOperationsConvertString
+    {
+
+        // Function to return the minimum operations
+        // of the given type required to convert
+        // string s to string t
+        static int minOperations(string s,
+                                 string t, int n)
+        {
+            int ct0 = 0, ct1 = 0;
+            for (int i = 0; i < n; i++)
+            {
+
+                // Characters are already equal
+                if (s[i] == t[i])
+                    continue;
+
+                // Increment count of 0s
+                if (s[i] == '0')
+                    ct0++;
+
+                // Increment count of 1s
+                else
+                    ct1++;
+            }
+
+            return Math.Max(ct0, ct1);
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            string s = "010", t = "101";
+            int n = s.Length;
+            Console.Write(minOperations(s, t, n));
+            /*
+             Output
+2
+Time Complexity: O(N)
+
+Auxiliary Space: O(1) it is using constant space for variables
+
+
+             */
+        }
+    }
 }

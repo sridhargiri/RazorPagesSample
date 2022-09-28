@@ -130,7 +130,7 @@ Why event used when delegate also serve same purpose
 Active directory federation services
 Web api global variable
 .NET core web api route for application home page
-Azure SQL vs Managed instance
+Azure SQL vs Managed instance, azure durable functions
 
 EY 3rd July 2021
 -------------------------
@@ -167,12 +167,12 @@ Table valued functions
 
 Brillio (ciena)
 ---------------
-Latency modes in gc
+4 Latency modes in gc
 strong/weak references
 
 divini (client: coremont)
 -------------------------
-6th august 2022, 1st round - idempotency, .net core inmemory cache
+6th august 2022, 1st round - idempotency, .net core inmemory cache and web api cache via proxy server
 16th august 2022, 2nd round - deadlock, object as key in dictionary (also same object key twice) - to override gethashcode & Equals methods
 
 maxerience (17/08/2022)
@@ -181,7 +181,7 @@ L in Liskov, How does it different from interface, deep details asked
 DSA:Longest common subsequence, Palindrome and Print unique characters
 
 coforge L1 (14/09/2022) JD provided
--------------------------------------------
+------------------------------------
 azure devops password (replace token)
 Microservices, .NET Core, Entity Framework
 Azure (Service Bus/ Azure Storage/ App Insights/ Messaging/ Queue)
@@ -194,7 +194,15 @@ costrategix L1 16th sep 2022
 1. DependencyResolver in .net
 2. Task vs thread (cancel, async, background , so Task = cab)
 
-nagarro L1 on 17/09/2022 0am
+costrategix L2 23th sep 2022
+----------------------------
+json join with id and parentid sample_json.txt attached
+
+costrategix L3 28th sep 2022 3.30pm
+-----------------------------------
+HR manager round
+
+nagarro L1 on 17/09/2022 9am
 -----------------------------
 1. multi layer vs multi tier
 2. why singleton over static class (unit test, loosely coupled by DI, free to decide when you want to invoke but static constructor invoke before class is loaded)
@@ -202,6 +210,13 @@ nagarro L1 on 17/09/2022 0am
 4. Liskov substituion in detail (when child class didn't implement any of the parent)
 5. observer, factory, abstract factory
 
+nagarro L2 on 27/09/2022 4pm
+----------------------------
+1. unit testing vs integration testing
+2. pods connect external ip 
+3. sql container data lost after restart (docker volume vs bind mount)
+4. web api scaling only bike insurance but no scaling for home insurance
+
 fail status (sep 2022)
 ----------------------
-Loss - 4 (sage IT, maxerience, hellofresh, divini, coforge, costrategix, nagarro)
+8 (shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out)
