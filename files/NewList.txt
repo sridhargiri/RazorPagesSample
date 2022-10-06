@@ -13,6 +13,23 @@ compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
 
+naukri JD for azure
+-------------------
+Storage – standard and Premium
+Storage Blob
+VNET/Security group
+Resource groups
+Load balancer configurations
+Azure OMS services – patching and monitoring
+Azure backup or Microsoft data protector
+Azure Site recovery
+Azure SQL, SQL MI, MySQL, Cosmos DB
+AI/Ml Services
+AKS, ACI, ACRs
+VPN Gateways
+NSGs / Azure Firewall
+Azure Policies, security monitor and App Insights
+
 sep 2022 onwards
 ----------------
 attribute routing (outgoing url), 
@@ -173,7 +190,7 @@ strong/weak references
 divini (client: coremont)
 -------------------------
 6th august 2022, 1st round - idempotency, .net core inmemory cache and web api cache via proxy server
-16th august 2022, 2nd round - deadlock, object as key in dictionary (also same object key twice) - to override gethashcode & Equals methods
+16th august 2022, 2nd round - deadlock, same object key twice - to override gethashcode & Equals methods
 
 maxerience (17/08/2022)
 -----------------------
@@ -192,7 +209,7 @@ Knowledge to manage Microservice with multiple database transactions
 costrategix L1 16th sep 2022
 ----------------------------
 1. DependencyResolver in .net
-2. Task vs thread (cancel, async, background , so Task = cab)
+2. Task vs thread (cancel, async, background; cab)
 
 costrategix L2 23th sep 2022
 ----------------------------
@@ -209,6 +226,7 @@ nagarro L1 on 17/09/2022 9am
 3. angular singleton by default
 4. Liskov substituion in detail (when child class didn't implement any of the parent)
 5. observer, factory, abstract factory
+6. index seek vs index scan
 
 nagarro L2 on 27/09/2022 4pm
 ----------------------------
@@ -219,4 +237,4 @@ nagarro L2 on 27/09/2022 4pm
 
 fail status (sep 2022)
 ----------------------
-8 (shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out)
+8 (shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out, amazon L1 out)

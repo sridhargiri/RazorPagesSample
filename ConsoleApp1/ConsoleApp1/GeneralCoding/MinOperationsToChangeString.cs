@@ -91,6 +91,151 @@ Replace 'n' with 'r', insert t, insert a
             String str2 = "saturday";
             Console.Write(editDistDP(str1, str2, str1.Length,
                                      str2.Length));
+            /*
+             Output 3
+The time complexity of above solution is exponential. In worst case, we may end up doing O(3m) operations. The worst case happens when none of characters of two strings match. Below is a recursive call diagram for worst case. 
+Auxiliary Space: O(1), because no extra space is utilized.
+            */
+        }
+    }
+    /*
+     We can see that many subproblems are solved, again and again, for example, eD(2, 2) is called three times. Since same subproblems are called again, this problem has Overlapping Subproblems property. So Edit Distance problem has both properties (see this and this) of a dynamic programming problem. Like other typical Dynamic Programming(DP) problems, recomputations of same subproblems can be avoided by constructing a temporary array that stores results of subproblems
+    */
+    public class MinimumOperationsToConvertString
+    {
+        static int min(int x, int y, int z)
+        {
+            if (x <= y && x <= z)
+                return x;
+            if (y <= x && y <= z)
+                return y;
+            else
+                return z;
+        }
+
+        static int editDistDP(String str1, String str2, int m, int n)
+        {
+            // Create a table to store
+            // results of subproblems
+            int[,] dp = new int[m + 1, n + 1];
+
+            // Fill d[][] in bottom up manner
+            for (int i = 0; i <= m; i++)
+            {
+                for (int j = 0; j <= n; j++)
+                {
+                    // If first string is empty, only option is
+                    // to insert all characters of second string
+                    if (i == 0)
+
+                        // Min. operations = j
+                        dp[i, j] = j;
+
+                    // If second string is empty, only option is
+                    // to remove all characters of second string
+                    else if (j == 0)
+
+                        // Min. operations = i
+                        dp[i, j] = i;
+
+                    // If last characters are same, ignore last
+                    // char and recur for remaining string
+                    else if (str1[i - 1] == str2[j - 1])
+                        dp[i, j] = dp[i - 1, j - 1];
+
+                    // If the last character is different,
+                    // consider all possibilities and find the
+                    // minimum
+                    else
+                        dp[i, j] = 1
+                                   + min(dp[i, j - 1], // Insert
+                                         dp[i - 1, j], // Remove
+                                         dp[i - 1,
+                                            j - 1]); // Replace
+                }
+            }
+
+            return dp[m, n];
+        }
+        /*
+         Space Complex Solution: In the above-given method we require O(m x n) space. 
+        This will not be suitable if the length of strings is greater than 2000 as it can only create 2D array of 2000 x 2000. 
+        To fill a row in DP array we require only one row the upper row. 
+        For example, if we are filling the i = 10 rows in DP array we require only values of 9th row. So we simply create a DP array of 2 x str1 length. This approach reduces the space complexity. Here is the C++ implementation of the above-mentioned problem
+        */
+        static void editDistDP_1(String str1, String str2, int m, int n)
+        {
+            int len1 = str1.Length;
+            int len2 = str2.Length;
+
+            // Create a DP array to memoize result
+            // of previous computations
+            int[,] DP = new int[2, len1 + 1];
+
+
+            // Base condition when second String
+            // is empty then we remove all characters
+            for (int i = 0; i <= len1; i++)
+                DP[0, i] = i;
+
+            // Start filling the DP
+            // This loop run for every
+            // character in second String
+            for (int i = 1; i <= len2; i++)
+            {
+
+                // This loop compares the char from
+                // second String with first String
+                // characters
+                for (int j = 0; j <= len1; j++)
+                {
+
+                    // if first String is empty then
+                    // we have to perform add character
+                    // operation to get second String
+                    if (j == 0)
+                        DP[i % 2, j] = i;
+
+                    // if character from both String
+                    // is same then we do not perform any
+                    // operation . here i % 2 is for bound
+                    // the row number.
+                    else if (str1[j - 1] == str2[i - 1])
+                    {
+                        DP[i % 2, j] = DP[(i - 1) % 2, j - 1];
+                    }
+
+                    // if character from both String is
+                    // not same then we take the minimum
+                    // from three specified operation
+                    else
+                    {
+                        DP[i % 2, j] = 1 + Math.Min(DP[(i - 1) % 2, j],
+                                               Math.Min(DP[i % 2, j - 1],
+                                                   DP[(i - 1) % 2, j - 1]));
+                    }
+                }
+            }
+
+            // after complete fill the DP array
+            // if the len2 is even then we end
+            // up in the 0th row else we end up
+            // in the 1th row so we take len2 % 2
+            // to get row
+            Console.Write(DP[len2 % 2, len1] + "\n");
+        }
+
+        // Driver code
+        public static void Main()
+        {
+            String str1 = "sunday";
+            String str2 = "saturday";
+            Console.Write(editDistDP(str1, str2, str1.Length, str2.Length));
+            /*
+             Output-3
+Time Complexity: O(m x n) 
+Auxiliary Space: O(m x n)
+            */
         }
     }
     /*

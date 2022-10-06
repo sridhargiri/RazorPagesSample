@@ -345,7 +345,7 @@ Time Complexity: O(n)
         }
     }
     /*
-     https://www.geeksforgeeks.org/length-of-longest-subarray-with-smaller-elements-on-immediate-left-for-each-array-element/
+https://www.geeksforgeeks.org/length-of-longest-subarray-with-smaller-elements-on-immediate-left-for-each-array-element/
     Length of longest subarray with smaller elements on immediate left for each Array element
 Difficulty Level : Basic
 Last Updated : 13 Dec, 2021

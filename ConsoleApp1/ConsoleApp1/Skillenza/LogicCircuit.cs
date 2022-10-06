@@ -60,7 +60,7 @@ xnor
     {
         public static void Main(string[] args)
         {
-            int[] a = null; int problems = 0; int minutes = 0; int dmin = 0;
+            int[] a = null; 
             int solvemiutes = 0;
             int T = int.Parse(Console.ReadLine());
             DateTime date1 = new DateTime(1900, 1, 1, 12, 0, 0);

@@ -179,4 +179,34 @@ namespace ConsoleApp1
 
         }
     }
+    public class BaseA
+    {
+        public virtual void Sa()
+        {
+            Console.WriteLine("Class A");
+        }
+    }
+    public class BaseB : BaseA
+    {
+        public override void Sa()
+        {
+            Console.WriteLine("Class B");
+        }
+    }
+    public class VirtualOverride
+    {
+        public static void Main(string[] args)
+        {
+
+
+            BaseA obj = new BaseA();
+            BaseA obj1 = new BaseB();
+            BaseB obj2 = new BaseB();
+            //BaseB Obj3 = new BaseA();
+            obj.Sa();
+            obj1.Sa();
+            obj2.Sa();
+            //obj3.Sa(); error!
+        }
+    }
 }
