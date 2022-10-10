@@ -209,7 +209,7 @@ Knowledge to manage Microservice with multiple database transactions
 costrategix L1 16th sep 2022
 ----------------------------
 1. DependencyResolver in .net
-2. Task vs thread (cancel, async, background , so Task = cab)
+2. Task vs thread (cancel, async, background; cab)
 
 costrategix L2 23th sep 2022
 ----------------------------

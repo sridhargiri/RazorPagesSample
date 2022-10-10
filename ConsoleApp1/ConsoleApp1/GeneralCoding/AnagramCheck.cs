@@ -4,6 +4,27 @@ using System.Text;
 
 namespace ConsoleApp1
 {
+    /*
+     https://www.geeksforgeeks.org/cpp-program-to-check-whether-two-strings-are-anagram-of-each-other/
+    Program To Check Whether Two Strings Are Anagram Of Each Other
+    Write a function to check whether two given strings are anagram of each other or not. An anagram of a string is another string that contains the same characters, only the order of characters can be different. 
+    For example, “abcd” and “dabc” are an anagram of each other
+     LISTEN     SILENT
+    TRAINGLE    Integral
+    these are anagrams
+    Method 1 (Use Sorting):  
+
+Sort both strings
+Compare the sorted strings
+    Method 2
+    Method 2 (Count characters): 
+This method assumes that the set of possible characters in both strings is small. In the following implementation, it is assumed that the characters are stored using 8 bit and there can be 256 possible characters. 
+
+Create count arrays of size 256 for both strings. Initialize all values in count arrays as 0.
+Iterate through every character of both strings and increment the count of character in the corresponding count arrays.
+Compare count arrays. If both count arrays are same, then return true.
+Below is the implementation of the above idea:
+     */
     public class AnagramCheck
     {
 
@@ -22,8 +43,7 @@ namespace ConsoleApp1
             // For each character in input strings, 
             // increment count in the corresponding 
             // count array 
-            for (i = 0; i < str1.Length && i < str2.Length;
-                 i++)
+            for (i = 0; i < str1.Length && i < str2.Length;i++)
             {
                 count1[str1[i]]++;
                 count2[str2[i]]++;
@@ -56,6 +76,14 @@ namespace ConsoleApp1
             else
                 Console.WriteLine("The two strings are not"
                                   + " anagram of each other");
+            /*
+             Output:
+
+The two strings are anagram of each other
+Time Complexity: O(n)
+
+Auxiliary space: O(n)
+            */
         }
     }
 }

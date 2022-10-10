@@ -237,4 +237,5 @@ nagarro L2 on 27/09/2022 4pm
 
 fail status (sep 2022)
 ----------------------
-8 (shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out, amazon L1 out)
+9 companies
+shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out, amazon L1 out

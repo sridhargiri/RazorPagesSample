@@ -99,17 +99,17 @@ namespace ConsoleApp1
         }
     }
 
-    class VirtualOverrrideCopy
+    public class VirtualOverrideCopy
     {
-        static int Main(string[] args)
+        public static void Main(string[] args)
         {
+            // equivalent to B b = new B() and A a = new B()
             BFoo b = new BFoo();
             AFoo a = b;
             a.foo(); // Prints A::foo
             b.foo(); // Prints B::foo
             a.bar(); // Prints B::bar
             b.bar(); // Prints B::bar
-            return 0;
         }
     }
     public class SingletonMain
@@ -123,7 +123,8 @@ namespace ConsoleApp1
         }
         public static void Main(string[] args)
         {
-            Boxunbox(); var o1 = Singleton.Instance;
+            Boxunbox(); 
+            var o1 = Singleton.Instance;
             var o2 = Singleton.Instance;
             var o3 = Singleton.Instance;
             var o4 = Singleton.Instance;

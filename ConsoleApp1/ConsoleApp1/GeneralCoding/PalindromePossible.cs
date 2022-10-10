@@ -25,7 +25,6 @@ Explanation: Swap b(0th index) with d(last index) or
 Input : gcagac
 Output : false
 
-Recommended: Please try your approach on {IDE} first, before moving on to the solution.
 Approach:
 
 This algorithm was based on a thorough analysis of the behavior and possibility of the forming string palindrome. By this analysis, I got the following conclusions :
@@ -223,7 +222,7 @@ Yes
  Explanation: Remove first and second occurrence of character ‘a’, string S becomes “bczdzcb”, which is a palindrome . 
  
 Input: S = “madem”
-Output: No (bcos already palindrome)
+Output: No
     Approach: 
     The task can be solved by iterating over each unique character in the given string, and removing its occurrences wherever there is a mismatch, if a valid palindrome is found, after removing occurrences of the same character any number of times, return “Yes” else return “No“.
 
