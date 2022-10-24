@@ -235,6 +235,28 @@ nagarro L2 on 27/09/2022 4pm
 3. sql container data lost after restart (docker volume vs bind mount)
 4. web api scaling only bike insurance but no scaling for home insurance
 
+ey 15 oct 2022 sat 9am L1 out
+-----------------------------
+1. two way binding in plain js (without angular)
+2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, size 80gb, atleast/atmost once i.e, dosa)
+3. what significant between azure webjobs vs timer trigger both uses timer interval (scaling, pricing)
+4. jwt vs managed identity
+
+flyers soft 18 oct 2022 Tue 12pm L1 out
+---------------------------------------
+1. DI vs factory pattern
+2. why DI was used and composition was not used
+3. is code coverage good practice
+4. mock vs stub in unit testing
+5. forkjoin vs switchmap
+6. action filter vs middleware (ordering and context i.e. OC)
+7. composition over inheritance
+
+version1 18 oct 2022 Tue 4.30pm L1 out
+--------------------------------------
+lack of infra at my side
+
 fail status (sep 2022)
 ----------------------
-8 (shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out, amazon L1 out)
+12 companies
+shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out, amazon L1 out, ey L1 out, flyers soft L1 out, version1 out

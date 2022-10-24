@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class fizz_buzz
+    public class FizzBuzz
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i < 101; i++)
+            for (int i = 1; i <= 15; i++)
             {
-                if (i % 3 < 1)
+                if (i % 3 == 0)
                     Console.Write("fizz");
-                if (i % 5 < 1)
+                if (i % 5 == 0)
                     Console.Write("buzz");
                 if (i % 3 > 0 && i % 5 > 0)
                     Console.Write("{0}", i);

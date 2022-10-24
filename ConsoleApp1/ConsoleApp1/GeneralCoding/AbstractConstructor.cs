@@ -9,12 +9,9 @@ namespace ConsoleApp1
     // abstract class can have public constructor but can't be instantiated directly
     abstract class Features
     {
-        String username;
-        String password;
         //Make it protected as it will be called by only child classes
 
-        //we can have it public as well but, since cannot be instantiated \
-        //there is no need to make it public
+        //we can have it public as well but, since cannot be instantiated there is no need to make it public
 
         //On creation of every child's this constructor will always be called
         // to initialize libraries.
@@ -22,8 +19,6 @@ namespace ConsoleApp1
         protected Features()
         {
             Console.WriteLine("Abstract class constructor");
-            this.username = "default";
-            this.password = "default";
             //initialize library 1, library 2 etc.
             Console.WriteLine("Initializing Music/Video database library");
         }

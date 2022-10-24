@@ -1,0 +1,10 @@
+dotnet ef dbcontext scaffold "Data Source=DESKTOP-TJHLDSD\SQLEXPRESS;Initial Catalog=AdventureWorks2014;Integrated Security=true;" Microsoft.EntityFrameworkCore.SqlServer ^
+--context-dir EFDbContext --output-dir EFDbContext --context DbCoreContext --force ^
+--table [HumanResources].[Employee] ^
+--table [HumanResources].[Department] ^
+--table [HumanResources].[EmployeeDepartmentHistory] ^
+--table [HumanResources].[EmployeePayHistory] ^
+--table [HumanResources].[JobCandidate] ^
+--table [HumanResources].[Shift] ^
+--table [Person].[Address]
+cmd /k

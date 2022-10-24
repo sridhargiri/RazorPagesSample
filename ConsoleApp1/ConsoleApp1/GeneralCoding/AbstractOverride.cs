@@ -41,7 +41,7 @@ namespace ConsoleApp1
         // same as the previous class 
         public override void gfg1()
         {
-            Console.WriteLine("Class name is  G2");
+            Console.WriteLine("Class name is G2");
         }
     }
 
@@ -75,6 +75,7 @@ namespace ConsoleApp1
             obj.gfg1();
         }
     }
+    // virtual override sample
     class AFoo
     {
         public void foo()
