@@ -13,9 +13,9 @@ namespace ConsoleApp1
             for (int i = 1; i <= 15; i++)
             {
                 if (i % 3 == 0)
-                    Console.Write("fizz");
+                    Console.Write("Fizz");
                 if (i % 5 == 0)
-                    Console.Write("buzz");
+                    Console.Write("Buzz");
                 if (i % 3 > 0 && i % 5 > 0)
                     Console.Write("{0}", i);
                 Console.WriteLine("");
@@ -25,26 +25,30 @@ namespace ConsoleApp1
     public class StackError
     {
         static void Main(string[] args)
-        { new StackError().Run(); }
-    private int _sharedInteger;
+        {
+            new StackError().Run();
+        }
+        private int _sharedInteger;
 
         public void Run()
         {
-            Task modifyTaskOne = Task.Run(() => ModifySharedIntegerInLoop(600, 1));
-            Task modifyTaskTwo = Task.Run(() => ModifySharedIntegerInLoop(600, -1));
-            Task modifyTaskThree = Task.Run(() => ModifySharedIntegerInLoop(600, 1));
-            Task modifyTaskFour = Task.Run(() => ModifySharedIntegerInLoop(600, -1));
-            Task modifyTaskFive = Task.Run(() => ModifySharedIntegerInLoop(600, 1));
-            Task.WaitAll(modifyTaskOne, modifyTaskTwo, modifyTaskThree, modifyTaskFour, modifyTaskFive);
+            Task modifyTaskOne = Task.Run(() => ModifySharedIntegerInLoop(600, 1,1));
+            Task modifyTaskTwo = Task.Run(() => ModifySharedIntegerInLoop(600, -1,2));
+            Task modifyTaskThree = Task.Run(() => ModifySharedIntegerInLoop(600, 1,3));
+            Task modifyTaskFour = Task.Run(() => ModifySharedIntegerInLoop(600, -1,4));
+            Task modifyTaskFive = Task.Run(() => ModifySharedIntegerInLoop(600, 1,5));
+            Task.WaitAny(modifyTaskOne, modifyTaskTwo, modifyTaskThree, modifyTaskFour, modifyTaskFive);
             Debug.WriteLine(string.Format("Final value: {0}", _sharedInteger));
         }
 
-        private void ModifySharedIntegerInLoop(int maxLoops, int amount)
+        private void ModifySharedIntegerInLoop(int maxLoops, int amount,int order)
         {
             for (int i = 0; i < maxLoops; i++)
             {
                 ModifySharedIntegerSingleTime(amount);
             }
+            if (order == 5)
+                throw new Exception();
         }
 
         private void ModifySharedIntegerSingleTime(int amount)
@@ -62,9 +66,9 @@ The recursion should stop when the length of the string exceeds 100.
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Recur("duck",100));
+            Console.WriteLine(Recur("duck", 100));
         }
-       static string Recur(string str,int len)
+        static string Recur(string str, int len)
         {
             if (str.Length < len)
                 return str + Recur(str, str.Length);
