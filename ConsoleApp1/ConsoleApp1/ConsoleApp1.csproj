@@ -5,9 +5,9 @@
     <TargetFramework>net5.0</TargetFramework>
     <Foo>First Foo</Foo>
     <Property1>$(Foo)</Property1>
-    <Foo>Second Foo</Foo>
-    <Property2>$(Foo)</Property2>
-    <StartupObject>ConsoleApp1.UniqueWords</StartupObject>
+    <Foo1>Second Foo</Foo1>
+    <Property2>$(Foo1)</Property2>
+    <StartupObject>ConsoleApp1.AbstractOverrideInit</StartupObject>
   </PropertyGroup>
   <Target Name="TestMessage" AfterTargets="Build">
     <Message Text="$(Property1)" Importance="high" />

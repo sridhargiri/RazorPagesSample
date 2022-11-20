@@ -12,6 +12,11 @@ vm deploy vs azure app service
 compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
+.net 6 minimal api
+
+scaffold
+--------
+Scaffold-DbContext "Data Source=sridharsw-lp; Initial Catalog=AssignmentDb; Integrated Security=True; Encrypt=False;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -StartupProject AssignmentDataLayer
 
 naukri JD for azure
 -------------------
@@ -187,6 +192,8 @@ Brillio (ciena)
 4 Latency modes in gc
 strong/weak references
 
+srarting from august 2022
+***************************
 divini (client: coremont)
 -------------------------
 6th august 2022, 1st round - idempotency, .net core inmemory cache and web api cache via proxy server
@@ -232,7 +239,7 @@ nagarro L2 on 27/09/2022 4pm
 ----------------------------
 1. unit testing vs integration testing
 2. pods connect external ip 
-3. sql container data lost after restart (docker volume vs bind mount)
+3. sql docker container data lost after restart (volume vs bind mount)
 4. web api scaling only bike insurance but no scaling for home insurance
 
 ey 15 oct 2022 sat 9am L1 out
@@ -241,23 +248,72 @@ ey 15 oct 2022 sat 9am L1 out
 2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, size 80gb, atleast/atmost once i.e, dosa)
 3. what significant between azure webjobs vs timer trigger both uses timer interval (scaling, pricing)
 4. jwt vs managed identity
+5. azure disaster recovery
 
 flyers soft 18 oct 2022 Tue 12pm L1 out
 ---------------------------------------
 1. DI vs factory pattern
-2. why DI was used and composition was not used
+2. why DI was used and composition was not used (also composition over inheritance)
 3. is code coverage good practice
 4. mock vs stub in unit testing
 5. forkjoin vs switchmap
 6. action filter vs middleware (ordering and context i.e. OC)
-7. composition over inheritance
 
 version1 18 oct 2022 Tue 4.30pm L1 out
 --------------------------------------
 lack of infra at my side
 
-fail status (sep 2022)
-----------------------
-12 companies
-shell, sage IT, maxerience, hellofresh, divini, coforge, costrategix L3 out, nagarro L2 out, amazon L1 out, ey L1 out, flyers soft L1 out, version1 out
+Everi 27 oct 2022 3pm L1 out
+----------------------------
+1. why * in angular structural directive (ng-template, only one per element)
+2. parent/child component how angular apply different color to buttons (The default value is ViewEncapsulation.Emulated)
+3. why function no dml
+4. terminate thread sleep
+
+accolite 31 oct 2022 2pm L1 out
+-------------------------------
+1. sum of individual digits program
+2. virtual override, c#, oops
+
+capgemini online test taken on 6th nov 2022 (sunday)
+----------------------------------------------------
+1. async await in catch, finally - allowed
+2. Task.run null action - gives error
+3. Logic apps connector from azure to ibm / connect one logic app to another
+4. distribute traffic evenly through azure traffic manager weighted routing methods (6 types in total, Note:azure traffic manager service endpoints includes azure webapps, cloud services, azure VM)
+5. fields in abstract class cannot be changed by assigning new values in deriving class
+6. azure premium disk low latency
+7. azure devops run button not enabled reason?
+8. If you still want to rebase the commits but can't rebase and merge automatically on GitHub.com you must rebase the topic branch (or head branch) onto the base branch locally on the command line
+9. Task.Run vs StartNew (we can’t attach a child task to a task launched by Task.Run)
+
+ajmera (Nov 11)
+---------------
+offline assessment done, time taken 2 days
+
+rsm 18th nov 4.30pm
+-------------------
+1. ef parent/child insert same query
+2. ef rollback parent insert when child query fails
+
+fail status, 17 companies from aug 2022
+---------------------------------------
+1.	shell (codility test out)
+2.	sage IT
+3.	maxerience
+4.	hellofresh
+5.	divini
+6.	coforge
+7.	costrategix L3 out
+8.	nagarro L2 out
+9.	amazon shortlisting out
+10.	ey L1 out
+11.	flyers soft L1 out
+12.	version1
+13.	everi
+14.	accolite
+15.	capgemini (test not clear)
+16.	altimetrik L1 out
+17.	ajmera assessment out
+18.	rsm L1 out
 

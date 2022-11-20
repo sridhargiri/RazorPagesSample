@@ -1,0 +1,350 @@
+Q.1 What is the full form of CIDR?
+
+       A. Classful Intra Domain Routing
+
+       B. Classless Intra Domain Routing
+
+       C. Classless Inter Domain Routing
+
+       D. Classful Inter Domain Routing
+
+Ans : Classless Inter Domain Routing
+
+Q.2 IP address space can be applied to _____________.
+
+       A. Virtual networks
+
+       B. Subnets
+
+       C. None of the options
+
+       D. All the options
+
+Ans : All the options
+
+Q.3 Azure Virtual Networks can be created using _________.
+
+       A. Azure CLI
+
+       B. Azure Portal
+
+       C. Azure Powershell
+
+       D. All the options
+
+Ans : All the options
+
+Q.4 Azure DNS is the same as Domain Registrar.
+
+       A. True
+
+       B. False
+
+Ans : False
+
+
+Q.5 How many endpoints are there in Azure Traffic Manager?
+
+       A. 1
+
+       B. 2
+
+       C. 3
+
+       D. 4
+
+Ans : 3
+
+Q.6 Network traffic can be controlled in _______ ways.
+
+       A. 1
+
+       B. 2
+
+       C. 3
+
+       D. 4
+
+Ans : 3
+
+Q.7 Which of the following are load balancer types?
+
+       A. Standard Load Balancer
+
+       B. Public Load Balancer
+
+       C. Internal Load Balancer
+
+       D. All the options
+
+Ans : All the options
+
+Q.8 Which endpoint is used for Non-Azure services?
+
+       A. External Endpoint
+
+       B. Nested Endpoint
+
+       C. Azure Endpoints
+
+       D. All the options
+
+Ans : External Endpoint
+
+Q.9 Azure Traffic manager receives a query from _____________.
+
+       A. Endpoint
+
+       B. Client
+
+       C. Routing Method
+
+       D. All the options
+
+Ans : Client
+
+Q.10 P2S Connection creates a VPN on which protocol?
+
+       A. UDP
+
+       B. SSTP
+
+       C. TCP
+
+       D. All the options
+
+Ans : SSTP
+
+Q.11 An application gateway is a _______ routing technique.
+
+       A. Six-layer
+
+       B. Five-layer
+
+       C. Four-layer
+
+       D. Seven-layer
+
+Ans : Seven-layer
+
+Q.12 Which of the following are the types of Application Gateways?
+
+       A. Standard
+
+       B. WAF
+
+       C. None of the mentioned
+
+       D. All the options
+
+Ans : All the options
+
+Q.13 A subnet is a range of IP addresses in a ______________.
+
+       A. Cloud Service
+
+       B. VNet
+
+       C. DNS Server
+
+       D. VM role instance
+
+Ans : VNet
+
+Q.14 If you are running a web application or a user is going to fill it out and query data, the best option is to use _____________.
+
+       A. An application gateway
+
+       B. Health monitoring probes
+
+       C. A load balancer
+
+       D. A traffic manager
+
+Ans : An application gateway
+
+Q.15 In a site-to-site configuration, avoid ______________.
+
+       A. Resource manager deployment
+
+       B. Overlapping subnets
+
+       C. Adding additional address spaces
+
+       D. Adding additional subnets
+
+Ans : Overlapping subnets
+
+Q.16 Cookie-based session affinity is a feature of ____________.
+
+       A. Application Gateway
+
+       B. Load Balancer
+
+       C. Traffic Manager
+
+       D. DNS delegation
+
+Ans : Application Gateway
+
+
+Q.17 Setting up the NS record for a child zone in a parent zone is called ____________.
+
+       A. Domain delegation
+
+       B. Registrar
+
+       C. Domain management
+
+       D. DNS resolution
+
+Ans : Domain delegation
+
+Q.18 Azure Application Gateway (AG) by default, monitors the health of all resources and automatically removes an unhealthy resource from the pool.
+
+       A. True
+
+       B. False
+
+Ans : True
+
+Q.19 The load balancer will regularly probe your endpoint for every 15 seconds, by default.
+
+       A. True
+
+       B. False
+
+Ans : True
+
+Q.20 Azure Traffic Manager service endpoints includes _______________.
+
+       A. Azure Web Apps
+
+       B. Cloud services
+
+       C. Azure VMs
+
+       D. All the options
+
+Ans : All the options
+
+Q.21 If you are planning for communication between on-premise computers and public endpoints in Azure, you must use _______.
+
+       A. Microsoft Azure external name resolution
+
+       B. Your own DNS server/implementation
+
+       C. Azure-provided name resolution
+
+       D. The last three IP addresses in the range
+
+Ans : Microsoft Azure external name resolution
+
+Q.22 A connection to a VNet that requires a configuration procedure on every computer that you want to connect to the VNet is called ______.
+
+       A. ExpressRoute
+
+       B. Point-to-Site VPN
+
+       C. VNet-to-VNet VPN
+
+       D. Site-to-Site VPN
+
+Ans : Point-to-Site VPN
+
+Q.23 When you add an IaaSv1 VM to a VNet, you must also add it to the
+_________________.
+
+       A. Subnet
+
+       B. Gateway
+
+       C. VNet configuration file
+
+       D. Dynamic IP address
+
+Ans : Subnet
+
+Q.24 Which connection configuration offers faster speeds, higher security, lower latencies, and higher reliability?
+
+       A. Site-to-Site VPN
+
+       B. Point-to-Site VPN
+
+       C. ExpressRoute
+
+       D. VNet-to-VNet VPN
+
+Ans : ExpressRoute
+
+Q.25 For an IaaSv2 VM, you assign a/an _______________ to the subnet.
+
+       A. FQDN
+
+       B. VM
+
+       C. IP Address
+
+       D. NIC
+
+Ans : NIC
+
+Q.26 zure provides a DNS system to support many name resolution scenarios, except _______.
+
+       A. Hybrid connections
+
+       B. Same VNet
+
+       C. None of the options
+
+       D. Same cloud service
+
+Ans : Hybrid connections
+
+Q.27 To automate VNet creation in the classic portal, you use ___________.
+
+       A. Service manager model with a configuration file
+
+       B. ARM
+
+       C. PowerShell
+
+       D. A gateway
+
+Ans : Service manager model with a configuration file
+
+Q.28 To provide fast performance and high availability for your domain, Azure DNS uses ___________ networking.
+
+       A. Geocast
+
+       B. Broadcast
+
+       C. Multicast
+
+       D. Anycast
+
+Ans : Anycast
+
+Q.29 ExpressRoute provides a connection that does not cross ____________.
+
+       A. The on-premises network
+
+       B. The internet
+
+       C. Cloud services
+
+       D. VNets
+
+Ans : The internet
+
+Q.30 Which statement regarding ExpressRoute connections is true?
+
+       A. They consist of a single connection to the Microsoft Edge router
+
+       B. They use a VPN over the public Internet
+
+       C. They use a private connection facilitated by a connectivity provider
+
+       D. They can connect to all regions across all geopolitical boundaries
+
+Ans : They use a private connection facilitated by a connectivity provider

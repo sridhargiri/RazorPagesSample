@@ -8,6 +8,13 @@ namespace ConsoleApp1
 {
     public class FizzBuzz
     {
+        /*
+         fizz buzz program, 
+if divisible by 3 print Fizz
+if divisible by 5 print Buzz
+if divisible by both 3 and 5 print FizzBuzz
+if not divisible by 3 or 5, print number itself
+        */
         static void Main(string[] args)
         {
             for (int i = 1; i <= 15; i++)
@@ -32,16 +39,16 @@ namespace ConsoleApp1
 
         public void Run()
         {
-            Task modifyTaskOne = Task.Run(() => ModifySharedIntegerInLoop(600, 1,1));
-            Task modifyTaskTwo = Task.Run(() => ModifySharedIntegerInLoop(600, -1,2));
-            Task modifyTaskThree = Task.Run(() => ModifySharedIntegerInLoop(600, 1,3));
-            Task modifyTaskFour = Task.Run(() => ModifySharedIntegerInLoop(600, -1,4));
-            Task modifyTaskFive = Task.Run(() => ModifySharedIntegerInLoop(600, 1,5));
+            Task modifyTaskOne = Task.Run(() => ModifySharedIntegerInLoop(600, 1, 1));
+            Task modifyTaskTwo = Task.Run(() => ModifySharedIntegerInLoop(600, -1, 2));
+            Task modifyTaskThree = Task.Run(() => ModifySharedIntegerInLoop(600, 1, 3));
+            Task modifyTaskFour = Task.Run(() => ModifySharedIntegerInLoop(600, -1, 4));
+            Task modifyTaskFive = Task.Run(() => ModifySharedIntegerInLoop(600, 1, 5));
             Task.WaitAny(modifyTaskOne, modifyTaskTwo, modifyTaskThree, modifyTaskFour, modifyTaskFive);
             Debug.WriteLine(string.Format("Final value: {0}", _sharedInteger));
         }
 
-        private void ModifySharedIntegerInLoop(int maxLoops, int amount,int order)
+        private void ModifySharedIntegerInLoop(int maxLoops, int amount, int order)
         {
             for (int i = 0; i < maxLoops; i++)
             {
@@ -64,15 +71,21 @@ The recursion should stop when the length of the string exceeds 100.
     */
     public class RecursionStop
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine(Recur("duck", 100));
+            string s = "duck";
+            s = Concatenate(s);
+            Console.WriteLine(s);
+            Console.ReadKey();
         }
-        static string Recur(string str, int len)
+
+        static string Concatenate(string s)
         {
-            if (str.Length < len)
-                return str + Recur(str, str.Length);
-            return str;
+            while (s.Length <= 100)
+            {
+                s = Concatenate(s + s);
+            }
+            return s;
         }
     }
 

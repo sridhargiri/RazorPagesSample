@@ -48,7 +48,7 @@ namespace ConsoleApp1
                     Items = new List<OrderItem>() {
                     new OrderItem { ProductId=1,Quantity=20 } }
                 });
-            var s = GetSummaries(orders, products, 2019);
+            var s = GetSummaries(orders, products, 2020);
         }
         public static IEnumerable<Summary> GetSummaries(IEnumerable<Order> orders, IEnumerable<ProductClass> products, int year)
         {
