@@ -295,6 +295,13 @@ rsm 18th nov 4.30pm
 -------------------
 1. ef parent/child insert same query
 2. ef rollback parent insert when child query fails
+3. .net 6 features
+
+itela 24/11/2022 11:30am L1 out
+-------------------------------
+asked only architectural questions, how you propose technical solutions
+
+XA online test taken on 25th nov 8am (question is attached on triangle types)
 
 fail status, 17 companies from aug 2022
 ---------------------------------------
@@ -316,4 +323,5 @@ fail status, 17 companies from aug 2022
 16.	altimetrik L1 out
 17.	ajmera assessment out
 18.	rsm L1 out
-
+19.	itleasoft
+20.	XA (online test)
