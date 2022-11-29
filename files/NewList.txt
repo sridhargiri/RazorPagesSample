@@ -12,6 +12,8 @@ vm deploy vs azure app service
 compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
+js higher order functions
+js partial function
 .net 6 minimal api
 
 scaffold
@@ -244,7 +246,7 @@ nagarro L2 on 27/09/2022 4pm
 
 ey 15 oct 2022 sat 9am L1 out
 -----------------------------
-1. two way binding in plain js (without angular)
+1. implement two way binding in plain js (without angular)
 2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, size 80gb, atleast/atmost once i.e, dosa)
 3. what significant between azure webjobs vs timer trigger both uses timer interval (scaling, pricing)
 4. jwt vs managed identity
@@ -301,9 +303,26 @@ itela 24/11/2022 11:30am L1 out
 -------------------------------
 asked only architectural questions, how you propose technical solutions
 
-XA online test taken on 25th nov 8am (question is attached on triangle types)
+itela 29/11/2022 tue 11am L2 out
+-------------------------------
+1. ef vs repository pattern, then why unitofwork is required
+2. ef vs dapper
+3. asp.net core generate unique request id using middleware and pass this value from controller to BL
+4. asp.net core openid vs oauth; also server to server communicate after authentication
 
-fail status, 17 companies from aug 2022
+XA 25th nov 8am
+----------------
+online test (question is attached on triangle types)
+
+codevysya L1 26th nov sat 12.30pm
+---------------------------------
+1. sort an array in js (without inbuilt method)
+2. capitalise first letter, so "test" becomes "Test"
+3. function currying in js
+4. deep copy vs shallow copy in js
+5. react public and private routes
+
+fail status, 21 companies from aug 2022
 ---------------------------------------
 1.	shell (codility test out)
 2.	sage IT
@@ -323,5 +342,7 @@ fail status, 17 companies from aug 2022
 16.	altimetrik L1 out
 17.	ajmera assessment out
 18.	rsm L1 out
-19.	itleasoft
+19.	itelasoft
 20.	XA (online test)
+21.	codevysya for react opening
+

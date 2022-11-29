@@ -12,6 +12,8 @@ vm deploy vs azure app service
 compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
+js higher order functions
+js partial function
 .net 6 minimal api
 
 scaffold
@@ -244,7 +246,7 @@ nagarro L2 on 27/09/2022 4pm
 
 ey 15 oct 2022 sat 9am L1 out
 -----------------------------
-1. two way binding in plain js (without angular)
+1. implement two way binding in plain js (without angular)
 2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, size 80gb, atleast/atmost once i.e, dosa)
 3. what significant between azure webjobs vs timer trigger both uses timer interval (scaling, pricing)
 4. jwt vs managed identity
@@ -277,8 +279,8 @@ accolite 31 oct 2022 2pm L1 out
 
 capgemini online test taken on 6th nov 2022 (sunday)
 ----------------------------------------------------
-1. async await in catch, finally
-2. Task.run null action
+1. async await in catch, finally - allowed
+2. Task.run null action - gives error
 3. Logic apps connector from azure to ibm / connect one logic app to another
 4. distribute traffic evenly through azure traffic manager weighted routing methods (6 types in total, Note:azure traffic manager service endpoints includes azure webapps, cloud services, azure VM)
 5. fields in abstract class cannot be changed by assigning new values in deriving class
@@ -295,8 +297,25 @@ rsm 18th nov 4.30pm
 -------------------
 1. ef parent/child insert same query
 2. ef rollback parent insert when child query fails
+3. .net 6 features
 
-fail status, 17 companies from aug 2022
+itela 24/11/2022 11:30am L1 out
+-------------------------------
+asked only architectural questions, how you propose technical solutions
+
+XA 25th nov 8am
+----------------
+online test (question is attached on triangle types)
+
+codevysya L1 26th nov sat 12.30pm
+---------------------------------
+1. sort an array in js (without inbuilt method)
+2. capitalise first letter, so "test" becomes "Test"
+3. function currying in js
+4. deep copy vs shallow copy in js
+5. react public and private routes
+
+fail status, 21 companies from aug 2022
 ---------------------------------------
 1.	shell (codility test out)
 2.	sage IT
@@ -316,4 +335,7 @@ fail status, 17 companies from aug 2022
 16.	altimetrik L1 out
 17.	ajmera assessment out
 18.	rsm L1 out
+19.	itelasoft
+20.	XA (online test)
+21.	codevysya for react opening
 
