@@ -1,5 +1,12 @@
-self study
------------
+sep 2021 onwards
+----------------
+attribute routing (outgoing url), 
+multiple action filter order [ https://www.strathweb.com/2012/06/control-the-execution-order-of-your-filters-in-asp-net-web-api/ ], 
+filter that has dependency TypeFilter
+angular forkjoin and mergemap
+
+self study Part 1
+-----------------
 .net core jwt serialize
 web api when no cache
 azure load balancer
@@ -20,7 +27,7 @@ scaffold
 --------
 Scaffold-DbContext "Data Source=sridharsw-lp; Initial Catalog=AssignmentDb; Integrated Security=True; Encrypt=False;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -StartupProject AssignmentDataLayer
 
-naukri JD for azure
+JD for azure
 -------------------
 Storage – standard and Premium
 Storage Blob
@@ -37,17 +44,11 @@ VPN Gateways
 NSGs / Azure Firewall
 Azure Policies, security monitor and App Insights
 
-sep 2022 onwards
-----------------
-attribute routing (outgoing url), 
-multiple action filter order [ https://www.strathweb.com/2012/06/control-the-execution-order-of-your-filters-in-asp-net-web-api/ ], 
-filter that has dependency TypeFilter
-angular forkjoin and mergemap
-
-
 https://docs.microsoft.com/en-us/azure/api-management/import-and-publish
 https://reactjs.org/docs/thinking-in-react.html
 
+self study Part 2
+-----------------
 dependency register cs microservice
 call api in another api microservices
 parts of http request
@@ -57,6 +58,8 @@ ef core db first oracle
 azure cdn, azure blob auto delete old archive via webjob or timer trigger or lifecycle management,lease blob
 azure functions heavy data load
 
+self study Part 3
+-----------------
 abstract vs interface,static class vs singleton
 angular change detection
 async pipe - pure/impure pipes
@@ -68,7 +71,8 @@ sql server vs mysql
 azure ad,hybrid
 sql elastic pool
 azure static website hosting $web storage account
-debouncing,props.children,httpevent,usecallback,useRef,useEffect
+debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array)
+three ways to avoid props drilling in react: redux, usecontext, container composition
 microservices transaction example c#, c# istio, mediatr,automatonymous,
 c# template pattern,abstract factory pattern,adapter pattern, abstract override
 react diffing, shadow DOM,hooks
@@ -188,6 +192,7 @@ observer in angular
 IEnumerable with index retrieval time
 IEnumerable OrderBy with non existent column
 Table valued functions
+implement custom dependency injection
 
 Brillio (ciena)
 ---------------
