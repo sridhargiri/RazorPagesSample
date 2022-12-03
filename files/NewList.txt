@@ -327,6 +327,11 @@ codevysya L1 26th nov sat 12.30pm
 4. deep copy vs shallow copy in js
 5. react public and private routes
 
+rsm L2 2nd dec 2022 3.30pm
+--------------------------
+1. web api measure api response time
+2. ef handle concurrency
+
 fail status, 21 companies from aug 2022
 ---------------------------------------
 1.	shell (codility test out)
@@ -344,7 +349,7 @@ fail status, 21 companies from aug 2022
 13.	everi
 14.	accolite
 15.	capgemini (test not clear)
-16.	altimetrik L1 out
+16.	altimetrik L1 out (assessment failed for Zip.co on 3rd dec 2022 saturday) https://github.com/quadpay/software-engineer-interview
 17.	ajmera assessment out
 18.	rsm L1 out
 19.	itelasoft
