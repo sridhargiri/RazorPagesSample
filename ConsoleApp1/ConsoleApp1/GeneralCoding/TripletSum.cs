@@ -138,7 +138,7 @@ Implementation:
                 {
                     if (A[i] + A[l] + A[r] == sum)
                     {
-                        Console.Write("Triplet is " + A[i] + ", " + A[l] + ", " + A[r]);
+                        Console.Write("Triplet is {0}, {1}, {2} that add upto {3}", A[i], A[l], A[r], sum);
                         return true;
                     }
                     else if (A[i] + A[l] + A[r] < sum)
@@ -201,6 +201,7 @@ Implementation:
             int[] A = new int[] { 1, 4, 45, 6, 10, 8 };
             int sum = 22;
             int arr_size = A.Length;
+            triplet.find3Numbers(A, arr_size, sum);
             /*
              Output
 Triplet is 4, 8, 10
@@ -211,7 +212,6 @@ Space Complexity: O(1).
 As no extra space is required
             */
 
-            triplet.find3Numbers(A, arr_size, sum);
         }
     }
     /*
@@ -233,13 +233,11 @@ Implementation:
         // returns true if there is triplet
         // with sum equal to 'sum' present
         // in A[]. Also, prints the triplet
-        static bool find3Numbers(int[] A,
-                                 int arr_size, int sum)
+        static bool find3Numbers(int[] A, int arr_size, int sum)
         {
             // Fix the first element as A[i]
             for (int i = 0; i < arr_size - 2; i++)
             {
-
                 // Find pair in subarray A[i+1..n-1]
                 // with sum equal to sum - A[i]
                 HashSet<int> s = new HashSet<int>();
@@ -248,8 +246,7 @@ Implementation:
                 {
                     if (s.Contains(curr_sum - A[j]))
                     {
-                        Console.Write("Triplet is {0}, {1}, {2}", A[i],
-                                      A[j], curr_sum - A[j]);
+                        Console.Write("Triplet is {0}, {1}, {2} that add upto {3}", A[i], A[j], curr_sum - A[j], sum);
                         return true;
                     }
                     s.Add(A[j]);
@@ -259,7 +256,26 @@ Implementation:
             // If we reach here, then no triplet was found
             return false;
         }
+        /*
+         dry run of hashing approach, input array = 1, 4, 45, 6, 10, 8 and sum = 22, 
+outer for run from 0 to 4 (=array_size=2 i.e. 6-2)
 
+note: hashset initialised every loop
+
+i=0; curr_sum = 22-1=21, 
+	j=1; 21-4=17,	hashset not contains, so add 4
+	j=2; 21-45=-24,	hashset not contains, so add 45
+	j=3; 21-6=15,	hashset not contains, so add 6
+	j=4; 21-10=11,	hashset not contains, so add 10
+	j=5; 21-8=13,	hashset not contains, so add 8
+
+i=1; curr_sum = 22-4=18,
+	j=2; 18-45=-27,	hashset not contains, so add 45
+	j=3; 18-6=12,	hashset not contains, so add 6
+	j=4; 18-10=8,	hashset not contains, so add 10
+	j=5; 18-8=10,	hashset contains, so return true by printing below to console, 
+	--->print A[i] as A[1]=4, A[j] as A[5]=8, print current difference which is 22-4 as 10
+        */
         /* Driver code */
         public static void Main()
         {

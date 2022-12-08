@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
     /*
-     UBS Haclerrank test taken on 29 nov 2022
+     UBS Hackerrank test taken on 29 nov 2022
     Q1
     ***
      https://www.geeksforgeeks.org/find-length-of-longest-substring-with-at-most-k-normal-characters/
@@ -162,7 +162,7 @@ paris has only one estimate, so it is the average.
 
     Q3
     ***
-    .net core custom middleware to check if request hader value equals a given value. if pass, allow request else return 403
+    .net core custom middleware to check if request header value equals a given value. if pass, allow request else return 403
 
     Q4
     ***

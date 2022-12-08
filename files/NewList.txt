@@ -61,17 +61,16 @@ azure functions heavy data load
 self study Part 3
 -----------------
 abstract vs interface,static class vs singleton
-angular change detection
+angular change detection, httpinterceptor, share-data-between-sibling-components-in-angular, auth guard (4 types)
 async pipe - pure/impure pipes
 axios vs fetch - backward,json stringify,timeout,interceptor
-limit no of instance
-share-data-between-sibling-components-in-angular
+c# limit or count no of instances
 microservice transaction - 2pc & saga, microservice event sourcing - CQRS, bounded context in DDD
 sql server vs mysql
 azure ad,hybrid
 sql elastic pool
 azure static website hosting $web storage account
-debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array)
+react => debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array)
 three ways to avoid props drilling in react: redux, usecontext, container composition
 microservices transaction example c#, c# istio, mediatr,automatonymous,
 c# template pattern,abstract factory pattern,adapter pattern, abstract override
@@ -332,7 +331,17 @@ rsm L2 2nd dec 2022 3.30pm
 1. web api measure api response time
 2. ef handle concurrency
 
-fail status, 21 companies from aug 2022
+randstad L1 6th dec 12pm
+------------------------
+1. web api performance tuning and other generic questions
+
+syrencloud L1 7th dec 2022 4pm
+------------------------------
+1. abstract class inherit interface
+2. js settimeout function called in a loop
+3. find three numbers that add to given sum
+
+fail status, 22 companies from aug 2022
 ---------------------------------------
 1.	shell (codility test out)
 2.	sage IT
@@ -351,8 +360,11 @@ fail status, 21 companies from aug 2022
 15.	capgemini (test not clear)
 16.	altimetrik L1 out (assessment failed for Zip.co on 3rd dec 2022 saturday) https://github.com/quadpay/software-engineer-interview
 17.	ajmera assessment out
-18.	rsm L1 out
+18.	rsm L2 out
 19.	itelasoft
 20.	XA (online test)
 21.	codevysya for react opening
+22.	devexpress hackerrank failed on 24 oct 2022 late night
+23.	randstad
+24. syrencloud
 
