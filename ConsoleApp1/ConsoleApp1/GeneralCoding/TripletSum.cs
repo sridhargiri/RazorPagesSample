@@ -262,14 +262,14 @@ outer for run from 0 to 4 (=array_size=2 i.e. 6-2)
 
 note: hashset initialised every loop
 
-i=0; curr_sum = 22-1=21, 
+i=0; curr_sum = target-a[i] = 22-1=21, 
 	j=1; 21-4=17,	hashset not contains, so add 4
 	j=2; 21-45=-24,	hashset not contains, so add 45
 	j=3; 21-6=15,	hashset not contains, so add 6
 	j=4; 21-10=11,	hashset not contains, so add 10
 	j=5; 21-8=13,	hashset not contains, so add 8
 
-i=1; curr_sum = 22-4=18,
+i=1; curr_sum = target-a[i] = 22-4=18,
 	j=2; 18-45=-27,	hashset not contains, so add 45
 	j=3; 18-6=12,	hashset not contains, so add 6
 	j=4; 18-10=8,	hashset not contains, so add 10

@@ -340,8 +340,15 @@ syrencloud L1 7th dec 2022 4pm
 1. abstract class inherit interface
 2. js settimeout function called in a loop
 3. find three numbers that add to given sum
+4. delete vs drop vs truncate
 
-fail status, 22 companies from aug 2022
+joulestowatts wolters kluwers L1 9th dec 2022 3pm
+--------------------------------------------------
+1. Index fragmentation: (pages logical ordering not match physical ordering in data file) external/internal (identifed by dmv). keywords: fill factor, defragmentation by RRI
+2. sql server isolation level
+3. Sum of prime numbers between range
+
+fail status, 25 companies from aug 2022
 ---------------------------------------
 1.	shell (codility test out)
 2.	sage IT
@@ -367,4 +374,4 @@ fail status, 22 companies from aug 2022
 22.	devexpress hackerrank failed on 24 oct 2022 late night
 23.	randstad
 24. syrencloud
-
+25. joulestowatts

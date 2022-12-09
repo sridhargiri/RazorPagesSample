@@ -69,11 +69,11 @@ Find the first number greater than p in the list that is not marked.
         // Driver Code
         static void Main()
         {
-            if (isPrime(11))
-                Console.Write(" true");
+            if (isPrime(3))
+                Console.WriteLine("true");
 
             else
-                Console.Write(" false");
+                Console.WriteLine("false");
             int n = 30;
             Console.WriteLine("Following are the prime numbers smaller than or equal to " + n);
             SieveOfEratosthenes(n);
