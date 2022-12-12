@@ -303,16 +303,16 @@ rsm 18th nov 4.30pm
 2. ef rollback parent insert when child query fails
 3. .net 6 features
 
-itela 24/11/2022 11:30am L1 out
--------------------------------
+itela 24/11/2022 11:30am L1 pass
+--------------------------------
 asked only architectural questions, how you propose technical solutions
 
 itela 29/11/2022 tue 11am L2 out
--------------------------------
+--------------------------------
 1. ef vs repository pattern, then why unitofwork is required
 2. ef vs dapper
 3. asp.net core generate unique request id using middleware and pass this value from controller to BL
-4. asp.net core openid vs oauth; also server to server communicate after authentication
+4. asp.net core openid vs oauth; also server to server communicate after authentication.
 
 XA 25th nov 8am
 ----------------
@@ -340,7 +340,13 @@ syrencloud L1 7th dec 2022 4pm
 1. abstract class inherit interface
 2. js settimeout function called in a loop
 3. find three numbers that add to given sum
-4. delete vs drop vs truncate
+4. delete vs drop vs truncate (RPR)
+5. var vs let vs const
+
+syrencloud L2 12th dec 2022 12pm
+--------------------------------
+1. Reverse individual words (input: i am boy, output: i ma yob)
+2. abstract class usage
 
 joulestowatts wolters kluwers L1 9th dec 2022 3pm
 --------------------------------------------------
@@ -360,7 +366,7 @@ fail status, 25 companies from aug 2022
 8.	nagarro L2 out
 9.	amazon shortlisting out
 10.	ey L1 out
-11.	flyers soft L1 out
+11.	flyers soft L2 out
 12.	version1
 13.	everi
 14.	accolite
@@ -373,5 +379,5 @@ fail status, 25 companies from aug 2022
 21.	codevysya for react opening
 22.	devexpress hackerrank failed on 24 oct 2022 late night
 23.	randstad
-24. syrencloud
+24. syrencloud L2 out
 25. joulestowatts
