@@ -26,7 +26,7 @@ nested queries
 ef over ado.net
 solid principles
 design patterns, abstract factory, singleton
-microservices communication, DDD
+microservices communication, DDD (BC, Context Map). DDD Phases - strategic and tactical 
 azure functions, service bus, functions, logic apps
 scalability in azure services
 important code review points, sonarcube

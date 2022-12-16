@@ -95,7 +95,6 @@ header ajax vs rest
 ef inheritance table per hierarchy
 pub/sub pattern
 
-
 gisbiz
 --------
 microsoft orleans/akka.net
@@ -141,8 +140,7 @@ component interaction react
 useclass useexisting usefactory
 LB vs AGW
 Availability set
-Two component same selector
-More than one router outlet
+angular: Two component same selector, More than one router outlet, shared module, lazy loading module, bootstrap vs entry components
 Angular template check navigate save without changes
 identify which VM code is running
 Pass status success from one step to other in devops
@@ -353,6 +351,12 @@ joulestowatts wolters kluwers L1 9th dec 2022 3pm
 1. Index fragmentation: (pages logical ordering not match physical ordering in data file) external/internal (identifed by dmv). keywords: fill factor, defragmentation by RRI
 2. sql server isolation level
 3. Sum of prime numbers between range
+
+joulestowatts wolters kluwers L2 15/12/2022 4pm
+--------------------------------------------------
+1. scenario based: to send an email to multiple users that has link to download file with single click validation, also ensure mail is not hacked
+2. angular jasmine example, SOLID principle with example
+3. clustered vs non clustered index
 
 fail status, 25 companies from aug 2022
 ---------------------------------------
