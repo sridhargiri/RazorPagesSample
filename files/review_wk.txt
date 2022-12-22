@@ -6,7 +6,7 @@ component communication in angular
 client side validations in angular
 observable / promises in angular
 refresh tokens in angular side
-webapi authentication or authorisation'
+webapi authentication or authorisation
 memory management in .net, troubleshoot high memory utilisation
 delegates in .NET
 linq and lambda
@@ -21,7 +21,7 @@ partial views in mvc
 performance optimisation in mvc and sql server
 index fragmentaion
 isolation levels
-clustered / non- cluster
+clustered / non cluster
 nested queries
 ef over ado.net
 solid principles

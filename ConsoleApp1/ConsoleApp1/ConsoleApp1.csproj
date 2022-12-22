@@ -7,7 +7,7 @@
     <Property1>$(Foo)</Property1>
     <Foo1>Second Foo</Foo1>
     <Property2>$(Foo1)</Property2>
-    <StartupObject>ConsoleApp1.KnightsTourProblem</StartupObject>
+    <StartupObject>ConsoleApp1.PasswordStringDistinct</StartupObject>
   </PropertyGroup>
   <Target Name="TestMessage" AfterTargets="Build">
     <Message Text="$(Property1)" Importance="high" />

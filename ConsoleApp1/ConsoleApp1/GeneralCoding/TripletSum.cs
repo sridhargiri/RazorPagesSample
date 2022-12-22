@@ -44,20 +44,17 @@ If there is no triplet, then print that no triplet exist
         {
             // Fix the first
             // element as A[i]
-            for (int i = 0;
-                 i < arr_size - 2; i++)
+            for (int i = 0; i < arr_size - 2; i++)
             {
 
                 // Fix the second
                 // element as A[j]
-                for (int j = i + 1;
-                     j < arr_size - 1; j++)
+                for (int j = i + 1; j < arr_size - 1; j++)
                 {
 
                     // Now look for
                     // the third number
-                    for (int k = j + 1;
-                         k < arr_size; k++)
+                    for (int k = j + 1; k < arr_size; k++)
                     {
                         if (A[i] + A[j] + A[k] == sum)
                         {

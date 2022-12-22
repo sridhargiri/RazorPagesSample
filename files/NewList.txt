@@ -21,7 +21,7 @@ azure hosting and deployment web apps vs vm
 mount vs render
 js higher order functions
 js partial function
-.net 6 minimal api
+.net 6 minimal api (Top level, MapMethods for Patch, Results.Ok, services)
 
 scaffold
 --------
@@ -358,8 +358,46 @@ joulestowatts wolters kluwers L2 15/12/2022 4pm
 2. angular jasmine example, SOLID principle with example
 3. clustered vs non clustered index
 
-fail status, 25 companies from aug 2022
----------------------------------------
+wenger watson 21/12/2022 for Wolter kluwer
+------------------------------------------
+1. in the year 1540 there was a man who was 30 years old but in 1545 he was 25 how is this possible
+2. 5 techniques to avoid memory leaks
+
+atmosol 13/12/2022 9:30am System Task out (attached)
+----------------------------------------------------
+1. Paymrnt invoice task
+
+nse L1 out 22/12/2022 7:30pm
+----------------------------
+1. hot cold observable
+2. rsjs - of vs from, map vs for
+3. angular authguard
+4. chain of responsibility, proxy
+
+Wolters kluwers mettl test 22/12/2022 11pm
+---------------------------------------------
+1.	css var method , double hyphen
+2.	disable spell check in html5, spellcheck="false"
+3.	Align flex boxes in center, align-items: center;
+4.	css select all siblings, .open ~ h2
+5.	react event binding in class component, this.onClick = this.handleClick.bind(this);
+6.	rel="canonical"
+7.	test async function in js
+	async function f(){
+    return 1;
+	}
+	f().then(alert)
+8.	var items='book,pen,pencil,box';
+	var r=/\s*,\s*/;
+	var i1=items.split(r);
+	console.log(i1,items);
+	answer  ['book', 'pen', 'pencil', 'box'],'book,pen,pencil,box'
+9.	js object.assign
+
+
+
+fail status, 27 companies from aug 2022 till date
+---------------------------------------------------
 1.	shell (codility test out)
 2.	sage IT
 3.	maxerience
@@ -384,4 +422,6 @@ fail status, 25 companies from aug 2022
 22.	devexpress hackerrank failed on 24 oct 2022 late night
 23.	randstad
 24. syrencloud L2 out
-25. joulestowatts
+25. joulestowatts for wolter kluwers, wenger watson for wolters kluwers and wolter kluwers direct
+26.	atmosol
+27. nse it
