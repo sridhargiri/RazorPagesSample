@@ -1,3 +1,2 @@
 # DSA samples 
-### Maple folder is incomplete
-### In Nov 2021 Added openiddict sample
+### This repository has 500+ Data Structures Algorithms exercises
