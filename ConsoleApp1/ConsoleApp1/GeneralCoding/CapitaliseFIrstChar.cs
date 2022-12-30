@@ -29,7 +29,7 @@ if the count of characters is greater than K,
 change the case of the 1st character of the word to the upper case
 Below is the implementation of the above approach:
     */
-    class CapitaliseFirstChar
+    public class CapitaliseFirstChar
     {
         public static void Capitalise_First_Letter_If_Exceeds_Count(string str, int k)
         {
@@ -61,7 +61,7 @@ Below is the implementation of the above approach:
             Capitalise_First_Letter_If_Exceeds_Count(str, k);
             /*
              Output
-Geeksforgeeks Is The Best
+Geeksforgeeks is The Best
 Time Complexity: O(N), where N is the count of characters in string str.
 Auxiliary space: O(1)
             */
