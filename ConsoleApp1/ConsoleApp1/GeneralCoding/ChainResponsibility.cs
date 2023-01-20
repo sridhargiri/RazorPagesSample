@@ -235,6 +235,240 @@ namespace ConsoleApp1
     }
 
 }
+namespace ConsoleApp1
+{
+    // https://dotnettutorials.net/lesson/chain-of-responsibility-design-pattern/
+    public abstract class RupeeHandler
+    {
+        public RupeeHandler rsHandler;
+        public RupeeHandler SetNextHandler(RupeeHandler rsHandler)
+        {
+            this.rsHandler = rsHandler;
+            return rsHandler;
+        }
+        public abstract void DispatchRupees(long requestedAmount);
+    }
+    public class TwoThousandHandler : RupeeHandler
+    {
+        public override void DispatchRupees(long requestedAmount)
+        {
+            long numberofNotesToBeDispatched = requestedAmount / 2000;
+            if (numberofNotesToBeDispatched > 0)
+            {
+                if (numberofNotesToBeDispatched > 1)
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Two Thousand notes are dispatched by TwoThousandHandler");
+                }
+                else
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Two Thousand note is dispatched by TwoThousandHandler");
+                }
+            }
+            long pendingAmountToBeProcessed = requestedAmount % 2000;
+            if (pendingAmountToBeProcessed > 0)
+            {
+                rsHandler.DispatchRupees(pendingAmountToBeProcessed);
+            }
+        }
+    }
+    public class FiveHundredHandler : RupeeHandler
+    {
+        public override void DispatchRupees(long requestedAmount)
+        {
+            long numberofNotesToBeDispatched = requestedAmount / 500;
+            if (numberofNotesToBeDispatched > 0)
+            {
+                if (numberofNotesToBeDispatched > 1)
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Five Hundred notes are dispatched by FiveHundredHandler");
+                }
+                else
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Five Hundred note is dispatched by FiveHundredHandler");
+                }
+            }
+            long pendingAmountToBeProcessed = requestedAmount % 500;
+            if (pendingAmountToBeProcessed > 0)
+            {
+                rsHandler.DispatchRupees(pendingAmountToBeProcessed);
+            }
+        }
+    }
+    public class TwoHundredHandler : RupeeHandler
+    {
+        public override void DispatchRupees(long requestedAmount)
+        {
+            long numberofNotesToBeDispatched = requestedAmount / 200;
+            if (numberofNotesToBeDispatched > 0)
+            {
+                if (numberofNotesToBeDispatched > 1)
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Two Hundred notes are dispatched by TwoHundredHandler");
+                }
+                else
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Two Hundred note is dispatched by TwoHundredHandler");
+                }
+            }
+            long pendingAmountToBeProcessed = requestedAmount % 200;
+            if (pendingAmountToBeProcessed > 0)
+            {
+                rsHandler.DispatchRupees(pendingAmountToBeProcessed);
+            }
+        }
+    }
+    public class HundredHandler : RupeeHandler
+    {
+        public override void DispatchRupees(long requestedAmount)
+        {
+            long numberofNotesToBeDispatched = requestedAmount / 100;
+            if (numberofNotesToBeDispatched > 0)
+            {
+                if (numberofNotesToBeDispatched > 1)
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Hundred notes are dispatched by HundredHandler");
+                }
+                else
+                {
+                    Console.WriteLine(numberofNotesToBeDispatched + " Hundred note is dispatched by HundredHandler");
+                }
+            }
+            long pendingAmountToBeProcessed = requestedAmount % 100;
+            if (pendingAmountToBeProcessed > 0)
+            {
+                rsHandler.DispatchRupees(pendingAmountToBeProcessed);
+            }
+        }
+    }
+    public class ChainOfResponsibilityDesignPattern
+    {
+
+        private TwoThousandHandler twoThousandHandler = new TwoThousandHandler();
+        private FiveHundredHandler fiveHundredHandler = new FiveHundredHandler();
+        private TwoHundredHandler twoHundredHandler = new TwoHundredHandler();
+        private HundredHandler hundredHandler = new HundredHandler();
+
+        public ChainOfResponsibilityDesignPattern()
+        {
+            // Prepare the chain of Handlers
+            twoThousandHandler.SetNextHandler(fiveHundredHandler).SetNextHandler(twoHundredHandler).SetNextHandler(hundredHandler);
+        }
+
+        public void Withdraw(long requestedAmount)
+        {
+            twoThousandHandler.DispatchRupees(requestedAmount);
+        }
+        static void Main(string[] args)
+        {
+            ChainOfResponsibilityDesignPattern atm = new ChainOfResponsibilityDesignPattern();
+            Console.WriteLine("\n Requested Amount 4600");
+            atm.Withdraw(4600);
+            Console.WriteLine("\n Requested Amount 1900");
+            atm.Withdraw(1900);
+            Console.WriteLine("\n Requested Amount 600");
+            atm.Withdraw(600);
+            Console.WriteLine("\n Requested Amount 5000");
+            atm.Withdraw(5000);
+        }
+    }
+}
+namespace ConsoleApp1
+{
+    public abstract class Employee
+    {
+        // next element in chain or responsibility
+        protected Employee supervisor;
+        public void setNextSupervisor(Employee supervisor)
+        {
+            this.supervisor = supervisor;
+        }
+        public abstract void applyLeave(string employeeName, int numberofDaysLeave);
+    }
+    public class TeamLeader : Employee
+    {
+        // TeamLeader can only approve upto 10 days of leave
+        private int MAX_LEAVES_CAN_APPROVE = 10;
+        public override void applyLeave(string employeeName, int numberofDaysLeave)
+        {
+            // check if TeamLeader can process this request
+            if (numberofDaysLeave <= MAX_LEAVES_CAN_APPROVE)
+            {
+                ApproveLeave(employeeName, numberofDaysLeave);
+            }
+            // if TeamLeader can't process the LeaveRequest then pass on to the supervisor(ProjectLeader)
+            // so that he can process
+            else
+            {
+                supervisor.applyLeave(employeeName, numberofDaysLeave);
+            }
+        }
+        private void ApproveLeave(string employeeName, int numberofDaysLeave)
+        {
+            Console.WriteLine("TeamLeader approved " + numberofDaysLeave + " days " + "Leave for the employee : " + employeeName);
+        }
+    }
+    public class ProjectLeader : Employee
+    {
+        // ProjectLeader can only approve upto 20 days of leave
+        private int MAX_LEAVES_CAN_APPROVE = 20;
+        public override void applyLeave(string employeeName, int numberofDaysLeave)
+        {
+            // check if ProjectLeader can process this request
+            if (numberofDaysLeave <= MAX_LEAVES_CAN_APPROVE)
+            {
+                ApproveLeave(employeeName, numberofDaysLeave);
+            }
+            // if ProjectLeader can't process the LeaveRequest then pass on to the supervisor(HR) 
+            // so that he can process
+            else
+            {
+                supervisor.applyLeave(employeeName, numberofDaysLeave);
+            }
+        }
+        private void ApproveLeave(string employeeName, int numberofDaysLeave)
+        {
+            Console.WriteLine("ProjectLeader approved " + numberofDaysLeave + " days " + "Leave for the employee : " + employeeName);
+        }
+    }
+    public class HR : Employee
+    {
+        // HR can only approve upto 30 days of leave
+        private int MAX_LEAVES_CAN_APPROVE = 30;
+        public override void applyLeave(string employeeName, int numberofDaysLeave)
+        {
+            if (numberofDaysLeave <= MAX_LEAVES_CAN_APPROVE)
+            {
+                ApproveLeave(employeeName, numberofDaysLeave);
+            }
+            else
+            {
+                Console.WriteLine("Leave application suspended, Please contact HR");
+            }
+        }
+        private void ApproveLeave(string employeeName, int numberofDaysLeave)
+        {
+            Console.WriteLine("HR approved " + numberofDaysLeave + " days " + "Leave for the employee : "  + employeeName);
+        }
+    }
+    public class ChainOfResponsibilityExample
+    {
+        static void Main(string[] args)
+        {
+            TeamLeader teamLeader = new TeamLeader();
+            ProjectLeader projectLeader = new ProjectLeader();
+            HR hr = new HR();
+            teamLeader.setNextSupervisor(projectLeader);
+            projectLeader.setNextSupervisor(hr);
+            teamLeader.applyLeave("Anurag", 9);
+            Console.WriteLine();
+            teamLeader.applyLeave("Pranaya", 18);
+            Console.WriteLine();
+            teamLeader.applyLeave("Priyanka", 30);
+            Console.WriteLine();
+            teamLeader.applyLeave("Ramesh", 50);
+        }
+    }
+}
 
 
 
