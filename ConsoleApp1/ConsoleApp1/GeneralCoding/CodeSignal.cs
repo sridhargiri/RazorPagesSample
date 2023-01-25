@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -264,6 +265,76 @@ For last row, print middle elements from A[] which are still not printed, in rev
 Below is the implementation of the above approach: 
      */
     public class SortBoundary
-    { }
+    {
+        public static void printMatrix(int[,] grid, int m, int n)
+        {
+            ArrayList A = new ArrayList();
+            // Appending border elements
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (j == n - 1 || (i == m - 1) || j == 0 || i == 0)
+                        A.Add(grid[i,j]);
+                }
+            }
+
+            // Sorting the list
+            A.Sort();
+
+            // Printing first row with
+            // first N elements from A
+            for (int i = 0; i < n; i++)
+                Console.WriteLine(A[i] + " ");
+            Console.WriteLine('\n');
+            // print(*A[:n])
+
+            // Printing N-2 rows
+            for (int i = 0; i < m - 2; i++)
+            {
+
+                // Print elements from last
+                Console.Write(A[A.Count - i - 1] + " ");
+
+                // Print middle elements
+                // from original matrix
+                for (int j = 1; j < n - 1; j++)
+                    Console.Write(grid[i + 1,j] + " ");
+
+                // Print elements from front
+                Console.WriteLine(A[n + i]);
+
+
+                //[n + m - 2:n + m - 2 + n] << endl;
+            }
+            // Printing last row
+            var a=A.ToArray().Cast<int>().Skip(n + m - 2).Take(n + m - 2 + n).Reverse().ToList();
+
+            //for (int i = n + m - 2; i < n + m - 2 + n; i++)
+            //    Console.Write(a[i] + " ");
+        }
+        /* Driver program to test above function */
+        public static void Main(String[] args)
+        {
+            // Dimensions of a Matrix
+            int m = 4, n = 5;
+
+            // Given Matrix
+            int[,] grid = { { 1, 2, 3, 4, 0 },
+                    { 1, 1, 1, 1, 2 },
+                    { 1, 2, 2, 2, 4 },
+                    { 1, 9, 3, 1, 7 } };
+
+            // Function Call
+            printMatrix(grid, m, n);
+            /*
+             output
+            0 1 1 1 1 
+            9 1 1 1 1
+            7 2 2 2 2
+            4 4 3 3 2 
+             */
+        }
+    }
 
 }

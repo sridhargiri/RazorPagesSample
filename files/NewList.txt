@@ -27,8 +27,8 @@ scaffold
 --------
 Scaffold-DbContext "Data Source=sridharsw-lp; Initial Catalog=AssignmentDb; Integrated Security=True; Encrypt=False;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -StartupProject AssignmentDataLayer
 
-JD for azure
--------------------
+JD azure
+--------
 Storage – standard and Premium
 Storage Blob
 VNET/Security group
@@ -61,30 +61,28 @@ azure functions heavy data load
 self study Part 3
 -----------------
 abstract vs interface,static class vs singleton
-angular change detection, httpinterceptor, share-data-between-sibling-components-in-angular, auth guard (4 types)
+angular change detection, httpinterceptor, share-data-between-sibling-components-in-angular, ngrx state
 async pipe - pure/impure pipes
 axios vs fetch - backward,json stringify,timeout,interceptor
-c# limit or count no of instances
+c# limit (or) count no of instances
 microservice transaction - 2pc & saga, microservice event sourcing - CQRS, bounded context in DDD
 sql server vs mysql
-azure ad,hybrid
-sql elastic pool
+azure ad,hybrid, sql elastic pool
 azure static website hosting $web storage account
-react => debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array)
+react => debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array), diffing, shadow DOM, hooks
 three ways to avoid props drilling in react: redux, usecontext, container composition
 microservices transaction example c#, c# istio, mediatr,automatonymous,
 c# template pattern,abstract factory pattern,adapter pattern, abstract override
-react diffing, shadow DOM,hooks
 TempData Attribute
-query performance-Avoid OR in join,Like
+query performance-Avoid OR in join,Like, use nolock
 cap theorem nosql
 unit test cloud app
-ngrx state
 git reset,distributed,offline,local server
 arrow fn(lexical/dynamic scoping), promise(then,catch,race,chaining) vs observable(next,complete,sub/unsub)=lazy,mutiple emit,cancellable,operator
 fnf:automatically set updatedby in ef - override savechanges
 bybox:ABC A<B<C where A=1,C=10 combinations 120
 sql server optimistic and pessimistic concurrency models => optimistic (rowversion - code level) & pessimistic locking (db level - 4 types)
+.net core json order (appsettings, secret, env var, cmd var) => env var override launchsettings
 
 gamesa
 ------
@@ -235,7 +233,7 @@ nagarro L1 on 17/09/2022 9am
 1. multi layer vs multi tier
 2. why singleton over static class (unit test, loosely coupled by DI, free to decide when you want to invoke but static constructor invoke before class is loaded)
 3. angular singleton by default
-4. Liskov substituion in detail (when child class didn't implement any of the parent)
+4. Liskov substitution in detail (when child class didn't implement any of the parent)
 5. observer, factory, abstract factory
 6. index seek vs index scan
 
@@ -337,7 +335,7 @@ syrencloud L1 7th dec 2022 4pm
 1. abstract class inherit interface
 2. js settimeout function called in a loop
 3. find three numbers that add to given sum
-4. delete vs drop vs truncate (RPR)
+4. delete vs drop vs truncate (Rollback, Performance, Relations)
 5. var vs let vs const
 
 syrencloud L2 12th dec 2022 12pm
@@ -357,8 +355,8 @@ joulestowatts wolters kluwers L2 15/12/2022 4pm
 2. angular jasmine example, SOLID principle with example
 3. clustered vs non clustered index
 
-wenger watson 21/12/2022 for Wolter kluwer
-------------------------------------------
+wenger watson 21/12/2022 for symphony group
+-------------------------------------------
 1. in the year 1540 there was a man who was 30 years old but in 1545 he was 25 how is this possible
 2. 5 techniques to avoid memory leaks
 
@@ -370,8 +368,8 @@ nse it L1 out 22/12/2022 7:30pm
 --------------------------------
 1. hot vs cold observable
 2. rxjs - of vs from (both create observable and emit values), map vs for
-3. angular authguard
-4. chain of responsibility (set next), proxy
+3. angular authguard (5 types)
+4. chain of responsibility (set next), proxy pattern
    Note: if there is virtual / override method is there, if base method is called in override then base "this" has reference of child rather than base
 5. angular: subject vs behaviorsubject
 
@@ -402,15 +400,35 @@ avanze 28/12/2022 3pm
 3. sql server portion / sql server why cursor is not recommended / updatable view / with check option to prevent update
 4. .net vs .net core
 5. c# generic class, singleton
-6. c# object == (reference compare) vs Equals (compare values)
+6. c# object == (reference compare) vs Equals (value compare)
 
-fail status, 27 companies from aug 2022 till date
+diaspark 10/01/2022 09:45pm L1
+------------------------------
+1. sql query select max sum of salary group by dept
+2. call function in view (allowed normally), call view in function (allowed normally), call sp in view (using openquery)
+3. .net core signalr how many hubs will be created for 15 connected clients
+4. why json file in .net core instead config file (reason: Linux doesn't recognise config and iis cannot be installed but Linux recognises json file)
+5. web api versioning can be done in two ways and four types of versioning.
+6. sql server nvarchar vs varchar (nvarchar 4000, 2 byte, unicode / varchar 8000, 1 byte, non-unicode)
+
+volumetree HackerEarth failed on 20/01/2023
+-------------------------------------------
+1. sql query 
+   dept who made most sales
+   A client who has given the most sales to the department is the best client.
+
+2. Determine the number of distinct arrays of length N whose elements are in the range [0, 2k - 1], and the bitwise XOR value of elements of the array is maximized. 
+   Additionally, output the lexicographically maximum array such that the bitwise XOR value of elements of the array is maximized.
+   
+3. few react mcq
+
+fail status, 33 companies from aug 2022 till date
 -------------------------------------------------
 1.	shell (codility test out)
 2.	sage IT
 3.	maxerience
 4.	hellofresh
-5.	divini
+5.	divinisoft
 6.	coforge
 7.	costrategix L3 out
 8.	nagarro L2 out
@@ -428,10 +446,15 @@ fail status, 27 companies from aug 2022 till date
 20.	XA (online test)
 21.	codevysya L1 out for react opening
 22.	devexpress hackerrank failed on 24 oct 2022 late night
-23.	randstad
+23.	randstad L1 out
 24. syrencloud L2 out
-25. joulestowatts for wolter kluwers, wenger watson for wolters kluwers and wolter kluwers direct
-26.	atmosol
+25. joulestowatts for wolter kluwers and wolter kluwers direct
+26.	atmosol assessment round out
 27. nse it L1 out
-28.	avanzetech
-29.	mpower finance, 29 dec 2022, 12:30pm, not went well
+28.	avanzetech L1 out (virtue sources)
+29.	mpower finance, 29 dec 2022, 12:30pm, cancelled
+30.	symphony group
+31.	diaspark
+32. On time logistics test fail
+33. Volumetree
+34. ?

@@ -132,4 +132,79 @@ Space Complexity: O(n)
             */
         }
     }
+    /*
+     https://www.geeksforgeeks.org/count-of-n-size-maximum-sum-arrays-with-elements-in-range-0-2k-1-and-bitwise-and-equal-to-0/
+    Count of N-size maximum sum Arrays with elements in range [0, 2^K – 1] and Bitwise AND equal to 0
+    Given two positive integers N and K, the task is to find the number of arrays of size N such that each array element lies over the range [0, 2K – 1] with the maximum sum of array element having Bitwise AND of all array elements 0.
+
+Examples:
+
+Input: N = 2 K = 2
+Output: 4
+Explanation:
+The possible arrays with maximum sum having the Bitwise AND of all array element as 0 {0, 3}, {3, 0}, {1, 2}, {2, 1}. The count of such array is 4.
+
+Input: N = 5 K = 6 
+Output: 15625 
+
+    Approach: The given problem can be solved by observing the fact that as the Bitwise AND of the generated array should be 0, then for each i in the range [0, K – 1] there should be at least 1 element with an ith bit equal to 0 in its binary representation. Therefore, to maximize the sum of the array, it is optimal to have exactly 1 element with the ith bit unset.
+
+Hence, for each of the K bits, there are NC1 ways to make it unset in 1 array element. Therefore, the resultant count of an array having the maximum sum is given by NK.
+
+Below is the implementation of the approach
+
+     */
+    public class MaximumSumArrayBitwise
+    {
+
+        // Function to find the value of X to
+        // the power Y
+        static int BitwisePower(int x, int y)
+        {
+
+            // Stores the value of X^Y
+            int res = 1;
+
+            while (y > 0)
+            {
+
+                // If y is odd, multiply x
+                // with result
+                if (y % 2 != 0)
+                    res = res * x;
+
+                // Update the value of y and x
+                y = y >> 1;
+                x = x * x;
+            }
+
+            // Return the result
+            return res;
+        }
+
+        // Function to count number of arrays
+        // having element over the range
+        // [0, 2^K - 1] with Bitwise AND value
+        // 0 having maximum possible sum
+        static void countArrays(int N, int K)
+        {
+
+            // Print the value of N^K
+            Console.WriteLine((int)(BitwisePower(N, K)));
+        }
+
+        // Driver Code
+        public static void Main()
+        {
+            int N = 4, K = 3;
+
+            countArrays(N, K);
+            /*
+Output: 15625
+
+Time Complexity: O(log K)
+Auxiliary Space: O(1)
+            */
+        }
+    }
 }
