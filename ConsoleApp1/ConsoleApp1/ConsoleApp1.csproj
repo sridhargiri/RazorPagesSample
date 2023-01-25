@@ -7,7 +7,7 @@
     <Property1>$(Foo)</Property1>
     <Foo1>Second Foo</Foo1>
     <Property2>$(Foo1)</Property2>
-    <StartupObject>ConsoleApp1.MaximumSumArrayBitwise</StartupObject>
+    <StartupObject>ConsoleApp1.SortBoundary</StartupObject>
   </PropertyGroup>
   <Target Name="TestMessage" AfterTargets="Build">
     <Message Text="$(Property1)" Importance="high" />
@@ -15,6 +15,7 @@
   </Target>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
