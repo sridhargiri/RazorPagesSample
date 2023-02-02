@@ -72,12 +72,14 @@ receive automatic json/receive json()
 cancellable and interceptable/both no
 outside 200-299 rejected/unsuccess response resolved
 
+react => debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array), hooks, virtual DOM vs shadow DOM
+react => diffing (only changed portion of V-DOM is sent to UI), batch update, reconciliation, key (uniquely identify each element and keep track of changed elements in list)
+react => three ways to avoid props drilling: redux, usecontext, container composition
+
 c# limit (or) count no of instances
 microservice transaction - 2pc & saga, event sourcing - CQRS, bounded context in DDD
 sql server vs mysql
 azure ad, hybrid, sql elastic pool, azure static website hosting $web storage account
-react => debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array), diffing, shadow DOM, hooks
-three ways to avoid props drilling in react: redux, usecontext, container composition
 microservices transaction example c#, c# istio, mediatr,automatonymous,
 c# template pattern,abstract factory pattern,adapter pattern, abstract override
 TempData Attribute
@@ -160,10 +162,11 @@ Why event used when delegate also serve same purpose
 Active directory federation services
 Web api global variable
 .NET core web api route for application home page
-Azure SQL vs Managed instance, azure durable functions
+Azure SQL vs Managed instance (near compatible, lift and shift) 
+azure durable functions
 
 EY 3rd July 2021
--------------------------
+----------------
 azure webjob types
 react immutable props
 azure private container
@@ -357,7 +360,7 @@ joulestowatts wolters kluwers L1 9th dec 2022 3pm
 3. Sum of prime numbers between range
 
 joulestowatts wolters kluwers L2 15/12/2022 4pm
---------------------------------------------------
+-----------------------------------------------
 1. scenario based: to send an email to multiple users that has link to download file with single click validation, also ensure mail is not hacked
 2. angular jasmine example, SOLID principle with example
 3. clustered vs non clustered index

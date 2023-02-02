@@ -1,0 +1,36 @@
+azure ci/cd pipelines yaml changes required
+AAD integration from angular side
+angular component lifecycle
+webcomponents in angular
+component communication in angular
+client side validations in angular
+observable / promises in angular
+refresh tokens in angular side
+webapi authentication or authorisation
+memory management in .net, troubleshoot high memory utilisation
+delegates in .NET
+linq and lambda
+async await
+api validations
+unit Test cases for angular jasmine
+Routing mechanism in webapi
+CORS policy client and server
+api versioning
+oauth2
+partial views in mvc
+performance optimisation in mvc and sql server
+index fragmentaion
+isolation levels
+clustered / non- cluster
+nested queries
+ef over ado.net
+solid principles
+design patterns, abstract factory, singleton
+microservices communication, DDD (BC, Context Map). DDD Phases - strategic and tactical 
+azure functions, service bus, functions, logic apps
+scalability in azure services
+important code review points, sonarcube
+add test cases in middle yaml
+azure ACI
+
+
