@@ -432,6 +432,11 @@ volumetree HackerEarth failed on 20/01/2023
    
 3. few react mcq
 
+viasat rextester test
+---------------------
+online test 5 questions taken on 03/02/2023 3pm but failed
+See viasat.cs for c sharp question others on python and sql so ignore
+
 fail status, 33 companies from aug 2022 till date
 -------------------------------------------------
 1.	shell (codility test out)
@@ -467,4 +472,5 @@ fail status, 33 companies from aug 2022 till date
 31.	diaspark
 32. On time logistics test fail
 33. Volumetree
-34. ?
+34. viasat online test failed
+35. ?
