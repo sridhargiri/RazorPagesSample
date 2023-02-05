@@ -32,4 +32,64 @@ namespace ConsoleApp1
             Console.WriteLine(g.Element + ":" + g.Count);
         }
     }
+
+    public class PigLatinExample
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(ToPigLatin("testing one translation"));
+        }
+        public static string ToPigLatin(string sentence)
+        {
+            const string vowels = "AEIOUaeio";
+            List<string> newWords = new List<string>();
+
+            foreach (string word in sentence.Split(' '))
+            {
+                string firstLetter = word.Substring(0, 1);
+                string restOfWord = word.Substring(1, word.Length - 1);
+                int currentLetter = vowels.IndexOf(firstLetter);
+
+                if (currentLetter == -1)
+                {
+                    newWords.Add(restOfWord + firstLetter + "ay");
+                }
+                else
+                {
+                    newWords.Add(word + "way");
+                }
+            }
+            return string.Join(" ", newWords);
+        }
+    }
+
+    public class PigLatin2
+    {
+        public static void Main(string[] args)
+        {
+            string str = "test test test hello world pig latin";
+            Console.WriteLine(MakePigLatin(str));
+            /*
+             i/p testing one translation
+             o/p estingtay neoay ranslationtay
+
+             i/p test test test hello world pig latin
+             o/p esttay esttay esttay ellohay orldway igpay atinlay
+             */
+        }
+
+        public static string MakePigLatin(string str)
+        {
+            string[] words = str.Split(' ');
+            str = String.Empty;
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i].Length <= 1) continue;
+                string output = new String(words[i].ToCharArray());
+                output = output.Substring(1, output.Length - 1) + output.Substring(0, 1) + "ay ";
+                str += output;
+            }
+            return str.Trim();
+        }
+    }
 }

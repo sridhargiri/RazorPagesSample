@@ -435,9 +435,10 @@ volumetree HackerEarth failed on 20/01/2023
 viasat rextester test
 ---------------------
 online test 5 questions taken on 03/02/2023 3pm but failed
+pig latin nodejs
 See viasat.cs for c sharp question others on python and sql so ignore
 
-fail status, 33 companies from aug 2022 till date
+fail status, 34 companies from aug 2022 till date
 -------------------------------------------------
 1.	shell (codility test out)
 2.	sage IT
@@ -469,7 +470,7 @@ fail status, 33 companies from aug 2022 till date
 28.	avanzetech L1 out (virtue sources)
 29.	mpower finance, 29 dec 2022, 12:30pm, cancelled
 30.	symphony group
-31.	diaspark
+31.	diaspark, not attended in-persion interview scheduled for 29/01/2023
 32. On time logistics test fail
 33. Volumetree
 34. viasat online test failed
