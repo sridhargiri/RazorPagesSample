@@ -145,8 +145,7 @@ Mphasis, infy & hexaware (mixed) - same day - 19 june 2021
 component communication angular
 component interaction react
 useclass useexisting usefactory
-LB vs AGW
-Availability set
+LB vs AGW, Availability set
 angular: Two component same selector, More than one router outlet, shared module, lazy loading module, bootstrap vs entry components
 Angular template check navigate save without changes
 identify which VM code is running
@@ -375,13 +374,13 @@ atmosol 13/12/2022 9:30am System Task out (attached)
 1. Paymrnt invoice task
 
 nse it L1 out 22/12/2022 7:30pm
---------------------------------
-1. hot vs cold observable
-2. rxjs - of vs from (both create observable and emit values), map vs for
+-------------------------------
+1. observable => hot (data produced outside, all subscriber same data) vs cold (data produced inside, all subscriber their own data)
+2. rxjs - of vs from (both create observable and emit values; from send separate element and of send full), map vs for
 3. angular authguard (5 types)
 4. chain of responsibility (set next), proxy pattern
    Note: if there is virtual / override method is there, if base method is called in override then base "this" has reference of child rather than base
-5. angular: subject vs behaviorsubject
+5. angular 4 types: subject, behaviorsubject, replaysubject, asyncsubject (explain each)
 
 Wolters kluwers mettl test 22/12/2022 11pm
 ------------------------------------------
@@ -437,6 +436,18 @@ viasat rextester test
 online test 5 questions taken on 03/02/2023 3pm but failed
 pig latin nodejs
 See viasat.cs for c sharp question others on python and sql so ignore
+
+SafeSend 24/02/2023
+-------------------
+Given a string s that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid. Return a list of unique strings that are valid with the minimum number of removals. You may return the answer in any order. 
+Example 1: Input: s = "()())()"
+Output: ["(())()","()()()"]
+
+
+Given an integer array nums, find the subarray with the largest sum, and return its sum. 
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+The subarray [4,-1,2,1] has the largest sum 6.
 
 fail status, 34 companies from aug 2022 till date
 -------------------------------------------------

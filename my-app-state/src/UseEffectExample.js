@@ -7,7 +7,11 @@ const UseEffectExample = () => {
     { title: "Learn useState Hook", id: 1 },
     { title: "Learn useEffect Hook", id: 2 }
   ]);
-
+  /*
+  set NODE_OPTIONS=--openssl-legacy-provider
+  solution link
+  https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
+  */
   useEffect(() => {
     console.log("useEffect has been called!", button);
   }, [button]);
