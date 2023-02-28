@@ -439,17 +439,17 @@ See viasat.cs for c sharp question others on python and sql so ignore
 
 SafeSend 24/02/2023
 -------------------
-Given a string s that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid. Return a list of unique strings that are valid with the minimum number of removals. You may return the answer in any order. 
+Given a string s that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid. 
+Return a list of unique strings that are valid with the minimum number of removals. You may return the answer in any order. 
 Example 1: Input: s = "()())()"
 Output: ["(())()","()()()"]
-
 
 Given an integer array nums, find the subarray with the largest sum, and return its sum. 
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
 Output: 6
 The subarray [4,-1,2,1] has the largest sum 6.
 
-fail status, 34 companies from aug 2022 till date
+fail status, 35 companies from aug 2022 till date
 -------------------------------------------------
 1.	shell (codility test out)
 2.	sage IT
@@ -485,4 +485,5 @@ fail status, 34 companies from aug 2022 till date
 32. On time logistics test fail
 33. Volumetree
 34. viasat online test failed
-35. ?
+35. Safesend failed
+36. ?
