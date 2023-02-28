@@ -13,7 +13,7 @@ namespace ConsoleApp1
         public int BuildingId { get; set; }
     }
     /*
-     Aploris Teamslde online test taken on 28/02/2023
+     Aploris Teamslide online test taken on 28/02/2023
      */
     public class Aploris
     {
