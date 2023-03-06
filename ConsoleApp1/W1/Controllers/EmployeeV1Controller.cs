@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace W1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version}/[controller]")] //https://localhost:44377/api/v3/employeev
     [ApiController]
     [ApiVersion("1.0")]
+    [ApiVersion("1.1", Deprecated = true)]
+    [ApiVersion("2.0")]
     public class EmployeeV1Controller : ControllerBase
     {
         [HttpGet]
