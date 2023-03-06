@@ -38,6 +38,9 @@ namespace W1
                 x.AssumeDefaultVersionWhenUnspecified = true;
                 x.ReportApiVersions = true;
                 x.RouteConstraintName = "sridhar";
+                //x.ApiVersionReader = new QueryStringApiVersionReader("version"); // to have version as query string instead of api-version
+
+                //x.ApiVersionReader = new UrlSegmentApiVersionReader(); // to have version in path, but not working
                 //x.ApiVersionReader = new HeaderApiVersionReader("api-version"); //uncomment to do version by header
             });
             services.AddSwaggerGen(c =>
