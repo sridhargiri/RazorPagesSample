@@ -485,7 +485,7 @@ fail status, 37 companies from aug 2022 till date
 28.	avanzetech L1 out (virtue sources)
 29.	mpower finance, 29 dec 2022, 12:30pm, cancelled
 30.	symphony group
-31.	diaspark, not attended in-persion interview scheduled for 29/01/2023
+31.	diaspark, not attended in-person interview scheduled for 29/01/2023
 32. On time logistics test fail
 33. Volumetree
 34. viasat online test failed

@@ -38,10 +38,15 @@ namespace W1
                 x.AssumeDefaultVersionWhenUnspecified = true;
                 x.ReportApiVersions = true;
                 x.RouteConstraintName = "sridhar";
-                //x.ApiVersionReader = new QueryStringApiVersionReader("version"); // to have version as query string instead of api-version
-
-                //x.ApiVersionReader = new UrlSegmentApiVersionReader(); // to have version in path, but not working
-                //x.ApiVersionReader = new HeaderApiVersionReader("api-version"); //uncomment to do version by header
+                x.ApiVersionReader = ApiVersionReader.Combine(
+                new QueryStringApiVersionReader("api-version"),
+                new HeaderApiVersionReader("X-Version"),
+                new MediaTypeApiVersionReader("ver"));
+                // https://www.meziantou.net/versioning-an-asp-net-core-api.htm  
+                // search google for "The constraint reference 'apiVersion' could not be resolved to a type. Register the constraint type with 'Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap'."  
+                // search google for "conflicting method/path combination get for actions"
+                // search google for ".net core web api version attribute" 
+                // https://code-maze.com/aspnetcore-api-versioning/      
             });
             services.AddSwaggerGen(c =>
             {
