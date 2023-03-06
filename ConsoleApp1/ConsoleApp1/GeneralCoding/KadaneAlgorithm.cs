@@ -5,9 +5,10 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     * coderbyte disprz
-     * 
-     Kadane’s Algorithm:
+     coderbyte disprz
+Asked in SafeSend on 24/02/2023
+https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/  
+Kadane’s Algorithm:
 
 Initialize:
     max_so_far = 0

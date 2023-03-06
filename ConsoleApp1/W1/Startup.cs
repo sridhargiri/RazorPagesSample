@@ -31,9 +31,17 @@ namespace W1
             var ConnectionString = Configuration.GetConnectionString("DbConstring");
 
             services.AddControllers();
+            services.AddApiVersioning(x =>
+            {
+                x.DefaultApiVersion = new ApiVersion(1, 0);
+                x.AssumeDefaultVersionWhenUnspecified = true;
+                x.ReportApiVersions = true;
+                x.RouteConstraintName = "sridhar";
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "W1", Version = "v1" });
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
             services.AddTransient<IDataRepository, DataRepository>();
             services.AddDbContext<exerciseContext>(options => options.UseSqlServer(ConnectionString));
