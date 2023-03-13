@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Global, css } from "@emotion/core";
 import normalize from "normalize.css";
 import { ThemeProvider } from "emotion-theming";
@@ -23,11 +23,11 @@ const BookSearch = () => {
         `}
       />
       <Router>
-        <Switch>
-          <Route path="/BookSearch" exact component={SearchPage} />
-          <Route path="/book/:bookId" exact component={BookDetailPage} />
-          <Route component={NoMatchRoute} />
-        </Switch>
+        <Routes>
+          <Route path="/BookSearch" exact element={<SearchPage />} />
+          <Route path="/book/:bookId" exact element={<BookDetailPage />} />
+          <Route element={<NoMatchRoute />} />
+        </Routes>
       </Router>
     </ThemeProvider>
   );

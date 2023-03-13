@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Link, NavLink, BrowserRouter, Route, Switch } from "react-router-dom";
+import { NavLink, BrowserRouter, Route, Routes } from "react-router-dom";
 import UseEffectExample from "./UseEffectExample";
+import Tictac from "./Tictac";
 import Lift from "./Lift";
 import BookSearch from "./BookSearch";
+import RouteSample from "./RouteSample";
 class Homepage extends Component {
   render() {
     return (
@@ -23,12 +25,24 @@ class Homepage extends Component {
               Book Search
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/Tictac" className="btn btn-primary">
+              tic tac
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/RouteSample" className="btn btn-primary">
+              Routes
+            </NavLink>
+          </li>
           <hr />
-          <Switch>
-            <Route path="/UseEffectExample" component={UseEffectExample} />
-            <Route path="/Lift" component={Lift} />
-            <Route path="/BookSearch" component={BookSearch} />
-          </Switch>
+          <Routes>
+            <Route path="/UseEffectExample" element={<UseEffectExample />} />
+            <Route path="/Lift" element={<Lift />} />
+            <Route path="/BookSearch" element={<BookSearch />} />
+            <Route path="/Tictac" element={<Tictac />} />
+            <Route path="/RouteSample" element={<RouteSample />} />
+          </Routes>
         </div>
       </BrowserRouter>
     );

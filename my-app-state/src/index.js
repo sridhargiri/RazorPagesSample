@@ -1,10 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Link, BrowserRouter, Route, Switch } from "react-router-dom";
 import "./index.css";
-import BookSearch from "./BookSearch";
 import reportWebVitals from "./reportWebVitals";
-import TraditionalComponent from "./TraditionalComponent";
 import Homepage from "./Homepage";
 
 ReactDOM.render(<Homepage />, document.getElementById("root"));
