@@ -375,7 +375,7 @@ atmosol 13/12/2022 9:30am System Task out (attached)
 
 nse it L1 out 22/12/2022 7:30pm
 -------------------------------
-1. observable => hot (data produced outside, all subscriber same data) vs cold (data produced inside, all subscriber their own data)
+1. observable => hot (data produced outside, all subscriber same data) vs cold (data produced inside, each subscriber their own data)
 2. rxjs - of vs from (both create observable and emit values; from send separate element and of send full), map vs for
 3. angular authguard (5 types)
 4. chain of responsibility (set next), proxy pattern
