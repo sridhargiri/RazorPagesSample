@@ -1,12 +1,11 @@
 sep 2021 onwards
-----------------
-attribute routing (outgoing url), 
-multiple action filter order [ https://www.strathweb.com/2012/06/control-the-execution-order-of-your-filters-in-asp-net-web-api/ ], 
-filter that has dependency TypeFilter
-angular forkjoin and mergemap
 
 self study Part 1
 -----------------
+attribute routing (outgoing url), 
+multiple action filter order [ https://www.strathweb.com/2012/06/control-the-execution-order-of-your-filters-in-asp-net-web-api/ ], 
+filter that has dependency TypeFilter
+angular forkjoin / mergemap (parallel) / concatmap (one after other) / catchError (function substitution if error)
 .net core jwt serialize
 web api when no cache
 azure load balancer
@@ -21,7 +20,7 @@ azure hosting and deployment web apps vs vm
 mount vs render
 js higher order functions
 js partial function
-.net 6 minimal api (Top level, MapMethods for Patch, Results.Ok, services)
+.net 6 features (minimal api, Top level, MapMethods for Patch, Results.Ok, services)
 
 scaffold
 --------
@@ -57,6 +56,7 @@ connect function to onprem database hybrid connection
 ef core db first oracle
 azure cdn, azure blob auto delete old archive via webjob or timer trigger or lifecycle management,lease blob
 azure functions heavy data load
+.net event driven = https://github.com/event-driven-dotnet/home
 
 self study Part 3
 -----------------
@@ -72,9 +72,10 @@ receive automatic json/receive json()
 cancellable and interceptable/both no
 outside 200-299 rejected/unsuccess response resolved
 
-react => debouncing,props.children,httpevent,usecallback,useRef,useEffect (empty dependency array), hooks, virtual DOM vs shadow DOM
+react => debouncing,props.children,httpevent,usecallback (it also has dependency array like useEffect),useRef, hooks, virtual DOM vs shadow DOM
 react => diffing (only changed portion of V-DOM is sent to UI), batch update, reconciliation, key (uniquely identify each element and keep track of changed elements in list)
 react => three ways to avoid props drilling: redux, usecontext, container composition
+Note on useEffect => Nothing specified = This runs after every render / specified empty array = This runs only on mount (when the component appears)
 
 c# limit (or) count no of instances
 microservice transaction - 2pc & saga, event sourcing - CQRS, bounded context in DDD
@@ -129,7 +130,7 @@ Agilysys (old 2019) MCQ
 complete binary tree
 Time required to merge two sorted lists
 Time required to delete a node from doubly linked list
-multiple classes through which request is passed but oly relevant classes carry out operations
+multiple classes through which request is passed but only relevant classes carry out operations. ans: Chain of responsibility
 creating duplicate objects while keeping performance in mind
 Visitor classes which changes execution algorithm
 Which design pattern provides a single class which provides simplified methods for clients and delegates calls to those clients
@@ -163,6 +164,7 @@ Web api global variable
 .NET core web api route for application home page
 Azure SQL vs Managed instance (near compatible, lift and shift) 
 azure durable functions
+.net 7 (aot, grouping api, central nuget)
 
 EY 3rd July 2021
 ----------------
@@ -204,7 +206,7 @@ Brillio (ciena)
 strong/weak references
 
 srarting from august 2022
-***************************
+*************************
 divini (client: coremont)
 -------------------------
 6th august 2022, 1st round - idempotency, .net core inmemory cache and web api cache via proxy server
@@ -314,12 +316,12 @@ asked only architectural questions, how you propose technical solutions
 
 itela 29/11/2022 tue 11am L2 out
 --------------------------------
-1. ef vs repository pattern, then why unitofwork is required, ef vs dapper
+1. ef vs repository pattern, then why unitofwork is required (answer: (multiple repositories share single dbcontext), ef vs dapper
 2. asp.net core generate unique request id using middleware and pass this value from controller to BL, register multiple implementations
 3. asp.net core openid vs oauth; also server to server communicate after authentication.
 
 XA 25th nov 8am
-----------------
+---------------
 online test (question is attached on triangle types)
 
 codevysya L1 26th nov sat 12.30pm
@@ -371,13 +373,13 @@ wenger watson 21/12/2022 for symphony group
 
 atmosol 13/12/2022 9:30am System Task out (attached)
 ----------------------------------------------------
-1. Paymrnt invoice task
+1. Payment invoice task
 
 nse it L1 out 22/12/2022 7:30pm
 -------------------------------
 1. observable => hot (data produced outside, all subscriber same data) vs cold (data produced inside, each subscriber their own data)
 2. rxjs - of vs from (both create observable and emit values; from send separate element and of send full), map vs for
-3. angular authguard (5 types)
+3. angular authguard (5 types -> CanActivate, CanActivateChild, CanDeactivate, Resolve, CanLoad)
 4. chain of responsibility (set next), proxy pattern
    Note: if there is virtual / override method is there, if base method is called in override then base "this" has reference of child rather than base
 5. angular 4 types: subject, behaviorsubject, replaysubject, asyncsubject (explain each)
