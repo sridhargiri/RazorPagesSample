@@ -156,7 +156,7 @@ deploy to VM in devops
 Page caching in MVC
 SQL Server compatibility levels
 sql server materialised view
-Azure function authentication
+Azure RBAC (Identity, role, scope), function authentication
 Azure View vm logs 
 Why event used when delegate also serve same purpose
 Active directory federation services
@@ -258,7 +258,7 @@ nagarro L2 on 27/09/2022 4pm
 ey 15 oct 2022 sat 9am L1 out
 -----------------------------
 1. implement two way binding in plain js (without angular)
-2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, size 80gb, atleast/atmost once i.e, dosa)
+2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, limited to 80gb, atleast/atmost once i.e, dosa)
 3. what significant between azure webjobs vs timer trigger both uses timer interval (scaling, pricing)
 4. jwt vs managed identity
 5. azure disaster recovery
@@ -308,7 +308,6 @@ rsm 18th nov 4.30pm
 -------------------
 1. ef parent/child insert same query
 2. ef rollback parent insert when child query fails
-3. .net 6 features
 
 itela 24/11/2022 11:30am L1 pass
 --------------------------------
