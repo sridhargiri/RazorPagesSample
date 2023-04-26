@@ -5,7 +5,7 @@ self study Part 1
 attribute routing (outgoing url), 
 multiple action filter order [ https://www.strathweb.com/2012/06/control-the-execution-order-of-your-filters-in-asp-net-web-api/ ], 
 filter that has dependency TypeFilter
-angular forkjoin / mergemap (parallel) / concatmap (one after other) / catchError (function substitution if error)
+angular forkjoin (wait for all to complete) / mergemap (parallel) / concatmap (one after other) / catchError (function substitution if error)
 .net core jwt serialize
 web api when no cache
 azure load balancer
@@ -19,7 +19,7 @@ compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
 js higher order functions
-js partial function
+js partial function (can take maultiple args)
 .net 6 features (minimal api, Top level, MapMethods for Patch, Results.Ok, services)
 
 scaffold
@@ -327,7 +327,7 @@ codevysya L1 26th nov sat 12.30pm
 ---------------------------------
 1. sort an array in js (without inbuilt method)
 2. capitalise first letter, so "test" becomes "Test"
-3. function currying in js
+3. function currying in js (can take only one args)
 4. deep copy vs shallow copy in js
 5. react public and private routes
 
@@ -454,7 +454,13 @@ Aploris online test 28/02/2023 11pm
 -----------------------------------
 question file attached
 
-fail status, 37 companies from aug 2022 till date
+Dashninja L2 on apr 10 2023
+---------------------------
+Nothing to mention in L1, but in L2 below was asked
+upload files in angular => handle change event (event.target.files[0], use FormData api to post the file via Angular HTTP, use reportProgress for progress
+ef related
+
+fail status, 38 companies from aug 2022 till date
 -------------------------------------------------
 1.	shell (codility test out)
 2.	sage IT
@@ -486,10 +492,11 @@ fail status, 37 companies from aug 2022 till date
 28.	avanzetech L1 out (virtue sources)
 29.	mpower finance, 29 dec 2022, 12:30pm, cancelled
 30.	symphony group
-31.	diaspark, not attended in-person interview scheduled for 29/01/2023
+31.	diaspark, remotely attended further rounds
 32. On time logistics test fail
 33. Volumetree
 34. viasat online test failed
 35. Safesend failed
 36. Aploris online test failed
-37. ?
+37. Dashninja
+38. 
