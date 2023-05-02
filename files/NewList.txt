@@ -19,8 +19,8 @@ compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
 js higher order functions
-js partial function (can take maultiple args)
-.net 6 features (minimal api, Top level, MapMethods for Patch, Results.Ok, services)
+js partial function (can take multiple args)
+.net 6 features (minimal api, Top level, MapMethods for Patch, Results.Ok, services, PublishSingleFile, PublishTrimmed)
 
 scaffold
 --------
@@ -32,7 +32,6 @@ Storage – standard vs Premium
 Storage Blob
 VNET/Security group
 Resource groups
-Load balancer configurations
 Azure OMS services – patching and monitoring
 Azure backup or Microsoft data protector
 Azure Site recovery
@@ -454,11 +453,17 @@ Aploris online test 28/02/2023 11pm
 -----------------------------------
 question file attached
 
-Dashninja L2 on apr 10 2023
----------------------------
+Dashninja L2 fail on apr 10 2023
+--------------------------------
 Nothing to mention in L1, but in L2 below was asked
 upload files in angular => handle change event (event.target.files[0], use FormData api to post the file via Angular HTTP, use reportProgress for progress
 ef related
+
+Quinnox L1 02/02/2023 9am failed
+---------------------------------
+1. find closest to target in an integer array
+2. .net vs angular difference
+3. azure timer trigger, App insights did you use?
 
 fail status, 38 companies from aug 2022 till date
 -------------------------------------------------
@@ -481,7 +486,7 @@ fail status, 38 companies from aug 2022 till date
 17.	ajmera assessment out
 18.	rsm L2 out
 19.	itelasoft
-20.	XA (online test)
+20.	XA Group 27 Apr 2023 (online test)
 21.	codevysya L1 out for react opening
 22.	devexpress hackerrank failed on 24 oct 2022 late night
 23.	randstad L1 out
@@ -499,4 +504,5 @@ fail status, 38 companies from aug 2022 till date
 35. Safesend failed
 36. Aploris online test failed
 37. Dashninja
-38. 
+38. Quinnox
+39. ?

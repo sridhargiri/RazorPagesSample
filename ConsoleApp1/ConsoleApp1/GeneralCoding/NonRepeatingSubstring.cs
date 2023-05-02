@@ -80,7 +80,6 @@ All possible substrings from the given string are,
 Among them, the highlighted consists of distinct characters only. 
  
 
-Recommended: Please try your approach on {IDE} first, before moving on to the solution.
 Naive Approach: 
 The simplest approach is to generate all possible substrings from the given string and check for each substring whether it contains all distinct characters or not. If the length of string is N, then there will be N*(N+1)/2 possible substrings. 
 
@@ -181,6 +180,110 @@ Auxiliary Space: O(1)
  
 
 */
+        }
+    }
+    /*
+     https://www.geeksforgeeks.org/count-of-substrings-with-at-least-k-pairwise-distinct-characters-having-same-frequency/
+    Count of Substrings with at least K pairwise Distinct Characters having same Frequency
+    Given a string S and an integer K, the task is to find the number of substrings which consists of at least K pairwise distinct characters having same frequency.
+
+Examples:
+
+Input: S = “abasa”, K = 2 
+Output: 5 
+Explanation: 
+The substrings in having 2 pairwise distinct characters with same frequency are {“ab”, “ba”, “as”, “sa”, “bas”}.
+Input: S = “abhay”, K = 3 
+Output: 4 
+Explanation: 
+The substrings having 3 pairwise distinct characters with same frequency are {“abh”, “bha”, “hay”, “bhay”}.
+    Naive Approach: The simplest approach to solve this problem is to generate all possible substrings of the given string and check if both the conditions are satisfied. If found to be true, increase count. Finally, print count.
+
+    Time Complexity: O(N3)
+Auxiliary Space: O(1)
+
+Efficient Approach: To optimize the above approach, follow the steps below to solve the problem:
+
+Check if the frequencies of each character is same. If found to be true, simply generate all the substrings to check if each character satisfies the condition of at least N pairwise distinct characters.
+Precompute the frequencies of characters to check the conditions for each substring.
+Below is the implementation of the above approach:
+
+
+    */
+    public class SubstringsPairwise
+    {
+
+        // Function to find the subString with K
+        // pairwise distinct characters and
+        // with same frequency
+        static int no_of_subString(String s, int N)
+        {
+
+            // Stores the occurrence of each
+            // character in the subString
+            int[] fre = new int[26];
+
+            int str_len;
+
+            // Length of the String
+            str_len = (int)s.Length;
+
+            int count = 0;
+
+            // Iterate over the String
+            for (int i = 0; i < str_len; i++)
+            {
+
+                // Set all values at each index to zero
+                fre = new int[26];
+
+                int max_index = 0;
+
+                // Stores the count of
+                // unique characters
+                int dist = 0;
+
+                // Moving the subString ending at j
+                for (int j = i; j < str_len; j++)
+                {
+
+                    // Calculate the index of
+                    // character in frequency array
+                    int x = s[j] - 'a';
+
+                    if (fre[x] == 0)
+                        dist++;
+
+                    // Increment the frequency
+                    fre[x]++;
+
+                    // Update the maximum index
+                    max_index = Math.Max(max_index, fre[x]);
+
+                    // Check for both the conditions
+                    if (dist >= N && ((max_index * dist) ==
+                                      (j - i + 1)))
+                        count++;
+                }
+            }
+
+            // Return the answer
+            return count;
+        }
+
+        // Driver Code
+        public static void Main(String[] args)
+        {
+            String s = "abhay";
+            int N = 3;
+
+            // Function call
+            Console.Write(no_of_subString(s, N));
+            /*
+             output 4
+            Time Complexity: O(N2)
+            Auxiliary Space: O(1)
+             */
         }
     }
 }
