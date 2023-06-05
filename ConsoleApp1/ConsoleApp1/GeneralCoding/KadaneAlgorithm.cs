@@ -5,10 +5,10 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     coderbyte disprz
+coderbyte disprz
 Asked in SafeSend on 24/02/2023
 https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/  
-Kadane’s Algorithm:
+Largest Sum Contiguous Subarray (Kadane’s Algorithm)
 
 Initialize:
     max_so_far = 0
@@ -21,7 +21,71 @@ Loop for each element of the array
   (c) if(max_ending_here < 0)
             max_ending_here = 0
 return max_so_far
-    */
+
+Given an array arr[] of size N. The task is to find the sum of the contiguous subarray within a arr[] with the largest sum. 
+The idea of Kadane’s algorithm is to maintain a variable max_ending_here that stores the maximum sum contiguous subarray ending at current index 
+    and a variable max_so_far stores the maximum sum of contiguous subarray found so far, 
+    Everytime there is a positive-sum value in max_ending_here compare it with max_so_far and update max_so_far if it is greater than max_so_far.
+
+– the subarray with negative sum is discarded (by assigning max_ending_here = 0 in code).
+
+– we carry subarray till it gives positive sum.    
+ 
+Illustration:
+
+    Lets take the example: {-2, -3, 4, -1, -2, 1, 5, -3}
+    max_so_far = INT_MIN
+    max_ending_here = 0
+
+    for i=0,  a[0] =  -2
+    max_ending_here = max_ending_here + (-2)
+    Set max_ending_here = 0 because max_ending_here < 0
+    and set max_so_far = -2
+
+    for i=1,  a[1] =  -3
+    max_ending_here = max_ending_here + (-3)
+    Since max_ending_here = -3 and max_so_far = -2, max_so_far will remain -2
+    Set max_ending_here = 0 because max_ending_here < 0
+
+    for i=2,  a[2] =  4
+    max_ending_here = max_ending_here + (4)
+    max_ending_here = 4
+    max_so_far is updated to 4 because max_ending_here greater 
+    than max_so_far which was -2 till now
+
+    for i=3,  a[3] =  -1
+    max_ending_here = max_ending_here + (-1)
+    max_ending_here = 3
+
+    for i=4,  a[4] =  -2
+    max_ending_here = max_ending_here + (-2)
+    max_ending_here = 1
+
+    for i=5,  a[5] =  1
+    max_ending_here = max_ending_here + (1)
+    max_ending_here = 2
+
+    for i=6,  a[6] =  5
+    max_ending_here = max_ending_here + (5)
+    max_ending_here = 7
+    max_so_far is updated to 7 because max_ending_here is 
+    greater than max_so_far
+
+    for i=7,  a[7] =  -3
+    max_ending_here = max_ending_here + (-3)
+    max_ending_here = 4
+
+Follow the below steps to Implement the idea:
+
+Initialize the variables max_so_far = INT_MIN and max_ending_here = 0
+Run a for loop from 0 to N-1 and for each index i: 
+Add the arr[i] to max_ending_here.
+If max_so_far is less than max_ending_here then update max_so_far  to max_ending_here.
+If max_ending_here < 0 then update max_ending_here = 0
+Return max_so_far
+Below is the Implementation of the above approach.
+
+     */
     public class KadaneAlgorithm
     {
         /// <summary>
@@ -146,8 +210,7 @@ It is similar to Largest Sum Contiguous Subarray problem. The only thing to note
         {
             int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };//Maximum contiguous sum is 7
             //int[] a =  { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
-            Console.Write("Maximum contiguous sum is " +
-                                    maxSubArraySum(a));
+            Console.Write("Maximum contiguous sum is " + maxSubArraySum(a));
             int[] arr = { 1, -2, -3, 0, 7, -8, -2 };
 
             Console.WriteLine("Maximum Sub array product is "

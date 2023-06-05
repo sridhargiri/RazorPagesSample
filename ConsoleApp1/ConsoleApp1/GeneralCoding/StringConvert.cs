@@ -34,7 +34,7 @@ Method :
 https://www.geeksforgeeks.org/check-if-it-is-possible-to-convert-one-string-into-another/?ref=rp
 
 	 */
-	class GFG
+	public class GFG
 	{
 
 		// Function to check is it possible to convert

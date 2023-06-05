@@ -56,6 +56,7 @@ ef core db first oracle
 azure cdn, azure blob auto delete old archive via webjob or timer trigger or lifecycle management,lease blob
 azure functions heavy data load
 .net event driven = https://github.com/event-driven-dotnet/home
+ZeroMQ (NetMQ.Sockets)
 
 self study Part 3
 -----------------
@@ -65,10 +66,10 @@ async pipe - pure/impure pipes
 
 axios/fetch (both are promise based)
 ***********************************
-third party so backward allowed/inbuilt so only modern
+third party so backward (or) legacy allowed/inbuilt so only latest browser support
 direct post data/post body as stringified
 receive automatic json/receive json()
-cancellable and interceptable/both no
+cancellable and interceptable/not cancellabe/interceptable
 outside 200-299 rejected/unsuccess response resolved
 
 react => debouncing,props.children,httpevent,usecallback (it also has dependency array like useEffect),useRef, hooks, virtual DOM vs shadow DOM
@@ -87,7 +88,8 @@ query performance-Avoid OR in join,Like, use nolock
 cap theorem nosql
 unit test cloud app
 git reset,distributed,offline,local server
-arrow fn(lexical/dynamic scoping), promise(then,catch,race,chaining) vs observable(observer - next,complete,error)=lazy(sub/unsub),mutiple emit,cancellable,operator
+arrow fn(lexical/dynamic scoping), 
+promise(then,catch,race,chaining) vs observable(observer - next,complete,error)=lazy(sub/unsub),mutiple emit,cancellable,operator
 fnf:automatically set updatedby in ef - override savechanges
 bybox:ABC A<B<C where A=1,C=10 combinations 120
 sql server optimistic and pessimistic concurrency models => optimistic (rowversion - code level) & pessimistic locking (db level - 4 types)
@@ -130,9 +132,9 @@ complete binary tree
 Time required to merge two sorted lists
 Time required to delete a node from doubly linked list
 multiple classes through which request is passed but only relevant classes carry out operations. ans: Chain of responsibility
-creating duplicate objects while keeping performance in mind
-Visitor classes which changes execution algorithm
-Which design pattern provides a single class which provides simplified methods for clients and delegates calls to those clients
+creating duplicate objects while keeping performance in mind. ans: Prototype pattern
+Visitor classes which changes execution algorithm. ans: Visitor Pattern
+Which design pattern provides a single class which provides simplified methods for clients and delegates calls to those clients. ans: Facade pattern
 Order of execution of derived and base class constructor
 SQL DDL & DML Triggers
 Cookie with secure attribute
@@ -258,7 +260,7 @@ ey 15 oct 2022 sat 9am L1 out
 -----------------------------
 1. implement two way binding in plain js (without angular)
 2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, limited to 80gb, atleast/atmost once i.e, dosa)
-3. what significant between azure webjobs vs timer trigger both uses timer interval (scaling, pricing)
+3. azure webjobs (it scales to 3 if app service plan scaled to 3 so add add the Singleton attribute to acheive one instance) vs timer trigger (default singleton mode) both uses timer interval (scaling, pricing)
 4. jwt vs managed identity
 5. azure disaster recovery
 
@@ -464,6 +466,23 @@ Quinnox L1 02/02/2023 9am failed
 1. find closest to target in an integer array
 2. .net vs angular difference
 3. azure timer trigger, App insights did you use?
+
+nagarro (30/05/2023) L1 fail
+------------------------------
+1. cohesion vs coupling
+2. closure js
+3. kubernetes configmap (non confidential) vs secret (confidential)
+4. microservice vs SOA
+5. Task vs thread
+6. Promise in js
+7. moq mock an exception
+8. unit test always return fixed value
+9. IoC vs DI
+10. UML diagram for composition/association and explain each
+11. azure devops publish as nuget
+12. agile estimation techniques => when developers conflict over each other on the estimated hours
+12. share data (or same method call) between two different async methods
+13. padding vs margin
 
 fail status, 38 companies from aug 2022 till date
 -------------------------------------------------

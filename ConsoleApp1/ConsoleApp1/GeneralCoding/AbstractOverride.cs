@@ -211,4 +211,71 @@ namespace ConsoleApp1
             //obj3.Sa(); error!
         }
     }
+
+
+
+    // Abstract class
+    abstract class Abstract_class
+    {
+
+        // Method declaration for abstract class
+        public abstract void abstract_method();
+    }
+
+    // Parent class
+    class Abstract_class2 : Abstract_class
+    {
+
+        // Method definition for abstract method
+        public override void abstract_method()
+        {
+            Console.WriteLine("Abstract method is called");
+        }
+    }
+
+    // First child class extends parent
+    class Abstract_class3 : Abstract_class2
+    {
+        public override void abstract_method()
+        {
+            Console.WriteLine("Abstract method is called in Abstract_class3");
+        }
+        // Method definition
+        public void Mymethod1()
+        {
+            Console.WriteLine("Method from GFG2 class");
+        }
+    }
+
+    // Second child class extends first child class
+    class GFG3 : Abstract_class3
+    {
+
+        public override void abstract_method()
+        {
+            Console.WriteLine("Abstract method is called in GFG Class");
+        }
+        // Method definition
+        public void Mymethod2()
+        {
+            Console.WriteLine("Method from GFG3 class");
+        }
+    }
+
+    public class AbstractOverride2
+    {
+
+        // Driver code
+        public static void Main(String[] args)
+        {
+
+            // Creating an object of GFG3 class
+            GFG3 obj = new GFG3();
+
+            // Call the methods using GFG3 class
+            obj.abstract_method();
+            obj.Mymethod1();
+            obj.Mymethod2();
+        }
+    }
 }
