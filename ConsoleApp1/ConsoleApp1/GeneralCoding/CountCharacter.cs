@@ -5,15 +5,14 @@ using System.Text;
 namespace ConsoleApp1
 {
     /*
-     Count characters Asked in brimmatech, here it is my own implementation
-
-    Input: “AABBCCDDAAAAABBBBBBBCEFZZ”
+Count characters Asked in brimmatech, here it is my own implementation
+Input: “AABBCCDDAAAAABBBBBBBCEFZZ”
 Output: "A2B2C2D2A5B7CEFZ2"
 
 In:AABBCCDDEEFF out:A2B2C2D2E2F2
 
      */
-    class CountCharacter
+    public class CountCharacter
     {
         public static void Main(string[] args)
         {
@@ -41,6 +40,7 @@ In:AABBCCDDEEFF out:A2B2C2D2E2F2
                 }
             }
             Console.WriteLine(output);
+            // output A2B2C2D2A5B7CEFZ2
         }
     }
 
@@ -50,7 +50,6 @@ In:AABBCCDDEEFF out:A2B2C2D2E2F2
     Given an input string, write a function that returns the Run Length Encoded string for the input string.
     For example, if the input string is “wwwwaaadexxxxxx”, then the function should return “w4a3d1e1x6”
 
-    Recommended: Please solve it on “PRACTICE” first, before moving on to the solution.
     a) Pick the first character from the source string. 
     b) Append the picked character to the destination string. 
     c) Count the number of subsequent occurrences of the picked character and append the count to the destination string. 
@@ -85,6 +84,7 @@ In:AABBCCDDEEFF out:A2B2C2D2E2F2
             //String str = "wwwwaaadexxxxxxywww";
             String str = "AABBCCDDAAAAABBBBBBBCEFZZ";
             printRLE(str);
+            // output A2B2C2D2A5B7CEFZ2
         }
     }
     /*
@@ -108,8 +108,18 @@ The idea is to maintain an index of the resultant string.
      */
     public class RemoveAllCharacter
     {
-        static void removeChar(string s,
-                               char c)
+        static void removeChar2(string str, char s)
+        {
+            foreach (char c in str)
+            {
+                if (c==s)
+                {
+                    continue;
+                }
+                Console.Write(c);
+            }
+        }
+        static void removeChar(string s, char c)
         {
             int j, count = 0, n = s.Length;
             char[] t = s.ToCharArray();
@@ -134,7 +144,7 @@ The idea is to maintain an index of the resultant string.
         public static void Main()
         {
             string s = "geeksforgeeks";
-            removeChar(s, 'g');
+            removeChar2(s, 'g');
             //Output: 
             //eeksforeeks
         }

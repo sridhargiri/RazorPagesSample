@@ -136,8 +136,8 @@ Auxiliary Space: Since we aren’t using any extra space, Therefore Auxiliary sp
 
 
     /*
-     https://www.geeksforgeeks.org/check-if-string-formed-by-first-and-last-x-characters-of-a-string-is-a-palindrome/
-    Check if String formed by first and last X characters of a String is a Palindrome
+https://www.geeksforgeeks.org/check-if-string-formed-by-first-and-last-x-characters-of-a-string-is-a-palindrome/
+Check if String formed by first and last X characters of a String is a Palindrome
 Last Updated : 28 Jun, 2021
 Given a string str and an integer X. The task is to find whether the first X characters of both string str and reversed string str are same or not. If it is equal then print true, otherwise print false.
 
@@ -195,8 +195,7 @@ Below is the implementation of the above approach :
             // Function Call
             is_palindrome_first_last_X_Characters(str, x);
             /*
-             Output
-false
+Output: false
 Time complexity: O(min(n, k))
 Auxiliary Space: O(1)
             */

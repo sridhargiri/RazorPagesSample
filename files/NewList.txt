@@ -94,6 +94,7 @@ fnf:automatically set updatedby in ef - override savechanges
 bybox:ABC A<B<C where A=1,C=10 combinations 120
 sql server optimistic and pessimistic concurrency models => optimistic (rowversion - code level) & pessimistic locking (db level - 4 types)
 .net core json order (appsettings, secret, env var, cmd var) => env var override launchsettings
+.net core json file types (6)
 
 gamesa
 ------
@@ -165,7 +166,7 @@ Web api global variable
 .NET core web api route for application home page
 Azure SQL vs Managed instance (near compatible, lift and shift) 
 azure durable functions
-.net 7 (aot, grouping api, central nuget)
+.net 7 (aot, grouping api, central nuget package, trimming)
 
 EY 3rd July 2021
 ----------------
@@ -234,7 +235,8 @@ costrategix L1 16th sep 2022
 
 costrategix L2 23th sep 2022
 ----------------------------
-json join with id and parentid sample_json.txt attached
+1. json join with id and parentid sample_json.txt attached
+2. c# lock vs mutex (Lock = Appdomain vide & Monitor.Enter/Exit but Mutex = operating system vide)
 
 costrategix L3 28th sep 2022 3.30pm
 -----------------------------------
@@ -253,7 +255,7 @@ nagarro L2 on 27/09/2022 4pm
 ----------------------------
 1. unit testing vs integration testing
 2. pods connect external ip 
-3. sql docker container data lost after restart (volume vs bind mount)
+3. sql docker container data lost after restart => volume mount (within docker) vs bind mount (host machine)
 4. web api scaling only bike insurance but no scaling for home insurance
 
 ey 15 oct 2022 sat 9am L1 out
@@ -329,7 +331,7 @@ codevysya L1 26th nov sat 12.30pm
 1. sort an array in js (without inbuilt method)
 2. capitalise first letter, so "test" becomes "Test"
 3. function currying in js (can take only one args)
-4. deep copy vs shallow copy in js
+4. deep copy (not same reference & implement via serialization or spread operator) vs shallow copy (points to same reference) in js
 5. react public and private routes
 
 rsm L2 2nd dec 2022 3.30pm
@@ -401,7 +403,7 @@ Wolters kluwers mettl test 22/12/2022 11pm
 	var r=/\s*,\s*/;
 	var i1=items.split(r);
 	console.log(i1,items);
-	answer  ['book', 'pen', 'pencil', 'box'],'book,pen,pencil,box'
+	answer ['book', 'pen', 'pencil', 'box'],'book,pen,pencil,box'
 9.	js object.assign
 
 avanze 28/12/2022 3pm
