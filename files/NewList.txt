@@ -537,9 +537,12 @@ Integrate 16/06/2023 failed L1
 2. secure jwt? = cookie 
 3. c# custom exceptions, pub sub vs message queue
 
+Finequs 05/07/2023 failed L1
+----------------------------
 1. API led architecture
-2. Task.WhenAll vs await
+2. Task.WhenAll => independent tasks run in parallel vs await => dependent tasks run one after other using await
 3. Azure keyvault audit
+4. JsonProperty attribute in newtonsoft json
 
 Infogain JD
 -----------
