@@ -26,7 +26,6 @@ Output :No
 Explanation :
 Here first ‘A’ in str1 is left to the ‘A’ in str2 and according to the condition ‘A’ can’tmove towards right. so str1 can’t be converted into str2.
 
-Recommended: Please try your approach on {IDE} first, before moving on to the solution.
 Method :
 1-Length of Both string must be same
 2-No. of A’s and B’s in both the strings must be equal

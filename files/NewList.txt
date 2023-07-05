@@ -1,5 +1,30 @@
 sep 2021 onwards
 
+old hexaware 2019
+----------------
+string s1=s2 and check output
+method overloading vs overriding
+same class in different namespace
+static class inheritance and static variables accessibility in derived
+new, override difference / base b=new base vs base b =new derived
+odata $$
+json accept header
+asqueryable million records
+allowanonymous
+web api return types and v1 vs v2.0, also web api return status code in exception
+get 2 view models in mvc
+change action name, wcf change method name, web api change method name
+multiple routes for same action is that an error or acceptable
+EF 4.1 dot collection method / fluent API
+like [d-p] %
+SQL 92 wildcards
+SQL Comparison operators, SQL View
+angularjs letter limit, parameter of datefilter and DI
+2 controllers in angularjs with same model
+Angularjs reverse filter / get, put post api call
+Angular life cycle
+ASP.NET Application life cycle (not page level)
+
 self study Part 1
 -----------------
 attribute routing (outgoing url), 
@@ -18,7 +43,7 @@ vm deploy vs azure app service
 compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
-js higher order functions
+js higher order functions (function as argument or return value). js book https://eloquentjavascript.net/index.html
 js partial function (can take multiple args)
 .net 6 features (minimal api, Top level, MapMethods for Patch, Results.Ok, services, PublishSingleFile, PublishTrimmed)
 
@@ -61,7 +86,7 @@ ZeroMQ (NetMQ.Sockets)
 self study Part 3
 -----------------
 abstract vs interface,static class vs singleton
-angular change detection, httpinterceptor, share-data-between-sibling-components-in-angular, ngrx state
+angular change detection, httpinterceptor, share-data-between-sibling-components-in-angular, ngrx state, web components
 async pipe - pure/impure pipes
 
 axios/fetch (both are promise based)
@@ -95,6 +120,18 @@ bybox:ABC A<B<C where A=1,C=10 combinations 120
 sql server optimistic and pessimistic concurrency models => optimistic (rowversion - code level) & pessimistic locking (db level - 4 types)
 .net core json order (appsettings, secret, env var, cmd var) => env var override launchsettings
 .net core json file types (6)
+
+Brimma JD
+---------
+.Net(Core) 5 or above (createscope)
+Azure
+Docker
+AKS
+SQL
+Problem Solving
+Web APIs
+Background Tasks = IHostedService (No scope provided by default)
+EntityFrameworkCore
 
 gamesa
 ------
@@ -231,12 +268,12 @@ Knowledge to manage Microservice with multiple database transactions
 costrategix L1 16th sep 2022
 ----------------------------
 1. DependencyResolver in .net
-2. Task vs thread (cancel, async, background; cab)
+2. Task (cancellable, async, background only, chaining, exception caught) vs thread (not cancellable, synchronous, foreground or background, no chaining, exception not caught)
 
 costrategix L2 23th sep 2022
 ----------------------------
 1. json join with id and parentid sample_json.txt attached
-2. c# lock vs mutex (Lock = Appdomain vide & Monitor.Enter/Exit but Mutex = operating system vide)
+2. c# lock (Appdomain vide & Monitor.Enter/Exit) vs mutex (operating system vide)
 
 costrategix L3 28th sep 2022 3.30pm
 -----------------------------------
@@ -245,7 +282,7 @@ HR manager round
 nagarro L1 on 17/09/2022 9am
 -----------------------------
 1. multi layer vs multi tier
-2. why singleton over static class (unit test, loosely coupled by DI, free to decide when you want to invoke but static constructor invoke before class is loaded)
+2. why singleton over static class (unit test, loosely coupled by DI, free to decide when you want to invoke i.e. lazy loading but static constructor invoke before class is loaded i.e. eager loading)
 3. angular singleton by default
 4. Liskov substitution in detail (when child class didn't implement any of the parent)
 5. observer, factory, abstract factory
@@ -318,7 +355,7 @@ asked only architectural questions, how you propose technical solutions
 
 itela 29/11/2022 tue 11am L2 out
 --------------------------------
-1. ef vs repository pattern, then why unitofwork is required (answer: (multiple repositories share single dbcontext), ef vs dapper
+1. ef vs repository pattern, then why unitofwork is required, answer: multiple repositories share single dbcontext, ef vs dapper
 2. asp.net core generate unique request id using middleware and pass this value from controller to BL, register multiple implementations
 3. asp.net core openid vs oauth; also server to server communicate after authentication.
 
@@ -329,7 +366,7 @@ online test (question is attached on triangle types)
 codevysya L1 26th nov sat 12.30pm
 ---------------------------------
 1. sort an array in js (without inbuilt method)
-2. capitalise first letter, so "test" becomes "Test"
+2. capitalise first letter, so "test" becomes "Test" ans: "test".charAt(0).toUpperCase() + "test".slice(1);
 3. function currying in js (can take only one args)
 4. deep copy (not same reference & implement via serialization or spread operator) vs shallow copy (points to same reference) in js
 5. react public and private routes
@@ -364,7 +401,7 @@ joulestowatts wolters kluwers L1 9th dec 2022 3pm
 
 joulestowatts wolters kluwers L2 15/12/2022 4pm
 -----------------------------------------------
-1. scenario based: to send an email to multiple users that has link to download file with single click validation, also ensure mail is not hacked
+1. scenario based: to send an email to multiple users that has link to download file with click once expiry condition, also ensure mail is not hacked
 2. angular jasmine example, SOLID principle with example
 3. clustered vs non clustered index
 
@@ -385,6 +422,14 @@ nse it L1 out 22/12/2022 7:30pm
 4. chain of responsibility (set next), proxy pattern
    Note: if there is virtual / override method is there, if base method is called in override then base "this" has reference of child rather than base
 5. angular 4 types: subject, behaviorsubject, replaysubject, asyncsubject (explain each)
+
+flyers soft L1 03/07/2023 3pm (interviewer: vivek)
+-------------------------------------------------
+1. namespace in service bus
+2. refactor running batch job
+3. microservices: seperate db how you do you join query
+4. microservices: implement saga pattern in azure service bus
+5. microservices: where you maintain compensating transactions
 
 Wolters kluwers mettl test 22/12/2022 11pm
 ------------------------------------------
@@ -443,12 +488,12 @@ See viasat.cs for c sharp question others on python and sql so ignore
 
 SafeSend 24/02/2023
 -------------------
-Given a string s that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid. 
-Return a list of unique strings that are valid with the minimum number of removals. You may return the answer in any order. 
-Example 1: Input: s = "()())()"
+Given a string s that contains parentheses and letters, remove the minimum number of invalid parentheses to make the input string valid. 
+Return a list of unique strings that are valid with the minimum number of removals. You may return the answer in any order. 
+Example 1: Input: s = "()())()"
 Output: ["(())()","()()()"]
 
-Given an integer array nums, find the subarray with the largest sum, and return its sum. 
+Given an integer array nums, find the subarray with the largest sum, and return its sum. 
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
 Output: 6
 The subarray [4,-1,2,1] has the largest sum 6.
@@ -484,7 +529,56 @@ nagarro (30/05/2023) L1 fail
 11. azure devops publish as nuget
 12. agile estimation techniques => when developers conflict over each other on the estimated hours
 12. share data (or same method call) between two different async methods
-13. padding vs margin
+13. padding (space inbetween neighbour element) vs margin (space between border and content)
+
+Integrate 16/06/2023 failed L1
+------------------------------
+1. clustered vs non clustered index storage
+2. secure jwt? = cookie 
+3. c# custom exceptions, pub sub vs message queue
+
+1. API led architecture
+2. Task.WhenAll vs await
+3. Azure keyvault audit
+
+Infogain JD
+-----------
+Collaborate with customer and Infogain technical team guide to capture functional, non-functional requirements
+Review existing applications to understand as-is architecture and identify opportunities to improve
+Design application architecture for green field and existing applications
+Define optimal mix of custom and Commercial off the shelf products to deliver effective modern architecture leveraging MACH, Event Driven Architecture
+Design ecosystem required for application including Cloud service selection, Monitoring, Source control and DevSecOps strategy
+Guide development of proof of concepts, accelerators, best practices, guidelines for delivering modern applications with .Net 6/7 or .Net Core
+Provide guidance to ensure a delightful developer experience for implementation team
+Lead or contribute to solutioning exercise as part of RFP, RFI response
+
+Must Haves
+10+ years of IT experience, 3+ years of relevant experience in architecting modern Web or API applications with Asp.Net
+Application Architecture experience with Two or More from Asp.Net Webforms, Asp.Net MVC, SignalR, Blazor
+Lead at least Two .Net Architecture development in recent past
+At least One application architecture development using Clean Architecture
+Database design experience with at least one RDBMS and one NoSQL engine
+Delivered at least Two High Level Design, Low Level Design
+Proficiency to review code in .Net Core 3.1 AND .net Framework 4x
+Expertise in Swagger / OpenAPI Spec, docker, .Net Async programming, Linq, Entity Framework
+Experience with tools for measuring, monitoring, troubleshooting and improving performance, scalability, availability and reliability of applications e.g. Visual Studio Profiler, Azure App Insights, SQL Profiler
+At least one project each with Test driven development using tools e.g. MS-Test, xUnit
+Experience with Static code analysis tools e.g. Sonar
+Understanding of Secure Architecture Design, OWASP Top 10 and techniques to mitigate threats
+
+Preferred
+Azure Application Developer certification
+Experience with .Net 6 or .Net 7
+Project experience with Behaviour Driven Development using tools e.g. SpecFlow
+Experience working with Azure PaaS, such as App Service, AKS, Azure Functions
+Experience with Front End frameworks such as React JS, Angular, Vue
+Experience with source control management, branching, CI CD
+Experience with Microservices
+Lead or contributed to solutioning and estimation for RFP, RFI response
+
+Birlasoft JD
+Candidates must be aware of Azure PaaS Services like (App Services, Azure Storage, Azure SQL, Service Bus, Logic Apps, Azure Functions etc.)
+Candidates have experience or are at least aware of Microservices and their design patterns (CQRS, SAGA, 2 Phase Commit etc.)
 
 fail status, 38 companies from aug 2022 till date
 -------------------------------------------------
@@ -517,7 +611,7 @@ fail status, 38 companies from aug 2022 till date
 27. nse it L1 out
 28.	avanzetech L1 out (virtue sources)
 29.	mpower finance, 29 dec 2022, 12:30pm, cancelled
-30.	symphony group
+30.	symphony group (STG) online test reattempted 29/06/2023 2pm it said form submitted already
 31.	diaspark, remotely attended further rounds
 32. On time logistics test fail
 33. Volumetree
@@ -526,4 +620,6 @@ fail status, 38 companies from aug 2022 till date
 36. Aploris online test failed
 37. Dashninja
 38. Quinnox
-39. ?
+39. Integrate
+40. Sapient test failed
+41. 
