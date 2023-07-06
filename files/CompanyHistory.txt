@@ -25,6 +25,12 @@ Angularjs reverse filter / get, put post api call
 Angular life cycle
 ASP.NET Application life cycle (not page level)
 
+The following are the 3 popular patterns used for caching in microservices architecture
+
+️Cache-Aside
+Read-Through/Write-Through
+Write-Behind
+
 self study Part 1
 -----------------
 attribute routing (outgoing url), 
@@ -423,14 +429,6 @@ nse it L1 out 22/12/2022 7:30pm
    Note: if there is virtual / override method is there, if base method is called in override then base "this" has reference of child rather than base
 5. angular 4 types: subject, behaviorsubject, replaysubject, asyncsubject (explain each)
 
-flyers soft L1 03/07/2023 3pm (interviewer: vivek)
--------------------------------------------------
-1. namespace in service bus
-2. refactor running batch job
-3. microservices: seperate db how you do you join query
-4. microservices: implement saga pattern in azure service bus
-5. microservices: where you maintain compensating transactions
-
 Wolters kluwers mettl test 22/12/2022 11pm
 ------------------------------------------
 1.	css var method, double hyphen
@@ -529,7 +527,7 @@ nagarro (30/05/2023) L1 fail
 11. azure devops publish as nuget
 12. agile estimation techniques => when developers conflict over each other on the estimated hours
 12. share data (or same method call) between two different async methods
-13. padding (space inbetween neighbour element) vs margin (space between border and content)
+13. padding (space inbetween neighbour element) vs margin (space between border and citw own ontent)
 
 Integrate 16/06/2023 failed L1
 ------------------------------
@@ -537,12 +535,20 @@ Integrate 16/06/2023 failed L1
 2. secure jwt? = cookie 
 3. c# custom exceptions, pub sub vs message queue
 
-Finequs 05/07/2023 failed L1
-----------------------------
+flyers soft L1 03/07/2023 3pm (interviewer: vivek)
+-------------------------------------------------
+1. namespace in service bus = container that contain service bus, queue, relay
+2. refactor running batch job
+3. microservices: seperate db how you do you join query
+4. microservices: implement saga pattern in azure service bus
+5. microservices: where you maintain compensating transactions
+
+Finequs 05/07/2023 failed L1 (interviewer: krishna kashyap)
+-----------------------------------------------------------
 1. API led architecture
 2. Task.WhenAll => independent tasks run in parallel vs await => dependent tasks run one after other using await
 3. Azure keyvault audit
-4. JsonProperty attribute in newtonsoft json
+4. JsonProperty attribute in newtonsoft json 
 
 Infogain JD
 -----------

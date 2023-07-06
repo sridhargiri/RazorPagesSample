@@ -1,0 +1,248 @@
+But RxJS isn't a silver bullet.
+
+Reactive programming introduces a set of its own challenges.
+
+Have you ever seen something like this in one of your Angular components?
+
+$observable.subscribe((result) => {
+    // do something with the result here
+});
+And then a little while later in the same file something like this?
+
+$observable.unsubscribe();
+Anytime we subscribe to an Observable we need to make sure that we unsubscribe as well. Plus, that subscribe stuff with the return result is rather hairy and makes my code unclean.
+
+What if there was a superior way to handle Observables and Promises?
+
+better%20way
+
+That's where Angular's AsyncPipe emerges and toots its horn.
+
+What is the Angular async pipe?
+Angular's async pipe is a pipe that subscribes to an Observable or Promise for you and returns the last value that was emitted.
+
+That means we don't have to do any more of this. 👇
+
+$observable.subscribe((result) => {
+    // do something with the result here
+});
+Every time a new value is emitted the async pipe will automatically mark your component to be checked for changes.
+
+And best of all, when the component is destroyed the async pipe will automatically unsubscribe for you. No need to do this manually.
+
+no%20need
+
+Why should we use Angular's async pipe?
+Any Angular developer worth his salt has gotta admit that the AsyncPipe is quite terrific.
+
+You should be using it because...
+
+If you subscribe() to an Observable or Promise you'll need to unsubscribe() at the end of your component's life cycle to avoid memory leaks.
+Change detection works splendidly with the async pipe.
+We don't have to unsubscribe manually because the AsyncPipe handles this for us.
+Not to mention that it makes our code more readable and clean.
+
+And using it makes you feel like ridding in a big elevator. 😏
+
+Angular AsyncPipe example(s)
+So how do we use Angular's AsyncPipe?
+
+Here's a beginner's example.
+
+import { Component, OnInit } from '@angular/core';
+import { Observable, timer } from 'rxjs';
+
+@Component({
+  selector: 'app-timer',
+  template: `
+    <p>Timer: {{ $timer | async }}</p>
+  `,
+  styleUrls: ['./timer.component.css']
+})
+export class TimerComponent implements OnInit {
+
+  $timer: Observable<Number>;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.$timer = timer(1000, 1000);
+  }
+
+}
+We begin by declaring a new timer in our TimerComponent class. This timer is configured to start in one second and then fire every second after that.
+
+Then, in our template, we print the timer results by using the AsyncPipe.
+
+Angular AsyncPipe with Observables
+Imagine we have an Observable that emits a stream of people.
+
+How do we use the AsyncPipe to handle this observable?
+
+Here's how it's done.
+
+import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
+@Component({
+  selector: 'app-timer',
+  template: `
+    <p>People: {{ $observable | async }}</p>
+  `,
+  styleUrls: ['./timer.component.css']
+})
+export class PeopleComponent implements OnInit {
+
+  $observable: Observable<any>;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.$observable = of(["Jim", "Dick", "Harry"]);
+  }
+
+}
+Angular async pipe with Promises
+But what about Promises?
+
+Here's a simple demo that resolves immediately with a list of names - similar to our Observable example.
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-people',
+  template: `
+    <p>{{ $observable | async }}</p>
+  `,
+  styleUrls: ['./people.component.css']
+})
+export class PeopleComponent implements OnInit {
+
+  $observable: Promise<any>;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.$observable = Promise.resolve(["Jim", "Dick", "Harry"]);
+  }
+
+}
+What about a Promise with a timer?
+
+The AsyncPipe example below will display foo after a 3-second wait.
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-timer',
+  template: `
+    <p *ngIf="($observable | async) as time">Current Timer Value: {{ time }}</p>
+  `,
+  styleUrls: ['./timer.component.css']
+})
+export class TimerComponent implements OnInit {
+
+  $observable: Promise<any>;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.$observable = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('foo');
+      }, 3000);
+    });
+  }
+}
+How to use the async pipe with *ngIf
+import { Component, OnInit } from '@angular/core';
+import { Observable, timer } from 'rxjs';
+
+@Component({
+  selector: 'app-timer',
+  template: `
+    <p *ngIf="($observable | async) as time">Current Timer Value: {{ time }}</p>
+  `,
+  styleUrls: ['./timer.component.css']
+})
+export class TimerComponent implements OnInit {
+
+  $observable: Observable<Number>;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.$observable = timer(5000, 1000);
+  }
+}
+How to use the async pip with *ngFor
+import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
+@Component({
+  selector: 'app-people',
+  template: `
+    <ul>
+      <li *ngFor="let user of $users | async">{{user}}</li>
+    </ul>
+  `,
+  styleUrls: ['./people.component.css']
+})
+export class PeopleComponent implements OnInit {
+
+  $users: Observable<string[]>;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.$users = of(['Alice', 'Jane', 'Dan', 'Mary'])
+  }
+}
+How to use the async pipe with HttpClient
+We'll use a simple Angular component for this demo.
+
+Our component will inject the Angular HTTP service (even though this is considered diddly) and call the boredapi.com website to retrieve an idea in case we ever get bored.
+
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+class Activity {
+  activity: string;
+  type: string;
+  link: string;
+}
+
+@Component({
+  selector: 'app-activity',
+  template: `
+    <h1>Activity Summary</h1>
+    <div *ngIf="($activity | async) as activity; else loading">
+       <p>{{ activity.activity }}</p>
+       <p>{{ activity.type }}</p>
+    </div>
+    <ng-template #loading>
+      <p>Loading...</p>
+    </ng-template>
+  `,
+  styleUrls: ['./activity.component.css']
+})
+
+export class ActivityComponent implements OnInit {
+
+  $activity: Observable<Activity>;
+
+  constructor(private httpClient: HttpClient) { }
+
+  ngOnInit(): void {
+    this.loadActivity();
+  }
+
+  loadActivity() {
+    this.$activity = this.httpClient.get<Activity>("https://www.boredapi.com/api/activity");
+  }
+}
+So what do you think?
+The AsyncPipe is quite the handy little tool.
+
+And I think it's reasonable to say that a well-designed Angular application should never need to subscribe to an Observable. The async pipe can take care of subscribing and unsubscribing while we worry about more important stuff.
