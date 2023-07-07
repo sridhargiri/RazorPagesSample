@@ -27,7 +27,7 @@ ASP.NET Application life cycle (not page level)
 
 The following are the 3 popular patterns used for caching in microservices architecture
 
-️Cache-Aside
+Cache-Aside
 Read-Through/Write-Through
 Write-Behind
 
@@ -254,7 +254,7 @@ srarting from august 2022
 *************************
 divini (client: coremont)
 -------------------------
-6th august 2022, 1st round - idempotency, .net core inmemory cache and web api cache via proxy server
+6th august 2022, 1st round - idempotency (get, put, delete is idempotent; post & patch is not), .net core inmemory cache and web api cache via proxy server
 16th august 2022, 2nd round - deadlock, same object key twice - to override gethashcode & Equals methods
 
 maxerience (17/08/2022)
@@ -273,7 +273,7 @@ Knowledge to manage Microservice with multiple database transactions
 
 costrategix L1 16th sep 2022
 ----------------------------
-1. DependencyResolver in .net
+1. DependencyResolver in .net web api used to register any dependency framework
 2. Task (cancellable, async, background only, chaining, exception caught) vs thread (not cancellable, synchronous, foreground or background, no chaining, exception not caught)
 
 costrategix L2 23th sep 2022
@@ -379,12 +379,12 @@ codevysya L1 26th nov sat 12.30pm
 
 rsm L2 2nd dec 2022 3.30pm
 --------------------------
-1. web api measure api response time
+1. web api measure api response time (3 ways = custom DelegatingHandler, action filter, middleware)
 2. ef handle concurrency (RowVersion Timestamp)
 
 randstad L1 6th dec 12pm
 ------------------------
-1. web api performance tuning and other generic questions
+1. web api performance tuning and other generic questions (async, compression, caching, protobuf-net fast serialization, client side validation)
 
 syrencloud L1 7th dec 2022 4pm
 ------------------------------
@@ -548,7 +548,12 @@ Finequs 05/07/2023 failed L1 (interviewer: krishna kashyap)
 1. API led architecture
 2. Task.WhenAll => independent tasks run in parallel vs await => dependent tasks run one after other using await
 3. Azure keyvault audit
-4. JsonProperty attribute in newtonsoft json 
+4. JsonProperty attribute in newtonsoft json
+
+TCare 07/07/2023 L1 9am
+----------------------------
+1. coding question TCare.cs
+2. clustered vs non clustered which is better 
 
 Infogain JD
 -----------
@@ -589,8 +594,8 @@ Birlasoft JD
 Candidates must be aware of Azure PaaS Services like (App Services, Azure Storage, Azure SQL, Service Bus, Logic Apps, Azure Functions etc.)
 Candidates have experience or are at least aware of Microservices and their design patterns (CQRS, SAGA, 2 Phase Commit etc.)
 
-fail status, 38 companies from aug 2022 till date
--------------------------------------------------
+companies from aug 2022 till date
+----------------------------------
 1.	shell (codility test out)
 2.	sage IT
 3.	maxerience
@@ -601,7 +606,7 @@ fail status, 38 companies from aug 2022 till date
 8.	nagarro L2 out
 9.	amazon shortlisting out
 10.	ey L1 out
-11.	flyers soft L2 out
+11.	flyers soft L2 out (again L1 in june 2023)
 12.	version1
 13.	everi
 14.	accolite
@@ -631,4 +636,6 @@ fail status, 38 companies from aug 2022 till date
 38. Quinnox
 39. Integrate
 40. Sapient test failed
-41. 
+41. Finequs
+42. TCare
+43. ?
