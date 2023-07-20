@@ -1,7 +1,7 @@
 sep 2021 onwards
 
 old hexaware 2019
-----------------
+-----------------
 string s1=s2 and check output
 method overloading vs overriding
 same class in different namespace
@@ -52,6 +52,7 @@ mount vs render
 js higher order functions (function as argument or return value). js book https://eloquentjavascript.net/index.html
 js partial function (can take multiple args)
 .net 6 features (minimal api, Top level, MapMethods for Patch, Results.Ok, services, PublishSingleFile, PublishTrimmed)
+https://samcogan.com/what-is-an-azure-app-service-plan-and-what-does-it-do/
 
 scaffold
 --------
@@ -115,7 +116,7 @@ azure ad, hybrid, sql elastic pool, azure static website hosting $web storage ac
 microservices transaction example c#, c# istio, mediatr,automatonymous,
 c# template pattern,abstract factory pattern,adapter pattern, abstract override
 TempData Attribute
-query performance-Avoid OR in join,Like, use nolock
+query performance-Avoid OR in join,Like, use nolock, table partitioning
 cap theorem nosql
 unit test cloud app
 git reset,distributed,offline,local server
@@ -287,7 +288,7 @@ HR manager round
 
 nagarro L1 on 17/09/2022 9am
 -----------------------------
-1. multi layer vs multi tier
+1. multi layer (logical, same machine) vs multi tier (physical, separate machine)
 2. why singleton over static class (unit test, loosely coupled by DI, free to decide when you want to invoke i.e. lazy loading but static constructor invoke before class is loaded i.e. eager loading)
 3. angular singleton by default
 4. Liskov substitution in detail (when child class didn't implement any of the parent)
@@ -409,7 +410,7 @@ joulestowatts wolters kluwers L2 15/12/2022 4pm
 -----------------------------------------------
 1. scenario based: to send an email to multiple users that has link to download file with click once expiry condition, also ensure mail is not hacked
 2. angular jasmine example, SOLID principle with example
-3. clustered vs non clustered index
+3. clustered (sorted, only 1, insert/update slow so specify fill factor 70) vs non clustered index (not sorted, upto 999, insert/update normal)
 
 wenger watson 21/12/2022 for symphony group
 -------------------------------------------
@@ -539,21 +540,22 @@ flyers soft L1 03/07/2023 3pm (interviewer: vivek)
 -------------------------------------------------
 1. namespace in service bus = container that contain service bus, queue, relay
 2. refactor running batch job
-3. microservices: seperate db how you do you join query
+3. microservices: seperate db how you do you join query (duplicate db1 into db2)
 4. microservices: implement saga pattern in azure service bus
 5. microservices: where you maintain compensating transactions
 
-Finequs 05/07/2023 failed L1 (interviewer: krishna kashyap)
------------------------------------------------------------
+Finequs 05/07/2023 11am failed L1 (interviewer: krishna kashyap)
+---------------------------------------------------------------
 1. API led architecture
 2. Task.WhenAll => independent tasks run in parallel vs await => dependent tasks run one after other using await
 3. Azure keyvault audit
 4. JsonProperty attribute in newtonsoft json
 
-TCare 07/07/2023 L1 9am
+TCare 07/07/2023 L1 9am fail
 ----------------------------
 1. coding question TCare.cs
 2. clustered vs non clustered which is better 
+3. web api content negotiation
 
 Infogain JD
 -----------
@@ -589,6 +591,7 @@ Experience with Front End frameworks such as React JS, Angular, Vue
 Experience with source control management, branching, CI CD
 Experience with Microservices
 Lead or contributed to solutioning and estimation for RFP, RFI response
+as-is to be process mapping examples
 
 Birlasoft JD
 Candidates must be aware of Azure PaaS Services like (App Services, Azure Storage, Azure SQL, Service Bus, Logic Apps, Azure Functions etc.)
