@@ -6,7 +6,7 @@ string s1=s2 and check output
 method overloading vs overriding
 same class in different namespace
 static class inheritance and static variables accessibility in derived
-new, override difference / base b=new base vs base b =new derived
+new, override difference / base b=new base vs base b = new derived
 odata $$
 json accept header
 asqueryable million records
@@ -557,6 +557,15 @@ TCare 07/07/2023 L1 9am fail
 2. clustered vs non clustered which is better 
 3. web api content negotiation
 
+ConcordOne (timepass) on 22/07/2023
+-----------------------------------
+1. Given string containing characters only x and y find out the substring of xy and replace it with the string yyx. \
+   you need to apply the operation on string stn. 
+   find  out the minimum number of operations you need to make so that no substring xy is present. 
+   if the answer is very large, return mod of 10 power 9 + 7
+
+2. connect azure logic app to VM
+
 Infogain JD
 -----------
 Collaborate with customer and Infogain technical team guide to capture functional, non-functional requirements
@@ -599,7 +608,7 @@ Candidates have experience or are at least aware of Microservices and their desi
 
 companies from aug 2022 till date
 ----------------------------------
-1.	shell (codility test out)
+1.	shell (codility test out) again taken 20/07/2023 failed
 2.	sage IT
 3.	maxerience
 4.	hellofresh
@@ -642,3 +651,5 @@ companies from aug 2022 till date
 41. Finequs
 42. TCare
 43. ?
+
+
