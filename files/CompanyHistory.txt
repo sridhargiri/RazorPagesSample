@@ -428,7 +428,7 @@ nse it L1 out 22/12/2022 7:30pm
 3. angular authguard (5 types -> CanActivate, CanActivateChild, CanDeactivate, Resolve, CanLoad)
 4. chain of responsibility (set next), proxy pattern
    Note: if there is virtual / override method is there, if base method is called in override then base "this" has reference of child rather than base
-5. angular 4 types: subject, behaviorsubject, replaysubject, asyncsubject (explain each)
+5. angular 4 types: subject, behaviorsubject, replaysubject, asyncsubject (https://i.stack.imgur.com/VyiFf.png) 
 
 Wolters kluwers mettl test 22/12/2022 11pm
 ------------------------------------------
