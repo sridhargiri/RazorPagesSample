@@ -4,13 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+SLK sotware: flatten array without built in in js
+function flatten(arr)
+{
+var output=[];
+for(var i in arr)
+{
+output.push(i);
+}
+console.log(arr.join(','));
+}
+
+flatten([1,2,3,[4,[5,[6]]]])
+*/
+
 namespace ConsoleApp1
 {
-    /*
-     How to replace a substring of a string
-    Something related to ConcordOne hackathon held on 22 jul 2023
-    https://www.geeksforgeeks.org/find-and-replace-all-occurrence-of-a-substring-in-the-given-string/
-    Given three strings S, S1, and S2 consisting of N, M, and K characters respectively, the task is to modify the string S by replacing all the substrings S1 with the string S2 in the string S.
+
+/*
+How to replace a substring of a string
+Something related to ConcordOne hackathon held on 22 jul 2023
+https://www.geeksforgeeks.org/find-and-replace-all-occurrence-of-a-substring-in-the-given-string/
+Given three strings S, S1, and S2 consisting of N, M, and K characters respectively, the task is to modify the string S by replacing all the substrings S1 with the string S2 in the string S.
 
 Examples:
 

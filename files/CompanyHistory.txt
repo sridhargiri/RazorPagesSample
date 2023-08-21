@@ -24,6 +24,7 @@ angularjs letter limit, parameter of datefilter and DI
 Angularjs reverse filter / get, put post api call
 Angular life cycle
 ASP.NET Application life cycle (not page level)
+Generics out keyword, GetCustomAttributes
 
 The following are the 3 popular patterns used for caching in microservices architecture
 
@@ -550,6 +551,7 @@ Finequs 05/07/2023 11am failed L1 (interviewer: krishna kashyap)
 2. Task.WhenAll => independent tasks run in parallel vs await => dependent tasks run one after other using await
 3. Azure keyvault audit
 4. JsonProperty attribute in newtonsoft json
+5. MuleSoft API led connectivity
 
 TCare 07/07/2023 L1 9am fail
 ----------------------------
@@ -565,6 +567,11 @@ ConcordOne (timepass) on 22/07/2023
    if the answer is very large, return mod of 10 power 9 + 7
 
 2. connect azure logic app to VM
+
+SLK software L1 failed on 21/09/2023
+-------------------------------------
+1.	very basic react questions
+2.	flatten array without built in in js
 
 Infogain JD
 -----------
@@ -605,6 +612,15 @@ as-is to be process mapping examples
 Birlasoft JD
 Candidates must be aware of Azure PaaS Services like (App Services, Azure Storage, Azure SQL, Service Bus, Logic Apps, Azure Functions etc.)
 Candidates have experience or are at least aware of Microservices and their design patterns (CQRS, SAGA, 2 Phase Commit etc.)
+
+Quinnox JD
+Strong .Netcore experience Hands-on experience in current projects is important
+Should be very strong in C# and .Net fundamentals
+Hands on experience in implementing Software Design Patterns and Enterprise level Design patterns [ e.g. Pub-Sub, Scatter Gather, CQRS and event sourcing]
+Experience of working with RestAPI and Microservices based Architecture
+Experience on using Unit Testing Frameworks like XUnit. NUnit, NMoq
+Experience in AWS Appsync, GraphQL
+Strong experience in AWS services like AWS Lambda, Cognito, DynamoDB, SQS, SNS
 
 companies from aug 2022 till date
 ----------------------------------
@@ -650,6 +666,7 @@ companies from aug 2022 till date
 40. Sapient test failed
 41. Finequs
 42. TCare
-43. ?
+43. SLK
+44. ?
 
 
