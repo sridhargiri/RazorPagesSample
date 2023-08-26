@@ -108,7 +108,8 @@ outside 200-299 rejected/unsuccess response resolved
 react => debouncing,props.children,httpevent,usecallback (it also has dependency array like useEffect),useRef, hooks, virtual DOM vs shadow DOM
 react => diffing (only changed portion of V-DOM is sent to UI), batch update, reconciliation, key (uniquely identify each element and keep track of changed elements in list)
 react => three ways to avoid props drilling: redux, usecontext, container composition
-Note on useEffect => Nothing specified = This runs after every render / specified empty array = This runs only on mount (when the component appears)
+react => fragment vs portal vs outlet
+Note on useEffect => Nothing specified = This runs after every render / specified empty array = This runs only on mount (when the component appears / pass value to trigger change of a particular value)
 
 c# limit (or) count no of instances
 microservice transaction - 2pc & saga, event sourcing - CQRS, bounded context in DDD
@@ -561,17 +562,17 @@ TCare 07/07/2023 L1 9am fail
 
 ConcordOne (timepass) on 22/07/2023
 -----------------------------------
-1. Given string containing characters only x and y find out the substring of xy and replace it with the string yyx. \
+1. Given string containing characters only x and y find out the substring of xy and replace it with the string yyx.
    you need to apply the operation on string stn. 
-   find  out the minimum number of operations you need to make so that no substring xy is present. 
+   find out the minimum number of operations you need to make so that no substring xy is present. 
    if the answer is very large, return mod of 10 power 9 + 7
 
 2. connect azure logic app to VM
 
-SLK software L1 failed on 21/09/2023
--------------------------------------
-1.	very basic react questions
-2.	flatten array without built in in js
+SLK software L1 failed on 21/08/2023 3pm (next day after annai adi sunday class)
+-------------------------------------------------------------------------------
+1.	react class component (componentDidMount, componentWillUnmount, props access as props.name, setState) vs functional component (useEffect, return a function inside useEffect props, access as just name, useState)
+2.	flatten array without prototype.flat() function in js. input: [1,2,3,[4,[5,[6]]]] and output: [1,2,3,4,5,6]
 
 Infogain JD
 -----------
