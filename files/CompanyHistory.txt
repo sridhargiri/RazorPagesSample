@@ -13,7 +13,7 @@ asqueryable million records
 allowanonymous
 web api return types and v1 vs v2.0, also web api return status code in exception
 get 2 view models in mvc
-change action name, wcf change method name, web api change method name
+change action name, web api change method name
 multiple routes for same action is that an error or acceptable
 EF 4.1 dot collection method / fluent API
 like [d-p] %
@@ -62,7 +62,8 @@ Scaffold-DbContext "Data Source=sridharsw-lp; Initial Catalog=AssignmentDb; Inte
 JD azure
 --------
 Storage – standard vs Premium
-Storage Blob
+Upload large Blob in chunks => repeat "PutBlockAsync" method, finally "PutBlockListAsync" method 
+Link:[https://www.andrewhoefling.com/Blog/Post/uploading-large-files-to-azure-blob-storage-in-c-sharp]
 VNET/Security group
 Resource groups
 Azure OMS services – patching and monitoring
@@ -102,7 +103,7 @@ axios/fetch (both are promise based)
 third party so backward (or) legacy allowed/inbuilt so only latest browser support
 direct post data/post body as stringified
 receive automatic json/receive json()
-cancellable and interceptable/not cancellabe/interceptable
+cancellable and interceptable/the opposite
 outside 200-299 rejected/unsuccess response resolved
 
 react => debouncing,props.children,httpevent,usecallback (it also has dependency array like useEffect),useRef, hooks, virtual DOM vs shadow DOM
@@ -111,8 +112,11 @@ react => three ways to avoid props drilling: redux, usecontext, container compos
 react => fragment vs portal vs outlet
 Note on useEffect => Nothing specified = This runs after every render / specified empty array = This runs only on mount (when the component appears / pass value to trigger change of a particular value)
 
-c# limit (or) count no of instances
+https://www.milanjovanovic.tech/blog
+saga by rebus or nservicebus or masstransit with rabbitmq or azure service bus as message broker
 microservice transaction - 2pc & saga, event sourcing - CQRS, bounded context in DDD
+
+c# limit (or) count no of instances
 sql server vs mysql
 azure ad, hybrid, sql elastic pool, azure static website hosting $web storage account
 microservices transaction example c#, c# istio, mediatr,automatonymous,
@@ -127,6 +131,7 @@ promise(then,catch,race,chaining) vs observable(observer - next,complete,error)=
 fnf:automatically set updatedby in ef - override savechanges
 bybox:ABC A<B<C where A=1,C=10 combinations 120
 sql server optimistic and pessimistic concurrency models => optimistic (rowversion - code level) & pessimistic locking (db level - 4 types)
+lock inside async doesnot work - Use SemaphoreSlim
 .net core json order (appsettings, secret, env var, cmd var) => env var override launchsettings
 .net core json file types (6)
 
@@ -195,7 +200,8 @@ component communication angular
 component interaction react
 useclass useexisting usefactory
 LB vs AGW, Availability set
-angular: Two component same selector, More than one router outlet, shared module, lazy loading module, bootstrap vs entry components
+angular: Two component same selector, More than one router outlet, shared module, lazy loading, AOT, bootstrap vs entry components (now deprecated)
+angular: tree shaking, providedIn: 'root' in singleton mode but regular providers API control the number of instances, 
 Angular template check navigate save without changes
 identify which VM code is running
 Pass status success from one step to other in devops
@@ -349,12 +355,12 @@ capgemini online test taken on 6th nov 2022 (sunday)
 8. If you still want to rebase the commits but can't rebase and merge automatically on GitHub.com you must rebase the topic branch (or head branch) onto the base branch locally on the command line
 9. Task.Run vs StartNew (we can’t attach a child task to a task launched by Task.Run)
 
-ajmera (Nov 11)
+ajmera (Nov 11) 2022
 ---------------
 offline assessment done, time taken 2 days
 
-rsm 18th nov 4.30pm
--------------------
+rsm 18/11/2022 4.30pm
+----------------------
 1. ef parent/child insert same query
 2. ef rollback parent insert when child query fails
 
@@ -571,8 +577,36 @@ ConcordOne (timepass) on 22/07/2023
 
 SLK software L1 failed on 21/08/2023 3pm (next day after annai adi sunday class)
 -------------------------------------------------------------------------------
-1.	react class component (componentDidMount, componentWillUnmount, props access as props.name, setState) vs functional component (useEffect, return a function inside useEffect props, access as just name, useState)
+1.	react class component (componentDidMount, componentWillUnmount, props access as props.name, setState) 
+	vs functional component (useEffect, return a function inside useEffect props, access as just name, useState)
 2.	flatten array without prototype.flat() function in js. input: [1,2,3,[4,[5,[6]]]] and output: [1,2,3,4,5,6]
+
+Sagent inperson 31/08/2023 after hackerrank test (failed)
+---------------------------------------------------------
+they gave an usecase and draw diagram and implement any one feature
+
+Harman L1 01/09/2023 at 1pm
+------------------------------
+thread indefinite lock is possible?
+asked about template method pattern with example
+HttpClientFactory uses factory pattern
+
+Harman L2 21/09/2023 at 3.30pm fail
+-----------------------------------
+How do you maintain high frequent time series data? do table partitioning, while querying table name remain same, but goes 
+
+• All types of Joins  
+• Group By
+• Indexing
+• CASE-WHEN statement 
+• Null-Safe Join
+• CTE(Common Table Expressions)
+• Dealing with duplicates
+• Any, All, and exists
+• Union operation, Subqueries, Having clause
+• Windowing Functions like Rank (), Row_Number() & Dense_Rank()
+• Over Clause with Partition and OrderBy
+• Aggregation on windowing functions like SUM(), AVG(), MIN(), MAX() etc.
 
 Infogain JD
 -----------
@@ -615,7 +649,7 @@ Candidates must be aware of Azure PaaS Services like (App Services, Azure Storag
 Candidates have experience or are at least aware of Microservices and their design patterns (CQRS, SAGA, 2 Phase Commit etc.)
 
 Quinnox JD
-Strong .Netcore experience Hands-on experience in current projects is important
+Strong .Net core experience Hands-on experience in current projects is important
 Should be very strong in C# and .Net fundamentals
 Hands on experience in implementing Software Design Patterns and Enterprise level Design patterns [ e.g. Pub-Sub, Scatter Gather, CQRS and event sourcing]
 Experience of working with RestAPI and Microservices based Architecture
@@ -668,6 +702,8 @@ companies from aug 2022 till date
 41. Finequs
 42. TCare
 43. SLK
-44. ?
+44. Harman
+45. Sagent
+46. ?
 
 

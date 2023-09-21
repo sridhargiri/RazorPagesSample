@@ -47,9 +47,15 @@ namespace ConsoleApp1
         // mandatory since the hooks already have default (but empty)
         // implementation. Hooks provide additional extension points in some
         // crucial places of the algorithm.
-        protected virtual void Hook1() { }
+        protected virtual void Hook1() 
+        {
+            Console.WriteLine("AbstractClass says: inside virtual hook 1");
+        }
 
-        protected virtual void Hook2() { }
+        protected virtual void Hook2()
+        {
+            Console.WriteLine("AbstractClass says: inside virtual hook 2");
+        }
     }
 
     // Concrete classes have to implement all abstract operations of the base
@@ -88,32 +94,23 @@ namespace ConsoleApp1
         }
     }
 
-    class Clientcall
-    {
-        // The client code calls the template method to execute the algorithm.
-        // Client code does not have to know the concrete class of an object it
-        // works with, as long as it works with objects through the interface of
-        // their base class.
-        public static void ClientCode(AbstractClass abstractClass)
-        {
-            // ...
-            abstractClass.TemplateMethod();
-            // ...
-        }
-    }
-
-    class Program
+    public class TemplatePatternExample
     {
         static void Main(string[] args)
         {
+            // The client code calls the template method to execute the algorithm.
+            // Client code does not have to know the concrete class of an object it
+            // works with, as long as it works with objects through the interface of
+            // their base class.
             Console.WriteLine("Same client code can work with different subclasses:");
-
-            Clientcall.ClientCode(new ConcreteClass1());
+            AbstractClass abstractClass = new ConcreteClass1();
+            abstractClass.TemplateMethod();
 
             Console.Write("\n");
 
             Console.WriteLine("Same client code can work with different subclasses:");
-            Clientcall.ClientCode(new ConcreteClass2());
+            abstractClass = new ConcreteClass2();
+            abstractClass.TemplateMethod();
         }
     }
 }
