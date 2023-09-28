@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Net;
+using System.Reflection.Metadata;
+using System.Security.Claims;
+using System.Threading;
+using System.Threading.Tasks;
+using Aristocrat.Data.InMemory;
+using Aristocrat.ProgressiveCalculator;
+using AutoMapper;
+using Darksaber.DataAccess.Command;
+using Darksaber.DataTransfer;
+using Darksaber.Quorum;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Primitives;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+
+namespace Darksaber.DataAccess.Tests.Provider;
+
+[TestClass]
+public class JackpotHitProviderTests
+{
+	private MockRepository _repository;
+	private Mock<IQuorumClient> _iClient;
+	private Mock<ILogger<JackpotHitProvider>> _logger;
+	private Mock<IServiceProvider> _iServiceProvider;
+	private Mock<IDocumentContext> _context;
+	private DarksaberDocument _document;
+	private Mock<IDataStore<DarksaberDocument>> _dataStore;
+	private JackpotHitProvider _jackpotHitProvider;
+	private Mock<IGameProfileProvider> _gameProfileProvider;
+
+	[TestInitialize]
+	public void TestInitialize()
+	{
+		this._repository = new MockRepository(MockBehavior.Loose);
+		this._iClient = this._repository.Create<IQuorumClient>();
+		this._iServiceProvider = this._repository.Create<IServiceProvider>();
+		this._context = this._repository.Create<IDocumentContext>();
+		this._logger = this._repository.Create<ILogger<JackpotHitProvider>>(MockBehavior.Loose);
+		this._document = new DarksaberDocument();
+		this._gameProfileProvider = this._repository.Create<IGameProfileProvider>(MockBehavior.Loose);
+		this._jackpotHitProvider = new JackpotHitProvider(this._context.Object, this._iClient.Object, this._logger.Object);
+		this._dataStore = this._repository.Create<IDataStore<DarksaberDocument>>();
+	}
+
+	[TestCleanup]
+	public void Cleanup() => this._repository?.VerifyAll();
+
+	private GameProfile CreateGameProfile() =>
+	new() {
+		PaytableId = "Sample Link",
+		ThemeId = "Lightning Link",
+		Progressives = new[] {
+				new ProgressiveProfile {
+					ProgressiveName = "Buffalo",
+					BehaviorName = "Default",
+					ProgId = 1,
+					Levels = new[] {
+						new LevelProfile {
+							LevelId = 1,
+							LevelName = "Grand",
+							BehaviorName = "Standard",
+							ResetValue = 1000.00m.ToMillicents(),
+							MaxValue = null,
+							IncrementRate = Percentage.FromPercent(1.10m)
+						},
+						new LevelProfile {
+							LevelId = 2,
+							LevelName = "Major",
+							BehaviorName = "Standard",
+							ResetValue = 100.00m.ToMillicents(),
+							MaxValue = 1000.00m.ToMillicents(),
+							IncrementRate = Percentage.FromPercent(1.10m)
+						}
+					}
+				}
+		}
+	};
+
+	private CommitHit CreateJackpotHit() =>
+	new() {
+		 ProgId=1,
+		 LevelId=1,
+		 ContributorId="1",
+		 JackpotId=1,
+		 TransactionId=1,
+		 PayMethod=PayMethods.PayMethod,
+		 PaidTime=DateTime.Now
+		 //Paid="100"		
+	};
+	//Commit
+	[TestMethod]
+	public void JackpotHitCommit_ExpectedBehavior()
+	{
+		// Arrange
+		var entity = CreateJackpotHit();
+		var gameprofile = CreateGameProfile();
+		var jackpotHit = new JackpotHit() {  ProgId=1, LevelId=1};
+		this._context?.Setup(document => document.GetStore<DarksaberDocument>()).Returns(this._dataStore.Object);
+		this._dataStore.Setup(store => store.Local).Returns(this._document);
+		this._gameProfileProvider?.Setup(gameProfile => gameProfile.CreateAsync(gameprofile, It.IsAny<CancellationToken>()));
+		this._iClient.Setup(client => client.Send(It.IsAny<JackpotCommitCommand>(), false))
+			.Callback((JackpotCommitCommand command, bool snapshot) => {
+				this._document.JackpotHits.FirstOrDefault(jackpotHit);
+			});
+
+		// Act
+		var result = this._jackpotHitProvider.Commit(entity).Result;
+
+		// Assert
+		Assert.IsNotNull(result);
+		//Assert.AreEqual(entity.PaytableId, result.PaytableId);
+		//Assert.AreEqual(entity.ThemeId, result.ThemeId);
+	}
+}
