@@ -50,7 +50,7 @@ vm deploy vs azure app service
 compressing requests
 azure hosting and deployment web apps vs vm
 mount vs render
-js higher order functions (function as argument or return value). js book https://eloquentjavascript.net/index.html
+js higher order functions (function as argument or return value): js book https://eloquentjavascript.net/index.html
 js partial function (can take multiple args)
 .net 6 features (minimal api, Top level, MapMethods for Patch, Results.Ok, services, PublishSingleFile, PublishTrimmed)
 https://samcogan.com/what-is-an-azure-app-service-plan-and-what-does-it-do/
@@ -83,7 +83,7 @@ self study Part 2
 -----------------
 dependency register cs microservice
 call api in another api microservices
-parts of http request
+parts of http request = header and body (uri is comprised of method, scheme, server, path, query)
 azure function deploy,authlevel
 connect function to onprem database hybrid connection
 ef core db first oracle
@@ -91,6 +91,7 @@ azure cdn, azure blob auto delete old archive via webjob or timer trigger or lif
 azure functions heavy data load
 .net event driven = https://github.com/event-driven-dotnet/home
 ZeroMQ (NetMQ.Sockets)
+temp table vs table variable (both reside in tempdb, but TV do not perform logging, transaction)
 
 self study Part 3
 -----------------
@@ -106,7 +107,8 @@ receive automatic json/receive json()
 cancellable and interceptable/the opposite
 outside 200-299 rejected/unsuccess response resolved
 
-react => debouncing,props.children,httpevent,usecallback (it also has dependency array like useEffect),useRef, hooks, virtual DOM vs shadow DOM
+react => debouncing,httpevent,usecallback (it also has dependency array like useEffect),useRef, hooks, virtual DOM vs shadow DOM
+react => props.children (special prop to pass data from the parent component to child but this data must be enclosed within the parent’s opening and closing tag (mostly used in wrapper components))
 react => diffing (only changed portion of V-DOM is sent to UI), batch update, reconciliation, key (uniquely identify each element and keep track of changed elements in list)
 react => three ways to avoid props drilling: redux, usecontext, container composition
 react => fragment (list of children without adding extra nodes) vs portal (render children into DOM outside hierarchy) vs outlet
@@ -133,7 +135,7 @@ bybox:ABC A<B<C where A=1,C=10 combinations 120
 sql server optimistic and pessimistic concurrency models => optimistic (rowversion - code level) & pessimistic locking (db level - 4 types)
 lock inside async doesnot work - Use SemaphoreSlim
 .net core json order (appsettings, secret, env var, cmd var) => env var override launchsettings
-.net core json file types (6)
+.net core json file types (6 = launchsettings, appsettings, bundleconfig, project, bower, global)
 
 Brimma JD
 ---------
@@ -161,7 +163,7 @@ gisbiz
 microsoft orleans/akka.net
 JUnit, MockIT and TestNG
 fortify tool
-rebase vs squash commit
+rebase vs squash commit (combine multiple commits into one)
 
 zen3
 ----
@@ -537,7 +539,7 @@ nagarro (30/05/2023) L1 fail
 11. azure devops publish as nuget
 12. agile estimation techniques => when developers conflict over each other on the estimated hours
 12. share data (or same method call) between two different async methods
-13. padding (space inbetween neighbour element) vs margin (space between border and citw own ontent)
+13. padding (space inbetween neighbour element) vs margin (space between border and own ontent)
 
 Integrate 16/06/2023 failed L1
 ------------------------------
@@ -551,7 +553,7 @@ flyers soft L1 03/07/2023 3pm (interviewer: vivek)
 2. refactor running batch job
 3. microservices: seperate db how you do you join query (duplicate db1 into db2)
 4. microservices: implement saga pattern in azure service bus
-5. microservices: where you maintain compensating transactions
+5. microservices: where you maintain compensating transactions (orkes conductor?)
 
 Finequs 05/07/2023 11am failed L1 (interviewer: krishna kashyap)
 ---------------------------------------------------------------
@@ -615,12 +617,30 @@ value of i (delegate) after 10 loop
 overloading/overriding
 IEnumberable vs IQueryable
 
-accion L1 28/09/2023 6pm
---------------------------
+RGBSI (online test fail) 29/09/2023
+-----------------------------------
+Task on recording regular hours and OT hours
+
+accion L1 28/09/2023 6pm failed
+-------------------------------
 1. count no of numbers + special char. input:Si#m$sN3Tr4t5d%^JDM^6  output: 9 Logic: if(((int)c>=33&&(int)c<=57)||(int)c==94)
 2. object pooling c#
 3. Eager Loading helps you to load all your needed entities at once / Lazy loading not loaded automatically with its parent object until they are requested.
 4. asked coding question added in project
+
+encore sonata L1 03/10/2023 12pm failed
+----------------------------------------
+write program to check palindrome or not in online IDE
+can thread be cancelled? yes Abort(), suspend()
+angular questions
+web api questions
+EF SaveChanges() method internally creates a transaction (BeginTransaction & UseTransaction)
+
+centific (hyderabad based) L1 fail 03/10/2023 4.30pm
+-----------------------------------------------------
+C# count all characters all properties
+sql query 2nd max or nth max salary
+your team's sprint velocity (story points/sprint days); burndown chart
 
 SQL
 ---
@@ -680,7 +700,7 @@ Candidates have experience or are at least aware of Microservices and their desi
 Quinnox JD
 Strong .Net core experience Hands-on experience in current projects is important
 Should be very strong in C# and .Net fundamentals
-Hands on experience in implementing Software Design Patterns and Enterprise level Design patterns [ e.g. Pub-Sub, Scatter Gather, CQRS and event sourcing]
+Hands on experience in implementing Software Design Patterns and Enterprise level Design patterns [e.g. Pub-Sub, Scatter Gather, CQRS and event sourcing]
 Experience of working with RestAPI and Microservices based Architecture
 Experience on using Unit Testing Frameworks like XUnit. NUnit, NMoq
 Experience in AWS Appsync, GraphQL
@@ -736,6 +756,9 @@ companies from aug 2022 till date
 46. inchcape
 47. infosys
 48. accion
-49. ?
+49. encore sonata
+50. centific
+51. RGBSI
+52. ?
 
 

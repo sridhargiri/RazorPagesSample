@@ -418,7 +418,7 @@ If we reach here, it means we didn’t find a mis
         }
         static void Main(string[] args)
         {
-            string str = "maddam";
+            string str = "madam";
             bool b = Check_Valid_Palindrome(str);
             Console.WriteLine(b);
         }

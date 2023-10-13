@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
     /*
-    Sagent online xobin test taken on 26y aug 2023 saturday
+    Sagent online xobin test taken on 26 aug 2023 saturday
     3 questions were asked 1 is the "Find the last non repeating character in string"
     remaining two are 
     1. find the length of array after removing the given number
@@ -27,7 +27,10 @@ Input: str = “aabbcc”
 Output: -1 
 All the characters of the given string have frequencies greater than 1. 
 
-Approach: Create a frequency array that will store the frequency of each of the characters of the given string. Once the frequencies have been updated, start traversing the string from the end character by character and for every character, if the frequency of the current character is 1 then this is the last non-repeating character. If all the characters have a frequency greater than 1 then print -1.
+Approach: Create a frequency array that will store the frequency of each of the characters of the given string. Once the frequencies have been updated, 
+    start traversing the string from the end character by character and for every character, 
+    if the frequency of the current character is 1 then this is the last non-repeating character. 
+    If all the characters have a frequency greater than 1 then print -1.
 Below is the implementation of the above approach:
 
      */
