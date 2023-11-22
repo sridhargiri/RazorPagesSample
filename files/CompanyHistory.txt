@@ -9,7 +9,7 @@ static class inheritance and static variables accessibility in derived
 new, override difference / base b=new base vs base b = new derived
 odata $$
 json accept header
-asqueryable million records
+asqueryable million records, do paging
 allowanonymous
 web api return types and v1 vs v2.0, also web api return status code in exception
 get 2 view models in mvc
@@ -37,7 +37,7 @@ self study Part 1
 attribute routing (outgoing url), 
 multiple action filter order [ https://www.strathweb.com/2012/06/control-the-execution-order-of-your-filters-in-asp-net-web-api/ ], 
 filter that has dependency TypeFilter
-angular forkjoin (wait for all to complete) / mergemap (parallel) / concatmap (one after other) / catchError (function substitution if error)
+angular mergemap (parallel requests) / concatmap (one after other) / catchError (function substitution if error)
 .net core jwt serialize
 web api when no cache
 azure load balancer
@@ -91,12 +91,12 @@ azure cdn, azure blob auto delete old archive via webjob or timer trigger or lif
 azure functions heavy data load
 .net event driven = https://github.com/event-driven-dotnet/home
 ZeroMQ (NetMQ.Sockets)
-temp table vs table variable (both reside in tempdb, but TV do not perform logging, transaction)
+temp table vs table variable (both reside in tempdb, but table variables do not perform logging, transaction)
 
 self study Part 3
 -----------------
 abstract vs interface,static class vs singleton
-angular change detection, httpinterceptor, share-data-between-sibling-components-in-angular, ngrx state, web components
+angular change detection, share-data-between-sibling-components-in-angular, ngrx state, web components
 async pipe - pure/impure pipes
 
 axios/fetch (both are promise based)
@@ -317,7 +317,7 @@ ey 15 oct 2022 sat 9am L1 out
 -----------------------------
 1. implement two way binding in plain js (without angular)
 2. azure service bus queue vs storage queue (duplicate detect, ordering guarantee, limited to 80gb, atleast/atmost once i.e, dosa)
-3. azure webjobs (it scales to 3 if app service plan scaled to 3 so add add the Singleton attribute to acheive one instance) vs timer trigger (default singleton mode) both uses timer interval (scaling, pricing)
+3. azure webjobs (it scales to 3 if app service plan scaled to 3 so add the Singleton attribute to acheive one instance) vs timer trigger (default singleton mode) both uses timer interval (scaling, pricing)
 4. jwt vs managed identity
 5. azure disaster recovery
 
@@ -327,8 +327,8 @@ flyers soft 18 oct 2022 Tue 12pm L1 out
 2. why DI was used and composition was not used (also composition over inheritance)
 3. is code coverage good practice
 4. mock vs stub in unit testing
-5. forkjoin vs switchmap
-6. action filter vs middleware (ordering and context i.e. OC)
+5. angular forkjoin (wait for all to complete) vs switchmap (cancels obervables / maintains the order)
+6. action filter vs middleware (ordering and httpcontext i.e. OC)
 
 version1 18 oct 2022 Tue 4.30pm L1 out
 --------------------------------------
@@ -373,7 +373,7 @@ asked only architectural questions, how you propose technical solutions
 
 itela 29/11/2022 tue 11am L2 out
 --------------------------------
-1. ef vs repository pattern, then why unitofwork is required, answer: multiple repositories share single dbcontext, ef vs dapper
+1. ef vs repository pattern, then why unitofwork is required, answer: multiple repositories share single dbcontext
 2. asp.net core generate unique request id using middleware and pass this value from controller to BL, register multiple implementations
 3. asp.net core openid vs oauth; also server to server communicate after authentication.
 
@@ -458,7 +458,7 @@ Wolters kluwers mettl test 22/12/2022 11pm
 	var r=/\s*,\s*/;
 	var i1=items.split(r);
 	console.log(i1,items);
-	answer ['book', 'pen', 'pencil', 'box'],'book,pen,pencil,box'
+	output is an array ['book', 'pen', 'pencil', 'box'],'book,pen,pencil,box'
 9.	js object.assign
 
 avanze 28/12/2022 3pm
@@ -540,7 +540,7 @@ nagarro (30/05/2023) L1 fail
 12. agile estimation techniques => when developers conflict over each other on the estimated hours
 12. share data (or same method call) between two different async methods
 13. padding (space inbetween neighbour element) vs margin (space between border and own ontent)
-
+          
 Integrate 16/06/2023 failed L1
 ------------------------------
 1. clustered vs non clustered index storage
@@ -588,24 +588,26 @@ Sagent inperson 31/08/2023 after hackerrank test (failed)
 ---------------------------------------------------------
 they gave an usecase and draw diagram and implement any one feature
 
-Harman L1 01/09/2023 at 1pm
-------------------------------
+Harman L1 01/09/2023 1pm
+------------------------
 thread indefinite lock is possible?
 asked about template method pattern with example
 HttpClientFactory uses factory pattern
 
 Harman L2 21/09/2023 at 3.30pm fail
 -----------------------------------
+Client valgenesis
 How do you maintain high frequently accessed db like time series data? do table partitioning, while querying table name remain same, but goes to their separate buckets
 Thread (doesn't utilise multi core cpu) vs process (uses multi core cpu)
 How to implement session timeout in asp.net core
 asked how do you db designing
 react: controlled vs uncontrolled components
+react reusable component https://www.section.io/engineering-education/how-to-create-a-reusable-react-form/
 
 Inchcape shipping 15/09/2023 8pm L1 failed
 ------------------------------------------
 asked about rabbitmq, distributed systems
-
+ 
 infosys L1 22/09/2023
 ---------------------
 performed very worst as I am not well and answered not properly to the generic questions asked by them
@@ -641,6 +643,52 @@ centific (hyderabad based) L1 fail 03/10/2023 4.30pm
 C# count all characters all properties
 sql query 2nd max or nth max salary
 your team's sprint velocity (story points/sprint days); burndown chart
+
+Ascendion L1 fail 17/10/2023 3pm (conducted by Curatal firstipo)
+----------------------------------------------------------------
+azure blob hot storage vs cold storage
+agile maximum story point
+agile maximum sprint duration
+Why repository pattern is used
+
+Ascendion L2 fail 20/10/2023 2pm 
+--------------------------------
+async/await example output asked but gave wrong answer = await ShortProcess(); await LongProcess() => both will happen sequentially
+SQL alter column datatype from nvarchar to int - Create a new column that's an integer and Select the data from the old column into the new one
+string question attached
+
+Technerds L1 26/10/2023 11pm (Leo)
+-----------------------------------
+Azure feature flag = Feature manager
+Azure container registry / Azure kubernetes services
+
+Technerds L2 customer 27/10/2023 7.30pm
+---------------------------------------
+supplied questions :-
+ef vs dapper = performance, db support, learning curve
+Azure experience
+Time estimate to complete Web app with user name and password with login features - Do not go more than 2 days
+when to choose between RDBMS and Nosql
+What is dependency injection
+Pros and cons of Serverless
+Feature flag
+Entity Framework Vs Dapper
+How to maintain legacy applications written in VB
+Microservices
+
+Zillion L1 fail, 16/11/2023 4.30pm
+----------------------------------
+httpinterceptor => implement intercept(); req.clone(); next.handle(), CanActivate, middleware
+
+Zillion L2 customer round 20/11/2023 10:30pm
+--------------------------------------------
+httpinterceptor response indicate success/failure
+angular memory leakage => unsubscribe observables, OnPush change detection, 
+angular loading indicator => 
+angular many javascript errors
+angular 8 to 10 migration challenges
+
+***AxiCorp testgorilla online test failed on 22/11/2023 at 11pm***
 
 SQL
 ---
@@ -707,7 +755,7 @@ Experience in AWS Appsync, GraphQL
 Strong experience in AWS services like AWS Lambda, Cognito, DynamoDB, SQS, SNS
 
 companies from aug 2022 till date
-----------------------------------
+---------------------------------
 1.	shell (codility test out) again taken 20/07/2023 failed
 2.	sage IT
 3.	maxerience
@@ -759,6 +807,11 @@ companies from aug 2022 till date
 49. encore sonata
 50. centific
 51. RGBSI
-52. ?
+52. Ascendion
+53. Technerds
+54. iGreenData toy robot assignment failed
+55. Zillion
+56. AxiCorp
+57. ?
 
 
