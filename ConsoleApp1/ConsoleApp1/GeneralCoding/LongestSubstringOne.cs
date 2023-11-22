@@ -17,13 +17,9 @@ Explanation: Length of the longest substring containing only ‘1’ is “11”
 Input: 11101110
 Output: 3
 
-Recommended: Please solve it on “PRACTICE” first, before moving on to the solution.
-Approach: Traverse the string and count the number of contiguous 1‘s encountered. Store the maximum number of coninous 1s in a variable, say max. Finally, print the value of max obtained.
-
-
-
+testgorilla online test AxiCorp
      */
-    class LongestSubstringOne
+    public class LongestSubstringOne
     {
         static int Maxlength(String s)
         {

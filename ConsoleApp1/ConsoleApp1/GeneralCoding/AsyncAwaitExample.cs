@@ -143,31 +143,43 @@ namespace ConsoleApp1
                $"{str}{new string(' ', 29 - str.Length)}   Thread {threadId}");
         }
     }
-
-    public class AsyncAwaitConsole
+    public class Ascendion
     {
         static void Main(string[] args)
         {
-            LongProcess();
+            string comments = "ABCD";
+            string newstr = null;
+            newstr = comments;
+            comments += "E";
+            Console.WriteLine(comments);
+            Console.WriteLine(newstr);
+        }
+    }
 
-            ShortProcess();
+    public class AsyncAwaitConsole
+    {
+        static async Task Main(string[] args)
+        {
+            await ShortProcess();
+            await LongProcess();
+
         }
 
         static async Task LongProcess()
         {
             Console.WriteLine("LongProcess Started");
 
-            await Task.Delay(1000); // hold execution for 4 seconds
+            await Task.Delay(4000); // hold execution for 4 seconds
 
             Console.WriteLine("LongProcess Completed");
 
         }
 
-        static void ShortProcess()
+        static async Task ShortProcess()
         {
             Console.WriteLine("ShortProcess Started");
 
-            //do something here
+            await Task.Delay(2000); // hold execution for 2 seconds
 
             Console.WriteLine("ShortProcess Completed");
         }
