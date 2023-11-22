@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ConsoleApp1
 {
@@ -49,6 +50,24 @@ testgorilla online test AxiCorp
 Time Complexity: O(N2)
 Auxiliary Space: O(1)
             */
+        }
+    }
+
+    // testgorilla online test AxiCorp
+    public class ATMPinValidate
+    {
+        public static bool ValidatePin(string pin)
+        {
+            Regex rgx = new Regex(@"^\d{4}(?:\d{2})?$");
+            return rgx.IsMatch(pin);
+        }
+
+        public static void Main()
+        {
+            Console.WriteLine("Insert pin:");
+            string pin = Console.ReadLine();
+
+            Console.WriteLine("The restult is {0}", ValidatePin(pin));
         }
     }
 }
