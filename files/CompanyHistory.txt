@@ -40,7 +40,6 @@ filter that has dependency TypeFilter
 angular mergemap (parallel requests) / concatmap (one after other) / catchError (function substitution if error)
 .net core jwt serialize
 web api when no cache
-azure load balancer
 http trigger function json
 aspnet core docker image
 docker dependencies file
@@ -434,7 +433,8 @@ atmosol 13/12/2022 9:30am System Task out (attached)
 
 nse it L1 out 22/12/2022 7:30pm
 -------------------------------
-1. observable => hot (data produced outside, all subscriber same data) vs cold (data produced inside, each subscriber their own data)
+1. observable => hot (data produced outside, all subscriber same data, multicast) vs cold (data produced inside, each subscriber their own data, unicast)
+   convert cold to hot using shareReplay(), subjects are always hot
 2. rxjs - of vs from (both create observable and emit values; from send separate element and of send full), map vs for
 3. angular authguard (5 types -> CanActivate, CanActivateChild, CanDeactivate, Resolve, CanLoad)
 4. chain of responsibility (set next), proxy pattern
@@ -683,12 +683,38 @@ httpinterceptor => implement intercept(); req.clone(); next.handle(), CanActivat
 Zillion L2 customer round 20/11/2023 10:30pm
 --------------------------------------------
 httpinterceptor response indicate success/failure
-angular memory leakage => unsubscribe observables, OnPush change detection, 
+angular memory leakage => [ADO] use async pipe, unsubscribe observables during ngOnDestroy, OnPush change detection, 
 angular loading indicator => 
 angular many javascript errors
 angular 8 to 10 migration challenges
+angular observable emit only once => take(1)
 
-***AxiCorp testgorilla online test failed on 22/11/2023 at 11pm***
+Zillion L2 another customer round 27/11/2023 9:30pm
+---------------------------------------------------
+Are you using reporting tools, any API integration,
+angular services => create, register in providers array, import and use
+have you done azure load balancing
+
+AxiCorp testgorilla online test failed on 22/11/2023 at 11pm
+------------------------------------------------------------
+coding question added in visual studio
+
+Alphastream L1 24/11/2023 fail (she went to annai adi pondy ashram siddhi day alone)
+------------------------------------------------------------------------------------
+they asked about my projects only
+How to do tasks in parallel
+have you used sql server clr sp?
+
+entrans L1 27/11/2023 4pm fail
+------------------------------
+virtual and override write an example
+only project questions
+
+Alphastream L2 30/11/2023 3pm while at Nathan hotel
+---------------------------------------------------
+they asked about my projects only
+Task vs IHostedService
+Have you addressed .net core application slowness
 
 SQL
 ---
@@ -812,6 +838,9 @@ companies from aug 2022 till date
 54. iGreenData toy robot assignment failed
 55. Zillion
 56. AxiCorp
-57. ?
+57. AlphaStream
+58. entrans
+59. ?
+60.
 
 
