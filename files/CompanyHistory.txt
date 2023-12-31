@@ -124,11 +124,10 @@ microservices transaction example c#, c# istio, mediatr,automatonymous,
 c# template pattern,abstract factory pattern,adapter pattern, abstract override
 TempData Attribute
 query performance-Avoid OR in join,Like, use nolock, table partitioning
-cap theorem nosql
-unit test cloud app
+cap theorem nosql, unit test cloud app
 git reset,distributed,offline,local server
 arrow fn(lexical/dynamic scoping), 
-promise(then,catch,race,chaining) vs observable(observer - next,complete,error)=lazy(sub/unsub),mutiple emit,cancellable,operator
+promise(then,catch,race,chaining) vs observable(observer - next,complete,error)=lazy(sub/unsub),multiple emit,cancellable,operator
 fnf:automatically set updatedby in ef - override savechanges
 bybox:ABC A<B<C where A=1,C=10 combinations 120
 sql server optimistic and pessimistic concurrency models => optimistic (rowversion - code level) & pessimistic locking (db level - 4 types)
@@ -246,7 +245,7 @@ SAS how you give it
 How identify error in deployments
 
 Pure software
-------------
+-------------
 Circular dependency transaction
 core clr
 how concurrent collections work (Behind the scenes working)
@@ -639,7 +638,7 @@ web api questions
 EF SaveChanges() method internally creates a transaction (BeginTransaction & UseTransaction)
 
 centific (hyderabad based) L1 fail 03/10/2023 4.30pm
------------------------------------------------------
+----------------------------------------------------
 C# count all characters all properties
 sql query 2nd max or nth max salary
 your team's sprint velocity (story points/sprint days); burndown chart
@@ -683,8 +682,8 @@ httpinterceptor => implement intercept(); req.clone(); next.handle(), CanActivat
 Zillion L2 customer round 20/11/2023 10:30pm
 --------------------------------------------
 httpinterceptor response indicate success/failure
-angular memory leakage => [ADO] use async pipe, unsubscribe observables during ngOnDestroy, OnPush change detection, 
-angular loading indicator => 
+angular memory leakage => [RADO] => Rxjs Operators: take/first,takeWhile,takeUntil, use async pipe, unsubscribe observables during ngOnDestroy, OnPush change detection, 
+angular loading indicator => use ng-if
 angular many javascript errors
 angular 8 to 10 migration challenges
 angular observable emit only once => take(1)
@@ -710,11 +709,20 @@ entrans L1 27/11/2023 4pm fail
 virtual and override write an example
 only project questions
 
-Alphastream L2 30/11/2023 3pm while at Nathan hotel
----------------------------------------------------
+Alphastream L2 30/11/2023 fail 3pm while at Nathan lodge
+-------------------------------------------------------
 they asked about my projects only
 Task vs IHostedService
 Have you addressed .net core application slowness
+
+Avalara Ondemand assessment 08/12/2023
+--------------------------------------
+40 Aptitude questions & 28 behavioral questions failed
+
+Diaspark L1 16/12/2023 8.30pm
+----------------------------------
+Add extension methods to interface
+Call view in EF
 
 SQL
 ---
@@ -840,7 +848,7 @@ companies from aug 2022 till date
 56. AxiCorp
 57. AlphaStream
 58. entrans
-59. ?
-60.
+59. Avalara
+60. ?
 
 
