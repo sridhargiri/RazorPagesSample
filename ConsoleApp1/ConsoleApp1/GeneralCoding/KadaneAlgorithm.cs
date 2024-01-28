@@ -210,11 +210,9 @@ It is similar to Largest Sum Contiguous Subarray problem. The only thing to note
         {
             int[] a = { -2, -3, 4, -1, -2, 1, 5, -3 };//Maximum contiguous sum is 7
             //int[] a =  { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
-            Console.Write("Maximum contiguous sum is " + maxSubArraySum(a));
+            Console.WriteLine("Maximum contiguous sum is " + maxSubArraySum(a));
             int[] arr = { 1, -2, -3, 0, 7, -8, -2 };
-
-            Console.WriteLine("Maximum Sub array product is "
-                              + maxSubarrayProduct(arr));
+            Console.WriteLine("Maximum Sub array product is " + maxSubarrayProduct(arr));
         }
 
     }

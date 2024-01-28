@@ -96,7 +96,8 @@ self study Part 3
 -----------------
 abstract vs interface,static class vs singleton
 angular change detection, share-data-between-sibling-components-in-angular, ngrx state, web components
-async pipe - pure/impure pipes
+async pipe - pure => called when reference change, single instance if reused vs impure pipes => always called, multi instance if reused
+FormIO, Mesosphere DC/OS
 
 axios/fetch (both are promise based)
 ***********************************
@@ -220,6 +221,7 @@ Web api global variable
 Azure SQL vs Managed instance (near compatible, lift and shift) 
 azure durable functions
 .net 7 (aot, grouping api, central nuget package, trimming)
+.net 8 (aspire, GC DATAS, )
 
 EY 3rd July 2021
 ----------------
@@ -715,14 +717,57 @@ they asked about my projects only
 Task vs IHostedService
 Have you addressed .net core application slowness
 
+Alphastream L3 asked to come in person on 16/01/2024 but ignored
+
 Avalara Ondemand assessment 08/12/2023
 --------------------------------------
 40 Aptitude questions & 28 behavioral questions failed
 
+Greenway health Ondemand assessment 15/01/2024
+----------------------------------------------
+40 Aptitude questions & 28 behavioral questions failed
+
 Diaspark L1 16/12/2023 8.30pm
-----------------------------------
+-----------------------------
 Add extension methods to interface
 Call view in EF
+
+Altimetrik 06/01/2023 3.30pm L1 for solution architect
+------------------------------------------------------
+How would you handle versioning to maintain backward compatibility while allowing for the introduction of new features?
+
+Microservices often require cross-cutting concerns like authentication, logging, and monitoring. How would you implement these concerns in a way that is consistent across all microservices?
+logging: Logstash then redirect to aws cloudwatch or azure monitor, monitoring: grafana, prometheus, authentication: jwt
+
+In a legacy monolithic application, how would you identify and define services that could be extracted to implement a SOA? What criteria would you use for service boundaries?
+
+To improve application performance, you decide to implement caching. What types of data would you cache, and how would you determine the cache expiration policies? What are the potential drawbacks of caching, and how would you address them?
+
+The project requires a serverless architecture to achieve scalability and cost efficiency. Explain how you would design and implement serverless components for both the frontend and backend. Discuss the benefits and challenges associated with serverless computing.
+
+You are the security administrator of your company’s Azure account. You review security recommendations for multiple subscriptions and need to enforce strict compliance for them. What would you recommend?
+
+Incedo L1 28/01/2023 12pm
+---------------------------
+event loop
+
+Incedo L2 29/01/2023 1pm
+--------------------------
+angular scope variable
+Validate model before it reaches controller
+where objects are created
+queue expiration time
+css xpath
+css selectors
+docker vs vm
+model vs entity
+cocurrency vs parallelism
+is dirty read acceptable
+how sql handles cqrs requests
+how you secure jwt
+same method more than one implementaion register, how to call
+
+
 
 SQL
 ---
@@ -805,7 +850,7 @@ companies from aug 2022 till date
 13.	everi
 14.	accolite
 15.	capgemini (test not clear)
-16.	altimetrik L1 out (assessment failed for Zip.co on 3rd dec 2022 saturday) https://github.com/quadpay/software-engineer-interview
+16.	altimetrik L1 out (assessment failed for Zip.co on 3rd dec 2022 saturday) https://github.com/quadpay/software-engineer-interview (again in jan 2024)
 17.	ajmera assessment out
 18.	rsm L2 out
 19.	itelasoft
@@ -844,7 +889,7 @@ companies from aug 2022 till date
 52. Ascendion
 53. Technerds
 54. iGreenData toy robot assignment failed
-55. Zillion
+55. Zillion (offer given but not joined due to smart phone unavailable)
 56. AxiCorp
 57. AlphaStream
 58. entrans

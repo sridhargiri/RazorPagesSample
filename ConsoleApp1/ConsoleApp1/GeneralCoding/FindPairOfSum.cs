@@ -44,7 +44,7 @@ namespace ConsoleApp1
                 //check condition
                 if (arr.Contains(temp))
                 {
-                    Console.Write("Pair with given sum " + sum + " is (" + arr[i] + ", " + temp + ")");
+                    Console.WriteLine("Pair with given sum " + sum + " is (" + arr[i] + ", " + temp + ")");
                 }
             }
         }

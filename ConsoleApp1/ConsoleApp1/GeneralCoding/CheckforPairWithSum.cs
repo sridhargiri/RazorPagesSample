@@ -56,8 +56,7 @@ namespace ConsoleApp1
 {
     public class CheckforPairWithSum
     {
-        static bool hasArrayTwoCandidates(int[] A,
-                           int arr_size, int sum)
+        static bool hasArrayTwoCandidates(int[] A, int arr_size, int sum)
         {
             int l, r;
 

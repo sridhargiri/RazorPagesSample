@@ -34,8 +34,7 @@ testgorilla online test AxiCorp
                 {
 
                     int count = 1;
-                    for (j = i + 1;
-                         j <= n - 1 && s[j] == '1'; j++)
+                    for (j = i + 1; j <= n - 1 && s[j] == '1'; j++)
                         count++;
                     ans = Math.Max(ans, count);
                 }
