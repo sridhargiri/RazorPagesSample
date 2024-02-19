@@ -98,6 +98,7 @@ abstract vs interface,static class vs singleton
 angular change detection, share-data-between-sibling-components-in-angular, ngrx state, web components
 async pipe - pure => called when reference change, single instance if reused vs impure pipes => always called, multi instance if reused
 FormIO, Mesosphere DC/OS
+injection, auth, data leak, xml upload
 
 axios/fetch (both are promise based)
 ***********************************
@@ -381,8 +382,8 @@ XA 25th nov 8am
 ---------------
 online test (question is attached on triangle types)
 
-codevysya L1 26th nov sat 12.30pm
----------------------------------
+codevysya L1 26th nov 2022 sat 12.30pm
+-------------------------------------
 1. sort an array in js (without inbuilt method)
 2. capitalise first letter, so "test" becomes "Test" ans: "test".charAt(0).toUpperCase() + "test".slice(1);
 3. function currying in js (can take only one args)
@@ -747,27 +748,37 @@ The project requires a serverless architecture to achieve scalability and cost e
 
 You are the security administrator of your company’s Azure account. You review security recommendations for multiple subscriptions and need to enforce strict compliance for them. What would you recommend?
 
-Incedo L1 28/01/2023 12pm
----------------------------
+Incedo L1 28/01/2023 12pm pass
+------------------------------
 event loop
 
-Incedo L2 29/01/2023 1pm
---------------------------
-angular scope variable
-Validate model before it reaches controller
-where objects are created
-queue expiration time
-css xpath
-css selectors
+Incedo L2 29/01/2023 1pm fail
+-----------------------------
+angular scope variable / angular 10 template reference variable
+Validate model before it reaches controller - Data annotations
+where objects are created in .net core
+queue expiration time - 7 days
+css xpath/css selectors
 docker vs vm
-model vs entity
-cocurrency vs parallelism
-is dirty read acceptable
+ef model vs entity
+concurrency vs parallelism
+is dirty read acceptable, isolation levels, locks
 how sql handles cqrs requests
 how you secure jwt
 same method more than one implementaion register, how to call
+azure function scaling - autoscale/manual scale
 
+energy exemplar
+array reverse, integer number addition avoid memory overflow exception
 
+hcl appscan online test 17th feb 2024 11pm
+------------------------------------------
+sum of digits in string where continuos digits are considered single number; 296ab23 gives output 296+23=319
+how many 4 digit numbers less than 10000 only containing non repeating 2 4 5 6 7 9 
+angle between hour and minute 
+gave code and asked output related to right shifting of digits
+gave code and asked output about shifting of node in linked lisr
+gave code and asked output flower, blower after example
 
 SQL
 ---
