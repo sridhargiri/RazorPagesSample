@@ -686,6 +686,7 @@ Zillion L2 customer round 20/11/2023 10:30pm
 --------------------------------------------
 httpinterceptor response indicate success/failure
 angular memory leakage => [RADO] => Rxjs Operators: take/first,takeWhile,takeUntil, use async pipe, unsubscribe observables during ngOnDestroy, OnPush change detection, 
+angular performace optimisation => https://www.scholarhat.com/tutorial/angular/tips-to-optimize-your-angular-application
 angular loading indicator => use ng-if
 angular many javascript errors
 angular 8 to 10 migration challenges
@@ -779,6 +780,18 @@ angle between hour and minute
 gave code and asked output related to right shifting of digits
 gave code and asked output about shifting of node in linked lisr
 gave code and asked output flower, blower after example
+
+ups L1 18/03/2024 4pm
+---------------------
+inherit vs implement
+Liskov substitution
+
+andela wolter kluwer
+architecture & design,
+convert from monolith to microservice /  Strangler Fig pattern
+servicemesh
+grpc
+Resume drilling
 
 SQL
 ---
@@ -905,6 +918,6 @@ companies from aug 2022 till date
 57. AlphaStream
 58. entrans
 59. Avalara
-60. ?
+60. Frodoe (Convergent) testgorilla assessment fail on 31/03/2024 9pm
 
 

@@ -37,8 +37,8 @@ namespace ConsoleApp1
                 foreach (ZipArchiveEntry entry in zip.Entries)
                     if (entry.Name == "reading.txt")
                         entry.ExtractToFile("C:\\Users\\Sridhar.Swaminathan\\downloads\\myfile.txt");
-            string ss=File.ReadAllText("C:\\Users\\Sridhar.Swaminathan\\downloads\\myfile.txt");
-            var des=JsonConvert.DeserializeObject<JsonClass>(ss);
+            string ss = File.ReadAllText("C:\\Users\\Sridhar.Swaminathan\\downloads\\myfile.txt");
+            var des = JsonConvert.DeserializeObject<JsonClass>(ss);
             Console.WriteLine(des.Country);
             Console.WriteLine(des.Places[0].State);
 
