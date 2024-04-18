@@ -55,9 +55,9 @@ namespace ConsoleApp1
         }
 
     }
-    // Q2 testgorilla frodoe (convergent) 31/03/2024
+    // Q2 testgorilla frodoe (convergint) 31/03/2024
     // asked to debug and correct it
-    // Task is irst convert binary to decimal, reverse binary string then convert to decimal print output
+    // Task is first convert binary to decimal, reverse binary string then convert to decimal print output
     public class Frodoe
     {
         public static void Main(string[] args)
@@ -125,5 +125,26 @@ namespace ConsoleApp1
 
             return result;
         }
+
+        /*
+converging coderpad test
+        ----------------
+Fist of positive integers (numbers]).
+a positive integer (k), representing the target sum.
+For example:
+numbers = [1, 5, 8, 1, 2]
+k = 13
+Your FindSumPair method should return a list of two integers, containing the
+indices of a pair of integers in the list that sums to k. Note that:
+The first index of the list is 0.
+• The first integer you return should represent the lower index.
+
+[0, 0] should be returned if no pair is found.
+In the case that there are multiple possible pairs that sum to the target,
+return the pair whose left index is the lowest.
+• In the case of two pairs having the same left index, favor the pair with the
+lower right index.
+For the above example, the correct return value would be: [[1, 2]
+         */
     }
 }

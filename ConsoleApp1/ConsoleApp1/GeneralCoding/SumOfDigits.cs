@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ConsoleApp1
@@ -95,6 +96,33 @@ Below is the implementation of the above approach:
             result = pg.sum(num);
             Console.WriteLine("Sum of Digits in {0} is {1}", num, result);
             Console.ReadLine();
+        }
+    }
+    // convergint online coderpad test taken at 18/04/2023 at 3pm
+    public class CountWords
+    {
+        public static void Main(string[] args)
+        {
+            string[] words =
+        {
+            "which",
+            "wristwatches",
+            "are",
+            "swiss",
+            "wristwatches"
+        };
+            Array.Sort(words);
+            var counts = words
+
+    .GroupBy(w => w)
+    .Select(g => new { Word = g.Key, Count = g.Count() })
+    .ToList();
+            
+            int[] arr = new int[counts.Count];
+            for (int i = 0; i < counts.Count; i++)
+            {
+                arr[i] = counts[i].Count;
+            }
         }
     }
 }

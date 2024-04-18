@@ -542,6 +542,7 @@ nagarro (30/05/2023) L1 fail
 12. agile estimation techniques => when developers conflict over each other on the estimated hours
 12. share data (or same method call) between two different async methods
 13. padding (space inbetween neighbour element) vs margin (space between border and own ontent)
+14. angular ngonchanges and ngdocheck practical example to implement it
           
 Integrate 16/06/2023 failed L1
 ------------------------------
@@ -786,9 +787,29 @@ ups L1 18/03/2024 4pm
 inherit vs implement
 Liskov substitution
 
+Frodoe testgorilla two times
+----------------------------
+1. century and lap year
+2. decimal tobinary then reverse binary then again binary to decimal
+3. reverse order of words (not to reverse individual words)
+
+nagarro L1 06/04/2024 8.30pm fail
+--------------------------------
+system port no 8080 different port no 1234 in container
+kubectl commands
+azure communication 
+in microservice service 2,3 ok service 4 fail
+group join linq
+functional component component onstart callback end callback
+why did not use service bus queue to store documents
+template method follow solid principle
+node vs pods
+ioptions vs ioptionssnapshot vs ioptionsmonitor
+angular viewchild vs viewchildren
+
 andela wolter kluwer
 architecture & design,
-convert from monolith to microservice /  Strangler Fig pattern
+convert from monolith to microservice / Strangler Fig pattern
 servicemesh
 grpc
 Resume drilling
@@ -918,6 +939,9 @@ companies from aug 2022 till date
 57. AlphaStream
 58. entrans
 59. Avalara
-60. Frodoe (Convergent) testgorilla assessment fail on 31/03/2024 9pm
+60. Frodoe (Convergent) testgorilla assessment fail on 31/03/2024 9pm, they asked to reappear on 05/04/2024 1am but fail
+61. ?
+
+
 
 
