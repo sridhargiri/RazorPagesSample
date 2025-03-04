@@ -1,4 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// dwongraded to .net 5.0
+using System;
+using System.IO;
 using System.Xml.Linq;
 
 Console.WriteLine("Welcome to localization testing tool! Do you want to test all the resx files in an entire solution?  Type Y/y for testing all resx files in a solution, press any other key for testing resx files in a particular folder.");

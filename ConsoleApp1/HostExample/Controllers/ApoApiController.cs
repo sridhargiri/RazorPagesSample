@@ -49,7 +49,9 @@ namespace HostExample.Controllers
                 return Ok(new Store { StoreId = 2, CountryCode = "NL", Customers = new List<Customer> { new Customer { CustomerId = 9999, Email = "test9999@example.com" } } });
             else
                 return Ok(new Store { StoreId = 1, CountryCode = "PL" });
+#pragma warning disable CS0162 // Unreachable code detected
             var store = _repository.GetStores((x) => x.CountryCode == header).Where(f => f.StoreId == storeId).FirstOrDefault();
+#pragma warning restore CS0162 // Unreachable code detected
             if (store == null)
             {
                 return NotFound();
