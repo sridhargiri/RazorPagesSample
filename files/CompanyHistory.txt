@@ -941,6 +941,10 @@ Experience on using Unit Testing Frameworks like XUnit. NUnit, NMoq
 Experience in AWS Appsync, GraphQL
 Strong experience in AWS services like AWS Lambda, Cognito, DynamoDB, SQS, SNS
 
+ciklum online test 2204/2025
+----------------------------
+interlocked class, sql problem, cancellationtokensource
+
 companies from aug 2022 till date
 ---------------------------------
 1.	shell (codility test out) again taken 20/07/2023 failed
@@ -1006,6 +1010,8 @@ companies from aug 2022 till date
 61. sagitec
 62. microland
 63. first group careers
+64. ciklum (only online test)
+65.
 
 
 
